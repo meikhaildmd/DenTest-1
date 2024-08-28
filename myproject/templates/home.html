@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+DentTest - Home
+{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Welcome to DentTest</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>About DentTest</h2>
+        <p>DentTest is your go-to resource for dental study materials. Explore our comprehensive guides and resources to excel in your dental studies.</p>
+    </section>
+</main>
+<footer>
+    <p>© 2024 DentTest. All rights reserved.</p>
+</footer>
+{% endblock %}
