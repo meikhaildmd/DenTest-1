@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Quizzes
+{% endblock %}
+
+{% block content %}
+<h1 class="centered-title">{{ subject.name }} - Quizzes</h1>
+<div class="container">
+    {% for quiz in quizzes %}
+        <div class="card">
+            <a href="{% url 'quiz_detail' quiz.id %}">{{ quiz.title }}</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

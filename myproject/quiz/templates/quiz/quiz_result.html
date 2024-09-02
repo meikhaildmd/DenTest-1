@@ -5,7 +5,32 @@ Quiz Result
 {% endblock %}
 
 {% block content %}
-    <h1>Quiz Result</h1>
-    <p>Your score: {{ score }} out of {{ total }}</p>
-    <a href="{% url 'quiz_home' %}">Back to Quiz Home</a>
+<h1>{{ quiz.title }} - Results</h1>
+{% if latest_attempt %}
+    <h2>Current Attempt</h2>
+    <p>Your score: {{ latest_attempt.score }} out of {{ quiz.questions.count }}</p>
+    {% with percentage=latest_attempt.score|divisibleby:quiz.questions.count %}
+        {% if percentage >= 0.8 %}
+            <p style="color: green; font-size: 24px; font-weight: bold;">Great job! Incredible!</p>
+        {% elif percentage >= 0.65 %}
+            <p style="color: orange; font-size: 20px;">Pass. Not bad, but continue practicing.</p>
+        {% else %}
+            <p style="color: red; font-size: 20px;">Be better.</p>
+        {% endif %}
+    {% endwith %}
+    <h2>Previous Attempts</h2>
+    <ul>
+        {% for attempt in attempts|slice:"1:" %}
+            <li>Attempt on {{ attempt.completed_at }}: {{ attempt.score }} out of {{ quiz.questions.count }}</li>
+        {% endfor %}
+    </ul>
+    <div class="links">
+        <a href="{% url 'quiz_detail' quiz.id %}">Retry Quiz</a>
+        <a href="{% url 'quiz_list' quiz.subject.id %}">Next Quiz</a>
+        <a href="{% url 'classification_list' %}">Back to Sections</a>
+    </div>
+{% else %}
+    <p>No attempts found.</p>
+{% endif %}
 {% endblock %}
+

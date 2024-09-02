@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Subjects
+{% endblock %}
+
+{% block content %}
+<h1 class="centered-title">{{ classification.name }} - Subjects</h1>
+<div class="container">
+    {% for subject in subjects %}
+        <div class="card">
+            <a href="{% url 'quiz_list' subject.id %}">{{ subject.name }}</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

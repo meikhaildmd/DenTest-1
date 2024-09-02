@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Sections
+{% endblock %}
+
+{% block content %}
+<h1 class="centered-title">Sections</h1>
+<div class="container">
+    {% for classification in classifications %}
+        <div class="card">
+            <a href="{% url 'subject_list' classification.id %}">{{ classification.name }}</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
