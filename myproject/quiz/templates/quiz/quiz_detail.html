@@ -6,42 +6,49 @@ Quiz Detail
 
 {% block content %}
 <h1>{{ quiz.title }}</h1>
-<nav>
-    <ul>
-        {% for q in questions %}
-            <li><a href="{% url 'quiz_question_detail' quiz.id q.id %}">Question {{ forloop.counter }}</a></li>
-        {% endfor %}
-    </ul>
-</nav>
-<form method="post">
-    {% csrf_token %}
+<div class="question-nav">
+    {% for q in questions %}
+        <a href="{% url 'quiz_detail' quiz.id q.id %}">Question {{ forloop.counter }}</a>
+    {% endfor %}
+</div>
+{% if question %}
     <div class="question-container">
         <h2>{{ question.text }}</h2>
         {% for image in question.images.all %}
             <img src="{{ image.image.url }}" alt="Question Image" class="question-image">
-            <p>Image URL: {{ image.image.url }}</p> <!-- Debug statement -->
         {% endfor %}
         {% for chart in question.charts.all %}
             <img src="{{ chart.chart.url }}" alt="Question Chart" class="question-chart">
-            <p>Chart URL: {{ chart.chart.url }}</p> <!-- Debug statement -->
         {% endfor %}
-        <input type="hidden" name="question_id" value="{{ question.id }}">
-        <div class="options">
-            <label>
-                <input type="radio" name="selected_option" value="option1"> {{ question.option1 }}
-            </label><br>
-            <label>
-                <input type="radio" name="selected_option" value="option2"> {{ question.option2 }}
-            </label><br>
-            <label>
-                <input type="radio" name="selected_option" value="option3"> {{ question.option3 }}
-            </label><br>
-            <label>
-                <input type="radio" name="selected_option" value="option4"> {{ question.option4 }}
-            </label><br>
-        </div>
-        <button type="submit">Submit</button>
+        <form method="post">
+            {% csrf_token %}
+            <div class="options">
+                <label>
+                    <input type="radio" name="selected_option" value="option1" {% if selected_option == 'option1' %}checked{% endif %}> {{ question.option1 }}
+                </label><br>
+                <label>
+                    <input type="radio" name="selected_option" value="option2" {% if selected_option == 'option2' %}checked{% endif %}> {{ question.option2 }}
+                </label><br>
+                <label>
+                    <input type="radio" name="selected_option" value="option3" {% if selected_option == 'option3' %}checked{% endif %}> {{ question.option3 }}
+                </label><br>
+                <label>
+                    <input type="radio" name="selected_option" value="option4" {% if selected_option == 'option4' %}checked{% endif %}> {{ question.option4 }}
+                </label><br>
+            </div>
+            <button type="submit" name="action" value="check_answer">Check Answer</button>
+            {% if selected_option %}
+                <button type="submit" name="action" value="next_question">Next Question</button>
+            {% endif %}
+        </form>
+        {% if selected_option %}
+            <div class="explanation">
+                <p>{% if is_correct %}Correct!{% else %}Incorrect.{% endif %}</p>
+                <p>{{ explanation }}</p>
+            </div>
+        {% endif %}
     </div>
-</form>
+{% else %}
+    <p>No questions available for this quiz.</p>
+{% endif %}
 {% endblock %}
-

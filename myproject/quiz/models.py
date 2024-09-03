@@ -92,8 +92,8 @@ class QuestionChart(models.Model):
 class QuizAttempt(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    score = models.IntegerField()
-    completed_at = models.DateTimeField(auto_now_add=True)
+    score = models.IntegerField(default=0)
+    completed_at = models.DateTimeField(blank=True, null=True)
     duration = models.DurationField(null=True, blank=True)
 
     def __str__(self):
@@ -103,3 +103,4 @@ class QuizAttempt(models.Model):
         verbose_name = "Quiz Attempt"
         verbose_name_plural = "Quiz Attempts"
         ordering = ['-completed_at']
+        unique_together = ('quiz', 'user', 'completed_at')
