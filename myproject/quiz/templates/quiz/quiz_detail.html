@@ -44,7 +44,9 @@ Quiz Detail
         {% if selected_option %}
             <div class="explanation">
                 <p>{% if is_correct %}Correct!{% else %}Incorrect.{% endif %}</p>
-                <p>{{ explanation }}</p>
+                <div>{{ explanation|linebreaksbr }}</div>
+
+
             </div>
         {% endif %}
     </div>
