@@ -27,7 +27,6 @@ def quiz_list(request, subject_id):
 
 
 @login_required
-@login_required
 def quiz_detail(request, quiz_id, question_id=None):
     quiz = get_object_or_404(Quiz, id=quiz_id)
     questions = list(quiz.questions.all())
@@ -42,7 +41,6 @@ def quiz_detail(request, quiz_id, question_id=None):
     selected_option = None
     next_question = None
 
-    # Use transaction.atomic() to ensure that operations are atomic
     with transaction.atomic():
         quiz_attempt, created = QuizAttempt.objects.get_or_create(
             quiz=quiz, user=request.user, completed_at__isnull=True,
@@ -51,9 +49,8 @@ def quiz_detail(request, quiz_id, question_id=None):
 
     if request.method == 'POST':
         selected_option = request.POST.get('selected_option')
-        action = request.POST.get('action')
 
-        if action == 'check_answer':
+        if request.POST.get('action') == 'check_answer':
             is_correct = selected_option == question.correct_option
             explanation = question.explanation
 
@@ -61,18 +58,22 @@ def quiz_detail(request, quiz_id, question_id=None):
                 quiz_attempt.score += 1
                 quiz_attempt.save()
 
-        # Determine the next question
         current_index = questions.index(question)
         next_question = questions[current_index +
                                   1] if current_index + 1 < len(questions) else None
 
-        if action == 'next_question':
+        if request.POST.get('action') == 'next_question':
             if next_question is None:
                 quiz_attempt.completed_at = timezone.now()
                 quiz_attempt.save()
                 return redirect('quiz_result', quiz_id=quiz.id)
             else:
                 return redirect('quiz_detail', quiz_id=quiz.id, question_id=next_question.id)
+
+        elif request.POST.get('action') == 'finish_quiz':
+            quiz_attempt.completed_at = timezone.now()
+            quiz_attempt.save()
+            return redirect('quiz_result', quiz_id=quiz.id)
 
     return render(request, 'quiz/quiz_detail.html', {
         'quiz': quiz,
