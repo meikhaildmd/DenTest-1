@@ -95,6 +95,7 @@ class QuizAttempt(models.Model):
     score = models.IntegerField(default=0)
     completed_at = models.DateTimeField(blank=True, null=True)
     duration = models.DurationField(null=True, blank=True)
+    answered_questions = models.ManyToManyField(Question, blank=True)
 
     def __str__(self):
         return f"{self.user.username} - {self.quiz.title} - {self.score}"

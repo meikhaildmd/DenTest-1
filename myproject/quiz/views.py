@@ -1,3 +1,4 @@
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Quiz, Question, QuizAttempt
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
@@ -30,50 +31,65 @@ def quiz_list(request, subject_id):
 def quiz_detail(request, quiz_id, question_id=None):
     quiz = get_object_or_404(Quiz, id=quiz_id)
     questions = list(quiz.questions.all())
-
-    if question_id is None:
-        question = questions[0]
-    else:
-        question = get_object_or_404(Question, id=question_id)
+    question = questions[0] if question_id is None else get_object_or_404(
+        Question, id=question_id)
 
     explanation = None
     is_correct = None
     selected_option = None
+    answered = False
     next_question = None
 
+    # Fetch or create a QuizAttempt
     with transaction.atomic():
         quiz_attempt, created = QuizAttempt.objects.get_or_create(
             quiz=quiz, user=request.user, completed_at__isnull=True,
             defaults={'score': 0}
         )
 
+    # Check if this question is already answered
+    answered_questions = quiz_attempt.answered_questions.all()
+    answered = question in answered_questions
+
     if request.method == 'POST':
         selected_option = request.POST.get('selected_option')
+        action = request.POST.get('action')
 
-        if request.POST.get('action') == 'check_answer':
+        # Handle Check Answer action
+        if action == 'check_answer' and not answered:
             is_correct = selected_option == question.correct_option
             explanation = question.explanation
 
             if is_correct:
                 quiz_attempt.score += 1
-                quiz_attempt.save()
+            quiz_attempt.answered_questions.add(
+                question)  # Mark question as answered
+            quiz_attempt.save()
 
+        # Determine the next question
         current_index = questions.index(question)
         next_question = questions[current_index +
                                   1] if current_index + 1 < len(questions) else None
 
-        if request.POST.get('action') == 'next_question':
-            if next_question is None:
+        # Handle Next Question action
+        if action == 'next_question':
+            if next_question:
+                return redirect('quiz_detail', quiz_id=quiz.id, question_id=next_question.id)
+            else:
+                # If there is no next question, finish the quiz
                 quiz_attempt.completed_at = timezone.now()
                 quiz_attempt.save()
                 return redirect('quiz_result', quiz_id=quiz.id)
-            else:
-                return redirect('quiz_detail', quiz_id=quiz.id, question_id=next_question.id)
 
-        elif request.POST.get('action') == 'finish_quiz':
+        # Handle Finish Quiz action
+        elif action == 'finish_quiz':
             quiz_attempt.completed_at = timezone.now()
             quiz_attempt.save()
             return redirect('quiz_result', quiz_id=quiz.id)
+
+    # Determine if this is the last question
+    current_index = questions.index(question)
+    is_last_question = (current_index == len(questions) - 1)
 
     return render(request, 'quiz/quiz_detail.html', {
         'quiz': quiz,
@@ -83,10 +99,12 @@ def quiz_detail(request, quiz_id, question_id=None):
         'is_correct': is_correct,
         'explanation': explanation,
         'next_question': next_question,
+        'answered': answered,
+        'is_last_question': is_last_question,  # Add this to the context
     })
 
 
-@login_required
+@ login_required
 def quiz_result(request, quiz_id):
     quiz = get_object_or_404(Quiz, id=quiz_id)
     attempts = QuizAttempt.objects.filter(

@@ -5,67 +5,97 @@ Quiz Detail
 {% endblock %}
 
 {% block content %}
-<div class="sidebar">
-    <h3>Questions</h3>
-    {% for q in questions %}
-        <a href="{% url 'quiz_detail' quiz.id q.id %}" class="question-link {% if question.id == q.id %}active{% endif %}">Question {{ forloop.counter }}</a>
-    {% endfor %}
-</div>
+<h1>{{ quiz.title }}</h1>
 
-<div class="content">
-    <h1>{{ quiz.title }}</h1>
-    {% if question %}
-        <div class="question-container">
-            <h2>{{ question.text }}</h2>
-            {% for image in question.images.all %}
-                <img src="{{ image.image.url }}" alt="Question Image" class="question-image">
+<!-- Sidebar with Question Links -->
+<div class="quiz-container">
+    <div class="question-sidebar">
+        <h3>Questions</h3>
+        <ul class="question-nav">
+            {% for q in questions %}
+                <li>
+                    <a href="{% url 'quiz_detail' quiz.id q.id %}" class="question-link">
+                        Question {{ forloop.counter }}
+                    </a>
+                </li>
             {% endfor %}
-            {% for chart in question.charts.all %}
-                <img src="{{ chart.chart.url }}" alt="Question Chart" class="question-chart">
-            {% endfor %}
-            <form method="post">
-                {% csrf_token %}
-                <div class="options">
-                    <label>
-                        <input type="radio" name="selected_option" value="option1" {% if selected_option == 'option1' %}checked{% endif %}>
-                        <span>{{ question.option1 }}</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="selected_option" value="option2" {% if selected_option == 'option2' %}checked{% endif %}>
-                        <span>{{ question.option2 }}</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="selected_option" value="option3" {% if selected_option == 'option3' %}checked{% endif %}>
-                        <span>{{ question.option3 }}</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="selected_option" value="option4" {% if selected_option == 'option4' %}checked{% endif %}>
-                        <span>{{ question.option4 }}</span>
-                    </label>
-                </div>
+        </ul>
+    </div>
 
-                <!-- Buttons -->
-                <div class="button-group">
-                    <button type="submit" name="action" value="check_answer">Check Answer</button>
-                    {% if next_question %}
-                        <button type="submit" name="action" value="next_question">Next Question</button>
+    <!-- Main Question Area -->
+    <div class="question-content">
+        {% if question %}
+            <div class="question-container">
+                <h2>{{ question.text }}</h2>
+
+                <!-- Display Images -->
+                {% for image in question.images.all %}
+                    <img src="{{ image.image.url }}" alt="Question Image" class="question-image">
+                {% endfor %}
+
+                <!-- Display Charts -->
+                {% for chart in question.charts.all %}
+                    <img src="{{ chart.chart.url }}" alt="Question Chart" class="question-chart">
+                {% endfor %}
+
+                <!-- Form for Answer Submission -->
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <!-- Options Section -->
+                    <div class="options">
+                        <label class="option-label">
+                            <input type="radio" name="selected_option" value="option1" 
+                                   {% if selected_option == 'option1' %}checked{% endif %} 
+                                   {% if answered %}disabled{% endif %}>
+                            <span>{{ question.option1 }}</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="selected_option" value="option2" 
+                                   {% if selected_option == 'option2' %}checked{% endif %} 
+                                   {% if answered %}disabled{% endif %}>
+                            <span>{{ question.option2 }}</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="selected_option" value="option3" 
+                                   {% if selected_option == 'option3' %}checked{% endif %} 
+                                   {% if answered %}disabled{% endif %}>
+                            <span>{{ question.option3 }}</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="selected_option" value="option4" 
+                                   {% if selected_option == 'option4' %}checked{% endif %} 
+                                   {% if answered %}disabled{% endif %}>
+                            <span>{{ question.option4 }}</span>
+                        </label>
+                    </div>
+
+                    <!-- Check Answer Button -->
+                    {% if not answered %}
+                        <button type="submit" name="action" value="check_answer" class="btn-check-answer">Check Answer</button>
+                    {% endif %}
+                    
+                    <!-- Next Question or Finish Quiz Button -->
+                    {% if is_last_question %}
+                        <button type="submit" name="action" value="finish_quiz" class="btn-finish-quiz">Finish Quiz</button>
                     {% else %}
-                        <button type="submit" name="action" value="finish_quiz">Finish Quiz</button>
+                        <button type="submit" name="action" value="next_question" class="btn-next-question">Next Question</button>
                     {% endif %}
-                </div>
-            </form>
+                </form>
 
-            {% if selected_option %}
-                <div class="explanation">
-                    <p>{% if is_correct %}Correct!{% else %}Incorrect.{% endif %}</p>
-                    {% if explanation %}
-                        <p>{{ explanation|linebreaks }}</p>
-                    {% endif %}
-                </div>
-            {% endif %}
-        </div>
-    {% else %}
-        <p>No questions available for this quiz.</p>
-    {% endif %}
+                <!-- Explanation Section -->
+                {% if selected_option %}
+                    <div class="explanation">
+                        <p>{% if is_correct %}Correct!{% else %}Incorrect.{% endif %}</p>
+                        {% if explanation %}
+                            <p class="explanation-text">{{ explanation|linebreaks }}</p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        {% else %}
+            <p>No questions available for this quiz.</p>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}
