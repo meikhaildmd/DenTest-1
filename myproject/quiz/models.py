@@ -80,10 +80,14 @@ class QuestionImage(models.Model):
         return f"Image for {self.question.text}"
 
 
-class QuestionChart(models.Model):
-    question = models.ForeignKey(
-        Question, related_name='charts', on_delete=models.CASCADE)
-    chart = models.ImageField(upload_to='question_charts/')
+class PatientChartData(models.Model):
+    question = models.OneToOneField(
+        'Question', related_name='chart_data', on_delete=models.CASCADE
+    )
+    chief_complaint = models.TextField()
+    medications = models.TextField()
+    medical_history = models.TextField()
+    current_findings = models.TextField()
 
     def __str__(self):
         return f"Chart for {self.question.text}"

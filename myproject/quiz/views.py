@@ -1,3 +1,4 @@
+from .models import Quiz, Question, QuizAttempt, PatientChartData
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Quiz, Question, QuizAttempt
 from django.shortcuts import get_object_or_404, redirect, render
@@ -39,6 +40,7 @@ def quiz_detail(request, quiz_id, question_id=None):
     selected_option = None
     answered = False
     next_question = None
+    chart_data = None
 
     # Fetch or create a QuizAttempt
     with transaction.atomic():
@@ -50,6 +52,9 @@ def quiz_detail(request, quiz_id, question_id=None):
     # Check if this question is already answered
     answered_questions = quiz_attempt.answered_questions.all()
     answered = question in answered_questions
+
+    # Fetch PatientChartData if available
+    chart_data = PatientChartData.objects.filter(question=question).first()
 
     if request.method == 'POST':
         selected_option = request.POST.get('selected_option')
@@ -100,7 +105,8 @@ def quiz_detail(request, quiz_id, question_id=None):
         'explanation': explanation,
         'next_question': next_question,
         'answered': answered,
-        'is_last_question': is_last_question,  # Add this to the context
+        'is_last_question': is_last_question,
+        'chart_data': chart_data,  # Add this to the context
     })
 
 
