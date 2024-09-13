@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Create a Custom Quiz
+{% endblock %}
+
+{% block content %}
+<h1>Create a Custom Quiz</h1>
+
+<!-- Display any form errors -->
+{% if form.errors %}
+    <div class="form-errors">
+        <ul>
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+<!-- Form for selecting subjects and number of questions -->
+<form method="post">
+    {% csrf_token %}
+    
+    <!-- Subject Selection -->
+    <div class="form-group">
+        <h3>Select Subjects</h3>
+        <div class="subject-checkboxes">
+            {{ form.subjects }}
+        </div>
+    </div>
+
+    <!-- Number of Questions Selection -->
+    <div class="form-group">
+        <h3>Select Number of Questions</h3>
+        <div class="number-questions-input">
+            {{ form.number_of_questions }}
+        </div>
+    </div>
+
+    <!--

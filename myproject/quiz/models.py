@@ -109,3 +109,20 @@ class QuizAttempt(models.Model):
         verbose_name_plural = "Quiz Attempts"
         ordering = ['-completed_at']
         unique_together = ('quiz', 'user', 'completed_at')
+
+
+class QuizAttemptSubject(models.Model):
+    quiz_attempt = models.ForeignKey(
+        QuizAttempt, related_name='subject_scores', on_delete=models.CASCADE)
+    subject = models.ForeignKey(
+        Subject, related_name='quiz_attempts', on_delete=models.CASCADE)
+    score = models.IntegerField(default=0)
+    total_questions = models.IntegerField(default=0)
+
+    def calculate_percentage(self):
+        if self.total_questions > 0:
+            return (self.score / self.total_questions) * 100
+        return 0
+
+    def __str__(self):
+        return f"{self.quiz_attempt} - {self.subject}"
