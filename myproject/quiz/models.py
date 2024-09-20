@@ -1,7 +1,36 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils.timezone import now
+import uuid
+import os
 
 
+# Function to randomize image file names
+def get_image_filename(instance, filename):
+    ext = filename.split('.')[-1]
+    return f'{uuid.uuid4()}.{ext}'
+
+
+# User Profile Model for subscription management
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    subscription_type = models.CharField(
+        max_length=100, choices=[('free', 'Free'), ('premium', 'Premium')]
+    )
+    subscription_start = models.DateTimeField(default=now)
+    subscription_end = models.DateTimeField(
+        null=True, blank=True)  # Can store expiration date
+
+    def is_active_subscription(self):
+        if self.subscription_end:
+            return now() < self.subscription_end
+        return False
+
+    def __str__(self):
+        return f"{self.user.username} - {self.subscription_type} Subscription"
+
+
+# Classification Model
 class Classification(models.Model):
     name = models.CharField(max_length=100)
 
@@ -14,6 +43,7 @@ class Classification(models.Model):
         ordering = ['name']
 
 
+# Subject Model
 class Subject(models.Model):
     classification = models.ForeignKey(
         Classification, related_name='subjects', on_delete=models.CASCADE)
@@ -28,6 +58,7 @@ class Subject(models.Model):
         ordering = ['name']
 
 
+# Quiz Model
 class Quiz(models.Model):
     subject = models.ForeignKey(
         Subject, related_name='quizzes', on_delete=models.CASCADE, default=1)
@@ -44,7 +75,21 @@ class Quiz(models.Model):
         ordering = ['-created_at']
 
 
+# Detailed Explanation Model for storing long explanations
+class DetailedExplanation(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField()  # This will store the long explanation (can be Markdown)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return f"/explanations/{self.id}/"
+
+
 class Question(models.Model):
+    question_id = models.CharField(max_length=100, unique=True)
     quiz = models.ForeignKey(
         Quiz, related_name='questions', on_delete=models.CASCADE)
     text = models.CharField(max_length=300)
@@ -60,7 +105,16 @@ class Question(models.Model):
     ]
     correct_option = models.CharField(
         max_length=100, choices=CORRECT_OPTION_CHOICES)
+
+    # Short explanation and link for "read more"
     explanation = models.TextField(blank=True, null=True)
+    detailed_explanation = models.ForeignKey(
+        'DetailedExplanation', null=True, blank=True, on_delete=models.SET_NULL)
+    read_more_link = models.URLField(blank=True, null=True)
+
+    # Explanation image field
+    explanation_image = models.ImageField(
+        upload_to='explanation_images/', blank=True, null=True)
 
     def __str__(self):
         return self.text
@@ -71,28 +125,31 @@ class Question(models.Model):
         ordering = ['quiz']
 
 
+# Question Image Model
 class QuestionImage(models.Model):
     question = models.ForeignKey(
         Question, related_name='images', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='question_images/')
+    image = models.ImageField(upload_to=get_image_filename)
 
     def __str__(self):
         return f"Image for {self.question.text}"
 
 
+# Patient Chart Data Model
 class PatientChartData(models.Model):
     question = models.OneToOneField(
-        'Question', related_name='chart_data', on_delete=models.CASCADE
-    )
+        Question, related_name='chart_data', on_delete=models.CASCADE)
+    patient_details = models.CharField(
+        max_length=255, null=True, blank=True)  # For sex and age
     chief_complaint = models.TextField()
-    medications = models.TextField()
-    medical_history = models.TextField()
+    medical_history = models.TextField()  # This will now include medications
     current_findings = models.TextField()
 
     def __str__(self):
         return f"Chart for {self.question.text}"
 
 
+# Quiz Attempt Model
 class QuizAttempt(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -111,6 +168,7 @@ class QuizAttempt(models.Model):
         unique_together = ('quiz', 'user', 'completed_at')
 
 
+# Quiz Attempt Subject Model
 class QuizAttemptSubject(models.Model):
     quiz_attempt = models.ForeignKey(
         QuizAttempt, related_name='subject_scores', on_delete=models.CASCADE)

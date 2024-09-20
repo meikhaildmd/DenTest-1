@@ -24,6 +24,10 @@ urlpatterns = [
 
     # Quiz Result
     path('quiz/<int:quiz_id>/result/', views.quiz_result, name='quiz_result'),
+
+    # Detailed Explanation view with string-based question_id
+    path('explanation/<str:question_id>/',
+         views.detailed_explanation, name='detailed_explanation'),
 ]
 
 # Serve media files during development

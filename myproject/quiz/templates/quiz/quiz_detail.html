@@ -33,18 +33,21 @@
                     <a href="#image-container" class="show-image-link">Image</a>
                 {% endif %}
 
-                <!-- Display Patient Chart and Options Side by Side -->
+                <!-- Display Patient Chart and Options Side by Side or Centered if No Chart -->
                 <div class="chart-options-container" style="display: flex; align-items: flex-start; gap: 20px;">
                     
-                    <!-- Patient Chart Section -->
-                    <div class="patient-chart-container" style="flex: 1; max-width: 300px;">
-                        {% if question.chart_data %}
+                    <!-- Patient Chart Section (only shown if chart_data is available) -->
+                    {% if question.chart_data %}
+                        <div class="patient-chart-container" style="flex: 1; max-width: 300px;">
                             {% include 'quiz/patient_chart.html' with chart_data=question.chart_data %}
-                        {% endif %}
-                    </div>
+                        </div>
+                        <!-- Options Section with Chart -->
+                        <div class="options-container" style="flex: 2;">
+                    {% else %}
+                        <!-- Options Section Centered if No Chart -->
+                        <div class="options-container" style="flex: 1; margin: 0 auto;">
+                    {% endif %}
                     
-                    <!-- Options Section -->
-                    <div class="options-container" style="flex: 2;">
                         <!-- Form for Answer Submission -->
                         <form method="post">
                             {% csrf_token %}
@@ -92,13 +95,23 @@
                         {% if selected_option %}
                             <div class="explanation">
                                 <p>{% if is_correct %}Correct!{% else %}Incorrect.{% endif %}</p>
-                                {% if explanation %}
-                                    <p class="explanation-text">{{ explanation|linebreaks }}</p>
+                                {% if explanation_html %}
+                                    <p class="explanation-text">{{ explanation_html|safe }}</p>
+                                {% endif %}
+
+                                <!-- Show "Read More" link generated dynamically -->
+                                <p><a href="{% url 'detailed_explanation' question.question_id %}" target="_blank">Read more</a></p>
+                                
+                                <!-- Render Explanation Image if available -->
+                                {% if question.explanation_image %}
+                                    <div class="explanation-image">
+                                        <img src="{{ question.explanation_image.url }}" alt="Explanation Image" class="question-image">
+                                    </div>
                                 {% endif %}
                             </div>
                         {% endif %}
-                    </div>
-                </div>
+                    </div> <!-- Close options-container -->
+                </div> <!-- Close chart-options-container -->
 
                 <!-- Image Section, Hidden by Default -->
                 <div id="image-container" class="hidden-image-container">
@@ -114,4 +127,3 @@
     </div>
 </div>
 {% endblock %}
-

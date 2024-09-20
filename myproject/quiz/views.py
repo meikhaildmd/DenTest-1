@@ -1,11 +1,25 @@
-from .models import Quiz, Question, QuizAttempt, PatientChartData, Classification, Subject, QuizAttemptSubject
+from .models import Quiz, Question, QuizAttempt, PatientChartData, Classification, Subject, QuizAttemptSubject, UserProfile
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
-# Assuming you'll create a form for custom quizzes
+from markdown import markdown
 from .forms import CustomQuizForm
+
+# Subscription check decorator (optional, not applied yet)
+
+
+def subscription_required(view_func):
+    def wrap(request, *args, **kwargs):
+        user_profile = request.user.userprofile
+        if not user_profile.is_active_subscription():
+            # Redirect to subscription page if not subscribed
+            return redirect('subscribe')
+        return view_func(request, *args, **kwargs)
+    return wrap
+
+# Classification list view (can later incorporate free/paid logic)
 
 
 @login_required
@@ -24,7 +38,7 @@ def classification_list(request):
             total_questions = subject_attempts.aggregate(Avg('total_questions'))[
                 'total_questions__avg']
 
-            if avg_score and total_questions:
+            if avg_score is not None and total_questions is not None and total_questions > 0:
                 avg_percentage = (avg_score / total_questions) * 100
             else:
                 avg_percentage = None
@@ -36,6 +50,8 @@ def classification_list(request):
         'subject_progress': subject_progress
     })
 
+# Subject list view
+
 
 @login_required
 def subject_list(request, classification_id):
@@ -43,12 +59,16 @@ def subject_list(request, classification_id):
     subjects = classification.subjects.all()
     return render(request, 'quiz/subject_list.html', {'classification': classification, 'subjects': subjects})
 
+# Quiz list view
+
 
 @login_required
 def quiz_list(request, subject_id):
     subject = get_object_or_404(Subject, id=subject_id)
     quizzes = subject.quizzes.all()
     return render(request, 'quiz/quiz_list.html', {'subject': subject, 'quizzes': quizzes})
+
+# Create custom quiz view
 
 
 @login_required
@@ -61,13 +81,27 @@ def create_custom_quiz(request):
             questions = Question.objects.filter(
                 quiz__subject__in=selected_subjects).order_by('?')[:number_of_questions]
 
+            if not questions:
+                # Handle case where no questions are available
+                return redirect('subject_list', classification_id=selected_subjects.first().classification.id)
+
             # Create a new quiz (custom, no subject or title required)
             quiz = Quiz.objects.create(
                 title="Custom Quiz", description="Custom-selected quiz")
 
             for question in questions:
-                question.quiz = quiz
-                question.save()
+                # Create new question instances linked to the custom quiz
+                Question.objects.create(
+                    quiz=quiz,
+                    text=question.text,
+                    option1=question.option1,
+                    option2=question.option2,
+                    option3=question.option3,
+                    option4=question.option4,
+                    correct_option=question.correct_option,
+                    explanation=question.explanation,
+                    explanation_image=question.explanation_image,
+                )
 
             return redirect('quiz_detail', quiz_id=quiz.id)
 
@@ -75,6 +109,8 @@ def create_custom_quiz(request):
         form = CustomQuizForm()
 
     return render(request, 'quiz/create_custom_quiz.html', {'form': form})
+
+# Quiz detail view
 
 
 @login_required
@@ -150,6 +186,10 @@ def quiz_detail(request, quiz_id, question_id=None):
             quiz_attempt.save()
             return redirect('quiz_result', quiz_id=quiz.id)
 
+    # Convert explanation to HTML using Markdown
+    explanation_html = markdown(
+        question.explanation) if question.explanation else None
+
     # Determine if this is the last question
     current_index = questions.index(question)
     is_last_question = (current_index == len(questions) - 1)
@@ -160,12 +200,14 @@ def quiz_detail(request, quiz_id, question_id=None):
         'questions': questions,
         'selected_option': selected_option,
         'is_correct': is_correct,
-        'explanation': explanation,
+        'explanation_html': explanation_html,  # Pass HTML formatted explanation
         'next_question': next_question,
         'answered': answered,
         'is_last_question': is_last_question,
         'chart_data': chart_data,  # Add this to the context
     })
+
+# Quiz result view
 
 
 @login_required
@@ -185,7 +227,7 @@ def quiz_result(request, quiz_id):
         }
 
         overall_percentage = (total_score / total_questions) * \
-            100 if total_questions > 0 else 0
+            100 if total_questions > 0 else None
 
     else:
         overall_percentage = None
@@ -197,4 +239,23 @@ def quiz_result(request, quiz_id):
         'attempts': attempts,
         'overall_percentage': overall_percentage,
         'subject_percentages': subject_percentages
+    })
+
+
+@login_required
+def detailed_explanation(request, question_id):
+    # Get the question object based on the question_id
+    question = get_object_or_404(Question, question_id=question_id)
+
+    # Check if the question has a detailed explanation and convert it to markdown
+    if question.detailed_explanation:
+        detailed_explanation_content = question.detailed_explanation.content
+        detailed_explanation_html = markdown(detailed_explanation_content)
+    else:
+        detailed_explanation_html = None
+
+    # Pass the question and the markdown-converted detailed explanation to the template
+    return render(request, 'quiz/detailed_explanation.html', {
+        'question': question,
+        'detailed_explanation': detailed_explanation_html
     })
