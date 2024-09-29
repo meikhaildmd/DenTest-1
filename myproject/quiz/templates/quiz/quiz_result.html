@@ -5,32 +5,56 @@ Quiz Result
 {% endblock %}
 
 {% block content %}
-<h1>{{ quiz.title }} - Results</h1>
-{% if latest_attempt %}
-    <h2>Current Attempt</h2>
-    <p>Your score: {{ latest_attempt.score }} out of {{ quiz.questions.count }}</p>
-    {% if percentage is not None %}
-        {% if percentage >= 80 %}
+<h1>{% if quiz %}{{ quiz.title }}{% else %}Custom Quiz{% endif %} - Results</h1>
+
+{% if is_custom_quiz %}
+    <!-- Custom Quiz Results -->
+    <h2>Custom Quiz Results</h2>
+    <p>Your score: {{ correct_answers }} out of {{ total_questions }}</p>
+    {% if overall_percentage is not None %}
+        {% if overall_percentage >= 80 %}
             <p style="color: green; font-size: 24px; font-weight: bold;">Great job! Incredible!</p>
-        {% elif percentage >= 65 %}
+        {% elif overall_percentage >= 65 %}
             <p style="color: orange; font-size: 20px;">Pass. Not bad, but continue practicing.</p>
         {% else %}
             <p style="color: red; font-size: 20px;">Be better.</p>
         {% endif %}
     {% endif %}
-    <h2>Previous Attempts</h2>
-    <ul>
-        {% for attempt in attempts|slice:"1:" %}
-            <li>Attempt on {{ attempt.completed_at }}: {{ attempt.score }} out of {{ quiz.questions.count }}</li>
-        {% endfor %}
-    </ul>
-    <div class="links">
-        <a href="{% url 'quiz_detail' quiz.id %}">Retry Quiz</a>
-        <a href="{% url 'quiz_list' quiz.subject.id %}">Next Quiz</a>
-        <a href="{% url 'classification_list' %}">Back to Sections</a>
-    </div>
-{% else %}
-    <p>No attempts found.</p>
-{% endif %}
-{% endblock %}
 
+    <a href="{% url 'create_custom_quiz' %}">Create Another Custom Quiz</a>
+    <br>
+    <a href="{% url 'classification_list' %}">Back to Sections</a>  <!-- Added back to sections link -->
+
+{% else %}
+    <!-- Regular Quiz Results -->
+    <h2>Regular Quiz Results</h2>
+    {% if latest_attempt %}
+        <p>Your score: {{ latest_attempt.score }} out of {{ latest_attempt.total_questions }}</p>
+        {% if overall_percentage is not None %}
+            {% if overall_percentage >= 80 %}
+                <p style="color: green; font-size: 24px; font-weight: bold;">Great job! Incredible!</p>
+            {% elif overall_percentage >= 65 %}
+                <p style="color: orange; font-size: 20px;">Pass. Not bad, but continue practicing.</p>
+            {% else %}
+                <p style="color: red; font-size: 20px;">Be better.</p>
+            {% endif %}
+        {% endif %}
+        
+        <h3>Subject Performance:</h3>
+        <ul>
+            {% for subject, progress in subject_progress.items %}
+                <li>{{ subject }}: {{ progress.percentage }}%</li>
+            {% endfor %}
+        </ul>
+        
+        <div class="links">
+            <a href="{% url 'quiz_detail' quiz.id %}">Retry Quiz</a>
+            <a href="{% url 'quiz_list' quiz.subject.id %}">Next Quiz</a>
+            <a href="{% url 'classification_list' %}">Back to Sections</a>
+        </div>
+    {% else %}
+        <p>No attempts found.</p>
+    {% endif %}
+{% endif %}
+
+{% endblock %}

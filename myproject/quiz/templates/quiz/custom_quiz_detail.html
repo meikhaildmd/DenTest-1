@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Custom Quiz: {{ question.text }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ "Custom Quiz" }}</h1>
+
+<!-- Sidebar with Question Links -->
+<div class="quiz-container">
+    <div class="question-sidebar">
+        <h3>Questions</h3>
+        <ul class="question-nav">
+            {% for q in questions %}
+                <li>
+                    <a href="{% url 'custom_quiz_detail' q.id %}" class="question-link">
+                        Question {{ forloop.counter }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Main Question Area -->
+    <div class="question-content">
+        <div class="question-container">
+            <h2>{{ question.text }}</h2>
+
+            <!-- Display Patient Chart and Options Side by Side or Centered if No Chart -->
+            <div class="chart-options-container" style="display: flex; align-items: flex-start; gap: 20px;">
+                
+                <!-- Patient Chart Section (only shown if chart_data is available) -->
+                {% if chart_data %}
+                    <div class="patient-chart-container" style="flex: 1; max-width: 300px;">
+                        {% include 'quiz/patient_chart.html' with chart_data=chart_data %}
+                    </div>
+                    <!-- Options Section with Chart -->
+                    <div class="options-container" style="flex: 2;">
+                {% else %}
+                    <!-- Options Section Centered if No Chart -->
+                    <div class="options-container" style="flex: 1; margin: 0 auto;">
+                {% endif %}
+                
+                    <!-- Form for Answer Submission -->
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="options">
+                            <label class="option-label">
+                                <input type="radio" name="selected_option" value="option1" 
+                                       {% if selected_option == 'option1' %}checked{% endif %}>
+                                <span>{{ question.option1 }}</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="selected_option" value="option2" 
+                                       {% if selected_option == 'option2' %}checked{% endif %}>
+                                <span>{{ question.option2 }}</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="selected_option" value="option3" 
+                                       {% if selected_option == 'option3' %}checked{% endif %}>
+                                <span>{{ question.option3 }}</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="selected_option" value="option4" 
+                                       {% if selected_option == 'option4' %}checked{% endif %}>
+                                <span>{{ question.option4 }}</span>
+                            </label>
+                        </div>
+
+                        <!-- Check Answer Button -->
+                        {% if not answered %}
+                            <button type="submit" name="action" value="check_answer" class="btn-check-answer">Check Answer</button>
+                        {% endif %}
+                        
+                        <!-- Next Question or Finish Quiz Button -->
+                        {% if is_last_question %}
+                            <button type="submit" name="action" value="finish_quiz" class="btn-finish-quiz">Finish Quiz</button>
+                        {% else %}
+                            <button type="submit" name="action" value="next_question" class="btn-next-question">Next Question</button>
+                        {% endif %}
+                    </form>
+
+                    <!-- Explanation Section -->
+                    {% if selected_option %}
+                        <div class="explanation">
+                            <p>{% if is_correct %}Correct!{% else %}Incorrect.{% endif %}</p>
+                            <p class="explanation-text">{{ explanation_html|safe }}</p>
+
+                            <!-- Show "Read More" link generated dynamically -->
+                            <p><a href="{% url 'detailed_explanation' question.question_id %}" target="_blank">Read more</a></p>
+                            
+                            <!-- Render Explanation Image if available -->
+                            {% if question.explanation_image %}
+                                <div class="explanation-image">
+                                    <img src="{{ question.explanation_image.url }}" alt="Explanation Image" class="question-image">
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div> <!-- Close options-container -->
+            </div> <!-- Close chart-options-container -->
+
+        </div> <!-- Close question-container -->
+    </div> <!-- Close question-content -->
+</div> <!-- Close quiz-container -->
+{% endblock %}

@@ -105,7 +105,7 @@
                                 <!-- Render Explanation Image if available -->
                                 {% if question.explanation_image %}
                                     <div class="explanation-image">
-                                        <img src="{{ question.explanation_image.url }}" alt="Explanation Image" class="question-image">
+                                        <img src="{{ question.explanation_image.url }}" alt="Explanation Image" class="standard-image">
                                     </div>
                                 {% endif %}
                             </div>
@@ -116,7 +116,7 @@
                 <!-- Image Section, Hidden by Default -->
                 <div id="image-container" class="hidden-image-container">
                     {% for image in question.images.all %}
-                        <img src="{{ image.image.url }}" alt="Question Image" class="question-image">
+                        <img src="{{ image.image.url }}" alt="Question Image" class="standard-image">
                     {% endfor %}
                 </div>
 

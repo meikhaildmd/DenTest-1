@@ -114,7 +114,7 @@ class Question(models.Model):
 
     # Explanation image field
     explanation_image = models.ImageField(
-        upload_to='explanation_images/', blank=True, null=True)
+        upload_to='explanation_image/', blank=True, null=True)
 
     def __str__(self):
         return self.text
@@ -149,7 +149,6 @@ class PatientChartData(models.Model):
         return f"Chart for {self.question.text}"
 
 
-# Quiz Attempt Model
 class QuizAttempt(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -158,22 +157,36 @@ class QuizAttempt(models.Model):
     duration = models.DurationField(null=True, blank=True)
     answered_questions = models.ManyToManyField(Question, blank=True)
 
+    def track_question_progress(self, question, is_correct):
+        """Track the progress of each question in the quiz attempt."""
+        if not self.answered_questions.filter(id=question.id).exists():
+            self.answered_questions.add(question)
+            if is_correct:
+                self.score += 1
+            self.save()
+
+            # Track subject score by subject
+            quiz_subject = question.quiz.subject
+            attempt_subject, created = QuizAttemptSubject.objects.get_or_create(
+                quiz_attempt=self, subject=quiz_subject
+            )
+            attempt_subject.total_questions += 1
+            if is_correct:
+                attempt_subject.score += 1
+            attempt_subject.save()
+
     def __str__(self):
         return f"{self.user.username} - {self.quiz.title} - {self.score}"
-
-    class Meta:
-        verbose_name = "Quiz Attempt"
-        verbose_name_plural = "Quiz Attempts"
-        ordering = ['-completed_at']
-        unique_together = ('quiz', 'user', 'completed_at')
 
 
 # Quiz Attempt Subject Model
 class QuizAttemptSubject(models.Model):
     quiz_attempt = models.ForeignKey(
-        QuizAttempt, related_name='subject_scores', on_delete=models.CASCADE)
+        QuizAttempt, related_name='subject_scores', on_delete=models.CASCADE
+    )
     subject = models.ForeignKey(
-        Subject, related_name='quiz_attempts', on_delete=models.CASCADE)
+        Subject, related_name='quiz_attempts', on_delete=models.CASCADE
+    )
     score = models.IntegerField(default=0)
     total_questions = models.IntegerField(default=0)
 
