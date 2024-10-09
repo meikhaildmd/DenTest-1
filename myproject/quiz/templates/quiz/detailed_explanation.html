@@ -6,7 +6,7 @@ Detailed Explanation for "{{ question.text }}"
 
 {% block content %}
 <!-- Display the detailed explanation text -->
-<div class="detailed-explanation">
+<div class="guide-content"> <!-- Changed class to guide-content for targeted styling -->
     {% if detailed_explanation %}
         <p>{{ detailed_explanation|safe }}</p>
     {% else %}
@@ -21,3 +21,4 @@ Detailed Explanation for "{{ question.text }}"
     </div>
 {% endif %}
 {% endblock %}
+

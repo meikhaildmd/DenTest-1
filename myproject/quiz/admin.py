@@ -17,8 +17,8 @@ class PatientChartDataAdmin(admin.ModelAdmin):
 
 @admin.register(DetailedExplanation)
 class DetailedExplanationAdmin(admin.ModelAdmin):
-    list_display = ('id', 'created_at')
-    search_fields = ('id',)
+    list_display = ('title', 'created_at')
+    search_fields = ('title',)
     ordering = ('-created_at',)
 
 

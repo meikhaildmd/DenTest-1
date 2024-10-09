@@ -9,13 +9,17 @@ Question Result
 <h2>Question: {{ question.text }}</h2>
 <p>Your answer: {{ selected_option }}</p>
 <p>Correct answer: {{ question.correct_option }}</p>
+
 {% if is_correct %}
-    <p style="color: green; font-size: 24px; font-weight: bold;">Correct!</p>
+    <p class="correct">Correct!</p>
 {% else %}
-    <p style="color: red; font-size: 24px; font-weight: bold;">Incorrect.</p>
+    <p class="incorrect">Incorrect.</p>
 {% endif %}
+
 <p><strong>Explanation:</strong></p>
-<p>{{ explanation|linebreaks }}</p>
+<div class="explanation">
+    <p>{{ explanation|linebreaks }}</p>
+</div>
 
 {% if next_question %}
     <a href="{% url 'quiz_question_detail' quiz.id next_question.id %}">Next Question</a>
