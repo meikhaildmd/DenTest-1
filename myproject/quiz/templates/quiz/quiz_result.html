@@ -21,15 +21,22 @@ Quiz Result
         {% endif %}
     {% endif %}
 
+    <h3>Subject Performance:</h3>
+    <ul>
+        {% for subject, progress in subject_progress.items %}
+            <li>{{ subject }}: {{ progress.percentage|floatformat:2 }}% ({{ progress.score }} out of {{ progress.total }})</li>
+        {% endfor %}
+    </ul>
+
     <a href="{% url 'create_custom_quiz' %}">Create Another Custom Quiz</a>
     <br>
-    <a href="{% url 'classification_list' %}">Back to Sections</a>  <!-- Added back to sections link -->
+    <a href="{% url 'classification_list' %}">Back to Sections</a>
 
 {% else %}
     <!-- Regular Quiz Results -->
     <h2>Regular Quiz Results</h2>
     {% if latest_attempt %}
-        <p>Your score: {{ latest_attempt.score }} out of {{ latest_attempt.total_questions }}</p>
+        <p>Your score: {{ total_score }} out of {{ total_questions }}</p>
         {% if overall_percentage is not None %}
             {% if overall_percentage >= 80 %}
                 <p style="color: green; font-size: 24px; font-weight: bold;">Great job! Incredible!</p>
@@ -43,7 +50,7 @@ Quiz Result
         <h3>Subject Performance:</h3>
         <ul>
             {% for subject, progress in subject_progress.items %}
-                <li>{{ subject }}: {{ progress.percentage }}%</li>
+                <li>{{ subject }}: {{ progress.percentage|floatformat:2 }}% ({{ progress.score }} out of {{ progress.total }})</li>
             {% endfor %}
         </ul>
         
@@ -56,5 +63,4 @@ Quiz Result
         <p>No attempts found.</p>
     {% endif %}
 {% endif %}
-
 {% endblock %}

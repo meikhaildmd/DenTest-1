@@ -20,7 +20,7 @@ Create a Custom Quiz
     </div>
 {% endif %}
 
-<!-- Form for selecting subjects and number of questions -->
+<!-- Form for selecting subjects, number of questions, and filter options -->
 <form method="post">
     {% csrf_token %}
     
@@ -37,6 +37,19 @@ Create a Custom Quiz
         <h3>Select Number of Questions</h3>
         <div class="number-questions-input">
             {{ form.number_of_questions }}
+        </div>
+    </div>
+
+    <!-- Filter Option Selection -->
+    <div class="form-group">
+        <h3>Filter Questions</h3>
+        <div class="filter-options">
+            {% for radio in form.filter_option %}
+                <label>
+                    {{ radio.tag }}
+                    {{ radio.choice_label }}
+                </label><br>
+            {% endfor %}
         </div>
     </div>
 

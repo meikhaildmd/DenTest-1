@@ -197,3 +197,22 @@ class QuizAttemptSubject(models.Model):
 
     def __str__(self):
         return f"{self.quiz_attempt} - {self.subject}"
+
+
+class UserQuestionStatus(models.Model):
+    STATUS_CHOICES = [
+        ('unanswered', 'Unanswered'),
+        ('correct', 'Correct'),
+        ('incorrect', 'Incorrect'),
+    ]
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    status = models.CharField(
+        max_length=10, choices=STATUS_CHOICES, default='unanswered')
+
+    class Meta:
+        # Ensures one status per user per question
+        unique_together = ('user', 'question')
+
+    def __str__(self):
+        return f"{self.user.username} - {self.question.text[:50]} - {self.status}"
