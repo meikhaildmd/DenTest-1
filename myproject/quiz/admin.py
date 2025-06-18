@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Classification, Subject, Quiz, Question, QuestionImage, QuizAttempt, DetailedExplanation
+from .models import Classification, Subject, Quiz, Question, QuestionImage, QuizAttempt
 from .models import PatientChartData
 
 
@@ -15,21 +15,14 @@ class PatientChartDataAdmin(admin.ModelAdmin):
               'medical_history', 'current_findings')
 
 
-@admin.register(DetailedExplanation)
-class DetailedExplanationAdmin(admin.ModelAdmin):
-    list_display = ('title', 'created_at')
-    search_fields = ('title',)
-    ordering = ('-created_at',)
-
-
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('text', 'quiz', 'correct_option')
+    list_display = ('question_id', 'text', 'quiz', 'correct_option')
     search_fields = ('text',)
-    list_filter = ('quiz',)
-    ordering = ('quiz',)
+    list_filter = ('quiz', 'quiz__subject')
+    ordering = ('quiz', 'quiz__subject')
     inlines = [QuestionImageInline]
     fields = ['question_id', 'quiz', 'text', 'option1', 'option2', 'option3', 'option4', 'correct_option',
-              'explanation', 'detailed_explanation', 'read_more_link', 'explanation_image']
+              'explanation', 'explanation_image',]
 
 
 admin.site.register(Classification)

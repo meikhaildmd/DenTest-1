@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 
+{% load quiz_extras %}
+
 {% block title %}
 Quiz Result
 {% endblock %}
@@ -21,12 +23,38 @@ Quiz Result
         {% endif %}
     {% endif %}
 
-    <h3>Subject Performance:</h3>
-    <ul>
-        {% for subject, progress in subject_progress.items %}
-            <li>{{ subject }}: {{ progress.percentage|floatformat:2 }}% ({{ progress.score }} out of {{ progress.total }})</li>
-        {% endfor %}
-    </ul>
+        <h3>Subject Performance</h3>
+    <table class="perf-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Quiz&nbsp;Score</th>
+          <th>Overall&nbsp;Progress</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for subject, progress in subject_progress.items %}
+        {% with overall=cumulative_progress|get_item:subject %}
+        <tr>
+          <td>{{ subject }}</td>
+
+          <td>{{ progress.score }} / {{ progress.total }}
+              ({{ progress.percentage|floatformat:1 }}%)</td>
+
+          <td>
+            {% if overall %}
+              {{ overall.score }} / {{ overall.total }}
+              ({{ overall.percentage|floatformat:1 }}%)
+            {% else %}
+              —
+            {% endif %}
+          </td>
+        </tr>
+        {% endwith %}
+      {% endfor %}
+      </tbody>
+    </table>
+
 
     <a href="{% url 'create_custom_quiz' %}">Create Another Custom Quiz</a>
     <br>
@@ -35,32 +63,54 @@ Quiz Result
 {% else %}
     <!-- Regular Quiz Results -->
     <h2>Regular Quiz Results</h2>
-    {% if latest_attempt %}
-        <p>Your score: {{ total_score }} out of {{ total_questions }}</p>
-        {% if overall_percentage is not None %}
-            {% if overall_percentage >= 80 %}
-                <p style="color: green; font-size: 24px; font-weight: bold;">Great job! Incredible!</p>
-            {% elif overall_percentage >= 65 %}
-                <p style="color: orange; font-size: 20px;">Pass. Not bad, but continue practicing.</p>
-            {% else %}
-                <p style="color: red; font-size: 20px;">Be better.</p>
-            {% endif %}
+    <p>Your score: {{ correct_answers }} / {{ total_questions }} ({{ overall_percentage|floatformat:2 }}%)</p>
+
+    {% if overall_percentage is not None %}
+        {% if overall_percentage >= 80 %}
+            <p style="color:green;font-size:24px;font-weight:bold;">Great job! Incredible!</p>
+        {% elif overall_percentage >= 65 %}
+            <p style="color:orange;font-size:20px;">Pass. Not bad, but continue practicing.</p>
+        {% else %}
+            <p style="color:red;font-size:20px;">Be better.</p>
         {% endif %}
-        
-        <h3>Subject Performance:</h3>
-        <ul>
-            {% for subject, progress in subject_progress.items %}
-                <li>{{ subject }}: {{ progress.percentage|floatformat:2 }}% ({{ progress.score }} out of {{ progress.total }})</li>
-            {% endfor %}
-        </ul>
-        
-        <div class="links">
-            <a href="{% url 'quiz_detail' quiz.id %}">Retry Quiz</a>
-            <a href="{% url 'quiz_list' quiz.subject.id %}">Next Quiz</a>
-            <a href="{% url 'classification_list' %}">Back to Sections</a>
-        </div>
-    {% else %}
-        <p>No attempts found.</p>
     {% endif %}
+
+  <h3>Subject Performance</h3>
+<table class="perf-table">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>This Quiz</th>
+      <th>Overall</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for subject, progress in subject_progress.items %}
+    {% with overall=cumulative_progress|get_item:subject %}
+    <tr>
+      <td>{{ subject }}</td>
+
+      <td>{{ progress.score }} / {{ progress.total }}  ({{ progress.percentage|floatformat:1 }}%)</td>
+
+      <td>
+        {% if overall %}
+          {{ overall.score }} / {{ overall.total }}
+          ({{ overall.percentage|floatformat:1 }}%)
+        {% else %}
+          — 
+        {% endif %}
+      </td>
+    </tr>
+    {% endwith %}
+  {% endfor %}
+  </tbody>
+</table>
+
+    <div class="links">
+        <a href="{% url 'quiz_detail' quiz.id %}">Retry Quiz</a>
+        <a href="{% url 'quiz_list' quiz.subject.id %}">Next Quiz</a>
+        <a href="{% url 'classification_list' %}">Back to Sections</a>
+    </div>
 {% endif %}
+
 {% endblock %}

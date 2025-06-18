@@ -34,13 +34,10 @@ urlpatterns = [
 
     # Custom Quiz Result (no quiz_id needed)
     # New URL for custom quiz results
-    path('custom-quiz-result/', views.quiz_result, name='custom_quiz_result'),
+    path('custom-quiz-result/', views.custom_quiz_result,
+         name='custom_quiz_result'),
 
-    # Detailed Explanation view with string-based question_id
-    path('explanation/<str:question_id>/',
-         views.detailed_explanation, name='detailed_explanation'),
 ]
-
 # Serve media files during development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

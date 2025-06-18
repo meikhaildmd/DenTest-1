@@ -3,6 +3,7 @@ from django.db import models
 from django.utils.timezone import now
 import uuid
 import os
+from django.utils.translation import gettext_lazy as _
 
 
 # Function to randomize image file names
@@ -75,46 +76,47 @@ class Quiz(models.Model):
         ordering = ['-created_at']
 
 
-# Detailed Explanation Model for storing long explanations
-class DetailedExplanation(models.Model):
-    title = models.CharField(max_length=255)
-    content = models.TextField()  # This will store the long explanation (can be Markdown)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.title
-
-    def get_absolute_url(self):
-        return f"/explanations/{self.id}/"
-
-
 class Question(models.Model):
+    # A unique identifier for the question
     question_id = models.CharField(max_length=100, unique=True)
+
+    # Foreign key linking this question to a quiz
     quiz = models.ForeignKey(
-        Quiz, related_name='questions', on_delete=models.CASCADE)
+        Quiz,
+        related_name='questions',
+        on_delete=models.CASCADE
+    )
+
+    # The text for the question
     text = models.CharField(max_length=300)
+
+    # Options for the answer
     option1 = models.CharField(max_length=100)
     option2 = models.CharField(max_length=100)
     option3 = models.CharField(max_length=100)
     option4 = models.CharField(max_length=100)
+
+    # Define the choices for the correct option
     CORRECT_OPTION_CHOICES = [
-        ('option1', 'Option 1'),
-        ('option2', 'Option 2'),
-        ('option3', 'Option 3'),
-        ('option4', 'Option 4'),
+        ('option1', _('Option 1')),
+        ('option2', _('Option 2')),
+        ('option3', _('Option 3')),
+        ('option4', _('Option 4')),
     ]
     correct_option = models.CharField(
-        max_length=100, choices=CORRECT_OPTION_CHOICES)
+        max_length=100,
+        choices=CORRECT_OPTION_CHOICES
+    )
 
-    # Short explanation and link for "read more"
+    # A short explanation (if needed)
     explanation = models.TextField(blank=True, null=True)
-    detailed_explanation = models.ForeignKey(
-        'DetailedExplanation', null=True, blank=True, on_delete=models.SET_NULL)
-    read_more_link = models.URLField(blank=True, null=True)
 
-    # Explanation image field
+    # An optional image associated with the explanation
     explanation_image = models.ImageField(
-        upload_to='explanation_image/', blank=True, null=True)
+        upload_to='explanation_image/',
+        blank=True,
+        null=True
+    )
 
     def __str__(self):
         return self.text
@@ -122,10 +124,11 @@ class Question(models.Model):
     class Meta:
         verbose_name = "Question"
         verbose_name_plural = "Questions"
-        ordering = ['quiz']
-
+        ordering = ['id']
 
 # Question Image Model
+
+
 class QuestionImage(models.Model):
     question = models.ForeignKey(
         Question, related_name='images', on_delete=models.CASCADE)

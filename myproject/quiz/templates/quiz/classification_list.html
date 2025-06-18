@@ -1,13 +1,20 @@
 {% extends "layout.html" %}
+{% load quiz_extras %}
 
-{% load quiz_extras %}  <!-- Load the custom filter -->
-
-{% block title %}
-Sections
-{% endblock %}
+{% block title %}Sections{% endblock %}
 
 {% block content %}
 <h1 class="centered-title">Sections</h1>
+
+{% if resume_quiz %}
+  <div class="resume-banner">
+    You have an unfinished quiz. <a href="{% url 'quiz_detail' resume_quiz %}">Resume now »</a>
+  </div>
+{% elif resume_custom_quiz %}
+  <div class="resume-banner">
+    You have an unfinished custom quiz. <a href="{% url 'custom_quiz_detail' %}">Resume now »</a>
+  </div>
+{% endif %}
 
 <div class="create-quiz-container">
     <a href="{% url 'create_custom_quiz' %}" class="btn-create-custom-quiz">Create Custom Quiz</a>
@@ -20,11 +27,7 @@ Sections
             <ul>
                 {% for subject in classification.subjects.all %}
                     <li>
-                        <a href="{% url 'quiz_list' subject.id %}">
-                            {{ subject.name }}
-                        </a>
-
-                        <!-- Use the custom get_item filter to access the dictionary -->
+                        <a href="{% url 'quiz_list' subject.id %}">{{ subject.name }}</a>
                         {% with subject_progress|get_item:subject.name as progress %}
                             {% if progress %}
                                 <span class="progress {% if progress > 75 %}green{% elif progress >= 60 %}yellow{% else %}red{% endif %}">
