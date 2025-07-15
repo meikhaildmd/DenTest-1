@@ -5,12 +5,12 @@ Subjects
 {% endblock %}
 
 {% block content %}
-<h1 class="centered-title">{{ classification.name }} - Subjects</h1>
+<h1 class="centered-title">{{ sections.name }} - Subjects</h1>
 <div class="container">
     {% for subject in subjects %}
-        <div class="card">
-            <a href="{% url 'quiz_list' subject.id %}">{{ subject.name }}</a>
-        </div>
+    <div class="card">
+        <a href="{% url 'quiz_list' subject.id %}">{{ subject.name }}</a>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}

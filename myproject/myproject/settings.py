@@ -39,9 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'quiz',
     'debug_toolbar',
+    "rest_framework",
+    "corsheaders",
+
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -103,6 +107,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -136,7 +148,7 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
-# Add this line to redirect users to the classifications page after login
+# Add this line to redirect users to the sections page after login
 LOGIN_REDIRECT_URL = 'classification_list'
 
 LOGGING = {
@@ -157,3 +169,32 @@ LOGGING = {
         },
     },
 }
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SAMESITE = "Lax"
+CSRF_COOKIE_SECURE = False  # since you're using HTTP
+CORS_ALLOW_CREDENTIALS = True
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3001",
+]
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-language",
+    "content-language",
+    "content-type",
+    "authorization",
+    "x-csrftoken",
+    "x-requested-with",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3001",
+]
+CSRF_COOKIE_NAME = "csrftoken"

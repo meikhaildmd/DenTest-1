@@ -8,11 +8,9 @@ from markdown import markdown
 
 from .forms import CustomQuizForm
 from .models import (
-    Classification,
+    sections,
     Question,
-    Quiz,
     QuizAttempt,
-    QuizAttemptSubject,
     Subject,
     UserProfile,
     UserQuestionStatus,
@@ -43,12 +41,12 @@ def subscription_required(view_func):
 # --------------------------------------------------------------------
 @login_required
 def classification_list(request):
-    classifications = Classification.objects.all()
+    sections = sections.objects.all()
     subject_progress = {}
 
     # Calculate global progress (DB-backed)
-    for classification in classifications:
-        for subject in classification.subjects.all():
+    for sections in sections:
+        for subject in sections.subjects.all():
             qs = Question.objects.filter(quiz__subject=subject)
             total_attempted = qs.exclude(
                 userquestionstatus__user=request.user,
@@ -63,7 +61,7 @@ def classification_list(request):
             subject_progress[subject.name] = pct
 
     context = {
-        "classifications": classifications,
+        "sections": sections,
         "subject_progress": subject_progress,
         # Banner flags
         "resume_quiz": request.session.get("active_quiz_id"),
@@ -77,12 +75,12 @@ def classification_list(request):
 # --------------------------------------------------------------------
 @login_required
 def subject_list(request, classification_id):
-    classification = get_object_or_404(Classification, id=classification_id)
-    subjects = classification.subjects.all()
+    sections = get_object_or_404(sections, id=classification_id)
+    subjects = sections.subjects.all()
     return render(
         request,
         "quiz/subject_list.html",
-        {"classification": classification, "subjects": subjects},
+        {"sections": sections, "subjects": subjects},
     )
 
 
