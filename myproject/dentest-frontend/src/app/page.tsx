@@ -1,11 +1,36 @@
 /* src/app/page.tsx */
+'use client';
+
 import Link from 'next/link';
-import WelcomeBanner from '@/components/WelcomeBanner';   // ⬅️ new big banner
+import WelcomeBanner from '@/components/WelcomeBanner';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const [name, setName] = useState<string | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/api/current-user/', {
+      credentials: 'include',
+      cache: 'no-store',
+    })
+      .then(r => (r.ok ? r.json() : null))
+      .then(d => setName(d?.username ?? null))
+      .catch(() => setName(null));
+  }, []);
+
+  const handleLogout = async () => {
+    await fetch('http://127.0.0.1:8000/api/logout/', {
+      method: 'POST',
+      credentials: 'include',
+    });
+    setName(null);
+    router.push('/login');
+  };
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
-
       {/* ───────── top-nav ───────── */}
       <nav className="absolute top-0 left-0 w-full p-4 flex items-center gap-4">
         {/* INBDE / ADAT */}
@@ -22,19 +47,28 @@ export default function Home() {
           ADAT
         </Link>
 
-        {/* Log-in */}
-        <Link
-          href="/login"
-          className="px-4 py-2 rounded bg-neutral-800 hover:bg-neutral-700 transition text-white font-medium"
-        >
-          Log&nbsp;in
-        </Link>
+        {/* Right side auth button */}
+        <div className="ml-auto">
+          {name ? (
+            <button
+              onClick={handleLogout}
+              className="px-4 py-2 rounded bg-neutral-800 hover:bg-neutral-700 transition text-white font-medium"
+            >
+              Log out
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="px-4 py-2 rounded bg-neutral-800 hover:bg-neutral-700 transition text-white font-medium"
+            >
+              Log in
+            </Link>
+          )}
+        </div>
       </nav>
 
       {/* ───────── hero ───────── */}
       <div className="text-center max-w-xl">
-
-        {/* colourful greeting – rendered only when authenticated */}
         <WelcomeBanner />
 
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">

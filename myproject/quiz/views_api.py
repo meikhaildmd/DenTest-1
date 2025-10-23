@@ -2,7 +2,8 @@ from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.middleware.csrf import get_token
 
 from .models import Section, Subject, Question, UserQuestionStatus
 from .serializers import (
@@ -167,6 +168,17 @@ class CustomQuizView(APIView):
         return Response(QuestionSerializer(questions, many=True).data)
 # ───────── Simple login & CSRF helpers (unchanged) ─────────
 
+@ensure_csrf_cookie
+def get_csrf_token(request):
+    """
+    Sets csrftoken cookie and also returns it in JSON.
+    Frontend should call this before login to get the token.
+    """
+    token = get_token(request)
+    return JsonResponse({"csrftoken": token})
+
+
+# ───────── Login view ─────────
 class LoginView(APIView):
     permission_classes = [AllowAny]
 
@@ -181,6 +193,8 @@ class LoginView(APIView):
             return Response({"detail": "Login successful"})
         return Response({"detail": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
 
+
+# ───────── Current user view ─────────
 class CurrentUserView(APIView):
     """
     GET /api/current-user/   →  {"username": "meikhaildmd"}
@@ -190,3 +204,10 @@ class CurrentUserView(APIView):
 
     def get(self, request):
         return Response({"username": request.user.username})
+    
+class LogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        logout(request)
+        return Response({"detail": "Logged out"}, status=200)

@@ -1,4 +1,3 @@
-/* src/app/login/page.tsx */
 'use client';
 
 import { useState } from 'react';
@@ -10,30 +9,23 @@ export default function LoginPage() {
     const [error, setError] = useState<string | null>(null);
     const router = useRouter();
 
-    /* helper ─ read cookie */
-    function getCookie(name: string) {
-        const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-        return m ? decodeURIComponent(m[2]) : null;
-    }
-
     const handleLogin = async () => {
         setError(null);
 
         try {
-            /* 1 ─ fetch CSRF cookie */
-            await fetch('http://127.0.0.1:8000/api/csrf/', {
+            // 1 ─ fetch CSRF cookie + token
+            const csrfRes = await fetch('http://127.0.0.1:8000/api/csrf/', {
                 credentials: 'include',
             });
+            const { csrftoken } = await csrfRes.json();
+            if (!csrftoken) throw new Error('CSRF token missing');
 
-            const csrf = getCookie('csrftoken');
-            if (!csrf) throw new Error('CSRF token missing');
-
-            /* 2 ─ POST credentials */
+            // 2 ─ POST credentials
             const r = await fetch('http://127.0.0.1:8000/api/login/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': csrf,
+                    'X-CSRFToken': csrftoken,
                 },
                 credentials: 'include',
                 body: JSON.stringify({ username, password }),
@@ -41,12 +33,17 @@ export default function LoginPage() {
 
             if (!r.ok) throw new Error('Invalid username or password');
 
-            /* 3 ─ success → go home */
+            // 3 ─ success → go home
             router.push('/');
         } catch (err: any) {
             setError(err.message || 'Login error');
             console.error(err);
         }
+    };
+
+    const handleGuest = () => {
+        // No login request → just go home as guest
+        router.push('/');
     };
 
     return (
@@ -76,13 +73,23 @@ export default function LoginPage() {
                     <p className="mb-4 text-sm text-red-400 text-center">{error}</p>
                 )}
 
-                <button
-                    onClick={handleLogin}
-                    className="w-full bg-blue-600 hover:bg-blue-700 transition
-                     text-white font-semibold py-2 rounded"
-                >
-                    Log&nbsp;in
-                </button>
+                <div className="flex flex-col gap-3">
+                    <button
+                        onClick={handleLogin}
+                        className="w-full bg-blue-600 hover:bg-blue-700 transition
+                         text-white font-semibold py-2 rounded"
+                    >
+                        Log&nbsp;in
+                    </button>
+
+                    <button
+                        onClick={handleGuest}
+                        className="w-full bg-neutral-700 hover:bg-neutral-600 transition
+                         text-white font-medium py-2 rounded"
+                    >
+                        Continue as Guest
+                    </button>
+                </div>
             </div>
         </div>
     );

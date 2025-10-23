@@ -62,7 +62,7 @@ export default function SubjectGrid({ subjects, sectionId }: Props) {
                 return (
                     <Link
                         key={s.id}
-                        href={`/inbde/quiz/${s.id}?sectionId=${sectionId}`}  /* ← section in query */
+                        href={`/adat/quiz/${s.id}?sectionId=${sectionId}`}  /* ← section in query */
                         className="
               group relative rounded-xl p-5 bg-neutral-800
               hover:-translate-y-1 hover:shadow-lg transition

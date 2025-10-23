@@ -1,4 +1,4 @@
-/* src/app/inbde/quiz/[subjectId]/page.tsx
+/* src/app/adat/quiz/[subjectId]/page.tsx
    Client page → unwrap params, gather query, mount QuizEngine */
 'use client';
 

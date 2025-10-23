@@ -2,6 +2,9 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
+import re
+import unicodedata
+from django.db.models import UniqueConstraint
 
 # 1. Section model — perfect as is.
 class Section(models.Model):
@@ -40,19 +43,40 @@ class Subject(models.Model):
 
     def __str__(self):
         return f"{self.section} – {self.name}"  # ⬅ changed to match new FK name
-# 3. Question
+
+def normalize_for_key(s: str) -> str:
+    """Robust normalization for deduping:
+    - Unicode normalize (NFKC)
+    - lowercase
+    - collapse whitespace
+    - strip trailing punctuation/zero-width chars
+    """
+    if not s:
+        return ""
+    s = unicodedata.normalize("NFKC", s).lower()
+    s = re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"[\.!\?:;,\u200b]+$", "", s)
+    return s
+
 class Question(models.Model):
-    question_id = models.CharField(max_length=100, unique=True)
+    # Human-friendly code (keep for display/search), not the dedupe key
+    question_id = models.CharField(max_length=300
+    , blank=True, null=True)
+
     subject = models.ForeignKey(
-        Subject, related_name="questions", on_delete=models.CASCADE
+        "Subject", related_name="questions", on_delete=models.CASCADE
     )
 
-    text = models.CharField(max_length=300)
+    text = models.TextField()
+    # New: normalized text key used for uniqueness within a subject
+    normalized_text_key = models.CharField(
+        max_length=500, editable=False, db_index=True, default=""
+    )
 
-    option1 = models.CharField(max_length=100)
-    option2 = models.CharField(max_length=100)
-    option3 = models.CharField(max_length=100)
-    option4 = models.CharField(max_length=100)
+    option1 = models.CharField(max_length=250)
+    option2 = models.CharField(max_length=250)
+    option3 = models.CharField(max_length=250)
+    option4 = models.CharField(max_length=250)
 
     CORRECT_OPTION_CHOICES = [
         ("option1", _("Option 1")),
@@ -67,10 +91,20 @@ class Question(models.Model):
         upload_to="explanation_image/", blank=True, null=True
     )
 
+    def save(self, *args, **kwargs):
+        self.normalized_text_key = normalize_for_key(self.text)
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.text
 
-
+    class Meta:
+        constraints = [
+            # Enforce: no duplicate (by normalized text) inside the same subject
+            UniqueConstraint(
+                fields=["subject", "normalized_text_key"], name="uq_subject_normtext"
+            )
+        ]
 # 4. QuestionImage
 def get_image_filename(instance, filename):
     return f"question_image/{instance.question.question_id}_{filename}"
@@ -212,3 +246,4 @@ class CustomQuizQuestion(models.Model):
 
     def __str__(self):
         return f"{self.custom_quiz.title} ↔ {self.question.question_id}"
+    

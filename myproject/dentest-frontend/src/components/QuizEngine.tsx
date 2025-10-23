@@ -4,6 +4,14 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import Link from 'next/link';
+
+/* ---------- csrf helper ---------- */
+function getCookie(name: string) {
+  if (typeof document === 'undefined') return null;
+  const match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]*)'));
+  return match ? decodeURIComponent(match[2]) : null;
+}
 
 /* ---------- types ---------- */
 export interface Question {
@@ -97,7 +105,10 @@ export default function QuizEngine({
     if (subjectId) {
       fetch('http://127.0.0.1:8000/api/user-question-status/update/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken') || '',
+        },
         credentials: 'include',
         body: JSON.stringify({
           question_id: q.id,
@@ -112,7 +123,7 @@ export default function QuizEngine({
   const next = () => {
     if (idx + 1 < questions.length) {
       setIdx(idx + 1);
-      setShowExp(false);                    // reset explanation
+      setShowExp(false); // reset explanation
       return;
     }
 
@@ -137,7 +148,15 @@ export default function QuizEngine({
   return (
     <div className="flex flex-col md:flex-row">
       {/* Sidebar */}
-      <div className="md:w-16 bg-neutral-900 p-2 flex md:flex-col gap-2 justify-center overflow-x-auto text-sm">
+      <div className="md:w-20 bg-neutral-900 p-2 flex md:flex-col gap-2 items-center text-sm">
+        {/* Logo inside sidebar */}
+        <Link
+          href="/"
+          className="mb-4 text-lg font-bold text-blue-500 hover:text-blue-400"
+        >
+          DentestPro
+        </Link>
+
         {questions.map((qq, i) => {
           const stat = answers[qq.id];
           const active = i === idx;
@@ -150,8 +169,8 @@ export default function QuizEngine({
               key={qq.id}
               onClick={() => { setIdx(i); setShowExp(isReview && !!stat); }}
               className={`w-8 h-8 rounded-full ${base} text-white
-                          ${active ? 'ring-2 ring-blue-400' : 'ring-1 ring-neutral-700'}
-                          hover:ring-blue-300 transition`}
+                        ${active ? 'ring-2 ring-blue-400' : 'ring-1 ring-neutral-700'}
+                        hover:ring-blue-300 transition`}
             >
               {i + 1}
             </button>
@@ -161,9 +180,21 @@ export default function QuizEngine({
 
       {/* Main panel */}
       <div className="md:w-4/5 max-w-2xl mx-auto mt-10 p-6 bg-neutral-900 rounded-xl shadow text-neutral-100">
-        <h2 className="mb-4 text-lg font-semibold">
-          Question {idx + 1} / {questions.length}
-        </h2>
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-lg font-semibold">
+            Question {idx + 1} / {questions.length}
+          </h2>
+
+          {/* Exit button back to section */}
+          {sectionId && (
+            <Link
+              href={`/adat/section/${sectionId}`}
+              className="text-sm text-red-500 hover:text-red-400"
+            >
+              Exit Quiz
+            </Link>
+          )}
+        </div>
 
         <p className="mb-6">{q.text}</p>
 
@@ -174,12 +205,20 @@ export default function QuizEngine({
             const isSel = answers[q.id]?.selected === ltr;
             const isCorrect = q.correct_option === optKey;
 
-            const bg =
-              answered && !isReview
-                ? isSel
-                  ? isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                  : 'bg-gray-100 text-neutral-800'
-                : 'bg-gray-50 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100';
+            let bg =
+              'bg-gray-50 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100';
+
+            if (answered || isReview) {
+              if (isCorrect) {
+                bg = 'bg-green-100 text-green-800'; // highlight correct
+              }
+              if (isSel && !isCorrect) {
+                bg = 'bg-red-100 text-red-800'; // user’s wrong answer
+              }
+              if (!isSel && !isCorrect) {
+                bg = 'bg-gray-100 text-neutral-800'; // mute others
+              }
+            }
 
             return (
               <button
@@ -197,7 +236,12 @@ export default function QuizEngine({
         {/* explanation */}
         {(showExp || (isReview && answers[q.id])) && (
           <div className="mt-4 p-3 bg-blue-800/20 border-l-4 border-blue-500 rounded">
-            <strong>Explanation:</strong> {q.explanation}
+            <strong>Explanation:</strong>
+            <div
+              className="mt-1"
+              style={{ whiteSpace: 'pre-line' }}
+              dangerouslySetInnerHTML={{ __html: q.explanation }}
+            />
           </div>
         )}
 

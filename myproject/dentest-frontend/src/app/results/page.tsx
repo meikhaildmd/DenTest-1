@@ -15,7 +15,15 @@ export default function ResultsPage() {
     const subjectId = qs.get('subjectId');
     const sectionId = qs.get('sectionId') || undefined;
     const isCustom = qs.get('custom') === '1';
-    const exam = qs.get('exam') || 'inbde';           // inbde | adat
+
+    // safer exam handling
+    const examParam = qs.get('exam');
+    const exam =
+        examParam === 'adat'
+            ? 'adat'
+            : examParam === 'inbde'
+                ? 'inbde'
+                : 'custom';
 
     /* ------------------ visuals ----------------------- */
     const pct = total > 0 ? (score / total) * 100 : 0;
@@ -29,8 +37,13 @@ export default function ResultsPage() {
 
     /* ------------------ navigation targets ------------ */
     const done = () => {
-        if (sectionId) nav.push(`/${exam}/section/${sectionId}`);
-        else nav.push(`/${exam}`);           // main INBDE / ADAT page
+        if (sectionId) {
+            nav.push(`/${exam}/section/${sectionId}`);
+        } else if (exam === 'adat' || exam === 'inbde') {
+            nav.push(`/${exam}`);
+        } else {
+            nav.push('/'); // fallback for custom quiz
+        }
     };
 
     const reviewHref = isCustom
@@ -71,7 +84,7 @@ export default function ResultsPage() {
                         <a
                             href={reviewHref}
                             className="flex-grow rounded px-4 py-2 border border-neutral-500
-                         hover:bg-neutral-800 transition text-neutral-200 font-medium text-center"
+               hover:bg-neutral-800 transition text-neutral-200 font-medium text-center"
                         >
                             Review
                         </a>

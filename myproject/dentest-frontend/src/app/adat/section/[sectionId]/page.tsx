@@ -1,6 +1,6 @@
 /* src/app/adat/section/[sectionId]/page.tsx */
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';           // tiny icon
+import { ArrowLeft } from 'lucide-react';
 import { Suspense } from 'react';
 import SubjectGrid from './SubjectGrid';
 
@@ -16,11 +16,13 @@ interface SectionWithSubjects {
 export default async function SectionPage({
   params,
 }: {
-  params: { sectionId: string };
+  params: Promise<{ sectionId: string }>;   // <-- make params a Promise
 }) {
+  const { sectionId } = await params;        // <-- await params
+
   const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
   const section: SectionWithSubjects = await fetch(
-    `${base}/api/sections/${params.sectionId}/with-subjects/`,
+    `${base}/api/sections/${sectionId}/with-subjects/`,
     { cache: 'no-store' },
   ).then((r) => r.json());
 
@@ -56,7 +58,7 @@ export default async function SectionPage({
 
         {/* subject grid with progress rings */}
         <Suspense fallback={<p className="text-neutral-400">Loading progress…</p>}>
-          <SubjectGrid subjects={section.subjects} />
+          <SubjectGrid subjects={section.subjects} sectionId={sectionId} />
         </Suspense>
       </div>
     </div>

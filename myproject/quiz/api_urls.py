@@ -7,6 +7,7 @@ from .views_api import (
     UserQuestionStatusUpdateView,
     UserQuestionStatusBySubjectView,
     LoginView,
+    LogoutView,
     get_csrf_token,
     UserProgressView,
     CustomQuizView,
@@ -25,4 +26,5 @@ urlpatterns = [
     path('user-progress/', UserProgressView.as_view(), name='user-progress'),
     path("custom-quiz/", CustomQuizView.as_view(), name="custom-quiz"),
     path("current-user/", CurrentUserView.as_view(), name="current-user"),
+    path("api/logout/", LogoutView.as_view(), name="logout"),
 ]

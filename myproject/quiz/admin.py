@@ -30,7 +30,7 @@ class SectionAdmin(admin.ModelAdmin):
 # ─── Subject admin ─────────────────────────────────────────────────────
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
-    list_display = ("name", "section")
+    list_display = ("id", "name", "section")
     list_filter = ("section__exam_type", "section")
     search_fields = ("name",)
 
