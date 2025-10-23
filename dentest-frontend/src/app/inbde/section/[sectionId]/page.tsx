@@ -16,11 +16,13 @@ interface SectionWithSubjects {
 export default async function SectionPage({
   params,
 }: {
-  params: { sectionId: string };
+  params: Promise<{ sectionId: string }>;
 }) {
+  const { sectionId } = await params;
+
   const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
   const section: SectionWithSubjects = await fetch(
-    `${base}/api/sections/${params.sectionId}/with-subjects/`,
+    `${base}/api/sections/${sectionId}/with-subjects/`,
     { cache: 'no-store' },
   ).then((r) => r.json());
 

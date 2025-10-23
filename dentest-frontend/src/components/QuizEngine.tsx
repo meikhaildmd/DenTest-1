@@ -5,6 +5,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { API } from '@/lib/config';
 
 /* ---------- csrf helper ---------- */
 function getCookie(name: string) {
@@ -56,7 +57,7 @@ export default function QuizEngine({
     if (propQuestions?.length) {
       setQuestions(propQuestions);
     } else if (subjectId) {
-      fetch(`http://127.0.0.1:8000/api/questions/subject/${subjectId}/`)
+      fetch(`${API}/questions/subject/${subjectId}/`)
         .then(r => r.json())
         .then(setQuestions)
         .catch(err => console.error('Failed to load questions:', err));
@@ -67,11 +68,11 @@ export default function QuizEngine({
   useEffect(() => {
     if (!isReview || !subjectId) return;
 
-    fetch(`http://127.0.0.1:8000/api/user-question-status/subject/${subjectId}/`, {
+    fetch(`${API}/user-question-status/subject/${subjectId}/`, {
       credentials: 'include',
     })
       .then(r => (r.status === 403 ? [] : r.json()))
-      .then((rows: any[]) => {
+      .then((rows: { question_id: number; last_answer: string; last_was_correct: boolean }[]) => {
         const rec: Record<number, AnswerStatus> = {};
         rows.forEach(d => {
           rec[d.question_id] = {
@@ -103,7 +104,7 @@ export default function QuizEngine({
     setShowExp(true);
 
     if (subjectId) {
-      fetch('http://127.0.0.1:8000/api/user-question-status/update/', {
+      fetch(`${API}/user-question-status/update/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

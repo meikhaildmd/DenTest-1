@@ -6,22 +6,31 @@ import WelcomeBanner from '@/components/WelcomeBanner';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+interface User {
+  username: string;
+}
+
 export default function Home() {
   const [name, setName] = useState<string | null>(null);
   const router = useRouter();
+  const API = process.env.NEXT_PUBLIC_API_BASE_URL;
 
+  // --- Load current user on mount ---
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/current-user/', {
+    if (!API) return;
+    fetch(`${API}/api/current-user/`, {
       credentials: 'include',
       cache: 'no-store',
     })
-      .then(r => (r.ok ? r.json() : null))
-      .then(d => setName(d?.username ?? null))
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d: User | null) => setName(d?.username ?? null))
       .catch(() => setName(null));
-  }, []);
+  }, [API]);
 
+  // --- Handle logout ---
   const handleLogout = async () => {
-    await fetch('http://127.0.0.1:8000/api/logout/', {
+    if (!API) return;
+    await fetch(`${API}/api/logout/`, {
       method: 'POST',
       credentials: 'include',
     });

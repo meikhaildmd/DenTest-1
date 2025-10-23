@@ -14,14 +14,14 @@ export default function LoginPage() {
 
         try {
             // 1 ─ fetch CSRF cookie + token
-            const csrfRes = await fetch('http://127.0.0.1:8000/api/csrf/', {
+            const csrfRes = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/csrf/`, {
                 credentials: 'include',
             });
             const { csrftoken } = await csrfRes.json();
             if (!csrftoken) throw new Error('CSRF token missing');
 
             // 2 ─ POST credentials
-            const r = await fetch('http://127.0.0.1:8000/api/login/', {
+            const r = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/login/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -35,9 +35,13 @@ export default function LoginPage() {
 
             // 3 ─ success → go home
             router.push('/');
-        } catch (err: any) {
-            setError(err.message || 'Login error');
-            console.error(err);
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                setError(err.message || 'Login error');
+                console.error(err);
+            } else {
+                setError('Login error');
+            }
         }
     };
 
@@ -54,19 +58,17 @@ export default function LoginPage() {
                 <input
                     type="text"
                     placeholder="Username"
-                    className="block w-full border p-2 mb-3 rounded
-                     bg-neutral-800 text-white placeholder-gray-400"
+                    className="block w-full border p-2 mb-3 rounded bg-neutral-800 text-white placeholder-gray-400"
                     value={username}
-                    onChange={e => setUsername(e.target.value)}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
 
                 <input
                     type="password"
                     placeholder="Password"
-                    className="block w-full border p-2 mb-4 rounded
-                     bg-neutral-800 text-white placeholder-gray-400"
+                    className="block w-full border p-2 mb-4 rounded bg-neutral-800 text-white placeholder-gray-400"
                     value={password}
-                    onChange={e => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
 
                 {error && (
@@ -76,16 +78,14 @@ export default function LoginPage() {
                 <div className="flex flex-col gap-3">
                     <button
                         onClick={handleLogin}
-                        className="w-full bg-blue-600 hover:bg-blue-700 transition
-                         text-white font-semibold py-2 rounded"
+                        className="w-full bg-blue-600 hover:bg-blue-700 transition text-white font-semibold py-2 rounded"
                     >
                         Log&nbsp;in
                     </button>
 
                     <button
                         onClick={handleGuest}
-                        className="w-full bg-neutral-700 hover:bg-neutral-600 transition
-                         text-white font-medium py-2 rounded"
+                        className="w-full bg-neutral-700 hover:bg-neutral-600 transition text-white font-medium py-2 rounded"
                     >
                         Continue as Guest
                     </button>
