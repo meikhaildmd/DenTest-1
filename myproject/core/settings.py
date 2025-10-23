@@ -67,13 +67,13 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
-ROOT_URLCONF = 'myproject.urls'
+ROOT_URLCONF = 'myproject.core.urls'
 
 # --- TEMPLATES ---
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR.parent / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,14 +86,18 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'myproject.wsgi.application'
+WSGI_APPLICATION = 'myproject.core.wsgi.application'
 
 # --- DATABASE ---
 DATABASES = {
-    'default': dj_database_url.config(
-        default=env("DATABASE_URL", default="postgres://postgres:password@localhost:5432/toothprep_dev"),
-        conn_max_age=600,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env("DB_NAME", default="dentest_dev"),
+        'USER': env("DB_USER", default="danielmeikhail"),
+        'PASSWORD': env("DB_PASSWORD", default="arnold28"),
+        'HOST': env("DB_HOST", default="localhost"),
+        'PORT': env("DB_PORT", default="5432"),
+    }
 }
 
 # --- PASSWORD VALIDATION ---
