@@ -81,7 +81,7 @@ export default function Home() {
         <WelcomeBanner />
 
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
-          Ace Your Dental Boards&nbsp;with&nbsp;DenTest
+          Ace Your Dental Boards&nbsp;with&nbsp;ToothPrep
         </h1>
 
         <p className="text-lg mb-8 text-neutral-300">

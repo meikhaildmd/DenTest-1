@@ -7,8 +7,9 @@ interface ProgressRow { subject_id: number; percent: number; }
 
 /* helper ─ fetch user progress, map subject_id → percentage */
 async function getProgress(): Promise<Record<number, number>> {
+  const API = process.env.NEXT_PUBLIC_API_BASE_URL;
   try {
-    const r = await fetch('http://127.0.0.1:8000/api/user-progress/', {
+    const r = await fetch(`${API}/user-progress/`, {
       credentials: 'include',
       cache: 'no-store',
     });
@@ -21,10 +22,10 @@ async function getProgress(): Promise<Record<number, number>> {
 }
 
 export default async function InbdeHome() {
-  const base = 'http://127.0.0.1:8000';
+  const API = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   const [sections, progress] = await Promise.all([
-    fetch(`${base}/api/sections/inbde/`, { cache: 'no-store' })
+    fetch(`${API}/api/sections/inbde/`, { cache: 'no-store' })
       .then(r => (r.ok ? r.json() : [])),
     getProgress(),
   ]);

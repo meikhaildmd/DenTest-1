@@ -3,12 +3,14 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
+const API = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 export default function LogoutPage() {
     const router = useRouter();
 
     useEffect(() => {
         async function doLogout() {
-            await fetch('http://127.0.0.1:8000/api/logout/', {
+            await fetch(`${API}/logout/`, {
                 method: 'POST',
                 credentials: 'include',
             });
