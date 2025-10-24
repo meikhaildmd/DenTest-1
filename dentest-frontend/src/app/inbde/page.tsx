@@ -8,12 +8,18 @@ interface ProgressRow { subject_id: number; percent: number; }
 /* helper ─ fetch user progress, map subject_id → percentage */
 async function getProgress(): Promise<Record<number, number>> {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
+  if (!API) return {};
+
   try {
     const r = await fetch(`${API}/user-progress/`, {
       credentials: 'include',
       cache: 'no-store',
     });
+
+    // If user not logged in → skip progress
+    if (r.status === 403 || r.status === 401) return {};
     if (!r.ok) return {};
+
     const rows: ProgressRow[] = await r.json();
     return Object.fromEntries(rows.map(p => [p.subject_id, p.percent]));
   } catch {
@@ -23,12 +29,22 @@ async function getProgress(): Promise<Record<number, number>> {
 
 export default async function InbdeHome() {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
+  if (!API) return <div>Error: API base URL not set</div>;
 
-  const [sections, progress] = await Promise.all([
-    fetch(`${API}/api/sections/inbde/`, { cache: 'no-store' })
-      .then(r => (r.ok ? r.json() : [])),
-    getProgress(),
-  ]);
+  let sections: Section[] = [];
+  let progress: Record<number, number> = {};
+
+  try {
+    const [sectionRes, progressData] = await Promise.all([
+      fetch(`${API}/sections/inbde/`, { cache: 'no-store' }),
+      getProgress(),
+    ]);
+
+    if (sectionRes.ok) sections = await sectionRes.json();
+    progress = progressData;
+  } catch (err) {
+    console.error("Error loading INBDE data:", err);
+  }
 
   return (
     <div className="min-h-screen p-6">
@@ -92,7 +108,6 @@ export default async function InbdeHome() {
     </div>
   );
 }
-
 /* ─────────────────────────────────────
    Duplicate this file for ADAT:
    - Save as src/app/adat/page.tsx
