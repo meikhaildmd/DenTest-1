@@ -20,7 +20,7 @@ async function getProgress(): Promise<Record<number, number>> {
   }
 
   try {
-    const r = await fetch(`${API}/user-progress/`, {
+    const r = await fetch(`${API}/api/user-progress/`, {
       credentials: "include",
       cache: "no-store",
     });
@@ -40,7 +40,7 @@ export default async function AdatHome() {
 
   // Fetch sections safely
   try {
-    const res = await fetch(`${API}/sections/adat/`, { cache: "no-store" });
+    const res = await fetch(`${API}/api/sections/adat/`, { cache: "no-store" });
     if (res.ok) sections = await res.json();
     else console.error("Failed to fetch sections:", res.status);
   } catch (e) {

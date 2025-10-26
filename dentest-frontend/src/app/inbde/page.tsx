@@ -20,7 +20,7 @@ async function getProgress(): Promise<Record<number, number>> {
   }
 
   try {
-    const r = await fetch(`${API}/user-progress/`, {
+    const r = await fetch(`${API}/api/user-progress/`, {
       credentials: "include",
       cache: "no-store",
     });
@@ -39,7 +39,7 @@ export default async function InbdeHome() {
   let progress: Record<number, number> = {};
 
   try {
-    const res = await fetch(`${API}/sections/inbde/`, { cache: "no-store" });
+    const res = await fetch(`${API}/api/sections/inbde/`, { cache: "no-store" });
     if (res.ok) sections = await res.json();
     else console.error("Failed to fetch INBDE sections:", res.status);
   } catch (e) {
