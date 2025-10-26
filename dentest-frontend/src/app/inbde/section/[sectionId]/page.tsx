@@ -1,4 +1,5 @@
 /* src/app/inbde/section/[sectionId]/page.tsx */
+export const dynamic = "force-dynamic";
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';           // tiny icon
 import { Suspense } from 'react';

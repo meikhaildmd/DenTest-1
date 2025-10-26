@@ -1,4 +1,5 @@
 /* src/app/adat/page.tsx */
+export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { ArrowLeft, ClipboardList } from "lucide-react";
 
