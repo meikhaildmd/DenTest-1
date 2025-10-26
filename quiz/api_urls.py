@@ -11,7 +11,8 @@ from .views_api import (
     get_csrf_token,
     UserProgressView,
     CustomQuizView,
-    CurrentUserView
+    CurrentUserView,
+    SignupView
 )
 
 urlpatterns = [
@@ -27,4 +28,5 @@ urlpatterns = [
     path("custom-quiz/", CustomQuizView.as_view(), name="custom-quiz"),
     path("current-user/", CurrentUserView.as_view(), name="current-user"),
     path("api/logout/", LogoutView.as_view(), name="logout"),
+    path("signup/", SignupView.as_view(), name="signup"),
 ]

@@ -4,19 +4,19 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-  <div class="auth-card">
-    <h2 class="centered-title">Login to DenTest</h2>
+<div class="auth-card">
+  <h2 class="centered-title">Login to ToothPrep</h2>
 
-    {# Show any non-field form errors (e.g. “invalid credentials”) #}
-    {% if form.non_field_errors %}
-      <p class="error">{{ form.non_field_errors }}</p>
-    {% endif %}
+  {# Show any non-field form errors (e.g. “invalid credentials”) #}
+  {% if form.non_field_errors %}
+  <p class="error">{{ form.non_field_errors }}</p>
+  {% endif %}
 
-    <form method="post" action="{% url 'login' %}">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="btn-primary">Login</button>
-    </form>
-    </p>
-  </div>
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn-primary">Login</button>
+  </form>
+  </p>
+</div>
 {% endblock %}

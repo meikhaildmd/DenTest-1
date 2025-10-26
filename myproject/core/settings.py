@@ -89,7 +89,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'myproject.core.wsgi.application'
 
 # --- DATABASE ---
-import dj_database_url
 
 if os.environ.get('DATABASE_URL'):
     DATABASES = {

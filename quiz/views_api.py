@@ -193,7 +193,6 @@ class LoginView(APIView):
             return Response({"detail": "Login successful"})
         return Response({"detail": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
 
-
 # ───────── Current user view ─────────
 class CurrentUserView(APIView):
     """
@@ -204,10 +203,69 @@ class CurrentUserView(APIView):
 
     def get(self, request):
         return Response({"username": request.user.username})
-    
+
+
+# ───────── Logout view ─────────
 class LogoutView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
         logout(request)
         return Response({"detail": "Logged out"}, status=200)
+
+
+# ───────── Signup view ─────────
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.views import View
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from django.http import JsonResponse
+import json
+
+
+@method_decorator(csrf_exempt, name="dispatch")
+class SignupView(View):
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            username = data.get("username")
+            email = data.get("email")
+            password = data.get("password")
+
+            # --- basic validation ---
+            if not username or not password:
+                return JsonResponse(
+                    {"error": "Username and password are required."}, status=400
+                )
+
+            if User.objects.filter(username=username).exists():
+                return JsonResponse(
+                    {"error": "Username already exists."}, status=400
+                )
+
+            if email and User.objects.filter(email=email).exists():
+                return JsonResponse(
+                    {"error": "Email already registered."}, status=400
+                )
+
+            # --- create user ---
+            user = User.objects.create_user(
+                username=username, email=email, password=password
+            )
+            user.save()
+
+            # --- automatically log them in (optional) ---
+            user = authenticate(username=username, password=password)
+            if user:
+                login(request, user)
+
+            return JsonResponse(
+                {"message": "User created successfully.", "username": user.username},
+                status=201,
+            )
+
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON."}, status=400)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)

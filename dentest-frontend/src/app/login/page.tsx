@@ -90,6 +90,14 @@ export default function LoginPage() {
                         Continue as Guest
                     </button>
                 </div>
+
+                {/* 👇 Signup link goes here */}
+                <p className="text-center text-sm mt-4 text-gray-400">
+                    Don’t have an account?{" "}
+                    <a href="/signup" className="text-purple-400 hover:underline">
+                        Sign up
+                    </a>
+                </p>
             </div>
         </div>
     );
