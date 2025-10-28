@@ -1,31 +1,38 @@
-/* src/app/custom/page.tsx
-   Client-side page – lets user build a custom quiz */
-
 'use client';
 export const dynamic = "force-dynamic";
+
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-/* read a cookie value */
+/* -------------------------------------------------------------
+   Helpers
+------------------------------------------------------------- */
 function getCookie(name: string): string | null {
-    const m = typeof document !== 'undefined'
+    const match = typeof document !== 'undefined'
         ? document.cookie.match(new RegExp(`(^|;)\\s*${name}=([^;]+)`))
         : null;
-    return m ? decodeURIComponent(m[2]) : null;
+    return match ? decodeURIComponent(match[2]) : null;
 }
 
+/* -------------------------------------------------------------
+   Types
+------------------------------------------------------------- */
 interface Section { id: number; name: string; }
-interface Subject { id: number; name: string; section: { id: number; name: string } }
+interface Subject { id: number; name: string; section: Section; }
 interface Question { id: number; text: string; }
 
-/* ✅ Use environment variable for production */
-const API = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000/api';
-
+/* -------------------------------------------------------------
+   Constants
+------------------------------------------------------------- */
+const API = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000/api';
 const FILTERS = ['all', 'incorrect', 'correct', 'unanswered'] as const;
 type Filter = (typeof FILTERS)[number];
 
-export default function CustomBuilder() {
+/* -------------------------------------------------------------
+   Component
+------------------------------------------------------------- */
+export default function CustomBuilderClient() {
     const [subjects, setSubjects] = useState<Subject[]>([]);
     const [selected, setSelected] = useState<Set<number>>(new Set());
     const [filter, setFilter] = useState<Filter>('all');
@@ -34,69 +41,58 @@ export default function CustomBuilder() {
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
     const router = useRouter();
-
-    /* --- tiny helper: guest check via sessionid cookie --- */
-    const isLoggedIn =
-        typeof document !== 'undefined' && document.cookie.includes('sessionid=');
-
-    /* --- exam filter from ?exam=inbde|adat|both --- */
     const search = useSearchParams();
-    const examFilter = search.get('exam') ?? 'both';   // default = both
+    const examFilter = search.get('exam') ?? 'both'; // ?exam=inbde|adat|both
 
+    const isLoggedIn = typeof document !== 'undefined' && document.cookie.includes('sessionid=');
+
+    /* -------------------------------------------------------------
+       Load subjects by section / exam
+    ------------------------------------------------------------- */
     useEffect(() => {
         (async () => {
             try {
-                const exams = examFilter === 'both'
-                    ? ['inbde', 'adat']
-                    : [examFilter];
-                const list: Subject[] = [];
+                const exams = examFilter === 'both' ? ['inbde', 'adat'] : [examFilter];
+                const allSubs: Subject[] = [];
 
                 for (const exam of exams) {
-                    const secs: Section[] = await fetch(`${API}/sections/${exam}/`).then(r => r.json());
-                    for (const sec of secs) {
+                    const sections: Section[] = await fetch(`${API}/sections/${exam}/`).then(r => r.json());
+                    for (const sec of sections) {
                         const subs: Subject[] = await fetch(`${API}/sections/${sec.id}/subjects/`).then(r => r.json());
-                        subs.forEach(s => list.push({ ...s, section: sec }));
+                        subs.forEach(s => allSubs.push({ ...s, section: sec }));
                     }
                 }
-                setSubjects(list);
-            } catch {
-                setErrorMsg('Failed to load subjects');
+                setSubjects(allSubs);
+            } catch (err) {
+                console.error(err);
+                setErrorMsg('Failed to load subjects.');
             }
         })();
     }, [examFilter]);
 
-    /* --- UI handlers --- */
-    const toggleSubject = (id: number) => {
-        const next = new Set(selected);
-        if (next.has(id)) {
-            next.delete(id);
-        } else {
-            next.add(id);
-        }
-        setSelected(next);
-    };
-
+    /* -------------------------------------------------------------
+       Start quiz
+    ------------------------------------------------------------- */
     const start = async () => {
         setErrorMsg(null);
         setLoading(true);
-        try {
-            /* 1. ensure csrftoken cookie exists */
-            await fetch(`${API.replace('/api', '')}/api/csrf/`, { credentials: 'include' });
 
-            /* 2. read it */
+        try {
+            /* 1️⃣ ensure CSRF cookie exists */
+            await fetch(`${API}/csrf/`, { credentials: 'include' });
+
+            /* 2️⃣ get csrftoken */
             const csrf = getCookie('csrftoken');
-            if (!csrf) {
-                setErrorMsg('Could not obtain CSRF token');
-                setLoading(false);
-                return;
-            }
+            if (!csrf) throw new Error('Could not obtain CSRF token.');
+
+            /* 3️⃣ request questions */
             const res = await fetch(`${API}/custom-quiz/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-CSRFToken': csrf,
                 },
-                credentials: 'include',
+                credentials: 'include', // ✅ important for user progress
                 body: JSON.stringify({
                     subject_ids: Array.from(selected),
                     filter,
@@ -104,20 +100,25 @@ export default function CustomBuilder() {
                 }),
             });
 
-            if (!res.ok) throw new Error((await res.json()).detail || 'Error');
+            if (!res.ok) {
+                const data = await res.json().catch(() => ({}));
+                throw new Error(data.detail || data.error || 'Quiz creation failed.');
+            }
 
             const questions: Question[] = await res.json();
             localStorage.setItem('customQuiz', JSON.stringify(questions));
             router.push('/custom/quiz');
-        } catch (err: unknown) {
-            if (err instanceof Error) setErrorMsg(err.message);
-            else setErrorMsg('Unknown error');
+        } catch (err: any) {
+            console.error(err);
+            setErrorMsg(err.message || 'Unknown error.');
         } finally {
             setLoading(false);
         }
     };
 
-    /* group by section for nicer layout */
+    /* -------------------------------------------------------------
+       Render grouped subjects
+    ------------------------------------------------------------- */
     const grouped = subjects.reduce<Record<number, Subject[]>>((acc, s) => {
         (acc[s.section.id] ??= []).push(s);
         return acc;
@@ -140,7 +141,11 @@ export default function CustomBuilder() {
                                             type="checkbox"
                                             className="accent-blue-600"
                                             checked={selected.has(s.id)}
-                                            onChange={() => toggleSubject(s.id)}
+                                            onChange={() => {
+                                                const next = new Set(selected);
+                                                next.has(s.id) ? next.delete(s.id) : next.add(s.id);
+                                                setSelected(next);
+                                            }}
                                         />
                                         {s.name}
                                     </label>
@@ -153,14 +158,15 @@ export default function CustomBuilder() {
 
             {/* FILTER + LIMIT */}
             <div className="mb-8 flex flex-col sm:flex-row items-center gap-6">
-                {/* correctness filter */}
+                {/* filter options */}
                 <div className="flex gap-4">
                     {FILTERS.map(f => {
                         const disabled = !isLoggedIn && f !== 'all';
                         return (
                             <label
                                 key={f}
-                                className={`inline-flex items-center gap-1 ${disabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'}`}
+                                className={`inline-flex items-center gap-1 ${disabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'
+                                    }`}
                             >
                                 <input
                                     type="radio"
@@ -201,7 +207,9 @@ export default function CustomBuilder() {
                 {loading ? 'Building…' : 'Start Quiz'}
             </button>
 
-            <Link href="/" className="ml-6 text-blue-400 hover:underline">Cancel</Link>
+            <Link href="/" className="ml-6 text-blue-400 hover:underline">
+                Cancel
+            </Link>
         </div>
     );
 }
