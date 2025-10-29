@@ -153,7 +153,11 @@ export default function CustomBuilderClient() {
                                             checked={selected.has(s.id)}
                                             onChange={() => {
                                                 const next = new Set(selected);
-                                                next.has(s.id) ? next.delete(s.id) : next.add(s.id);
+                                                if (next.has(s.id)) {
+                                                    next.delete(s.id);
+                                                } else {
+                                                    next.add(s.id);
+                                                }
                                                 setSelected(next);
                                             }}
                                         />
@@ -165,7 +169,6 @@ export default function CustomBuilderClient() {
                     </div>
                 ))}
             </div>
-
             {/* FILTER + LIMIT */}
             <div className="mb-8 flex flex-col sm:flex-row items-center gap-6">
                 {/* filter options */}
