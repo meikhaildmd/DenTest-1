@@ -1,10 +1,12 @@
 /* components/QuizEngine.tsx */
-
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { AnimatePresence, motion } from 'framer-motion';
+import clsx from 'clsx';
+import GradientButton from '@/components/GradientButton';
 import { API } from '@/lib/config';
 
 /* ---------- csrf helper ---------- */
@@ -22,12 +24,12 @@ export interface Question {
   option2: string;
   option3: string;
   option4: string;
-  correct_option: string;
+  correct_option: 'option1' | 'option2' | 'option3' | 'option4';
   explanation: string;
 }
-type AnswerStatus = { selected: string; isCorrect: boolean };
+type Letter = 'A' | 'B' | 'C' | 'D';
+type AnswerStatus = { selected: Letter; isCorrect: boolean };
 
-/* ---------- component ---------- */
 export default function QuizEngine({
   subjectId,
   sectionId,
@@ -48,9 +50,20 @@ export default function QuizEngine({
   const router = useRouter();
   const search = useSearchParams();
   const pathname = usePathname();
-
   const isReview = search.get('review') === 'true';
-  const optionMap = { A: 'option1', B: 'option2', C: 'option3', D: 'option4' } as const;
+
+  const optionMap = useMemo(
+    () => ({ A: 'option1', B: 'option2', C: 'option3', D: 'option4' } as const),
+    []
+  );
+
+  /* ----- theme helpers ----- */
+  const themeExam = exam === 'custom' ? 'home' : exam; // for GradientButton
+  const themeRing = exam === 'adat' ? 'ring-emerald-400' : 'ring-blue-400';
+  const themeAccent =
+    exam === 'adat'
+      ? 'from-emerald-700 via-teal-600 to-emerald-400'
+      : 'from-blue-600 via-purple-600 to-fuchsia-500';
 
   /* ----- load questions (custom or by subject) ----- */
   useEffect(() => {
@@ -58,9 +71,9 @@ export default function QuizEngine({
       setQuestions(propQuestions);
     } else if (subjectId) {
       fetch(`${API}/questions/subject/${subjectId}/`)
-        .then(r => r.json())
+        .then((r) => r.json())
         .then(setQuestions)
-        .catch(err => console.error('Failed to load questions:', err));
+        .catch((err) => console.error('Failed to load questions:', err));
     }
   }, [propQuestions, subjectId]);
 
@@ -71,32 +84,46 @@ export default function QuizEngine({
     fetch(`${API}/user-question-status/subject/${subjectId}/`, {
       credentials: 'include',
     })
-      .then(r => (r.status === 403 ? [] : r.json()))
-      .then((rows: { question_id: number; last_answer: string; last_was_correct: boolean }[]) => {
-        const rec: Record<number, AnswerStatus> = {};
-        rows.forEach(d => {
-          rec[d.question_id] = {
-            selected: d.last_answer,
-            isCorrect: d.last_was_correct,
-          };
-        });
-        setAnswers(rec);
-      })
+      .then((r) => (r.status === 403 ? [] : r.json()))
+      .then(
+        (
+          rows: {
+            question_id: number;
+            last_answer: Letter;
+            last_was_correct: boolean;
+          }[]
+        ) => {
+          const rec: Record<number, AnswerStatus> = {};
+          rows.forEach((d) => {
+            rec[d.question_id] = {
+              selected: d.last_answer,
+              isCorrect: d.last_was_correct,
+            };
+          });
+          setAnswers(rec);
+        }
+      )
       .catch(() => { });
   }, [isReview, subjectId, pathname]);
 
   /* ----- early render ----- */
   if (!questions.length) {
-    return <div className="p-8 text-neutral-300">Loading…</div>;
+    return (
+      <div className="p-8 text-neutral-300">
+        <div className="animate-pulse h-5 w-32 rounded bg-neutral-800 mb-3" />
+        <div className="animate-pulse h-5 w-44 rounded bg-neutral-800 mb-3" />
+        <div className="animate-pulse h-5 w-24 rounded bg-neutral-800" />
+      </div>
+    );
   }
 
   const q = questions[idx];
 
   /* ----- select answer ----- */
-  const select = (ltr: string) => {
+  const select = (ltr: Letter) => {
     if (answers[q.id] || isReview) return;
 
-    const selKey = optionMap[ltr as keyof typeof optionMap];
+    const selKey = optionMap[ltr];
     const isCorrect = selKey === q.correct_option;
 
     const updated = { ...answers, [q.id]: { selected: ltr, isCorrect } };
@@ -124,11 +151,11 @@ export default function QuizEngine({
   const next = () => {
     if (idx + 1 < questions.length) {
       setIdx(idx + 1);
-      setShowExp(false); // reset explanation
+      setShowExp(false);
       return;
     }
 
-    const correct = Object.values(answers).filter(a => a.isCorrect).length;
+    const correct = Object.values(answers).filter((a) => a.isCorrect).length;
     const qs = new URLSearchParams({
       score: String(correct),
       total: String(questions.length),
@@ -145,116 +172,233 @@ export default function QuizEngine({
     router.push(`/results?${qs.toString()}`);
   };
 
+  /* ----- helpers for styling ----- */
+  const exitHref =
+    exam === 'adat'
+      ? sectionId
+        ? `/adat/section/${sectionId}`
+        : '/adat'
+      : exam === 'inbde'
+        ? sectionId
+          ? `/inbde/section/${sectionId}`
+          : '/inbde'
+        : '/';
+
+  const answerBg = (ltr: Letter) => {
+    const optKey = optionMap[ltr];
+    const answered = !!answers[q.id];
+    const isSel = answers[q.id]?.selected === ltr;
+    const isCorrect = q.correct_option === optKey;
+
+    // Base (not answered)
+    let base =
+      'bg-neutral-900/60 border border-neutral-700 text-neutral-100 hover:border-neutral-500';
+
+    if (answered || isReview) {
+      if (isCorrect) {
+        base = 'text-white ring-1 ring-white/10 ' +
+          (exam === 'adat'
+            ? 'bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-500'
+            : 'bg-gradient-to-r from-blue-600 via-purple-600 to-fuchsia-500');
+      }
+      if (isSel && !isCorrect) {
+        base =
+          'bg-gradient-to-r from-red-700 via-rose-700 to-red-600 text-white ring-1 ring-rose-300/20';
+      }
+      if (!isSel && !isCorrect) {
+        base = 'bg-neutral-900/70 border border-neutral-800 text-neutral-300';
+      }
+    }
+
+    return base;
+  };
+
   /* ---------- render ---------- */
   return (
     <div className="flex flex-col md:flex-row">
       {/* Sidebar */}
-      <div className="md:w-20 bg-neutral-900 p-2 flex md:flex-col gap-2 items-center text-sm">
-        {/* Logo inside sidebar */}
+      <aside className="md:w-24 bg-neutral-950/80 p-2 md:p-3 flex md:flex-col gap-2 items-center text-sm backdrop-blur">
         <Link
           href="/"
-          className="mb-4 text-lg font-bold text-blue-500 hover:text-blue-400"
+          className={clsx(
+            'mb-3 text-lg font-extrabold tracking-tight',
+            exam === 'adat' ? 'text-emerald-300' : 'text-blue-300'
+          )}
         >
-          DentestPro
+          ToothPrep
         </Link>
 
         {questions.map((qq, i) => {
           const stat = answers[qq.id];
           const active = i === idx;
-          const base = stat
-            ? stat.isCorrect ? 'bg-green-500' : 'bg-red-500'
-            : 'bg-neutral-800';
+          const ok = stat?.isCorrect;
+          const wrong = stat && !stat.isCorrect;
+
+          const base = clsx(
+            'w-10 h-10 rounded-full grid place-items-center font-semibold select-none transition',
+            'shadow-sm hover:scale-105',
+            active && (exam === 'adat' ? 'ring-2 ring-emerald-400' : 'ring-2 ring-blue-400'),
+            !stat && 'bg-neutral-800/80 text-neutral-200 ring-1 ring-neutral-700',
+            ok && 'text-white shadow-[0_0_18px_rgba(16,185,129,0.35)] bg-gradient-to-b from-green-500 to-emerald-600',
+            wrong && 'text-white shadow-[0_0_18px_rgba(244,63,94,0.35)] bg-gradient-to-b from-rose-500 to-red-600'
+          );
 
           return (
             <button
               key={qq.id}
-              onClick={() => { setIdx(i); setShowExp(isReview && !!stat); }}
-              className={`w-8 h-8 rounded-full ${base} text-white
-                        ${active ? 'ring-2 ring-blue-400' : 'ring-1 ring-neutral-700'}
-                        hover:ring-blue-300 transition`}
+              onClick={() => {
+                setIdx(i);
+                setShowExp(isReview && !!stat);
+              }}
+              className={base}
+              aria-label={`Go to question ${i + 1}`}
             >
               {i + 1}
             </button>
           );
         })}
-      </div>
+      </aside>
 
       {/* Main panel */}
-      <div className="md:w-4/5 max-w-2xl mx-auto mt-10 p-6 bg-neutral-900 rounded-xl shadow text-neutral-100">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-semibold">
-            Question {idx + 1} / {questions.length}
-          </h2>
-
-          {/* Exit button back to section */}
-          {sectionId && (
-            <Link
-              href={`/adat/section/${sectionId}`}
-              className="text-sm text-red-500 hover:text-red-400"
-            >
-              Exit Quiz
-            </Link>
+      <main className="md:flex-1 max-w-3xl mx-auto mt-6 md:mt-10 px-4 md:px-6 w-full">
+        <motion.div
+          key={q.id}
+          initial={{ y: 8, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.25 }}
+          className={clsx(
+            'rounded-2xl p-6 md:p-7 shadow-lg border',
+            'bg-neutral-900/80 border-neutral-800 backdrop-blur'
           )}
-        </div>
+        >
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-lg md:text-xl font-semibold tracking-tight">
+              Question {idx + 1} / {questions.length}
+            </h2>
 
-        <p className="mb-6">{q.text}</p>
-
-        <div className="space-y-3">
-          {(['A', 'B', 'C', 'D'] as const).map(ltr => {
-            const optKey = optionMap[ltr];
-            const answered = !!answers[q.id];
-            const isSel = answers[q.id]?.selected === ltr;
-            const isCorrect = q.correct_option === optKey;
-
-            let bg =
-              'bg-gray-50 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100';
-
-            if (answered || isReview) {
-              if (isCorrect) {
-                bg = 'bg-green-100 text-green-800'; // highlight correct
-              }
-              if (isSel && !isCorrect) {
-                bg = 'bg-red-100 text-red-800'; // user’s wrong answer
-              }
-              if (!isSel && !isCorrect) {
-                bg = 'bg-gray-100 text-neutral-800'; // mute others
-              }
-            }
-
-            return (
-              <button
-                key={ltr}
-                onClick={() => select(ltr)}
-                disabled={answered || isReview}
-                className={`block w-full text-left px-4 py-2 border rounded ${bg}`}
-              >
-                <strong>{ltr}.</strong> {q[optKey]}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* explanation */}
-        {(showExp || (isReview && answers[q.id])) && (
-          <div className="mt-4 p-3 bg-blue-800/20 border-l-4 border-blue-500 rounded">
-            <strong>Explanation:</strong>
-            <div
-              className="mt-1"
-              style={{ whiteSpace: 'pre-line' }}
-              dangerouslySetInnerHTML={{ __html: q.explanation }}
-            />
+            <GradientButton
+              exam={themeExam as any}
+              shimmer={false}
+              onClick={() => router.push(exitHref)}
+              className="px-4 py-2 text-sm"
+            >
+              Exit
+            </GradientButton>
           </div>
-        )}
 
-        <div className="mt-6 text-right">
-          <button
-            onClick={next}
-            className="bg-blue-600 px-4 py-2 rounded text-white hover:bg-blue-700"
-          >
-            {idx === questions.length - 1 ? 'Finish Test' : 'Next'}
-          </button>
-        </div>
-      </div>
+          {/* Question text */}
+          <div className="mb-6">
+            <div
+              className={clsx(
+                'inline-block rounded-full px-3 py-1 text-xs font-bold mb-3',
+                'text-white',
+                `bg-gradient-to-r ${themeAccent}`
+              )}
+            >
+              {exam.toUpperCase()}
+            </div>
+            <p className="leading-relaxed text-neutral-100">{q.text}</p>
+          </div>
+
+          {/* Options */}
+          <div className="space-y-3">
+            {(Object.keys(optionMap) as Letter[]).map((ltr) => {
+              const optKey = optionMap[ltr];
+              const answered = !!answers[q.id];
+              const isSel = answers[q.id]?.selected === ltr;
+              const isCorrect = q.correct_option === optKey;
+
+              return (
+                <motion.button
+                  key={ltr}
+                  whileHover={!answered ? { scale: 1.01 } : undefined}
+                  whileTap={!answered ? { scale: 0.99 } : undefined}
+                  onClick={() => select(ltr)}
+                  disabled={answered || isReview}
+                  className={clsx(
+                    'relative block w-full text-left px-4 py-3 rounded-xl border transition-colors',
+                    answerBg(ltr),
+                    (answered || isReview) && (isCorrect || isSel)
+                      ? 'shadow-[0_0_0_1px_rgba(255,255,255,0.07)_inset,0_0_30px_rgba(255,255,255,0.05)]'
+                      : 'hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05)_inset]'
+                  )}
+                >
+                  <span className="font-bold mr-2">{ltr}.</span>
+                  {q[optKey]}
+                  {/* Shine overlay when answer is revealed */}
+                  <AnimatePresence>
+                    {(isCorrect || (isSel && !isCorrect)) && (answered || isReview) && (
+                      <motion.span
+                        initial={{ x: '-120%' }}
+                        animate={{ x: '140%' }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.15, ease: 'easeOut' }}
+                        className="pointer-events-none absolute inset-y-0 -left-10 w-24 skew-x-[-20deg] bg-white/10"
+                        style={{ maskImage: 'linear-gradient(90deg, transparent, black, transparent)' }}
+                      />
+                    )}
+                  </AnimatePresence>
+                </motion.button>
+              );
+            })}
+          </div>
+
+          {/* Explanation */}
+          <AnimatePresence initial={false} mode="wait">
+            {(showExp || (isReview && answers[q.id])) && (
+              <motion.div
+                key="explanation"
+                initial={{ height: 0, opacity: 0, y: -6 }}
+                animate={{ height: 'auto', opacity: 1, y: 0 }}
+                exit={{ height: 0, opacity: 0, y: -6 }}
+                transition={{ duration: 0.25 }}
+                className="mt-5 overflow-hidden"
+              >
+                <div
+                  className={clsx(
+                    'rounded-xl p-4 border',
+                    'bg-neutral-900/70 border-neutral-800'
+                  )}
+                >
+                  <div
+                    className="prose prose-invert max-w-none prose-p:my-2 prose-strong:font-semibold"
+                    style={{ whiteSpace: 'pre-line' }}
+                    // explanation already HTML on your side:
+                    dangerouslySetInnerHTML={{ __html: q.explanation }}
+                  />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Actions */}
+          <div className="mt-6 flex items-center justify-end gap-3">
+            {sectionId && (
+              <GradientButton
+                exam={themeExam as any}
+                shimmer={false}
+                onClick={() => router.push(exitHref)}
+                className="px-5 py-2"
+              >
+                Exit Section
+              </GradientButton>
+            )}
+
+            <GradientButton
+              exam={themeExam as any}
+              shimmer
+              glow
+              onClick={next}
+              className="px-6 py-2"
+            >
+              {idx === questions.length - 1 ? 'Finish Test' : 'Next'}
+            </GradientButton>
+          </div>
+        </motion.div>
+
+        {/* Bottom subtle gradient rule for vibe */}
+        <div className={clsx('mt-8 h-1 rounded-full w-40', `bg-gradient-to-r ${themeAccent}`)} />
+      </main>
     </div>
   );
 }

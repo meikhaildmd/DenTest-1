@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
-export default function WelcomeHeroBanner() {
+export default function WelcomeBanner() {
     const [name, setName] = useState<string | null>(null);
     const API = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -11,25 +12,23 @@ export default function WelcomeHeroBanner() {
             credentials: 'include',
             cache: 'no-store',
         })
-            .then(r => (r.ok ? r.json() : null))
-            .then(d => setName(d?.username ?? null))
+            .then((r) => (r.ok ? r.json() : null))
+            .then((d) => setName(d?.username ?? null))
             .catch(() => { });
     }, [API]);
 
     if (!name) return null;
 
     return (
-        <div
-            className="
-        mx-auto mb-8 w-fit
-        rounded-full py-3 px-6
-        text-xl sm:text-2xl font-semibold
-        text-white shadow-lg
-        bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500
-        animate-slide-down
-      "
+        <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="mx-auto mb-10 w-fit rounded-full py-4 px-8 text-2xl sm:text-3xl
+                 font-extrabold tracking-tight border border-white/10 backdrop-blur-md
+                 shimmer-text"
         >
             Welcome, {name}!
-        </div>
+        </motion.div>
     );
 }

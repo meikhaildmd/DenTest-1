@@ -1,9 +1,11 @@
 'use client';
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { motion } from 'framer-motion';
+import GradientButton from '@/components/GradientButton';
 
 /* -------------------------------------------------------------
    Helpers
@@ -49,6 +51,16 @@ export default function CustomBuilderClient() {
         typeof document !== 'undefined' && document.cookie.includes('sessionid=');
 
     /* -------------------------------------------------------------
+       THEME detection (ADAT / INBDE / BOTH)
+    ------------------------------------------------------------- */
+    const themeGradient =
+        examFilter === 'adat'
+            ? 'from-emerald-800 via-teal-600 to-emerald-400'
+            : examFilter === 'inbde'
+                ? 'from-blue-500 via-purple-500 to-fuchsia-500'
+                : 'from-blue-500 via-green-500 to-teal-400';
+
+    /* -------------------------------------------------------------
        Load subjects by section / exam
     ------------------------------------------------------------- */
     useEffect(() => {
@@ -58,8 +70,8 @@ export default function CustomBuilderClient() {
                 const allSubs: Subject[] = [];
 
                 for (const exam of exams) {
-                    const sections: Section[] = await fetch(`${API}/sections/${exam}/`).then(
-                        (r) => r.json()
+                    const sections: Section[] = await fetch(`${API}/sections/${exam}/`).then((r) =>
+                        r.json()
                     );
                     for (const sec of sections) {
                         const subs: Subject[] = await fetch(
@@ -84,14 +96,10 @@ export default function CustomBuilderClient() {
         setLoading(true);
 
         try {
-            // 1️⃣ ensure CSRF cookie exists
             await fetch(`${API}/csrf/`, { credentials: 'include' });
-
-            // 2️⃣ get csrftoken
             const csrf = getCookie('csrftoken');
             if (!csrf) throw new Error('Could not obtain CSRF token.');
 
-            // 3️⃣ request questions
             const res = await fetch(`${API}/custom-quiz/`, {
                 method: 'POST',
                 headers: {
@@ -136,28 +144,42 @@ export default function CustomBuilderClient() {
     ------------------------------------------------------------- */
     return (
         <div className="min-h-screen p-8 max-w-5xl mx-auto">
-            <h1 className="text-3xl font-bold mb-6">Build a Custom Quiz</h1>
+            {/* Header gradient */}
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`mx-auto mb-10 w-fit rounded-full py-3 px-8 text-xl sm:text-2xl font-semibold text-white shadow-lg bg-gradient-to-r ${themeGradient} animate-slide-down`}
+            >
+                Build Your Custom Quiz
+            </motion.div>
 
             {/* SUBJECT PICKER */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {Object.entries(grouped).map(([secId, subs]) => (
-                    <div key={secId} className="border border-neutral-700 rounded p-4">
-                        <h2 className="font-semibold mb-2">{subs[0].section.name}</h2>
-                        <ul className="space-y-1">
+                    <motion.div
+                        key={secId}
+                        whileHover={{ scale: 1.03 }}
+                        className="border border-neutral-700 rounded-xl p-4 bg-neutral-900/60 hover:bg-neutral-800 transition-all duration-200"
+                    >
+                        <h2 className="font-semibold mb-3 text-white/90">
+                            {subs[0].section.name}
+                        </h2>
+                        <ul className="space-y-2">
                             {subs.map((s) => (
                                 <li key={s.id}>
-                                    <label className="inline-flex items-center gap-2 cursor-pointer">
+                                    <label
+                                        className={`inline-flex items-center gap-2 cursor-pointer transition ${selected.has(s.id)
+                                            ? 'text-emerald-300'
+                                            : 'text-neutral-300 hover:text-white'
+                                            }`}
+                                    >
                                         <input
                                             type="checkbox"
-                                            className="accent-blue-600"
+                                            className="accent-emerald-500"
                                             checked={selected.has(s.id)}
                                             onChange={() => {
                                                 const next = new Set(selected);
-                                                if (next.has(s.id)) {
-                                                    next.delete(s.id);
-                                                } else {
-                                                    next.add(s.id);
-                                                }
+                                                next.has(s.id) ? next.delete(s.id) : next.add(s.id);
                                                 setSelected(next);
                                             }}
                                         />
@@ -166,36 +188,33 @@ export default function CustomBuilderClient() {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
+
             {/* FILTER + LIMIT */}
-            <div className="mb-8 flex flex-col sm:flex-row items-center gap-6">
-                {/* filter options */}
+            <div className="mb-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+                {/* Filter radio chips */}
                 <div className="flex gap-4">
                     {FILTERS.map((f) => {
                         const disabled = !isLoggedIn && f !== 'all';
                         return (
-                            <label
+                            <button
                                 key={f}
-                                className={`inline-flex items-center gap-1 ${disabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'
-                                    }`}
+                                disabled={disabled}
+                                onClick={() => !disabled && setFilter(f)}
+                                className={`px-4 py-1.5 rounded-full text-sm font-medium transition ${filter === f
+                                    ? 'bg-gradient-to-r from-emerald-600 to-teal-500 text-white'
+                                    : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700'
+                                    } ${disabled ? 'opacity-40 cursor-not-allowed' : ''}`}
                             >
-                                <input
-                                    type="radio"
-                                    name="filter"
-                                    className="accent-blue-600"
-                                    checked={filter === f}
-                                    disabled={disabled}
-                                    onChange={() => !disabled && setFilter(f)}
-                                />
                                 {f}
-                            </label>
+                            </button>
                         );
                     })}
                 </div>
 
-                {/* slider */}
+                {/* Range slider */}
                 <div className="flex items-center gap-3 w-full max-w-xs">
                     <input
                         type="range"
@@ -203,26 +222,32 @@ export default function CustomBuilderClient() {
                         max={100}
                         value={limit}
                         onChange={(e) => setLimit(Number(e.target.value))}
-                        className="w-full accent-blue-600"
+                        className="w-full accent-emerald-500"
                     />
-                    <span className="w-10 text-right">{limit}</span>
+                    <span className="w-10 text-right text-neutral-300">{limit}</span>
                 </div>
             </div>
 
             {/* ERROR + START */}
-            {errorMsg && <p className="text-red-400 mb-4">{errorMsg}</p>}
+            {errorMsg && (
+                <p className="text-red-400 mb-4 animate-pulse text-center">{errorMsg}</p>
+            )}
 
-            <button
-                disabled={loading || selected.size === 0}
-                onClick={start}
-                className="px-6 py-3 rounded bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white transition"
-            >
-                {loading ? 'Building…' : 'Start Quiz'}
-            </button>
+            <div className="flex justify-center gap-6 mt-8">
+                <GradientButton
+                    onClick={start}
+                    exam={examFilter === 'inbde' ? 'inbde' : examFilter === 'adat' ? 'adat' : 'home'}
+                    glow
+                >
+                    {loading ? 'Building…' : 'Start Quiz'}
+                </GradientButton>
 
-            <Link href="/" className="ml-6 text-blue-400 hover:underline">
-                Cancel
-            </Link>
+                <Link href="/" className="mt-2">
+                    <GradientButton exam="home" shimmer={false}>
+                        Cancel
+                    </GradientButton>
+                </Link>
+            </div>
         </div>
     );
 }

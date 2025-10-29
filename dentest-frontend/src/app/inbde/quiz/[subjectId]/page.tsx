@@ -1,36 +1,43 @@
-/* src/app/inbde/quiz/[subjectId]/page.tsx
-   Client wrapper → unwrap params, read query string, mount QuizEngine */
-
 'use client';
+
+
 
 import { use } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import QuizEngine from '@/components/QuizEngine';
+import { useTheme } from '@/components/ThemeProvider';
+import { useEffect } from 'react';
 
-export default function QuizPage({
-  params,
-}: {
-  params: Promise<{ subjectId: string }>;
-}) {
-  /* 1 ─ dynamic segment (Next 15 gives it as a promise) */
+interface PageParams {
+  subjectId: string;
+}
+
+export default function QuizPage({ params }: { params: Promise<PageParams> }) {
+  /* 1️⃣ unwrap Next 15 promise param */
   const { subjectId } = use(params);
 
-  /* 2 ─ query-string values */
+  /* 2️⃣ read optional query params */
   const search = useSearchParams();
-  const sectionId = search.get('sectionId') || undefined; // may be absent
-  const isReview = search.get('review') === 'true';      // optional
+  const sectionId = search.get('sectionId') || undefined;
+  const isReview = search.get('review') === 'true';
 
-  /* 3 ─ ensure remount when path / review flag changes */
+  /* 3️⃣ stable key — ensures re-mount between modes */
   const pathname = usePathname();
   const key = `${pathname}-${isReview}`;
 
-  /* 4 ─ render engine with all needed props */
+  /* 4️⃣ set theme when mounting */
+  const { setTheme } = useTheme();
+  useEffect(() => {
+    setTheme('inbde');
+  }, [setTheme]);
+
+  /* 5️⃣ render quiz engine */
   return (
     <QuizEngine
       key={key}
       subjectId={subjectId}
-      sectionId={sectionId}   /* lets ResultsPage build “Done” link */
-      exam="inbde"            /* passed down so next() can send exam=inbde */
+      sectionId={sectionId}
+      exam="inbde"
     />
   );
 }

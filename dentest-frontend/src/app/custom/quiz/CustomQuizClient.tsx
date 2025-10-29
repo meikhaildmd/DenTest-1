@@ -1,24 +1,25 @@
 'use client';
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
+
 import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 import QuizEngine, { Question } from '@/components/QuizEngine';
+import GradientButton from '@/components/GradientButton';
 
 export default function CustomQuizClient() {
     const qs = useSearchParams();
     const router = useRouter();
 
-    // exam comes from ?exam=inbde|adat (default to inbde)
+    // exam = ?exam=inbde|adat (default inbde)
     const exam = qs.get('exam') === 'adat' ? 'adat' : 'inbde';
-
-    // questions array from localStorage
     const [questions, setQuestions] = useState<Question[] | null>(null);
 
-    // load once on mount
+    // load questions once from localStorage
     useEffect(() => {
         const raw = localStorage.getItem('customQuiz');
         if (!raw) {
-            router.replace('/custom'); // nothing stored → back to builder
+            router.replace('/custom');
             return;
         }
 
@@ -27,20 +28,57 @@ export default function CustomQuizClient() {
             if (!parsed.length) throw new Error();
             setQuestions(parsed);
         } catch {
-            router.replace('/custom'); // malformed → back to builder
+            router.replace('/custom');
         }
     }, [router]);
 
-    // show nothing (or loader) until we have questions
+    /* ---------- theme gradients ---------- */
+    const themeGradient =
+        exam === 'adat'
+            ? 'from-emerald-800 via-teal-600 to-emerald-400'
+            : 'from-blue-500 via-purple-500 to-fuchsia-500';
+
+    /* ---------- render ---------- */
     if (!questions) {
-        return <p className="text-center text-neutral-400 mt-20">Loading questions…</p>;
+        return (
+            <div className="flex flex-col items-center justify-center min-h-screen text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`text-lg text-white/80 bg-gradient-to-r ${themeGradient} bg-clip-text text-transparent`}
+                >
+                    Loading custom quiz…
+                </motion.div>
+            </div>
+        );
     }
 
-    // render quiz engine in custom mode
     return (
-        <QuizEngine
-            questions={questions}   // custom-quiz questions
-            exam={exam}             // "inbde" | "adat" passed to results page
-        />
+        <div className="min-h-screen">
+            {/* Fancy header */}
+            <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`text-center text-2xl sm:text-3xl font-semibold py-6 bg-gradient-to-r ${themeGradient} text-white shadow-lg`}
+            >
+                Custom Quiz ({exam.toUpperCase()})
+            </motion.div>
+
+            {/* Quiz engine container */}
+            <div className="max-w-5xl mx-auto p-6">
+                <QuizEngine questions={questions} exam={exam} />
+            </div>
+
+            {/* Back button */}
+            <div className="flex justify-center mt-10 mb-10">
+                <GradientButton
+                    exam={exam}
+                    onClick={() => router.push(`/custom?exam=${exam}`)}
+                    shimmer
+                >
+                    Back to Builder
+                </GradientButton>
+            </div>
+        </div>
     );
 }

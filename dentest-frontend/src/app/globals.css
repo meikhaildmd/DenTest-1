@@ -1,31 +1,37 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* ============================================================
+   🌈 BASE VARIABLES (Light / Dark Mode)
+============================================================ */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+      --color-background: var(--background);
+      --color-foreground: var(--foreground);
+    }
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* in globals.css or a @layer utilities block */
+/* ============================================================
+   🎞️ BASIC ANIMATIONS
+============================================================ */
 @keyframes slide-down {
   from {
     transform: translateY(-1rem);
@@ -40,4 +46,170 @@ body {
 
 .animate-slide-down {
   animation: slide-down 0.4s ease-out both;
+}
+
+/* Subtle slide shimmer used in buttons */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(140%);
+  }
+}
+
+/* Horizontal gradient drift */
+@keyframes gradient-x {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 8s ease infinite;
+}
+
+/* ============================================================
+   🌌 DIAGONAL SMOOTH AURORA BACKGROUND (dark + elegant)
+============================================================ */
+@keyframes diagonalShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes smoothHueShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.animate-multi-gradient {
+  background: linear-gradient(135deg,
+      /* diagonal flow */
+      #0f172a,
+      /* deep midnight navy */
+      #1e3a8a,
+      /* indigo blue */
+      #312e81,
+      /* royal violet */
+      #064e3b,
+      /* forest teal */
+      #115e59
+      /* deep green cyan */
+    );
+  background-size: 250% 250%;
+  animation:
+    diagonalShift 10s ease-in-out infinite,
+    smoothHueShift 20s linear infinite;
+  filter: brightness(0.75) contrast(1.15) saturate(1.1);
+}
+
+/* ============================================================
+   ✨ ANIMATED GRADIENT TEXT (titles/headings)
+============================================================ */
+@keyframes gradient-text {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bg-animated-text {
+  background-image: linear-gradient(to right,
+      #93c5fd,
+      /* soft blue */
+      #c084fc,
+      /* lilac purple */
+      #6ee7b7,
+      /* emerald */
+      #5eead4,
+      /* teal */
+      #93c5fd);
+  background-size: 200% 200%;
+  animation: gradient-text 20s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ============================================================
+   💎 WELCOME BANNER AURORA SHIMMER
+============================================================ */
+@keyframes shimmerFlow {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ============================================================
+   💎 Brightened Welcome Banner Text (crisper shimmer)
+============================================================ */
+.shimmer-text {
+  background-image: linear-gradient(90deg,
+      #7dd3fc,
+      /* lighter sky blue */
+      #c084fc,
+      /* lilac purple */
+      #34d399,
+      /* emerald */
+      #99f6e4,
+      /* soft turquoise */
+      #7dd3fc);
+  background-size: 350% 350%;
+  animation: shimmerFlow 6s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.15),
+    0 0 16px rgba(255, 255, 255, 0.1);
+  font-weight: 700;
+}
+
+/* ============================================================
+   🌙 READABILITY + VISUAL DEPTH HELPERS
+============================================================ */
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.backdrop-soft {
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.overlay-dim {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7));
 }

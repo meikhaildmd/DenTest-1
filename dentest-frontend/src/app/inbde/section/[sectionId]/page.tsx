@@ -1,19 +1,22 @@
 /* src/app/inbde/section/[sectionId]/page.tsx */
 export const dynamic = "force-dynamic";
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';           // tiny icon
-import { Suspense } from 'react';
-import SubjectGrid from './SubjectGrid';
+
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import SectionClient from "./SectionClient";
 
 /* ---------- types ---------- */
-interface Subject { id: number; name: string; }
+interface Subject {
+  id: number;
+  name: string;
+}
 interface SectionWithSubjects {
   id: number;
   name: string;
   subjects: Subject[];
 }
 
-/* ---------- page ---------- */
+/* ---------- server component ---------- */
 export default async function SectionPage({
   params,
 }: {
@@ -24,21 +27,23 @@ export default async function SectionPage({
   const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
   const section: SectionWithSubjects = await fetch(
     `${base}/api/sections/${sectionId}/with-subjects/`,
-    { cache: 'no-store' },
+    { cache: "no-store" }
   ).then((r) => r.json());
 
   /* first letter badge colour (blue for INBDE) */
   const badge = (
-    <span className="inline-flex h-10 w-10 items-center justify-center
-                     rounded-full bg-blue-600 text-white text-xl font-bold">
+    <span
+      className="inline-flex h-10 w-10 items-center justify-center
+                 rounded-full bg-blue-600 text-white text-xl font-bold shadow-md"
+    >
       {section.name.charAt(0)}
     </span>
   );
 
+  /* ---------- render ---------- */
   return (
-    <div className="min-h-screen px-6 py-10">
+    <div className="min-h-screen px-6 py-10 bg-neutral-950 text-white">
       <div className="max-w-5xl mx-auto">
-
         {/* back link */}
         <Link
           href="/inbde"
@@ -55,12 +60,10 @@ export default async function SectionPage({
         </div>
 
         {/* gradient divider */}
-        <div className="h-1 w-28 bg-gradient-to-r from-blue-500 to-purple-500 rounded mb-8" />
+        <div className="h-1 w-28 bg-gradient-to-r from-blue-500 via-purple-500 to-fuchsia-500 rounded mb-8" />
 
-        {/* subject grid with progress rings */}
-        <Suspense fallback={<p className="text-neutral-400">Loading progress…</p>}>
-          <SubjectGrid subjects={section.subjects} />
-        </Suspense>
+        {/* client-side subject grid */}
+        <SectionClient subjects={section.subjects} />
       </div>
     </div>
   );

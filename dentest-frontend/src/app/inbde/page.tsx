@@ -1,8 +1,13 @@
 /* src/app/inbde/page.tsx */
 export const dynamic = "force-dynamic";
-import Link from "next/link";
-import { ArrowLeft, ClipboardList } from "lucide-react";
 
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import InbdeClient from "./InbdeClient";
+import SectionCard from "@/components/SectionCard";
+import GradientButton from "@/components/GradientButton";
+
+/* ---------- types ---------- */
 interface Section {
   id: number;
   name: string;
@@ -12,7 +17,7 @@ interface ProgressRow {
   percent: number;
 }
 
-/* Fetch user progress safely (won’t crash if not logged in) */
+/* ---------- fetch user progress safely ---------- */
 async function getProgress(): Promise<Record<number, number>> {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
   if (!API) {
@@ -34,11 +39,13 @@ async function getProgress(): Promise<Record<number, number>> {
   }
 }
 
+/* ---------- main page ---------- */
 export default async function InbdeHome() {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
   let sections: Section[] = [];
   let progress: Record<number, number> = {};
 
+  // Fetch sections
   try {
     const res = await fetch(`${API}/api/sections/inbde/`, { cache: "no-store" });
     if (res.ok) sections = await res.json();
@@ -47,6 +54,7 @@ export default async function InbdeHome() {
     console.error("Error fetching INBDE sections:", e);
   }
 
+  // Fetch user progress
   try {
     progress = await getProgress();
   } catch (e) {
@@ -54,54 +62,48 @@ export default async function InbdeHome() {
   }
 
   return (
-    <div className="min-h-screen p-6">
+    <div className="min-h-screen p-6 relative">
+      {/* 👇 activates the INBDE theme */}
+      <InbdeClient />
+
+      {/* BACK BUTTON */}
       <Link
         href="/"
-        className="inline-flex items-center gap-2 mb-6 text-blue-400 hover:text-blue-300 transition"
+        className="inline-flex items-center gap-2 mb-6 text-[var(--color-accent)] hover:text-[var(--color-accent-secondary)] transition"
       >
         <ArrowLeft size={18} /> Home
       </Link>
 
-      <h1 className="text-3xl font-bold mb-2">INBDE Sections</h1>
-      <p className="mb-6 text-neutral-400">
-        Choose a section to drill focused questions — or build a custom set.
-      </p>
+      {/* HEADER */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-[var(--color-foreground)] mb-2">
+          INBDE Sections
+        </h1>
+        <p className="text-[var(--color-accent-secondary)]/80">
+          Choose a section to drill focused questions — or build a custom set.
+        </p>
+      </div>
 
+      {/* SECTIONS GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {sections.map((s) => (
-          <Link
+          <SectionCard
             key={s.id}
+            title={s.name}
             href={`/inbde/section/${s.id}`}
-            className="group relative overflow-hidden rounded-xl bg-blue-600/90 hover:bg-blue-600 border-4 border-purple-400 p-5 shadow-lg transition hover:-translate-y-1"
-          >
-            <ClipboardList
-              size={28}
-              className="text-white/90 mb-4 group-hover:scale-110 transition-transform"
-            />
-            <h2 className="text-xl font-semibold text-white">{s.name}</h2>
-            {progress[s.id] !== undefined && (
-              <span className="mt-3 inline-block rounded-full bg-white/20 px-3 py-1 text-sm font-medium text-white/80">
-                {progress[s.id]} % complete
-              </span>
-            )}
-          </Link>
+            progress={progress[s.id]}
+          />
         ))}
       </div>
 
-      <div className="mt-10 text-center">
-        <Link
-          href="/custom?exam=inbde"
-          className="inline-block rounded px-6 py-3 bg-blue-600 hover:bg-blue-700 transition text-white font-semibold"
-        >
-          Build a custom INBDE quiz
+      {/* CUSTOM QUIZ BUTTON */}
+      <div className="mt-14 text-center">
+        <Link href="/custom?exam=inbde">
+          <GradientButton exam="inbde" shimmer glow className="text-lg px-8 py-4">
+            Build a Custom INBDE Quiz
+          </GradientButton>
         </Link>
       </div>
     </div>
   );
 }
-/* ─────────────────────────────────────
-   Duplicate this file for ADAT:
-   - Save as src/app/adat/page.tsx
-   - Replace every "inbde" with "adat"
-   - Adjust card colours if you wish
-   ──────────────────────────────────── */

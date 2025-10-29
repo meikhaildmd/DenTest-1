@@ -1,29 +1,40 @@
-/* src/app/adat/quiz/[subjectId]/page.tsx
-   Client page → unwrap params, gather query, mount QuizEngine */
 'use client';
+
+/**
+ * ADAT quiz page — unwraps dynamic params, reads query string,
+ * and mounts the reusable QuizEngine with ADAT styling.
+ */
 
 import { use } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import QuizEngine from '@/components/QuizEngine';
+import { useTheme } from '@/components/ThemeProvider';
+import { useEffect } from 'react';
 
-export default function QuizPage({
-  params,
-}: {
-  params: Promise<{ subjectId: string }>;
-}) {
-  /* 1 — dynamic segment (promise in Next 15) */
+interface PageParams {
+  subjectId: string;
+}
+
+export default function QuizPage({ params }: { params: Promise<PageParams> }) {
+  /* 1️⃣ unwrap Next 15 promise param */
   const { subjectId } = use(params);
 
-  /* 2 — query string values */
+  /* 2️⃣ read optional query params */
   const search = useSearchParams();
-  const sectionId = search.get('sectionId') || undefined;  // may be absent
+  const sectionId = search.get('sectionId') || undefined;
   const isReview = search.get('review') === 'true';
 
-  /* 3 — key so React remounts when route / review mode changes */
+  /* 3️⃣ stable key — ensures re-mount between modes */
   const pathname = usePathname();
   const key = `${pathname}-${isReview}`;
 
-  /* 4 — render the quiz engine */
+  /* 4️⃣ set theme when mounting */
+  const { setTheme } = useTheme();
+  useEffect(() => {
+    setTheme('adat');
+  }, [setTheme]);
+
+  /* 5️⃣ render quiz engine */
   return (
     <QuizEngine
       key={key}

@@ -1,7 +1,8 @@
 /* src/app/layout.tsx */
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import Script from 'next/script'; // ✅ Needed for Google Analytics
+import Script from 'next/script';
+import ThemeProvider from '@/components/ThemeProvider'; // ✅ added
 import './globals.css';
 
 /* ---- fonts ---- */
@@ -21,11 +22,7 @@ export const metadata: Metadata = {
 };
 
 /* ---- root layout ---- */
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
@@ -34,10 +31,7 @@ export default function RootLayout({
         {/* ✅ Google Analytics tracking */}
         {gaId && (
           <>
-            <Script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-            />
+            <Script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
             <Script id="google-analytics">
               {`
                 window.dataLayer = window.dataLayer || [];
@@ -52,10 +46,11 @@ export default function RootLayout({
         )}
       </head>
 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen`}>
+        {/* 👇 Wrap your entire app inside ThemeProvider */}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
