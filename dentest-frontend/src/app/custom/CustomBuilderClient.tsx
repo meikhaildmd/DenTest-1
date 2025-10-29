@@ -9,9 +9,10 @@ import { useRouter, useSearchParams } from 'next/navigation';
    Helpers
 ------------------------------------------------------------- */
 function getCookie(name: string): string | null {
-    const match = typeof document !== 'undefined'
-        ? document.cookie.match(new RegExp(`(^|;)\\s*${name}=([^;]+)`))
-        : null;
+    const match =
+        typeof document !== 'undefined'
+            ? document.cookie.match(new RegExp(`(^|;)\\s*${name}=([^;]+)`))
+            : null;
     return match ? decodeURIComponent(match[2]) : null;
 }
 
@@ -42,9 +43,10 @@ export default function CustomBuilderClient() {
 
     const router = useRouter();
     const search = useSearchParams();
-    const examFilter = search.get('exam') ?? 'both'; // ?exam=inbde|adat|both
+    const examFilter = search.get('exam') ?? 'both';
 
-    const isLoggedIn = typeof document !== 'undefined' && document.cookie.includes('sessionid=');
+    const isLoggedIn =
+        typeof document !== 'undefined' && document.cookie.includes('sessionid=');
 
     /* -------------------------------------------------------------
        Load subjects by section / exam
@@ -56,15 +58,19 @@ export default function CustomBuilderClient() {
                 const allSubs: Subject[] = [];
 
                 for (const exam of exams) {
-                    const sections: Section[] = await fetch(`${API}/sections/${exam}/`).then(r => r.json());
+                    const sections: Section[] = await fetch(`${API}/sections/${exam}/`).then(
+                        (r) => r.json()
+                    );
                     for (const sec of sections) {
-                        const subs: Subject[] = await fetch(`${API}/sections/${sec.id}/subjects/`).then(r => r.json());
-                        subs.forEach(s => allSubs.push({ ...s, section: sec }));
+                        const subs: Subject[] = await fetch(
+                            `${API}/sections/${sec.id}/subjects/`
+                        ).then((r) => r.json());
+                        subs.forEach((s) => allSubs.push({ ...s, section: sec }));
                     }
                 }
                 setSubjects(allSubs);
             } catch (err) {
-                console.error(err);
+                console.error('Error loading subjects:', err);
                 setErrorMsg('Failed to load subjects.');
             }
         })();
@@ -78,21 +84,21 @@ export default function CustomBuilderClient() {
         setLoading(true);
 
         try {
-            /* 1️⃣ ensure CSRF cookie exists */
+            // 1️⃣ ensure CSRF cookie exists
             await fetch(`${API}/csrf/`, { credentials: 'include' });
 
-            /* 2️⃣ get csrftoken */
+            // 2️⃣ get csrftoken
             const csrf = getCookie('csrftoken');
             if (!csrf) throw new Error('Could not obtain CSRF token.');
 
-            /* 3️⃣ request questions */
+            // 3️⃣ request questions
             const res = await fetch(`${API}/custom-quiz/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-CSRFToken': csrf,
                 },
-                credentials: 'include', // ✅ important for user progress
+                credentials: 'include',
                 body: JSON.stringify({
                     subject_ids: Array.from(selected),
                     filter,
@@ -108,22 +114,26 @@ export default function CustomBuilderClient() {
             const questions: Question[] = await res.json();
             localStorage.setItem('customQuiz', JSON.stringify(questions));
             router.push('/custom/quiz');
-        } catch (err: any) {
-            console.error(err);
-            setErrorMsg(err.message || 'Unknown error.');
+        } catch (err: unknown) {
+            console.error('Quiz start error:', err);
+            if (err instanceof Error) setErrorMsg(err.message);
+            else setErrorMsg('Unknown error.');
         } finally {
             setLoading(false);
         }
     };
 
     /* -------------------------------------------------------------
-       Render grouped subjects
+       Group subjects for display
     ------------------------------------------------------------- */
     const grouped = subjects.reduce<Record<number, Subject[]>>((acc, s) => {
         (acc[s.section.id] ??= []).push(s);
         return acc;
     }, {});
 
+    /* -------------------------------------------------------------
+       Render
+    ------------------------------------------------------------- */
     return (
         <div className="min-h-screen p-8 max-w-5xl mx-auto">
             <h1 className="text-3xl font-bold mb-6">Build a Custom Quiz</h1>
@@ -134,7 +144,7 @@ export default function CustomBuilderClient() {
                     <div key={secId} className="border border-neutral-700 rounded p-4">
                         <h2 className="font-semibold mb-2">{subs[0].section.name}</h2>
                         <ul className="space-y-1">
-                            {subs.map(s => (
+                            {subs.map((s) => (
                                 <li key={s.id}>
                                     <label className="inline-flex items-center gap-2 cursor-pointer">
                                         <input
@@ -160,7 +170,7 @@ export default function CustomBuilderClient() {
             <div className="mb-8 flex flex-col sm:flex-row items-center gap-6">
                 {/* filter options */}
                 <div className="flex gap-4">
-                    {FILTERS.map(f => {
+                    {FILTERS.map((f) => {
                         const disabled = !isLoggedIn && f !== 'all';
                         return (
                             <label
@@ -189,7 +199,7 @@ export default function CustomBuilderClient() {
                         min={5}
                         max={100}
                         value={limit}
-                        onChange={e => setLimit(Number(e.target.value))}
+                        onChange={(e) => setLimit(Number(e.target.value))}
                         className="w-full accent-blue-600"
                     />
                     <span className="w-10 text-right">{limit}</span>
