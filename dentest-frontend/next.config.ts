@@ -1,11 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // No dynamic key here — remove it if it’s present
   experimental: {
     serverActions: {
       bodySizeLimit: "2mb",
     },
+  },
+
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://api.toothprep.com/api/:path*",
+      },
+    ];
   },
 };
 
