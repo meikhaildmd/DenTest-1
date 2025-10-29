@@ -208,7 +208,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://www.dentest.net",
     "https://dentestpro.com",
     "https://www.dentestpro.com",
-    # ✅ Include backend itself
+    "https://api.toothprep.com",
     "https://toothprep-backend.onrender.com",
 ]
 
@@ -225,4 +225,3 @@ CORS_ALLOW_HEADERS = [
 # --- SECURITY HEADERS ---
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = not DEBUG
-SESSION_COOKIE_SECURE = not DEBUG
