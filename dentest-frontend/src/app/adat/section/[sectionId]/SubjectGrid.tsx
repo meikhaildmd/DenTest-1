@@ -57,7 +57,7 @@ export default function SubjectGrid({ subjects }: Props) {
     /* ---------- render ---------- */
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {subjects.map((s, i) => {
+            {subjects.map((s) => {
                 const p = pct[s.id];
                 const deg = (p ?? 0) * 3.6;
                 const ring = ringColor(p ?? 0);

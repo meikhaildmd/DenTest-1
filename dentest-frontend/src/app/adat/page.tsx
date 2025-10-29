@@ -2,7 +2,7 @@
 export const dynamic = "force-dynamic";
 
 import Link from "next/link";
-import { ArrowLeft, ClipboardList } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import AdatClient from "./AdatClient";
 import SectionCard from "@/components/SectionCard";
 import GradientButton from "@/components/GradientButton";

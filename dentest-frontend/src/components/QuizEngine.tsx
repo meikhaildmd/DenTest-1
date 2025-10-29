@@ -1,4 +1,3 @@
-/* components/QuizEngine.tsx */
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
@@ -58,8 +57,7 @@ export default function QuizEngine({
   );
 
   /* ----- theme helpers ----- */
-  const themeExam = exam === 'custom' ? 'home' : exam; // for GradientButton
-  const themeRing = exam === 'adat' ? 'ring-emerald-400' : 'ring-blue-400';
+  const themeExam = exam === 'custom' ? 'home' : exam;
   const themeAccent =
     exam === 'adat'
       ? 'from-emerald-700 via-teal-600 to-emerald-400'
@@ -190,13 +188,13 @@ export default function QuizEngine({
     const isSel = answers[q.id]?.selected === ltr;
     const isCorrect = q.correct_option === optKey;
 
-    // Base (not answered)
     let base =
       'bg-neutral-900/60 border border-neutral-700 text-neutral-100 hover:border-neutral-500';
 
     if (answered || isReview) {
       if (isCorrect) {
-        base = 'text-white ring-1 ring-white/10 ' +
+        base =
+          'text-white ring-1 ring-white/10 ' +
           (exam === 'adat'
             ? 'bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-500'
             : 'bg-gradient-to-r from-blue-600 via-purple-600 to-fuchsia-500');
@@ -239,8 +237,10 @@ export default function QuizEngine({
             'shadow-sm hover:scale-105',
             active && (exam === 'adat' ? 'ring-2 ring-emerald-400' : 'ring-2 ring-blue-400'),
             !stat && 'bg-neutral-800/80 text-neutral-200 ring-1 ring-neutral-700',
-            ok && 'text-white shadow-[0_0_18px_rgba(16,185,129,0.35)] bg-gradient-to-b from-green-500 to-emerald-600',
-            wrong && 'text-white shadow-[0_0_18px_rgba(244,63,94,0.35)] bg-gradient-to-b from-rose-500 to-red-600'
+            ok &&
+            'text-white shadow-[0_0_18px_rgba(16,185,129,0.35)] bg-gradient-to-b from-green-500 to-emerald-600',
+            wrong &&
+            'text-white shadow-[0_0_18px_rgba(244,63,94,0.35)] bg-gradient-to-b from-rose-500 to-red-600'
           );
 
           return (
@@ -277,7 +277,7 @@ export default function QuizEngine({
             </h2>
 
             <GradientButton
-              exam={themeExam as any}
+              exam={themeExam as 'inbde' | 'adat' | 'home' | undefined}
               shimmer={false}
               onClick={() => router.push(exitHref)}
               className="px-4 py-2 text-sm"
@@ -325,7 +325,6 @@ export default function QuizEngine({
                 >
                   <span className="font-bold mr-2">{ltr}.</span>
                   {q[optKey]}
-                  {/* Shine overlay when answer is revealed */}
                   <AnimatePresence>
                     {(isCorrect || (isSel && !isCorrect)) && (answered || isReview) && (
                       <motion.span
@@ -363,7 +362,6 @@ export default function QuizEngine({
                   <div
                     className="prose prose-invert max-w-none prose-p:my-2 prose-strong:font-semibold"
                     style={{ whiteSpace: 'pre-line' }}
-                    // explanation already HTML on your side:
                     dangerouslySetInnerHTML={{ __html: q.explanation }}
                   />
                 </div>
@@ -375,7 +373,7 @@ export default function QuizEngine({
           <div className="mt-6 flex items-center justify-end gap-3">
             {sectionId && (
               <GradientButton
-                exam={themeExam as any}
+                exam={themeExam as 'inbde' | 'adat' | 'home' | undefined}
                 shimmer={false}
                 onClick={() => router.push(exitHref)}
                 className="px-5 py-2"
@@ -385,7 +383,7 @@ export default function QuizEngine({
             )}
 
             <GradientButton
-              exam={themeExam as any}
+              exam={themeExam as 'inbde' | 'adat' | 'home' | undefined}
               shimmer
               glow
               onClick={next}
@@ -396,7 +394,6 @@ export default function QuizEngine({
           </div>
         </motion.div>
 
-        {/* Bottom subtle gradient rule for vibe */}
         <div className={clsx('mt-8 h-1 rounded-full w-40', `bg-gradient-to-r ${themeAccent}`)} />
       </main>
     </div>

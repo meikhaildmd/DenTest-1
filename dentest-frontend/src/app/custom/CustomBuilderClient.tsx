@@ -179,7 +179,7 @@ export default function CustomBuilderClient() {
                                             checked={selected.has(s.id)}
                                             onChange={() => {
                                                 const next = new Set(selected);
-                                                next.has(s.id) ? next.delete(s.id) : next.add(s.id);
+                                                next.has(s.id) ? void next.delete(s.id) : next.add(s.id);
                                                 setSelected(next);
                                             }}
                                         />
