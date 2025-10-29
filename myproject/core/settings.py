@@ -195,7 +195,6 @@ CORS_ALLOWED_ORIGINS = [
     "https://www.odontest.com",
     "https://dentest.net",
     "https://www.dentest.net",
-    "https://dentestpro.com",
     "https://www.dentestpro.com",
 ]
 
@@ -206,7 +205,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://www.odontest.com",
     "https://dentest.net",
     "https://www.dentest.net",
-    "https://dentestpro.com",
     "https://www.dentestpro.com",
     "https://api.toothprep.com",
     "https://toothprep-backend.onrender.com",
@@ -221,6 +219,11 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
     "x-requested-with",
 ]
+
+# --- ✅ Allow cookies to work across subdomains (frontend ↔ backend)
+SESSION_COOKIE_DOMAIN = ".toothprep.com"
+CSRF_COOKIE_DOMAIN = ".toothprep.com"
+
 
 # --- SECURITY HEADERS ---
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
