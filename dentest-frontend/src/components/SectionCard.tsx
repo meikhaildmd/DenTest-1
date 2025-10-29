@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useTheme } from '@/components/ThemeProvider';
 
 interface SectionCardProps {
     title: string;
@@ -11,8 +10,6 @@ interface SectionCardProps {
 }
 
 export default function SectionCard({ title, href, progress }: SectionCardProps) {
-    const { theme } = useTheme();
-
     return (
         <motion.div
             whileHover={{ y: -4, scale: 1.02 }}
@@ -44,10 +41,12 @@ export default function SectionCard({ title, href, progress }: SectionCardProps)
                 </div>
 
                 {/* Animated gradient glow on hover */}
-                <div className="
-          absolute inset-0 opacity-0 group-hover:opacity-100
-          bg-[var(--theme-gradient)] mix-blend-overlay transition-opacity duration-500
-        " />
+                <div
+                    className="
+            absolute inset-0 opacity-0 group-hover:opacity-100
+            bg-[var(--theme-gradient)] mix-blend-overlay transition-opacity duration-500
+          "
+                />
             </Link>
         </motion.div>
     );
