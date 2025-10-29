@@ -168,15 +168,27 @@ LOGGING = {
     },
 }
 
-# --- CORS + CSRF ---
+# --- CORS + CSRF (Production Safe) ---
+
 CSRF_COOKIE_HTTPONLY = False
-CSRF_COOKIE_SAMESITE = "Lax"
-CSRF_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_NAME = "csrftoken"
+
+# ✅ Must be 'None' (not 'Lax') so cookies can cross from toothprep.com → Render backend
+CSRF_COOKIE_SAMESITE = "None"
+SESSION_COOKIE_SAMESITE = "None"
+
+# ✅ Always True in production (HTTPS only)
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
+    # Local dev
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+
+    # Live domains
     "https://toothprep.com",
     "https://www.toothprep.com",
     "https://odontest.com",
@@ -190,13 +202,13 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://toothprep.com",
     "https://www.toothprep.com",
-    "https://api.toothprep.com",
     "https://odontest.com",
     "https://www.odontest.com",
     "https://dentest.net",
     "https://www.dentest.net",
     "https://dentestpro.com",
     "https://www.dentestpro.com",
+    # ✅ Include backend itself
     "https://toothprep-backend.onrender.com",
 ]
 
@@ -209,8 +221,6 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
     "x-requested-with",
 ]
-
-CSRF_COOKIE_NAME = "csrftoken"
 
 # --- SECURITY HEADERS ---
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
