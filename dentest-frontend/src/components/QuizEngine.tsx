@@ -68,7 +68,7 @@ export default function QuizEngine({
     if (propQuestions?.length) {
       setQuestions(propQuestions);
     } else if (subjectId) {
-      fetch(`${API}/questions/subject/${subjectId}/`)
+      fetch(`${API}/api/questions/subject/${subjectId}/`)
         .then((r) => r.json())
         .then(setQuestions)
         .catch((err) => console.error('Failed to load questions:', err));
@@ -79,7 +79,7 @@ export default function QuizEngine({
   useEffect(() => {
     if (!isReview || !subjectId) return;
 
-    fetch(`${API}/user-question-status/subject/${subjectId}/`, {
+    fetch(`${API}/api/user-question-status/subject/${subjectId}/`, {
       credentials: 'include',
     })
       .then((r) => (r.status === 403 ? [] : r.json()))
@@ -129,7 +129,7 @@ export default function QuizEngine({
     setShowExp(true);
 
     if (subjectId) {
-      fetch(`${API}/user-question-status/update/`, {
+      fetch(`${API}/api/user-question-status/update/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
