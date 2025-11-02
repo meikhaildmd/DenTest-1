@@ -111,17 +111,22 @@ class Question(models.Model):
         ]
 # 4. QuestionImage
 def get_image_filename(instance, filename):
-    return f"question_image/{instance.question.question_id}_{filename}"
+    # ✅ Handle case where no question is linked yet
+    if instance.question_id:
+        return f"question_image/{instance.question_id}_{filename}"
+    return f"question_image/unlinked_{filename}"
 
 
 class QuestionImage(models.Model):
     question = models.ForeignKey(
-        Question, related_name="images", on_delete=models.CASCADE
+        Question, related_name="images",
+        on_delete=models.CASCADE,
+        null=True, blank=True  # ✅ allows upload before linking to a question
     )
     image = models.ImageField(upload_to=get_image_filename)
 
     def __str__(self):
-        return f"Image for {self.question.text}"
+        return f"Image for {self.question.text if self.question else 'Unlinked image'}"
 
 
 # 5. PatientChartData
