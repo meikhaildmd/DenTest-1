@@ -1,0 +1,221 @@
+text,option1,option2,option3,option4,correct_option,explanation,subject_id,question_image,explanation_image
+Which of the following correctly matches the cell type with its primary function?,Leydig cells → sperm maturation,Sertoli cells → testosterone production,Granulosa cells → estrogen synthesis,Theca cells → ovulation trigger,3,"The gonads contain specialized supporting cells that regulate gametogenesis and hormone production, controlled by pituitary gonadotropins (LH, FSH).
+        •        Males:
+        •        Leydig cells (interstitial): Stimulated by LH → produce testosterone, which diffuses into seminiferous tubules. Testosterone is essential for spermatogenesis and development of secondary sex characteristics.
+        •        Sertoli cells (within seminiferous tubules): Stimulated by FSH → support developing sperm, form the blood-testis barrier, secrete androgen-binding protein, and release inhibin B to provide negative feedback on FSH. They also produce anti-Müllerian hormone (AMH) during development.
+        •        Females:
+        •        Granulosa cells: Stimulated by FSH → convert androgens (from theca cells) into estrogens via aromatase. They nurture oocytes and form part of the follicle.
+        •        Theca cells: Stimulated by LH → produce androgens and progesterone, important for ovulation and corpus luteum function.
+
+Clinical correlations:
+        •        Leydig cell tumors → testosterone excess → precocious puberty in boys.
+        •        Sertoli cell tumors → rare, can cause feminization.
+        •        Granulosa cell tumors → estrogen excess → abnormal uterine bleeding.
+
+👉 High-yield review:
+        •        Leydig → LH → Testosterone.
+        •        Sertoli → FSH → Support sperm, Inhibin B, AMH.
+        •        Granulosa → FSH → Estrogen (aromatase).
+        •        Theca → LH → Progesterone/Androgens.
+",6,,
+Where are sperm cells produced and where are they stored before ejaculation?,Produced in epididymis; stored in seminal vesicles,Produced in seminiferous tubules; stored in epididymis,Produced in vas deferens; stored in prostate gland,Produced in rete testis; stored in urethra,2,"Spermatogenesis occurs in the seminiferous tubules beginning at puberty. Germ cells progress from spermatogonia → spermatocytes → spermatids → spermatozoa, all supported by Sertoli cells and dependent on both FSH and testosterone.
+        •        Maturation & storage: Completed spermatozoa are transported to the epididymis, where they mature, gain motility, and are stored until ejaculation.
+        •        Transport during ejaculation: Pathway = epididymis → vas deferens → ejaculatory duct → urethra.
+        •        Accessory glands:
+        •        Seminal vesicles: Contribute majority of seminal volume (fructose, prostaglandins).
+        •        Prostate: Adds citrate, PSA, and enzymes.
+        •        Bulbourethral glands: Secrete lubricating mucus.
+
+Clinical tie-in: Blockage or absence of vas deferens (e.g., in cystic fibrosis) causes infertility despite normal spermatogenesis.
+
+👉 High-yield review:
+        •        Production = seminiferous tubules.
+        •        Maturation/storage = epididymis.
+        •        Vas deferens → transport.
+        •        Accessory glands → fluid contributions.",6,,
+Which of the following is secreted by chief cells of the stomach?,Intrinsic factor,Hydrochloric acid (HCl),Pepsinogen,Mucus,3,"The stomach mucosa has distinct secretory cells:
+        •        Chief cells (fundus/body): Secrete pepsinogen, activated to pepsin in acidic pH. Function = protein digestion.
+        •        Parietal cells (fundus/body): Secrete HCl (lowers gastric pH for enzyme activation, antimicrobial action) and intrinsic factor (required for vitamin B12 absorption in ileum). Stimulated by histamine (H2), acetylcholine (M3), and gastrin (CCK-B).
+        •        Mucous cells: Secrete mucus + bicarbonate → protect epithelium.
+        •        G cells (antrum): Secrete gastrin, stimulating parietal cells and gastric motility.
+
+Clinical tie-in:
+        •        Pernicious anemia: Autoimmune destruction of parietal cells → loss of intrinsic factor → B12 deficiency.
+        •        Zollinger-Ellison syndrome: Gastrinoma → excess gastrin → ulcers.
+        •        NSAID damage: Impairs mucosal protection → ulcers.
+
+👉 High-yield review:
+        •        Chief → pepsinogen.
+        •        Parietal → HCl + IF.
+        •        Mucous → mucus + HCO₃⁻.
+        •        G cells → gastrin.
+",6,,
+All of the following amino acids are ketogenic EXCEPT:,Lysine,Leucine,Isoleucine,Glycine,4,"Amino acids are classified by their metabolic fates:
+        •        Ketogenic only: Lysine & Leucine. → broken down into acetyl-CoA or acetoacetate for ketone body synthesis.
+        •        Both ketogenic & glucogenic: Isoleucine, phenylalanine, tryptophan, tyrosine.
+        •        Glucogenic only: Most others, including glycine (converted into pyruvate or TCA intermediates).
+
+Exam trick: Glycine is not ketogenic — it is purely glucogenic, so it cannot generate ketone bodies.
+
+👉 High-yield review:
+        •        Ketogenic only = Lysine, Leucine.
+        •        Both = “PITT” (Phenylalanine, Isoleucine, Tryptophan, Tyrosine).
+        •        Glycine = glucogenic only.
+",6,,
+Which enzyme restores oxaloacetate in the tricarboxylic acid (TCA) cycle?,Succinate dehydrogenase,Fumarase,Malate dehydrogenase,Citrate synthase,3,"The TCA cycle regenerates oxaloacetate (OAA) at the final step, enabling continuation of the cycle.
+        •        Malate dehydrogenase: Catalyzes malate → OAA, producing NADH. This step is energetically unfavorable but driven forward by rapid OAA consumption in citrate synthase reaction.
+        •        Other enzymes in the cycle:
+        •        Succinate dehydrogenase: Succinate → fumarate (FADH₂ produced).
+        •        Fumarase: Fumarate → malate.
+        •        Citrate synthase: OAA + acetyl-CoA → citrate (first step).
+
+Clinical tie-in:
+        •        TCA cycle defects are rare but secondary deficiencies (e.g., thiamine deficiency → α-ketoglutarate dehydrogenase dysfunction) can cause neurologic problems.
+        •        Malate shuttle is also important for transferring NADH equivalents into mitochondria.
+
+👉 High-yield review:
+        •        Final enzyme = malate dehydrogenase.
+        •        Reaction = malate → OAA + NADH.
+        •        OAA is essential to accept acetyl-CoA and restart the cycle.",6,,
+"In gluconeogenesis, biotin acts as a cofactor for which enzyme?",Pyruvate carboxylase,Pyruvate kinase,Phosphoenolpyruvate carboxykinase (PEPCK),Glucose-6-phosphatase,1,"Biotin (vitamin B7) is an essential coenzyme for carboxylation reactions, meaning it carries activated CO₂ to help form new carbon–carbon bonds. The classic high-yield fact: all carboxylases require biotin.
+
+In gluconeogenesis, the key biotin-dependent enzyme is pyruvate carboxylase, located in the mitochondria. It catalyzes the conversion of pyruvate (3C) → oxaloacetate (OAA, 4C), using CO₂, ATP, and biotin as cofactors. This is the first bypass step of gluconeogenesis, allowing the body to generate glucose from non-carbohydrate sources during fasting.
+        •        PEPCK (phosphoenolpyruvate carboxykinase): Converts OAA → PEP, but requires GTP, not biotin.
+        •        Pyruvate kinase: Functions in glycolysis (PEP → pyruvate), not gluconeogenesis.
+        •        Glucose-6-phosphatase: Final gluconeogenic enzyme, releasing free glucose into the blood.
+
+Clinical tie-in: Biotin deficiency (rare, can occur with excessive raw egg white ingestion due to avidin) can impair gluconeogenesis, leading to hypoglycemia, lactic acidosis, dermatitis, and alopecia.
+
+👉 High-yield summary:
+        •        Biotin = all carboxylases.
+        •        Pyruvate carboxylase: Pyruvate → OAA (gluconeogenesis bypass).
+        •        PEPCK: OAA → PEP (uses GTP, not biotin).
+        •        Other enzymes listed are not biotin dependent.",6,,
+Which metabolic pathway is the major source of NADPH in cells?,TCA cycle,Pentose phosphate pathway,Glycolysis,Beta-oxidation of fatty acids,2,"The Pentose Phosphate Pathway (PPP), also called the hexose monophosphate shunt, is an alternative glucose metabolism pathway that branches from glycolysis at glucose-6-phosphate. It operates in the cytosol and has two major products:
+        •        NADPH, a crucial reducing agent used in:
+• Reductive biosynthesis (fatty acid, cholesterol, steroid synthesis).
+• Maintaining reduced glutathione in red blood cells, which protects against oxidative damage from reactive oxygen species. This is why G6PD deficiency leads to hemolysis.
+• Cytochrome P450 hydroxylation reactions, important for detoxification in the liver.
+        •        Ribose-5-phosphate, essential for nucleotide and nucleic acid synthesis.
+
+By contrast:
+        •        Glycolysis and the TCA cycle produce NADH, which is used in oxidative phosphorylation to generate ATP.
+        •        β-oxidation of fatty acids produces NADH and FADH2, feeding into the electron transport chain for energy, but not NADPH.
+
+👉 High-yield summary: PPP is the only pathway that generates NADPH and ribose-5-phosphate; glycolysis/TCA/β-oxidation generate NADH/FADH2 for ATP, not NADPH.",6,,
+Which structural feature distinguishes thymine from uracil?,A hydroxyl group at carbon 2,A methyl group at carbon 5,An amino group at carbon 4,A double bond at carbon 6,2,"Both <b>uracil</b> and <b>thymine</b> are <b>pyrimidine bases</b>.<br><br>
+<b>Uracil</b> is found exclusively in <b>RNA</b>, whereas <b>thymine</b> is found only in <b>DNA</b>.<br><br>
+Structurally, they are nearly identical except that <b>thymine</b> possesses a <b>methyl group at the 5′ carbon</b>, which <b>uracil lacks</b>.<br><br>
+This <b>methylation</b> contributes to the <b>stability of DNA</b> and enables <b>DNA repair enzymes</b> to distinguish <b>thymine</b> from <b>uracil</b> that may result from <b>cytosine deamination</b>.<br><br>
+<b>Incorrect options explained:</b><br>
+<ul>
+<li><b>Hydroxyl at carbon 2 →</b> feature of <b>ribose</b> in RNA, not of the pyrimidine base itself</li>
+<li><b>Carbonyl at C4 →</b> present in both uracil and thymine</li>
+<li><b>Double bond positions →</b> identical in both bases</li>
+</ul>
+<b>High-yield review:</b><br>
+<ul>
+<li><b>Uracil →</b> RNA only; unmethylated pyrimidine</li>
+<li><b>Thymine →</b> DNA only; methylated at 5′ carbon</li>
+<li><b>Key distinction →</b> 5-methyl group = thymine</li>
+<li><b>Functional significance →</b> methylation stabilizes DNA and aids in repair discrimination</li>
+</ul>",6,,
+Which of the following best describes the role of gamma motor neurons in skeletal muscle physiology?,They innervate extrafusal fibers to generate force during contraction.,They regulate intrafusal muscle spindle sensitivity to stretch.,They mediate inhibition of antagonist muscles through reciprocal innervation.,They activate Golgi tendon organs to sense tension.,2,"Skeletal muscle fibers are divided into extrafusal fibers, which generate force, and intrafusal fibers, which are housed in muscle spindles and detect stretch. Gamma motor neurons innervate intrafusal fibers and adjust their baseline tension, setting the gain of the stretch reflex. This ensures spindles remain sensitive even when the muscle shortens, allowing regulation of muscle tone and length. In contrast, alpha motor neurons innervate extrafusal fibers to produce force. Reciprocal innervation involves inhibitory interneurons mediated via Ia afferents, not gamma motor neurons. Golgi tendon organs sense tension and are not activated by gamma motor neurons.
+
+👉 High-yield review:
+• Gamma motor neurons → intrafusal fibers (spindle sensitivity).
+• Alpha motor neurons → extrafusal fibers (force generation).
+• Reciprocal inhibition → Ia afferents and interneurons.
+• Golgi tendon organs → sense tension, protective reflex.",6,,
+Which of the following best describes the effect of pulmonary fibrosis on lung compliance?,Increased compliance,Decreased compliance,No change in compliance,Increased compliance due to airway obstruction,2,"<b>Lung compliance</b> is defined as the <b>change in lung volume per unit change in transpulmonary pressure</b>, reflecting how easily the lung tissue can <b>expand during inspiration</b>.<br><br>
+In <b>pulmonary fibrosis</b>, excessive <b>collagen and connective tissue deposition</b> within the interstitium causes the lungs to become <b>stiff and difficult to inflate</b>, leading to <b>reduced compliance</b>.<br><br>
+At the cellular level, <b>type I pneumocytes</b> cover most of the <b>alveolar surface</b> and provide the <b>thin barrier for gas exchange</b>, while <b>type II pneumocytes</b> secrete <b>surfactant</b>, which normally <b>reduces surface tension</b> and helps maintain compliance by preventing alveolar collapse.<br><br>
+In fibrotic lungs, even with adequate surfactant, the <b>rigidity of scarred tissue</b> prevents normal lung expansion and limits overall compliance.<br><br>
+
+<b>High-yield review:</b><br>
+<ul>
+<li><b>Definition →</b> compliance = ΔV / ΔP (change in volume per change in pressure)</li>
+<li><b>Increases in →</b> <b>emphysema</b> (loss of elastic tissue → lungs overexpand easily)</li>
+<li><b>Decreases in →</b> <b>pulmonary fibrosis</b> (stiff, collagen-rich lungs resist expansion)</li>
+<li><b>Cellular roles →</b> 
+  <ul>
+    <li><b>Type I pneumocytes →</b> gas exchange surface</li>
+    <li><b>Type II pneumocytes →</b> surfactant production</li>
+  </ul>
+</li>
+<li><b>Relationship →</b> compliance ∝ distensibility, and inversely related to elasticity</li>
+</ul>",6,,
+Which hormone stimulates pancreatic bicarbonate secretion?,Gastrin,Secretin,Cholecystokinin (CCK),Somatostatin,2,"<b>Secretin</b> is a <b>peptide hormone</b> released by <b>S cells</b> of the <b>duodenum</b> and <b>proximal jejunum</b> in response to <b>acidic chyme</b> entering from the stomach.<br><br>
+Its primary action is to stimulate <b>pancreatic ductal cells</b> to secrete <b>bicarbonate-rich fluid</b>, which <b>neutralizes gastric acid</b> and creates an <b>optimal pH</b> for pancreatic enzyme activity in the small intestine.<br><br>
+This bicarbonate secretion protects the <b>duodenal mucosa</b> from acid injury and ensures that enzymes such as <b>pancreatic lipase</b> and <b>amylase</b> can function effectively.<br><br>
+Additionally, <b>secretin</b> inhibits <b>gastric acid secretion</b> and <b>slows gastric emptying</b>, coordinating the timing of digestion between the stomach and the small intestine.<br><br>
+
+<b>High-yield review:</b><br>
+<ul>
+<li><b>Source →</b> S cells of duodenum and proximal jejunum</li>
+<li><b>Stimulus →</b> acidic chyme (low pH) entering from the stomach</li>
+<li><b>Main action →</b> stimulates pancreatic ductal cells to release bicarbonate</li>
+<li><b>Functions →</b> neutralizes gastric acid, protects duodenal mucosa, optimizes enzyme activity</li>
+<li><b>Inhibits →</b> gastric acid secretion and gastric emptying</li>
+<li><b>Nickname →</b> the <b>“bicarbonate hormone”</b></li>
+</ul>",6,,
+In which structure do sperm undergo maturation and acquire motility after being produced in the testes?,Seminiferous tubules,Vas deferens,Epididymis,Prostate,3,"<b>Sperm</b> are produced in the <b>seminiferous tubules</b> of the <b>testes</b> under the influence of <b>Sertoli cells</b> and <b>Leydig cells</b>.<br><br>
+Newly formed sperm are initially <b>non-motile</b> and <b>incapable of fertilization</b>. They travel to the <b>epididymis</b>, where they undergo <b>maturation</b>, <b>gain motility</b>, and are <b>stored</b> until ejaculation.<br><br>
+During <b>ejaculation</b>, mature sperm are propelled through the <b>vas deferens</b>, where they mix with secretions from the <b>seminal vesicles</b> and <b>prostate gland</b> to form <b>semen</b>.<br><br>
+<b>High-yield review:</b><br>
+<ul>
+<li><b>Production site →</b> seminiferous tubules (testes)</li>
+<li><b>Supporting cells →</b> Sertoli cells (nourish and support spermatogenesis), Leydig cells (produce testosterone)</li>
+<li><b>Maturation & storage →</b> epididymis</li>
+<li><b>Transport during ejaculation →</b> vas deferens</li>
+<li><b>Accessory glands →</b> seminal vesicles and prostate add fluids to form semen</li>
+</ul>",6,,
+What reaction is catalyzed by phosphoglycerate kinase in glycolysis?,Conversion of phosphoenolpyruvate to pyruvate,"Conversion of 1,3-bisphosphoglycerate to 3-phosphoglycerate with ATP formation",Conversion of glucose-6-phosphate to fructose-6-phosphate,Conversion of pyruvate to oxaloacetate,2,"Phosphoglycerate kinase catalyzes the first <b>substrate-level phosphorylation</b> in glycolysis, where a phosphate group from <b>1,3-bisphosphoglycerate (1,3-BPG)</b> is transferred to ADP, forming <b>ATP</b> and <b>3-phosphoglycerate</b>. This reaction is reversible and also functions in gluconeogenesis, where ATP is consumed. Because this is one of the ATP-generating steps in glycolysis, it is critical for anaerobic metabolism.
+
+👉 High-yield notes:
+- Net ATP of glycolysis: 2 ATP per glucose.
+- Substrate-level phosphorylation requires no mitochondria.
+- In RBCs, 1,3-BPG can be diverted to 2,3-BPG, which regulates hemoglobin oxygen affinity.",6,,
+"During prolonged fasting, all of the following pathways are active EXCEPT:",Glycogenolysis,Gluconeogenesis,Lipolysis,Glycogenesis,4,"In the <b>fasting state</b>, the body maintains glucose via glycogenolysis and gluconeogenesis, while lipolysis mobilizes fatty acids for ketone production. <b>Glycogenesis</b>, however, occurs only in the fed state under insulin and is inactive during fasting.
+
+👉 High-yield notes:
+- Hormones: fasting → ↑ glucagon, ↑ epinephrine, ↓ insulin.
+- Glycogenolysis dominates first 24 hrs; gluconeogenesis dominates later.
+- Ketogenesis increases after 2–3 days for brain and muscle energy.",6,,
+A patient with pyruvate dehydrogenase complex deficiency would have impaired synthesis of which molecule?,Acetyl-CoA,Lactate,Oxaloacetate,Alanine,1,"The <b>pyruvate dehydrogenase complex (PDC)</b> converts pyruvate into <b>acetyl-CoA</b>, feeding the TCA cycle. Deficiency prevents acetyl-CoA production, leading to shunting of pyruvate into lactate (lactic acidosis) and alanine. It requires cofactors: Thiamine (B1), Lipoic acid, CoA (B5), FAD (B2), NAD+ (B3).
+
+👉 High-yield notes:
+- Presents with neurodevelopmental delay, seizures, lactic acidosis.
+- Inhibited by arsenic (binds lipoic acid).
+- Treatment: ketogenic diet to bypass glycolysis and supply acetyl-CoA via fat metabolism.",6,,
+"In glucose-6-phosphate dehydrogenase (G6PD) deficiency, patients cannot produce enough of which molecule, leading to hemolysis?",ATP,NADH,NADPH,FADH2,3,"<b>G6PD</b> catalyzes the first step of the <b>pentose phosphate pathway</b>, producing <b>NADPH</b>. NADPH maintains reduced glutathione in RBCs, preventing oxidative damage. Deficiency (X-linked) causes RBCs to be vulnerable to oxidative stress (fava beans, sulfa drugs, infections), resulting in hemolysis. Findings: <b>Heinz bodies</b> (denatured Hb) and <b>bite cells</b>.
+
+👉 High-yield notes:
+- PPP occurs in cytoplasm (RBCs, liver, adrenal cortex).
+- NADPH also used for fatty acid synthesis and respiratory burst.
+- Hemolytic crises are triggered by oxidative stress.",6,,
+"Here are two statements about nitrogen metabolism:
+
+Statement 1: Glutamine synthetase incorporates ammonia into glutamate to form glutamine, which serves as a nontoxic transporter of ammonia in the blood.
+Statement 2: Ornithine acts as an intermediate in the urea cycle, which has two mitochondrial and three cytosolic steps, occurring mainly in the liver.
+
+Which of the following is true?",Statement 1 only,Statements 1 and 2,Statement 2 only,None,2,"Both statements are correct: Glutamine synthetase incorporates free ammonia into glutamate to form glutamine, which detoxifies ammonia and allows safe nitrogen transport in the blood. Glutamine can deliver nitrogen to tissues for biosynthetic pathways or to the liver/kidney for processing. Ornithine is a crucial intermediate in the urea cycle, the main nitrogen excretion pathway. The cycle has five steps: two mitochondrial (carbamoyl phosphate synthetase I, ornithine transcarbamylase) and three cytosolic (argininosuccinate synthetase, argininosuccinate lyase, arginase). Ornithine accepts carbamoyl phosphate in mitochondria to form citrulline, enabling nitrogen disposal as urea. High-yield points: Glutamine synthetase = glutamate + NH₃ → glutamine (detox + nitrogen transport). Glutamine = safe ammonia carrier. Ornithine = intermediate in urea cycle. Urea cycle = 2 mitochondrial, 3 cytosolic steps. Main site: liver, minor in kidney.",6,,
+Esophageal varices most likely result in which clinical presentation?,Dysphagia,Hematemesis,Hoarseness,Melena,2,"<b>Esophageal varices</b> are dilated submucosal veins in the lower esophagus due to <b>portal hypertension</b> (commonly cirrhosis). Pathophysiology: left gastric vein (portal) anastomoses with the azygos vein (systemic). Elevated portal pressure dilates these collaterals. Fragile varices rupture → <b>massive hematemesis</b>, often fatal. Other shunts: paraumbilical veins → caput medusae; superior rectal veins → hemorrhoids.<br><br><b>High-yield points:</b><br><ul><li><b>Portal HTN → left gastric ↔ azygos</b></li><li><b>Hematemesis = hallmark</b></li><li><b>Other stigmata:</b> hemorrhoids, caput medusae</li><li><b>Life-threatening</b> in cirrhosis</li></ul><b>Why the other options are incorrect:</b><br><ul><li><b>Dysphagia:</b> strictures, tumors, achalasia</li><li><b>Hoarseness:</b> recurrent laryngeal nerve (CN X) injury in thyroid or lung disease</li><li><b>Melena:</b> black tarry stool; possible but not primary in varices</li></ul>",6,,
+Which of the following produces a positive chronotropic effect on the heart?,Clipping the vagus nerve,Administration of a beta-blocker,Activation of parasympathetic fibers,Increased acetylcholine release at the SA node,1,"Chronotropism = effect on heart rate. <b>Positive chronotropy</b> = increased HR. <b>Negative chronotropy</b> = decreased HR. The <b>vagus nerve (CN X)</b> provides parasympathetic input to the SA node, slowing HR via acetylcholine at M2 receptors. Clipping the vagus nerve removes parasympathetic influence → unopposed sympathetic stimulation → ↑ SA node firing → tachycardia.<br><br><b>High-yield points:</b><br><ul><li><b>Vagus = parasympathetic brake</b></li><li><b>Cut vagus = ↑ HR</b></li><li><b>Sympathetic β1</b> = positive chronotropy</li><li><b>Parasympathetic (ACh/M2)</b> = negative chronotropy</li></ul><b>Why the other options are incorrect:</b><br><ul><li><b>Beta-blockers:</b> block β1 → ↓ HR (negative chronotropy)</li><li><b>Parasympathetic activation:</b> slows HR</li><li><b>Acetylcholine at SA node:</b> M2 receptor → ↓ HR</li></ul>",6,,
+Which of the following conditions is least likely to cause edema formation?,Hypoalbuminemia,Increased capillary hydrostatic pressure,Increased vascular permeability,Elevated plasma albumin concentration,4,"Edema results from imbalance in Starling forces. <b>Increased hydrostatic pressure</b> (e.g., heart failure), <b>decreased oncotic pressure</b> (e.g., hypoalbuminemia), and <b>increased vascular permeability</b> (inflammation) all promote fluid leakage. <b>Elevated plasma albumin</b> raises oncotic pressure, drawing fluid into capillaries, opposing edema.<br><br><b>High-yield points:</b><br><ul><li><b>Hydrostatic ↑</b> → edema</li><li><b>Oncotic ↓</b> (low albumin) → edema</li><li><b>Permeability ↑</b> → edema</li><li><b>High albumin</b> → resists edema</li></ul><b>Why the other options are incorrect:</b><br><ul><li><b>Hypoalbuminemia:</b> lowers oncotic pressure → edema</li><li><b>Hydrostatic ↑:</b> venous congestion → edema</li><li><b>Permeability ↑:</b> inflammation → edema</li></ul>",6,,
+Which of the following should normally not be found in urine?,Urea,Creatinine,Sodium,Albumin,4,"Normal urine contains <b>urea, creatinine, electrolytes, and water</b>. <b>Albumin</b> is normally excluded by the glomerular filtration barrier. Albuminuria indicates <b>glomerular damage</b>, as in diabetic nephropathy.<br><br><b>High-yield points:</b><br><ul><li><b>Normal urine:</b> urea, creatinine, electrolytes</li><li><b>Albuminuria</b> = renal pathology</li><li><b>Proteinuria</b> = hallmark of kidney disease</li></ul><b>Why the other options are incorrect:</b><br><ul><li><b>Urea:</b> normal waste</li><li><b>Creatinine:</b> normal muscle breakdown product</li><li><b>Sodium:</b> normal electrolyte</li></ul>",6,,
+Shock causes all of the following except:,Hypotension,Reduced tissue perfusion,GI bleeding,Lactic acidosis,3,"Shock = systemic hypoperfusion due to low cardiac output or effective circulating volume. It leads to <b>hypotension</b>, <b>reduced tissue perfusion</b>, and <b>lactic acidosis</b> from anaerobic metabolism. GI bleeding is not a direct feature of shock, though ischemia can predispose.<br><br><b>High-yield points:</b><br><ul><li><b>Shock = hypoperfusion</b></li><li><b>Hypotension</b> = hallmark</li><li><b>Lactic acidosis</b> = anaerobic metabolism</li><li><b>GI bleeding</b> = not classic</li></ul><b>Why the other options are incorrect:</b><br><ul><li><b>Hypotension:</b> defining feature</li><li><b>Reduced perfusion:</b> definition of shock</li><li><b>Lactic acidosis:</b> hallmark metabolic change</li></ul>",6,,
+Which of the following best describes the action of glucagon?,Stimulates glycogen synthesis,Stimulates glycogenolysis and gluconeogenesis,Stimulates lipogenesis,Inhibits gluconeogenesis,2,"<b>Glucagon</b>, secreted by pancreatic α-cells, maintains blood glucose during fasting. It stimulates <b>glycogenolysis</b> (breakdown of glycogen) and <b>gluconeogenesis</b> (new glucose production). Also promotes <b>lipolysis</b> in adipose tissue. Acts mainly on the liver.<br><br><b>High-yield points:</b><br><ul><li><b>Glucagon</b> = fasting hormone</li><li><b>↑ Glycogenolysis + ↑ Gluconeogenesis</b></li><li><b>↑ Lipolysis</b></li><li>Opposes insulin</li></ul><b>Why the other options are incorrect:</b><br><ul><li><b>Glycogen synthesis:</b> insulin effect</li><li><b>Lipogenesis:</b> insulin-mediated</li><li><b>Inhibits gluconeogenesis:</b> opposite of glucagon</li></ul>",6,,
+Which of the following correctly matches adrenergic receptor type with its primary physiologic effect?,α1 receptor → smooth muscle contraction,α2 receptor → inhibit norepinephrine and insulin release,β1 receptor → increase cardiac output and heart rate,all of the above,4,"Adrenergic receptors mediate sympathetic effects:<br><br><b>α1 receptors:</b> Gq → ↑ IP3/DAG → smooth muscle contraction (vasoconstriction, ↑ BP, mydriasis).<br><b>α2 receptors:</b> Gi → ↓ cAMP → inhibit norepinephrine release + inhibit insulin secretion.<br><b>β1 receptors:</b> Gs → ↑ cAMP → increase HR, contractility, renin release.<br><b>β2 receptors:</b> Gs → ↑ cAMP → smooth muscle relaxation (bronchodilation, vasodilation) + ↑ glucose output.<br><br><b>High-yield points:</b><br><ul><li>α1 = vasoconstriction, ↑ BP</li><li>α2 = ↓ NE + ↓ insulin</li><li>β1 = ↑ HR, contractility, renin</li><li>β2 = bronchodilation, vasodilation, ↑ glucose</li></ul><b>Why the other options are incorrect:</b><br><ul><li>Each listed effect is correct → best answer is 'All of the above'</li></ul>",6,,
+What is the renal clearance rate of glucose under normal physiologic conditions?,0 mL/min,60 mL/min,125 mL/min,600 mL/min,1,"Glucose clearance is normally <b>0 mL/min</b> because filtered glucose is completely reabsorbed in the proximal tubule by sodium-glucose transporters (SGLT2, SGLT1). No glucose is excreted under physiologic conditions. Glucosuria appears when plasma glucose exceeds the transport maximum (Tm ~375 mg/min), correlating with a renal threshold of ~180–200 mg/dL. SGLT2 inhibitors increase urinary glucose clearance intentionally.<br><br><b>High-yield points:</b><ul><li>Glucose clearance = ~0 mL/min normally</li><li>Reabsorbed in proximal tubule by SGLTs</li><li>Threshold ~180–200 mg/dL → glucosuria</li><li>SGLT2 inhibitors ↑ clearance</li></ul><b>Why the other options are incorrect:</b><ul><li><b>60 mL/min:</b> too high</li><li><b>125 mL/min:</b> equals GFR, for solutes like inulin</li><li><b>600 mL/min:</b> renal plasma flow, not glucose clearance</li></ul>",6,,
+Which of the following is not a function of the sympathetic nervous system?,Increase heart rate,Bronchodilation,Pupil constriction,Decrease GI motility,3,"The sympathetic system mediates 'fight-or-flight' responses via adrenergic receptors. <b>β1</b> receptors ↑ HR and contractility; <b>β2</b> causes bronchodilation and vasodilation; <b>α1</b> causes vasoconstriction and piloerection; overall, sympathetic tone decreases GI motility. In the iris, sympathetic α1 stimulates the radial muscle to cause <b>mydriasis (pupil dilation)</b>. Pupil constriction (<b>miosis</b>) is parasympathetic via CN III and the sphincter pupillae.<br><br><b>High-yield points:</b><ul><li>Sympathetic: ↑ HR, ↑ BP, bronchodilation, ↓ GI</li><li>Mydriasis = sympathetic (α1)</li><li>Miosis = parasympathetic (CN III, M3)</li><li>Sweat glands = sympathetic cholinergic exception</li></ul><b>Why the other options are incorrect:</b><ul><li><b>Increase HR:</b> β1-mediated</li><li><b>Bronchodilation:</b> β2-mediated</li><li><b>Decrease GI motility:</b> sympathetic effect</li></ul>",6,,
+Which anterior pituitary hormones are secreted by basophils versus acidophils?,"Basophils secrete FSH, LH, ACTH, TSH; acidophils secrete GH, prolactin","Basophils secrete GH, prolactin; acidophils secrete FSH, LH, ACTH, TSH",Basophils secrete only ACTH; acidophils secrete all others,Acidophils secrete all anterior pituitary hormones,1,"Anterior pituitary cells: <b>Basophils</b> secrete <b>B-FLAT</b> (FSH, LH, ACTH, TSH). <b>Acidophils</b> secrete <b>GPA</b> (GH, prolactin). Mnemonic: B-FLAT, GPA.<br><br><b>High-yield points:</b><ul><li>Basophils: FSH, LH, ACTH, TSH</li><li>Acidophils: GH, prolactin</li></ul><b>Why incorrect:</b><ul><li>Option 2: reversed</li><li>Option 3: incomplete</li><li>Option 4: false, split between cell types</li></ul>",6,,
+Absence of secretion from which organ is not absolutely essential for survival?,Pancreas,Thyroid gland,Adrenal cortex,Adrenal medulla,4,"The <b>adrenal medulla</b> secretes epinephrine and norepinephrine, important for stress responses but not essential for life. Sympathetic nerves provide redundancy. By contrast, adrenal cortex hormones (cortisol, aldosterone) are essential, as are insulin and thyroid hormones.<br><br><b>High-yield points:</b><ul><li>Non-essential: adrenal medulla</li><li>Essential: adrenal cortex, pancreas, thyroid</li></ul><b>Why incorrect:</b><ul><li>Pancreas: insulin vital</li><li>Thyroid: required for metabolism</li><li>Adrenal cortex: cortisol/aldosterone needed for survival</li></ul>",6,,
+Aldosterone increases sodium reabsorption in the collecting duct by upregulating which channel?,Na⁺/K⁺ ATPase,ENaC,NKCC2,Aquaporin-2,2,"<b>Aldosterone</b> acts on principal cells of the collecting duct, upregulating luminal <b>ENaC</b> channels and stimulating basolateral Na⁺/K⁺ ATPase. This promotes Na⁺ retention, K⁺ secretion, and water reabsorption.<br><br><b>High-yield points:</b><ul><li>↑ ENaC, ↑ Na⁺/K⁺ ATPase, ↑ K⁺ secretion</li><li>Stimuli: angiotensin II, hyperkalemia</li></ul><b>Why incorrect:</b><ul><li>Na⁺/K⁺ ATPase: stimulated but not the direct luminal channel</li><li>NKCC2: loop of Henle</li><li>Aquaporin-2: regulated by ADH</li></ul>",6,,
+Loss of GABAergic inhibition in the CNS is most associated with which clinical outcome?,Flaccid paralysis,Spastic paralysis with tetany,Hypotension,Hyporeflexia,2,"<b>GABA</b> is the main inhibitory neurotransmitter in the CNS. Loss of GABA/glycine activity → neuronal hyperexcitability → <b>spastic paralysis, tetany, hyperreflexia</b>. Seen in tetanus toxin exposure. UMN lesions also cause spastic paralysis.<br><br><b>High-yield points:</b><ul><li>GABA blocks hyperexcitability</li><li>Loss → tetany, spasticity</li></ul><b>Why incorrect:</b><ul><li>Flaccid paralysis: LMN lesions</li><li>Hypotension: not main outcome</li><li>Hyporeflexia: opposite; loss causes hyperreflexia</li></ul>",6,,
+Where is the highest osmolarity in the nephron normally found?,Proximal tubule,Descending loop of Henle,Distal tubule,Collecting duct (medullary),4,"The highest osmolarity is in the <b>inner medullary collecting duct</b>, especially with ADH present. The countercurrent multiplier and vasa recta maintain the medullary gradient (>1200 mOsm).<br><br><b>High-yield points:</b><ul><li>Highest osmolarity: medullary collecting duct</li><li>Countercurrent multiplier + ADH are essential</li></ul><b>Why incorrect:</b><ul><li>Proximal: isosmotic reabsorption</li><li>Descending loop: osm ↑ but not maximal</li><li>Distal: filtrate is hypoosmotic</li></ul>",6,,
+In which part of the kidney is urine most concentrated?,Cortex,Outer medulla,Inner medulla,Renal pelvis,3,"The <b>inner medulla</b> has the highest osmolality due to the <b>countercurrent multiplier system</b> and <b>urea recycling</b>. In the presence of ADH, the collecting duct becomes permeable to water, allowing equilibration with the hyperosmotic medulla and producing concentrated urine.<br><br><b>High-yield recap:</b><br>- Inner medulla = highest osmolality<br>- ADH ↑ water & urea permeability<br>- Produces maximally concentrated urine",6,,
+"Which enzyme has the smaller Km (higher affinity) for glucose, functioning at low glucose concentrations?",Hexokinase,Glucokinase,Phosphofructokinase-1,Pyruvate kinase,1,"<b>Hexokinase</b> has a <b>low Km</b> (high affinity) and functions in most tissues even at low glucose concentrations. It is inhibited by glucose-6-phosphate.<br><br><b>Glucokinase</b>, in the liver and pancreatic β-cells, has a high Km (low affinity) and functions postprandially when glucose is abundant, acting as a <b>glucose sensor</b> for insulin release.<br><br><b>High-yield recap:</b><br>- Hexokinase = low Km, inhibited by G6P<br>- Glucokinase = high Km, acts post-meal<br>- Prevents hypoglycemia, aids glucose homeostasis",6,,
+Which of the following correctly identifies the division of the respiratory system where gas exchange first begins?,Terminal bronchioles,Respiratory bronchioles,Alveolar ducts,Alveoli,2,"<b>Explanation:</b><br>The respiratory system has two functional zones with distinct roles.<br><br><b>Conducting Zone</b> — <i>air conditioning, not exchange</i><br>• Nose → Nasal cavities → Pharynx (nasopharynx, oropharynx) → Larynx → Trachea → Bronchi → <b>Terminal bronchioles</b>.<br>• Warms, humidifies, and filters air; epithelium is ciliated; walls are too thick for diffusion; <b>no alveoli</b>.<br><br><b>Respiratory Zone</b> — <i>site of gas exchange</i><br>• <b>Begins at the respiratory bronchioles</b> → alveolar ducts → alveolar sacs → alveoli.<br>• First appearance of alveoli in the airway wall allows O<sub>2</sub>/CO<sub>2</sub> diffusion.<br>• Alveoli contain <b>Type I pneumocytes</b> (gas exchange) and <b>Type II pneumocytes</b> (surfactant).<br><br><b>High-yield recap:</b> Gas exchange <b>begins at respiratory bronchioles</b>; the conducting zone (ending at terminal bronchioles) does <b>not</b> participate in diffusion.",6,,
+Which cardiovascular structure closes functionally at birth primarily due to an increase in left atrial pressure?,Ductus arteriosus,Foramen ovale,Ductus venosus,Umbilical vein,2,"<b>Explanation:</b><br>At birth, lung expansion lowers pulmonary vascular resistance, increasing pulmonary venous return and <b>left atrial pressure</b>. This pressure shift pushes the septal flap against the foramen ovale, producing <b>functional closure within minutes</b>.<br><br><table role='grid' style='width:100%;border-collapse:collapse;font-size:14px;color:#000;'><thead><tr style='background:#111827;color:#fff;'><th style='padding:6px;border:1px solid #ddd;'>Structure</th><th style='padding:6px;border:1px solid #ddd;'>Fetal Role</th><th style='padding:6px;border:1px solid #ddd;'>Closure Mechanism</th><th style='padding:6px;border:1px solid #ddd;'>Adult Remnant</th></tr></thead><tbody><tr style='background:#fff;color:#000;'><td style='padding:6px;border:1px solid #ddd;'><b>Foramen ovale</b></td><td style='padding:6px;border:1px solid #ddd;'>RA → LA shunt</td><td style='padding:6px;border:1px solid #ddd;'>↑ LA pressure after first breaths → flap closes</td><td style='padding:6px;border:1px solid #ddd;'><i>Fossa ovalis</i></td></tr><tr style='background:#f9fafb;color:#000;'><td style='padding:6px;border:1px solid #ddd;'><b>Ductus arteriosus</b></td><td style='padding:6px;border:1px solid #ddd;'>Pulmonary artery ↔ aortic arch</td><td style='padding:6px;border:1px solid #ddd;'>↑ O<sub>2</sub>, ↓ PGE<sub>2</sub> → constriction in 24–48 h</td><td style='padding:6px;border:1px solid #ddd;'><i>Ligamentum arteriosum</i></td></tr><tr style='background:#fff;color:#000;'><td style='padding:6px;border:1px solid #ddd;'><b>Ductus venosus</b></td><td style='padding:6px;border:1px solid #ddd;'>Umbilical vein → IVC (bypasses liver)</td><td style='padding:6px;border:1px solid #ddd;'>Flow ceases → fibrosis</td><td style='padding:6px;border:1px solid #ddd;'><i>Ligamentum venosum</i></td></tr><tr style='background:#f9fafb;color:#000;'><td style='padding:6px;border:1px solid #ddd;'><b>Umbilical vein</b></td><td style='padding:6px;border:1px solid #ddd;'>Placenta → fetus (oxygenated)</td><td style='padding:6px;border:1px solid #ddd;'>Constriction</td><td style='padding:6px;border:1px solid #ddd;'><i>Ligamentum teres hepatis</i></td></tr><tr style='background:#fff;color:#000;'><td style='padding:6px;border:1px solid #ddd;'><b>Umbilical arteries</b></td><td style='padding:6px;border:1px solid #ddd;'>Fetus → placenta (deoxygenated)</td><td style='padding:6px;border:1px solid #ddd;'>Constriction</td><td style='padding:6px;border:1px solid #ddd;'><i>Medial umbilical ligaments</i></td></tr></tbody></table><br><b>Extra pearls:</b> The interventricular foramen closes <b>before birth</b> as the septum forms. Persistent ductus arteriosus (PDA) causes a continuous ‘machinery’ murmur.",6,,
+Which neurotransmitter acts primarily through ligand-gated chloride channels to inhibit postsynaptic neurons in the CNS?,Glutamate,GABA,Nicotinic acetylcholine,NMDA (glutamate receptor),2,"<b>Explanation:</b><br><b>GABA</b> is the principal inhibitory neurotransmitter in the CNS. <b>GABA<sub>A</sub></b> receptors are ligand-gated <b>Cl<sup>−</sup> channels</b>; opening them causes Cl<sup>−</sup> influx → <b>hyperpolarization</b> → reduced likelihood of action potential firing.<br><br><b>Other key neurotransmitters:</b><br>• <b>Glycine</b> (spinal cord/brainstem): also opens Cl<sup>−</sup> channels → inhibitory.<br>• <b>Glutamate</b>: principal excitatory NT; via AMPA/NMDA/kainate, opens Na<sup>+</sup>/Ca<sup>2+</sup> channels → depolarization.<br>• <b>NMDA receptors</b> (a glutamate subtype): Na<sup>+</sup>/Ca<sup>2+</sup> influx; roles in learning/memory; voltage & ligand gated (Mg<sup>2+</sup> block relieved by depolarization).<br>• <b>Nicotinic ACh</b> (NMJ, autonomic ganglia): ligand-gated Na<sup>+</sup> channels → depolarization and muscle contraction.<br><br><b>High-yield recap:</b> Inhibitory = Cl<sup>−</sup> influx (GABA, glycine); Excitatory = Na<sup>+</sup>/Ca<sup>2+</sup> influx (glutamate, nicotinic ACh).",6,,

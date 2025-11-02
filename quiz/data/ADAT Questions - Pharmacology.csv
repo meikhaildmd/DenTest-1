@@ -1,0 +1,303 @@
+text,option1,option2,option3,option4,correct_option,explanation,subject_id,question_image,explanation_image
+"Which antibiotic inhibits protein synthesis by binding to the 50S ribosomal subunit, blocking translocation and tRNA release?",Penicillin,Azithromycin,Ciprofloxacin,Tetracycline,2,"Macrolides such as azithromycin, clarithromycin, and erythromycin act by binding to the 50S ribosomal subunit of bacteria, where they block the translocation step of protein synthesis. This prevents elongation of the peptide chain and inhibits bacterial growth; macrolides are typically bacteriostatic but can be bactericidal at high concentrations. In contrast, penicillins disrupt bacterial cell wall synthesis by inhibiting peptidoglycan cross-linking. Ciprofloxacin, a fluoroquinolone, inhibits DNA gyrase (topoisomerase II) and topoisomerase IV, impairing DNA replication. Tetracyclines bind to the 30S subunit and block aminoacyl-tRNA attachment, halting protein elongation. High-yield: Macrolides (50S) block translocation; Tetracyclines (30S) block tRNA binding; Aminoglycosides (30S) cause misreading of mRNA; Chloramphenicol (50S) inhibits peptidyl transferase; Linezolid (50S) prevents initiation complex.",9,,
+Which drug is most strongly associated with the risk of osteonecrosis of the jaw?,Furosemide,Hydrochlorothiazide,Bisphosphonate,Spironolactone,3,"Bisphosphonates (e.g., alendronate, zoledronic acid) are potent inhibitors of osteoclast-mediated bone resorption and are used in osteoporosis, Paget disease of bone, and metastatic bone disease. A serious adverse effect is osteonecrosis of the jaw, particularly after invasive dental procedures, due to impaired bone remodeling and healing. Loop diuretics such as furosemide and thiazides such as hydrochlorothiazide are mainly associated with electrolyte disturbances (e.g., hypokalemia with loops; hypercalcemia with thiazides) rather than jaw necrosis. Spironolactone, a potassium-sparing diuretic and aldosterone antagonist, may cause gynecomastia and hyperkalemia. High-yield: Bisphosphonates are linked to osteonecrosis of the jaw; thiazides increase calcium levels; loops decrease calcium levels and can be ototoxic.",9,,
+Which of the following best describes the mechanism of action of sulfonamide antibiotics?,Inhibit cell wall synthesis,Inhibit folic acid synthesis by competing with p-aminobenzoic acid (PABA),Inhibit DNA gyrase,Block 50S ribosomal subunit,2,"Sulfonamide antibiotics are structural analogs of para-aminobenzoic acid (PABA) and act as competitive inhibitors of dihydropteroate synthase, an enzyme required for folic acid synthesis in bacteria. By blocking folate production, they prevent synthesis of nucleotides necessary for DNA replication. Human cells are unaffected because they cannot synthesize folic acid and must obtain it from the diet. Sulfonamides are active against a broad spectrum of bacteria, with clinical applications in treating urinary tract infections, Nocardia infections, Actinomyces, and in some cases Chlamydia. Resistance occurs via altered enzyme affinity, increased PABA production, or impaired drug uptake. 👉 High-yield review: Mechanism: Inhibit folic acid synthesis (dihydropteroate synthase, PABA analogs). Key uses: UTIs, Nocardia, Actinomyces, Chlamydia. Side effects: Hypersensitivity reactions, Stevens–Johnson syndrome, hemolysis in G6PD deficiency, kernicterus in infants. Synergy: Often combined with trimethoprim (TMP-SMX) → sequential blockade of folate pathway.",9,,
+Which of the following local anesthetics is metabolized primarily in the blood by pseudocholinesterase?,Lidocaine,Prilocaine,Benzocaine,Procaine,4,"<b>Amide vs. Ester Local Anesthetics</b><br><br>
+Ester local anesthetics (e.g., procaine, benzocaine, tetracaine) are metabolized in the <b>plasma by pseudocholinesterase</b> into para-aminobenzoic acid (PABA) derivatives. 
+This rapid metabolism contributes to their <b>shorter duration of action</b> and higher potential for allergic reactions (due to PABA).<br><br>
+Amide local anesthetics (e.g., lidocaine, bupivacaine, prilocaine, mepivacaine) are metabolized <b>in the liver via microsomal enzymes (CYP450 system)</b> and have <b>longer duration of action</b>.<br><br>
+<b>High-Yield Recap:</b><br>
+- <b>Esters</b> → Blood metabolism (pseudocholinesterase)<br>
+- <b>Amides</b> → Hepatic metabolism (CYP450)<br>
+- <b>Allergy risk</b> → Higher with esters due to PABA formation<br>
+- <b>Mnemonic:</b> “<b>Esters Exit Early</b> — rapid breakdown in plasma; <b>Amides Last Longer</b> — metabolized in liver.”",9,,
+Which of the following local anesthetics is most likely to cause methemoglobinemia when administered in high doses?,Lidocaine,Prilocaine,Bupivacaine,Mepivacaine,2,"<b>Methemoglobinemia and Local Anesthetics</b><br><br>
+Methemoglobinemia occurs when hemoglobin’s iron (Fe²⁺) is oxidized to ferric form (Fe³⁺), forming methemoglobin which cannot carry oxygen. 
+This leads to <b>functional hypoxia</b> despite normal PaO₂.<br><br>
+<b>Prilocaine</b> and <b>benzocaine</b> are most commonly implicated. Prilocaine’s metabolite, <b>o-toluidine</b>, is a strong oxidizing agent. 
+Patients may present with <b>cyanosis unresponsive to oxygen</b> and <b>chocolate-colored blood</b>.<br><br>
+<b>Treatment:</b> <br>
+- <b>Methylene blue</b> (1–2 mg/kg IV) reduces Fe³⁺ back to Fe²⁺ via NADPH-dependent pathways.<br><br>
+<b>High-Yield Summary:</b><br>
+- <b>Mechanism:</b> Oxidation of Fe²⁺ → Fe³⁺ (methemoglobin formation)<br>
+- <b>Key Drugs:</b> Prilocaine, Benzocaine<br>
+- <b>Presentation:</b> Cyanosis, chocolate-colored blood, low O₂ saturation (~85%)<br>
+- <b>Treatment:</b> Methylene blue<br>
+- <b>Mnemonic:</b> “<b>P</b>rilocaine = <b>P</b>seudocyanosis.”",9,,
+Which of the following best explains why local anesthetics are less effective in infected or inflamed tissues?,"The infection increases tissue perfusion, diluting the anesthetic","The infection raises tissue pH, increasing drug ionization","The infection lowers tissue pH, reducing the proportion of uncharged drug","The infection increases pseudocholinesterase activity, degrading the drug faster",3,"<b>Effect of Tissue pH on Local Anesthetic Efficacy</b><br><br>
+Local anesthetics (LAs) are <b>weak bases</b> that exist in both uncharged (lipid-soluble) and charged (water-soluble) forms. 
+The <b>uncharged form (B)</b> crosses nerve membranes, while the <b>charged form (BH⁺)</b> binds sodium channels.<br><br>
+In <b>acidic tissue (infection)</b>, the equilibrium shifts toward the ionized BH⁺ form, which cannot cross lipid membranes — leading to <b>poor anesthetic penetration</b> and reduced efficacy.<br><br>
+<b>Clinical Implications:</b><br>
+- Infected tissues (low pH) = poor anesthesia<br>
+- Use nerve blocks distant from infection site<br>
+- Buffering anesthetics with bicarbonate can improve onset<br><br>
+<b>High-Yield Recap:</b><br>
+- <b>Low pKa = faster onset</b><br>
+- <b>Infection = acidic = more ionized form = poor effect</b><br>
+- <b>Only uncharged base penetrates, only charged form blocks</b>",9,,
+What is the mechanism of action of lidocaine?,Inhibition of calcium influx at presynaptic terminals,Competitive blockade of acetylcholine receptors,Blockade of voltage-gated sodium channels in the neuronal membrane,Enhancement of potassium efflux to hyperpolarize the membrane,3,"<b>Mechanism of Action of Lidocaine</b><br><br>
+Lidocaine is an <b>amide-type local anesthetic</b> that works by <b>blocking voltage-gated sodium channels</b> on the intracellular side of neuronal membranes. 
+This prevents sodium influx, halting depolarization and propagation of nerve impulses.<br><br>
+<b>State-dependent blockade:</b> It binds more effectively to open or inactivated channels, making it more selective for active (pain) fibers.<br><br>
+<b>Functional Loss Order:</b> Pain → Temperature → Touch → Motor<br>
+Small unmyelinated C fibers are most sensitive.<br><br>
+<b>Key Facts:</b><br>
+- Rapid onset (pKa ≈ 7.9)<br>
+- Duration: 60–120 min (longer with epinephrine)<br>
+- Metabolism: Hepatic (CYP450)<br>
+- Toxicity: CNS stimulation → seizures → depression; high doses → cardiac depression<br><br>
+<b>Mnemonic:</b> “Lidocaine = Na⁺ Channel Blocker → No Depolarization → No Pain.”",9,,
+A patient with Graves' disease is at risk of a hypertensive crisis when given which of the following?,Local anesthetic with epinephrine,Local anesthetic without vasoconstrictor,Nitrous oxide sedation,Intravenous benzodiazepine,1,"Graves’ disease is an autoimmune disorder characterized by hyperthyroidism and a hypermetabolic state. These patients have heightened sympathetic activity, making them particularly sensitive to exogenous catecholamines. Administering a local anesthetic containing epinephrine can trigger an exaggerated cardiovascular response, potentially leading to a hypertensive crisis or arrhythmias.<br><br>
+Key management principle: avoid or minimize epinephrine use in local anesthetics for hyperthyroid patients.<br><br>
+<b>High-Yield Recap:</b><ul>
+<li><b>Hyperthyroidism (Graves’):</b> Increased sympathetic tone → epinephrine sensitivity.</li>
+<li><b>Risk:</b> Hypertensive crisis, tachycardia, arrhythmia.</li>
+<li><b>Safe alternative:</b> Plain local anesthetic (e.g., 3% mepivacaine).</li></ul>",9,,
+Which of the following local anesthetics has intrinsic vasoconstrictive properties?,Lidocaine,Prilocaine,Cocaine,Articaine,3,"Cocaine is the only local anesthetic that has intrinsic vasoconstrictive properties. It achieves this by blocking the reuptake of norepinephrine at sympathetic nerve endings, leading to prolonged stimulation of α-adrenergic receptors and subsequent vasoconstriction.<br><br>
+This property distinguishes it from all other local anesthetics, which typically cause vasodilation and are therefore combined with a vasoconstrictor like epinephrine to prolong duration and reduce bleeding.<br><br>
+<b>High-Yield Recap:</b><ul>
+<li><b>Cocaine:</b> Vasoconstrictor (inhibits norepinephrine reuptake).</li>
+<li><b>All others:</b> Vasodilators (require epinephrine for vasoconstriction).</li>
+<li><b>Clinical relevance:</b> Cocaine is still used occasionally in ENT surgery for nasal mucosal anesthesia and vasoconstriction.</li></ul>",9,,
+A child receiving nitrous oxide sedation reports tingling in the fingers and around the mouth. Which of the following best describes this observation?,"An early, normal sign of nitrous oxide effect",A sign of nitrous oxide toxicity,A sign of hypoxia due to over-oxygenation,A sign of anxiety before sedation onset,1,"Tingling sensations in the fingers, lips, or cheeks are common and expected early signs of effective nitrous oxide sedation. These paresthesias indicate that the patient is entering the analgesic and anxiolytic phase. However, excessive nitrous oxide or prolonged exposure can cause toxicity — presenting with nausea, vomiting, euphoria, headache, or lethargy.<br><br>
+A post-sedation headache may indicate that the patient was not adequately oxygenated during recovery (diffusion hypoxia). Always administer 100% oxygen for 3–5 minutes post-procedure to prevent this.<br><br>
+<b>High-Yield Recap:</b><ul>
+<li><b>Early effect:</b> Tingling, warmth, light-headedness → normal response.</li>
+<li><b>Toxicity:</b> Nausea, euphoria, headache.</li>
+<li><b>Prevention:</b> 100% O<sub>2</sub> for 3–5 min after sedation.</li></ul>",9,,
+Which of the following is a contraindication for nitrous oxide sedation?,Psychiatric disorders,Mild dental anxiety,Controlled asthma,Normal pregnancy (2nd trimester),1,"Nitrous oxide is contraindicated in certain medical and psychological conditions due to its effects on gas-filled spaces and central nervous system perception.<br><br>
+<b>Absolute Contraindications:</b><ul>
+<li><b>Chronic obstructive pulmonary disease (COPD):</b> Risk of oxygen retention and hypoventilation.</li>
+<li><b>Recent ear/sinus/middle ear surgery:</b> Expansion of trapped gases can cause pain or pressure.</li>
+<li><b>Psychiatric disorders:</b> May lead to altered perception, anxiety, or unpredictable behavior during sedation.</li>
+<li><b>First-trimester pregnancy:</b> Theoretical teratogenicity — avoid elective use.</li></ul>
+<b>Relative Contraindications:</b><ul>
+<li>Upper respiratory tract infections.</li>
+<li>Severe emotional disturbances.</li>
+<li>Claustrophobia or nasal obstruction.</li></ul>
+<b>High-Yield Recap:</b><ul>
+<li><b>Main risks:</b> Gas expansion (closed spaces), hypoxia, perception changes.</li>
+<li><b>Psychiatric disorders:</b> Even mild cases can alter cooperation and response.</li>
+<li><b>Safe in:</b> Controlled hypertension, mild asthma, and mild anxiety.</li></ul>",9,,
+Which medication class is most commonly used for **oral minimal-to-moderate sedation** in dentistry due to its safety profile and anxiolytic efficacy?,Barbiturates,Benzodiazepines,"Opioids (e.g., hydrocodone)",Nitrous oxide,2,"<b>Benzodiazepines</b> are the preferred agents for <b>oral conscious sedation</b> because they provide anxiolysis, amnesia, and muscle relaxation with a <b>wider therapeutic index</b> and less respiratory depression than barbiturates. Common choices include <b>diazepam</b> (longer half-life), <b>lorazepam</b> (intermediate), and <b>triazolam</b> (short-acting for short procedures).<br><br><b>Why not the others?</b><br>- <b>Barbiturates:</b> Narrow therapeutic index, greater respiratory/CNS depression.<br>- <b>Opioids:</b> Primarily analgesics; when used for sedation they are adjuncts and increase risk of respiratory depression.<br>- <b>Nitrous oxide:</b> Effective for <i>inhalation</i> sedation, not an <i>oral</i> agent.<br><br><b>High-yield recap:</b><br>- First-line oral sedation = benzodiazepines.<br>- Maintain verbal contact; patient retains protective reflexes (conscious sedation).",9,,
+"After administering an oral benzodiazepine, the patient becomes calm and shows a <i>slight drooping of the upper eyelids</i>. What clinical sign does this represent, indicating adequate conscious sedation?",Miosis indicating opioid effect,Verrill’s sign,Loss of consciousness,Nystagmus indicating oversedation,2,"<b>Verrill’s sign</b> is the <b>slight ptosis (upper eyelid droop)</b> observed at an appropriate depth of benzodiazepine sedation. The patient remains conscious, responsive to verbal commands, and maintains airway reflexes—hallmarks of <b>conscious sedation</b>.<br><br><b>Clinical pearls:</b><br>- Use as a cue to <b>avoid deeper sedation</b> that risks respiratory depression.<br>- Continue monitoring: ventilation, oxygenation (pulse oximetry), circulation.<br><br><b>Not correct:</b> Miosis = opioid effect; loss of consciousness = deep sedation/general anesthesia; nystagmus is not a desired target and may signal oversedation or other drug effects.",9,,
+Which drug is the <b>specific reversal agent</b> for benzodiazepine-induced sedation or overdose?,Naloxone,Flumazenil,Physostigmine,Atropine,2,"<b>Flumazenil</b> is a <b>competitive antagonist</b> at the benzodiazepine site on the <b>GABA<sub>A</sub> receptor</b>, rapidly reversing benzodiazepine effects. Onset 1–2 minutes; duration 30–60 minutes—so monitor for <b>re-sedation</b> if the benzodiazepine lasts longer.<br><br><b>Cautions:</b> In chronic benzodiazepine users or mixed overdoses (e.g., with TCAs), flumazenil may precipitate withdrawal or seizures; use judiciously.<br><br><b>Not correct:</b> <i>Naloxone</i> reverses opioids; <i>physostigmine</i> reverses severe anticholinergic toxicity; <i>atropine</i> treats symptomatic bradycardia and muscarinic effects.",9,,
+A patient reports a documented <b>IgE-mediated</b> allergy to penicillin (urticaria and angioedema). Which antibiotic has the greatest risk of <b>cross-reactivity</b>?,Azithromycin,Cephalexin,Clindamycin,Metronidazole,2,"<b>Cephalexin</b> (a first-generation cephalosporin) shares the <b>β‑lactam</b> ring with penicillins and carries a small but real risk of <b>cross-allergenicity</b>, especially when side chains are similar. For confirmed, severe penicillin allergy, prefer non–β‑lactam alternatives (e.g., <i>clindamycin</i> or <i>azithromycin</i>). Later-generation cephalosporins have lower cross-reactivity but still require caution.<br><br><b>High-yield:</b> β‑lactam structure underlies cross-reactivity; macrolides and lincosamides are safer alternatives.",9,,
+"Which patient <b>does require</b> infective endocarditis antibiotic prophylaxis before invasive dental procedures (e.g., scaling and root planing)?",Rheumatic heart disease without valve replacement,Prosthetic cardiac valve,Mitral valve prolapse with regurgitation,History of total hip replacement (5 years ago),2,"Per current <b>AHA/ADA</b> guidance, prophylaxis is reserved for the highest-risk cardiac conditions: <b>prosthetic cardiac valves</b> or material used for valve repair; <b>prior infective endocarditis</b>; <b>cardiac transplant</b> with valvular regurgitation; and certain <b>congenital heart diseases</b> (unrepaired cyanotic CHD or repaired CHD with residual defects).<br><br><b>Not indicated:</b> Rheumatic heart disease, mitral valve prolapse (with/without regurgitation), bicuspid valve disease, and routine orthopedic implants.<br><br><b>Standard regimen (adult):</b> Amoxicillin 2 g PO 30–60 min before; penicillin-allergic options include clindamycin, azithromycin, or (with caution) cephalexin if no anaphylaxis history.",9,,
+Which of the following combinations of antibiotics should generally be avoided because their mechanisms of action can counteract each other?,Penicillin and tetracycline,Penicillin and vancomycin,Amoxicillin and clavulanic acid,Cephalexin and gentamicin,1,"<b>Bactericidal antibiotics</b> kill bacteria by interfering with cell wall synthesis or other vital processes that depend on active bacterial growth and division, whereas <b>bacteriostatic antibiotics</b> inhibit bacterial protein synthesis, halting cell growth and replication.<br><br>
+When a bacteriostatic drug (like tetracycline) is given together with a bactericidal agent (like penicillin), the static agent prevents bacteria from actively dividing, which reduces the effectiveness of the bactericidal agent that targets dividing cells.<br><br>
+<b>High-Yield Recap:</b><ul>
+<li><b>Bactericidal:</b> Penicillins, Cephalosporins, Aminoglycosides, Vancomycin</li>
+<li><b>Bacteriostatic:</b> Tetracyclines, Macrolides, Sulfonamides</li>
+<li><b>Avoid:</b> Penicillin + Tetracycline combination</li>
+</ul>",9,,
+Which of the following antibiotics is associated with a potentially fatal aplastic anemia and should be used with extreme caution?,Chloramphenicol,Clindamycin,Erythromycin,Tetracycline,1,"<b>Chloramphenicol</b> is a bacteriostatic broad-spectrum antibiotic that binds to the 50S ribosomal subunit, blocking <b>peptidyl transferase</b> activity. It can cause <b>bone marrow suppression</b>—either reversible and dose-dependent or irreversible and idiosyncratic (aplastic anemia).<br><br>
+<b>High-Yield Recap:</b><ul>
+<li><b>Mechanism:</b> Inhibits 50S subunit → blocks peptide bond formation</li>
+<li><b>Toxicity:</b> Aplastic anemia (idiosyncratic, often fatal)</li>
+<li><b>Use:</b> Reserved for life-threatening infections (e.g. typhoid, meningitis)</li>
+</ul>",9,,
+Which of the following statements about the drugs used in the management of angina pectoris is correct?,Digitalis decreases myocardial contractility and oxygen demand,Propranolol increases heart rate and cardiac output,Nitroglycerin dilates coronary arteries and reduces cardiac workload,Isosorbide dinitrate acts as a beta-adrenergic blocker,3,"<b>Angina pectoris</b> occurs when myocardial oxygen demand exceeds supply. <b>Nitrates</b> (e.g., nitroglycerin, isosorbide dinitrate) act as smooth muscle vasodilators, reducing <b>preload</b> and oxygen demand while increasing coronary perfusion.<br><br>
+<b>High-Yield Recap:</b><ul>
+<li><b>Nitrates:</b> ↓ Preload, ↓ Oxygen demand</li>
+<li><b>Beta-blockers:</b> ↓ Heart rate & contractility</li>
+<li><b>Digitalis:</b> ↑ Contractility (CHF), not for angina</li>
+<li><b>Calcium-channel blockers:</b> ↓ Afterload, ↓ Vasospasm</li>
+</ul>",9,,
+Which of the following best describes the mechanism of action of acyclovir?,Inhibits viral uncoating,Acts as a guanosine analog inhibiting viral DNA polymerase,Inhibits viral reverse transcriptase,Inhibits neuraminidase on influenza viruses,2,"<b>Acyclovir</b> is a guanosine analog activated by <b>viral thymidine kinase</b>. The triphosphate form inhibits <b>viral DNA polymerase</b> and incorporates into DNA, causing <b>chain termination</b>.<br><br>
+<b>High-Yield Recap:</b><ul>
+<li><b>Mechanism:</b> Guanosine analog → inhibits DNA polymerase</li>
+<li><b>Activation:</b> Requires viral thymidine kinase</li>
+<li><b>Uses:</b> HSV-1, HSV-2, VZV</li>
+<li><b>Toxicity:</b> Renal toxicity (crystalluria if dehydrated)</li>
+</ul>",9,,
+Which of the following antiarrhythmic drugs acts primarily by blocking sodium channels in cardiac cells?,Amiodarone,Quinidine,Verapamil,Propranolol,2,"Antiarrhythmic drugs are divided into classes (I–IV) by mechanism:<br><br>
+<div style='border:1px solid #ddd;border-radius:10px;overflow:hidden;margin:8px 0;'>
+<div style='background:#0f172a;color:#fff;padding:10px 12px;font-weight:600;'>Vaughan-Williams Classification</div>
+<table role='grid' style='width:100%;border-collapse:collapse;font-size:14px;color:#000;'>
+<thead><tr style='background:#111827;color:#fff;'><th>Class</th><th>Mechanism</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><td>I – Na⁺ Blockers</td><td>↓ Phase 0 depolarization</td><td>Quinidine, Lidocaine, Flecainide</td></tr>
+<tr><td>II – β-Blockers</td><td>↓ Sympathetic tone</td><td>Propranolol, Metoprolol</td></tr>
+<tr><td>III – K⁺ Blockers</td><td>Prolong repolarization</td><td>Amiodarone, Sotalol</td></tr>
+<tr><td>IV – Ca²⁺ Blockers</td><td>↓ AV nodal conduction</td><td>Verapamil, Diltiazem</td></tr>
+</tbody></table></div>
+<b>High-Yield Recap:</b><ul>
+<li><b>Class I:</b> Na⁺ blockers – affect depolarization</li>
+<li><b>Class II:</b> β-blockers – reduce sympathetic drive</li>
+<li><b>Class III:</b> K⁺ blockers – prolong refractory period</li>
+<li><b>Class IV:</b> Ca²⁺ blockers – slow AV conduction</li>
+</ul>",9,,
+Which of the following diuretics can lead to potassium loss and increased risk of digitalis toxicity?,Spironolactone,Chlorothiazide,Furosemide,Amiloride,2,"<b>Explanation:</b><br>
+Chlorothiazide is a <b>thiazide diuretic</b> that promotes the excretion of sodium and chloride in the distal convoluted tubule, leading to water loss and reduction in blood pressure.<br><br>
+It is <b>not potassium-sparing</b>, meaning it increases the excretion of potassium ions in urine, leading to <b>hypokalemia</b>. Low potassium levels enhance the myocardial sensitivity to <b>digitalis (digoxin)</b>, increasing the risk of digitalis toxicity. Clinical manifestations include arrhythmias, nausea, and visual disturbances.<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li><b>Site of action:</b> Distal convoluted tubule.</li>
+<li><b>Effect:</b> Na⁺/Cl⁻ excretion → ↓ blood volume.</li>
+<li><b>Adverse effects:</b> Hypokalemia, hyperuricemia, hyperglycemia.</li>
+<li><b>Digitalis warning:</b> Hypokalemia ↑ digoxin toxicity risk.</li>
+<li><b>Mnemonic:</b> “Thiazides thin potassium.”</li>
+</ul>",9,,
+Which of the following statements regarding NSAIDs and acetaminophen is TRUE?,Ibuprofen inhibits platelet aggregation but has no effect on gastric mucosa,Aspirin selectively inhibits COX-2 without affecting COX-1,Acetaminophen has minimal anti-inflammatory activity and does not cause gastric irritation,Indomethacin enhances prostaglandin synthesis in the gastric wall,3,"<b>Explanation:</b><br>
+<b>Aspirin, ibuprofen, and indomethacin</b> are all <b>NSAIDs</b> that inhibit <b>COX-1 and COX-2</b> enzymes, reducing prostaglandin and thromboxane synthesis.<br><br>
+Prostaglandins maintain gastric mucosal protection and platelet function, so NSAID inhibition leads to <b>gastric irritation, ulceration, and bleeding</b>. Aspirin irreversibly inhibits platelet COX-1, decreasing platelet aggregation.<br><br>
+<b>Acetaminophen</b> acts centrally to inhibit prostaglandin synthesis in the <b>hypothalamus</b>, lowering fever and pain but lacking peripheral anti-inflammatory action. It <b>does not irritate the stomach</b> and <b>does not affect platelet aggregation</b>, making it the preferred analgesic and antipyretic when NSAIDs are contraindicated.<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li><b>NSAIDs:</b> ↓ prostaglandins → ↓ pain/inflammation → ↑ gastric irritation.</li>
+<li><b>Adverse effects:</b> GI bleeding, ulcers, ↓ renal function.</li>
+<li><b>Acetaminophen:</b> Central COX inhibition → analgesic + antipyretic (safe for stomach).</li>
+<li><b>Mnemonic:</b> “Acetaminophen acts in the brain, not the gut.”</li>
+</ul>",9,,
+A 6-year-old child presents with fever and mild headache. Which of the following medications is most appropriate for managing the child’s symptoms?,Aspirin,Ibuprofen,Acetaminophen,Indomethacin,3,"<b>Explanation:</b><br>
+In pediatric patients, <b>acetaminophen</b> is the <b>drug of choice</b> for fever due to its excellent safety profile and mechanism of action at the <b>hypothalamic thermoregulatory center</b>.<br><br>
+It reduces fever via <b>central inhibition of prostaglandin synthesis</b> without irritating the gastric mucosa or affecting platelet function. <b>Ibuprofen</b> is also safe and effective but acetaminophen remains first-line due to lower risk of renal or gastrointestinal effects.<br><br>
+<b>Aspirin</b> is <b>contraindicated in children</b> due to the risk of <b>Reye’s syndrome</b> — acute hepatic failure and encephalopathy following viral infections. <b>Indomethacin</b> is reserved for inflammatory conditions, not routine fever.<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li><b>Best antipyretic in children:</b> Acetaminophen.</li>
+<li><b>Avoid:</b> Aspirin → Reye’s syndrome.</li>
+<li><b>Mechanism:</b> Central prostaglandin inhibition in hypothalamus.</li>
+<li><b>Mnemonic:</b> “Tylenol for tots.”</li>
+</ul>",9,,
+Which of the following is a common adverse effect of morphine?,Hypertension and tachycardia,Miosis and respiratory depression,Increased gastrointestinal motility,CNS stimulation and anxiety,2,"<b>Explanation:</b><br>
+<b>Morphine</b> is a potent <b>μ-opioid receptor agonist</b> that suppresses pain perception and produces analgesia, sedation, and euphoria. However, its pharmacologic effects cause predictable side effects.<br><br>
+<b>Respiratory depression</b> occurs due to inhibition of the medullary respiratory center, and <b>miosis</b> results from parasympathetic activation (Edinger–Westphal nucleus). <b>Constipation</b> is also common from reduced GI motility.<br><br>
+Other adverse effects include <b>bradycardia</b>, <b>hypotension</b>, <b>nausea/vomiting</b>, and <b>histamine release</b> causing pruritus.<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li><b>Mechanism:</b> μ-opioid receptor agonist → inhibits neurotransmitter release.</li>
+<li><b>Key adverse effects:</b> Respiratory depression, miosis, constipation, sedation.</li>
+<li><b>Antidote:</b> Naloxone (opioid antagonist).</li>
+<li><b>Mnemonic:</b> “Morphine makes you MICS — Miosis, Itch, Constipation, Sedation.”</li>
+</ul>",9,,
+Which of the following best describes the mechanism of action of diazepam?,Blocks sodium channels in peripheral nerves,Enhances the effect of GABA by increasing the frequency of chloride channel opening,"Inhibits monoamine oxidase, increasing dopamine levels",Directly stimulates GABA receptors as an agonist,2,"<b>Diazepam (Valium)</b> is a <b>benzodiazepine</b> that acts <b>indirectly</b> on the <b>GABA<sub>A</sub></b> receptor complex, 
+a ligand-gated chloride ion channel in the CNS. It enhances the effect of GABA by increasing the frequency of chloride channel openings, 
+leading to neuronal <b>hyperpolarization</b> and inhibition of action potentials.<br><br>
+Unlike barbiturates, which increase the <b>duration</b> of chloride channel opening, benzodiazepines modulate rather than activate GABA, 
+providing a safer sedative profile.<br><br>
+<b>Metabolism:</b><br>
+Diazepam undergoes hepatic oxidation to <b>active metabolites</b> including <b>desmethyldiazepam (nordiazepam)</b>, <b>temazepam</b>, and <b>oxazepam</b>, 
+which contribute to its long half-life and prolonged sedative effect. Because of this, caution is warranted in elderly or hepatic-impaired patients.<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li>Mechanism: Enhances GABA-mediated Cl⁻ influx → hyperpolarization → CNS depression.</li>
+<li>Metabolites: Nordiazepam, Temazepam, Oxazepam.</li>
+<li>Effect: Sedative, anxiolytic, anticonvulsant, muscle relaxant.</li>
+<li>Antidote: <b>Flumazenil</b> (competitive benzodiazepine receptor antagonist).</li>
+</ul>",9,,
+Which of the following statements best describes the mechanism of action and metabolism of morphine?,"Morphine blocks sodium channels, leading to local anesthesia",Morphine acts on μ-opioid receptors and is metabolized to active glucuronide compounds in the liver,"Morphine inhibits monoamine oxidase, increasing serotonin levels","Morphine directly stimulates nicotinic receptors, enhancing skeletal muscle tone",2,"<b>Morphine</b> is a <b>μ-opioid receptor agonist</b> that acts in the <b>CNS and spinal cord</b> to inhibit pain transmission. 
+By activating μ-receptors, it decreases adenylate cyclase activity, reduces Ca²⁺ influx, increases K⁺ efflux, and <b>hyperpolarizes neurons</b>, 
+suppressing pain signal propagation.<br><br>
+<b>Metabolism:</b><br>
+Morphine is metabolized in the <b>liver</b> via <b>glucuronidation</b> into two major metabolites:<br>
+- <b>Morphine-3-glucuronide (M3G):</b> inactive; may cause neuroexcitation.<br>
+- <b>Morphine-6-glucuronide (M6G):</b> active and potent; responsible for prolonged analgesic effects.<br><br>
+These metabolites are <b>renally excreted</b>, and accumulation in renal impairment can lead to <b>sedation</b> and <b>respiratory depression</b>.<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li>Mechanism: μ-opioid receptor agonist → inhibits pain transmission.</li>
+<li>Metabolism: Hepatic glucuronidation → M3G (inactive), M6G (active).</li>
+<li>Excretion: Renal → adjust dose in renal impairment.</li>
+<li>Side effects: Respiratory depression, constipation, miosis, dependence.</li>
+<li>Note: M6G is more potent than morphine; accumulation ↑ risk of toxicity.</li>
+</ul>",9,,
+A patient experiencing xerostomia needs a cholinergic agonist to increase saliva production. Which of the following drugs is indicated?,Atropine,Scopolamine,Pilocarpine,Propantheline,3,"<b>Pilocarpine</b> is a <b>direct-acting cholinergic agonist</b> that stimulates <b>muscarinic receptors</b> to increase 
+exocrine gland secretions, including <b>saliva</b> and <b>tears</b>. It is often used for <b>xerostomia</b> in conditions such as <b>Sjögren’s syndrome</b> or following 
+head and neck radiation therapy.<br><br>
+In contrast, <b>Atropine</b>, <b>Scopolamine</b>, and <b>Propantheline</b> are <b>anticholinergic agents</b> (competitive muscarinic receptor blockers) 
+that inhibit parasympathetic activity and therefore <b>decrease salivation</b>.<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li><b>Mechanism:</b> Direct muscarinic receptor agonist → increases glandular secretions.</li>
+<li><b>Use:</b> Xerostomia, Sjögren’s syndrome, post-radiation dry mouth, glaucoma (as miotic).</li>
+<li><b>Contraindicated:</b> In asthma and COPD → may cause bronchoconstriction.</li>
+</ul>",9,,
+Which of the following symptom clusters best represents anticholinergic toxicity?,"Increased salivation, sweating, bradycardia","Dry mouth, blurred vision, tachycardia, urinary retention","Excessive tearing, diarrhea, miosis, hypotension","Increased GI motility, bradycardia, and sweating",2,"<b>Anticholinergic toxicity</b> results from blockade of muscarinic receptors, leading to inhibition of 
+parasympathetic nervous system activity. This produces a classic set of symptoms often summarized as:<br><br>
+<b>“Hot as a hare, dry as a bone, blind as a bat, red as a beet, and mad as a hatter.”</b><br><br>
+<b>Key features include:</b><br>
+<ul>
+<li><b>Dry mouth (xerostomia)</b> — loss of salivary secretion</li>
+<li><b>Blurred vision</b> — due to mydriasis and loss of accommodation</li>
+<li><b>Tachycardia</b> — vagal inhibition</li>
+<li><b>Urinary retention and constipation</b> — decreased smooth muscle tone</li>
+<li><b>Flushed skin and hyperthermia</b> — impaired sweating</li>
+<li><b>Delirium/confusion</b> — central antimuscarinic effects</li>
+</ul>
+<b>Common causes:</b> Overdose of atropine, scopolamine, antihistamines, or tricyclic antidepressants.<br><br>
+<b>Treatment:</b> Administration of <b>physostigmine</b>, a reversible acetylcholinesterase inhibitor that crosses the blood-brain barrier 
+and restores acetylcholine levels at synapses.",9,,
+Which of the following medications is used to replenish dopamine levels in the brain for patients with Parkinson’s disease?,Dopamine,Epinephrine,Levodopa,Acetylcholine,3,"<b>Levodopa</b> is a <b>dopamine precursor</b> that crosses the <b>blood-brain barrier</b> and is converted into dopamine 
+within the CNS, replenishing depleted levels associated with <b>Parkinson’s disease</b>.<br><br>
+Administering dopamine directly is ineffective since dopamine <b>cannot cross the BBB</b>. However, Levodopa can, and when 
+given in combination with <b>Carbidopa</b> (a peripheral dopa-decarboxylase inhibitor), its breakdown in the periphery is minimized, 
+increasing the amount that reaches the brain.<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li><b>Mechanism:</b> Dopamine precursor → converted to dopamine in CNS.</li>
+<li><b>Given with:</b> Carbidopa → prevents peripheral metabolism of Levodopa.</li>
+<li><b>Use:</b> Parkinson’s disease.</li>
+<li><b>Side effects:</b> Dyskinesia, nausea, hallucinations, postural hypotension.</li>
+</ul>",9,,
+Warfarin acts by inhibiting which of the following physiological processes?,Conversion of prothrombin to thrombin,Vitamin K–dependent carboxylation of clotting factors,Platelet aggregation,Fibrin degradation,2,"<b>Warfarin</b> is an oral anticoagulant that works by inhibiting the enzyme <b>vitamin K epoxide reductase</b> in the liver. 
+This enzyme regenerates reduced vitamin K, a cofactor for the <b>γ-carboxylation of glutamate residues</b> on coagulation factors II, VII, IX, and X, and proteins C & S. 
+As a result, clotting factors are produced in an inactive form, leading to prolonged PT (prothrombin time).<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li><b>Mechanism:</b> Inhibits vitamin K epoxide reductase → ↓ synthesis of factors II, VII, IX, X, proteins C & S.</li>
+<li><b>Monitoring:</b> PT/INR must be checked frequently.</li>
+<li><b>Reversal:</b> Administer <b>vitamin K</b> or <b>fresh frozen plasma</b>.</li>
+<li><b>Interactions:</b> Green leafy vegetables and drugs like metronidazole, fluconazole, amiodarone alter effect.</li>
+</ul>",9,,
+Which of the following antibiotics is most strongly associated with the development of pseudomembranous colitis?,Erythromycin,Clindamycin,Azithromycin,Amoxicillin,2,"<b>Clindamycin</b> is a lincosamide antibiotic that inhibits bacterial protein synthesis by binding to the <b>50S ribosomal subunit</b>. 
+While effective against anaerobes and Gram-positive organisms, it is notorious for causing <b>antibiotic-associated pseudomembranous colitis</b> due to overgrowth of <i>Clostridium difficile</i>.<br><br>
+<b>C. difficile</b> produces toxins A and B, leading to mucosal injury, inflammation, and pseudomembrane formation.<br><br>
+<b>Treatment:</b> Stop the antibiotic and give <b>oral metronidazole</b> or <b>vancomycin</b>.<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li><b>Mechanism:</b> 50S ribosomal inhibitor (bacteriostatic).</li>
+<li><b>Major adverse effect:</b> Pseudomembranous colitis by <i>C. difficile</i>.</li>
+<li><b>Others in class:</b> Lincomycin (rarely used).</li>
+</ul>",9,,
+Ciprofloxacin exerts its antibacterial effect primarily by inhibiting which of the following enzymes?,RNA polymerase,DNA gyrase and topoisomerase IV,Peptidoglycan transpeptidase,30S ribosomal subunit,2,"<b>Ciprofloxacin</b> is a <b>fluoroquinolone antibiotic</b> that inhibits <b>DNA gyrase (topoisomerase II)</b> and <b>topoisomerase IV</b>, 
+enzymes that relax supercoiled DNA and separate replicated DNA strands. This causes <b>double-stranded DNA breaks</b>, killing the bacteria.<br><br>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li><b>Class:</b> Fluoroquinolone.</li>
+<li><b>Mechanism:</b> Inhibits DNA gyrase and topoisomerase IV → blocks replication.</li>
+<li><b>Uses:</b> UTIs, respiratory infections, GI infections, anthrax exposure.</li>
+<li><b>Adverse effects:</b> Tendon rupture, QT prolongation, contraindicated in children & pregnancy.</li>
+<li><b>Resistance:</b> Mutation in gyrA or efflux pump activation.</li>
+</ul>",9,,
+Which of the following antibiotic regimens is recommended as first-line prophylaxis against infective endocarditis for an adult patient prior to dental treatment?,Amoxicillin 2 g one hour before treatment,Clindamycin 600 mg 30 minutes before treatment,Azithromycin 500 mg one hour before treatment,Ampicillin 2 g one hour before treatment,1,"<b>Antibiotic prophylaxis</b> for infective endocarditis is indicated in high-risk cardiac conditions such as prosthetic valves, prior infective endocarditis, 
+repaired congenital heart defects with residual shunts, and cardiac transplant with valvulopathy.<br><br>
+The first-line antibiotic for dental procedures involving bleeding or gingival manipulation is <b>Amoxicillin 2 g orally 1 hour before treatment</b>.<br><br>
+For penicillin-allergic patients, <b>Azithromycin 500 mg</b> or <b>Clindamycin 600 mg</b> are used. Parenteral Ampicillin is used if oral administration is not possible.<br><br>
+<div style=""border:1px solid #ddd;border-radius:10px;overflow:hidden;margin:8px 0;"">
+<div style=""background:#0f172a;color:#fff;padding:10px 12px;font-weight:600;"">Antibiotic Prophylaxis Regimens for Infective Endocarditis</div>
+<table role=""grid"" style=""width:100%;border-collapse:collapse;font-size:14px;color:#000;"">
+<thead><tr style=""background:#111827;color:#fff;"">
+<th style=""padding:8px;border:1px solid #ddd;"">Patient Category</th>
+<th style=""padding:8px;border:1px solid #ddd;"">Drug & Dose</th>
+<th style=""padding:8px;border:1px solid #ddd;"">Timing</th>
+</tr></thead>
+<tbody>
+<tr><td style=""padding:8px;border:1px solid #ddd;"">First choice (adult)</td><td style=""padding:8px;border:1px solid #ddd;"">Amoxicillin 2 g</td><td style=""padding:8px;border:1px solid #ddd;"">1 hr before treatment</td></tr>
+<tr><td style=""padding:8px;border:1px solid #ddd;"">Children, first choice</td><td style=""padding:8px;border:1px solid #ddd;"">Amoxicillin 50 mg/kg</td><td style=""padding:8px;border:1px solid #ddd;"">1 hr before treatment</td></tr>
+<tr><td style=""padding:8px;border:1px solid #ddd;"">PCN allergy (adult)</td><td style=""padding:8px;border:1px solid #ddd;"">Azithromycin 500 mg or Clindamycin 600 mg</td><td style=""padding:8px;border:1px solid #ddd;"">1 hr before treatment</td></tr>
+<tr><td style=""padding:8px;border:1px solid #ddd;"">Children, PCN allergy</td><td style=""padding:8px;border:1px solid #ddd;"">Azithromycin 15 mg/kg or Clindamycin 20 mg/kg</td><td style=""padding:8px;border:1px solid #ddd;"">1 hr before treatment</td></tr>
+<tr><td style=""padding:8px;border:1px solid #ddd;"">Non-oral route (IV/IM)</td><td style=""padding:8px;border:1px solid #ddd;"">Ampicillin 2 g (adult), 50 mg/kg (children)</td><td style=""padding:8px;border:1px solid #ddd;"">30 min before treatment</td></tr>
+</tbody></table></div>
+<b>High-Yield Recap:</b><br>
+<ul>
+<li><b>First-line:</b> Amoxicillin 2 g (adult) 1 hr before treatment.</li>
+<li><b>Penicillin-allergic:</b> Azithromycin 500 mg or Clindamycin 600 mg.</li>
+<li><b>Children:</b> Adjust to 50 mg/kg Amoxicillin.</li>
+<li><b>Timing:</b> Administer before dental instrumentation.</li>
+</ul>",9,,
+Which of the following best describes the mechanism of action of celecoxib?,Non-selective inhibition of COX-1 and COX-2,Selective inhibition of COX-2,Irreversible inhibition of platelet COX-1,Inhibition of leukotriene synthesis,2,"Celecoxib is a <b>selective COX-2 inhibitor</b>, designed to reduce inflammation and pain while minimizing gastrointestinal side effects typical of non-selective NSAIDs.<br><br><b>COX-1:</b> Constitutive enzyme — responsible for gastric mucosal protection, renal blood flow, and platelet aggregation.<br><b>COX-2:</b> Inducible enzyme — expressed at inflammation sites; inhibition reduces prostaglandin synthesis and inflammation.<br><br><b>Advantages:</b><ul><li>Fewer GI ulcers and bleeding episodes compared to nonselective NSAIDs (e.g., ibuprofen, naproxen).</li><li>Minimal effect on platelet function and bleeding time.</li></ul><b>Risks:</b><ul><li>Higher risk of cardiovascular events (MI, stroke) due to prostacyclin/thromboxane imbalance.</li><li>Contraindicated in patients with established heart disease.</li></ul><b>High-Yield Recap:</b> Celecoxib = COX-2 selective → anti-inflammatory + less GI toxicity.",9,,
+"A 70-kg adult patient requires local anesthesia with 2% lidocaine containing 1:100,000 epinephrine. What is the maximum number of carpules that can be safely administered?",7,10,13,20,3,"Each carpule of 2% lidocaine (1.8 mL) contains <b>36 mg</b> of lidocaine (20 mg/mL × 1.8 mL).<br>Maximum recommended dose = <b>7 mg/kg × 70 kg = 490 mg</b>.<br>490 ÷ 36 = ~13 carpules.<br><br><b>Mechanism of Action:</b> Blocks <b>voltage-gated sodium channels</b>, preventing depolarization and nerve impulse propagation.<br><br><b>Toxicity Signs:</b> Circumoral numbness, tinnitus, dizziness → seizures → cardiovascular collapse.<br><b>Prevention:</b> Aspirate before injection, inject slowly, and use epinephrine to limit systemic absorption.<br><br><b>High-Yield Recap:</b><ul><li>Max lidocaine with epi: 7 mg/kg</li><li>Without epi: 4.4 mg/kg</li><li>Always calculate by weight.</li></ul>",9,,
+Which of the following local anesthetics provides the longest duration of pulpal anesthesia?,Lidocaine,Mepivacaine,Bupivacaine,Articaine,3,"<b>Bupivacaine</b> is a long-acting <b>amide</b> anesthetic with prolonged action due to high lipid solubility and protein binding.<br><br><b>Duration:</b><ul><li>Pulpal: 90–180 min</li><li>Soft-tissue: 4–12 hours</li></ul><b>Uses:</b> Long oral surgeries, postoperative pain control.<br><br><b>Cautions:</b><ul><li>Highly cardiotoxic — avoid intravascular injection.</li><li>Not recommended for children or short procedures.</li></ul><b>Comparison Table:</b><br><table border='1' cellpadding='4' cellspacing='0'><tr><th>Local Anesthetic</th><th>Duration (pulpal)</th><th>Key Property</th><th>Notes</th></tr><tr><td>Mepivacaine</td><td>20–40 min</td><td>Mild vasodilator</td><td>No epi needed for short cases</td></tr><tr><td>Lidocaine</td><td>60 min</td><td>Standard agent</td><td>Safe & effective</td></tr><tr><td>Articaine</td><td>60–75 min</td><td>High diffusion</td><td>Avoid IAN block (paresthesia risk)</td></tr><tr><td><b>Bupivacaine</b></td><td><b>90–180 min</b></td><td><b>High lipid solubility</b></td><td><b>Longest duration, cardiotoxic potential</b></td></tr></table><br><b>High-Yield Recap:</b> Bupivacaine = longest-acting local anesthetic; ideal for long cases but cardiotoxic.",9,,
