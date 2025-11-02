@@ -26,7 +26,7 @@ async function getProgress(): Promise<Record<number, number>> {
   }
 
   try {
-    const r = await fetch(`${API}/api/user-progress/`, {
+    const r = await fetch(`${API}/user-progress/`, {
       credentials: "include",
       cache: "no-store",
     });
@@ -46,7 +46,7 @@ export default async function AdatHome() {
   let progress: Record<number, number> = {};
 
   try {
-    const res = await fetch(`${API}/api/sections/adat/`, { cache: "no-store" });
+    const res = await fetch(`${API}/sections/adat/`, { cache: "no-store" });
     if (res.ok) sections = await res.json();
   } catch (e) {
     console.error("Error fetching sections:", e);
