@@ -18,7 +18,7 @@ export default function Home() {
   // --- Load current user on mount ---
   useEffect(() => {
     if (!API) return;
-    fetch(`${API}/api/current-user/`, {
+    fetch(`${API}/current-user/`, {
       credentials: 'include',
       cache: 'no-store',
     })
@@ -30,7 +30,7 @@ export default function Home() {
   // --- Handle logout ---
   const handleLogout = async () => {
     if (!API) return;
-    await fetch(`${API}/api/logout/`, {
+    await fetch(`${API}/logout/`, {
       method: 'POST',
       credentials: 'include',
     });

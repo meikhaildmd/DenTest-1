@@ -8,7 +8,7 @@ export default function WelcomeBanner() {
 
     useEffect(() => {
         if (!API) return;
-        fetch(`${API}/api/current-user/`, {
+        fetch(`${API}/current-user/`, {
             credentials: 'include',
             cache: 'no-store',
         })
