@@ -7,12 +7,23 @@ import { AnimatePresence, motion } from 'framer-motion';
 import clsx from 'clsx';
 import GradientButton from '@/components/GradientButton';
 import { API } from '@/lib/config';
+import { MEDIA_BASE } from "@/lib/config";
+import Image from "next/image";
 
 /* ---------- csrf helper ---------- */
 function getCookie(name: string) {
   if (typeof document === 'undefined') return null;
   const match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]*)'));
   return match ? decodeURIComponent(match[2]) : null;
+}
+
+
+
+function fullMediaUrl(url?: string | null): string | null {
+  if (!url) return null;
+  if (url.startsWith("http")) return url; // already full
+  if (url.startsWith("/")) return `${MEDIA_BASE}${url}`;
+  return `${MEDIA_BASE}/${url}`;
 }
 
 /* ---------- types ---------- */
@@ -25,6 +36,10 @@ export interface Question {
   option4: string;
   correct_option: 'option1' | 'option2' | 'option3' | 'option4';
   explanation: string;
+  question_image?: string | null;
+  question_image_url?: string | null;
+  explanation_image?: string | null;
+  explanation_image_url?: string | null;
 }
 type Letter = 'A' | 'B' | 'C' | 'D';
 type AnswerStatus = { selected: Letter; isCorrect: boolean };
@@ -298,6 +313,18 @@ export default function QuizEngine({
               {exam.toUpperCase()}
             </div>
             <p className="leading-relaxed text-neutral-100">{q.text}</p>
+            {(q.question_image || q.question_image_url) && (
+              <div className="relative w-full max-w-md mx-auto my-4 aspect-auto">
+                <Image
+                  src={fullMediaUrl(q.question_image_url || q.question_image)!}
+                  alt="Question diagram"
+                  className="rounded-lg border border-neutral-800 object-contain"
+                  width={600}
+                  height={400}
+                  priority={false}
+                />
+              </div>
+            )}
           </div>
 
           {/* Options */}
@@ -365,6 +392,18 @@ export default function QuizEngine({
                     dangerouslySetInnerHTML={{ __html: q.explanation }}
                   />
                 </div>
+                {(q.explanation_image || q.explanation_image_url) && (
+                  <div className="relative w-full max-w-md mx-auto mt-4 aspect-auto">
+                    <Image
+                      src={fullMediaUrl(q.explanation_image_url || q.explanation_image)!}
+                      alt="Explanation diagram"
+                      className="rounded-lg border border-neutral-800 object-contain"
+                      width={600}
+                      height={400}
+                      priority={false}
+                    />
+                  </div>
+                )}
               </motion.div>
             )}
           </AnimatePresence>

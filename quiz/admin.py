@@ -49,6 +49,13 @@ class QuestionAdmin(admin.ModelAdmin):
     inlines = [QuestionImageInline]
 
 
+@admin.register(QuestionImage)
+class QuestionImageAdmin(admin.ModelAdmin):
+    list_display = ("id", "question", "image")
+    search_fields = ("question__text",)
+    ordering = ("-id",)
+
+
 # ─── Patient chart admin ───────────────────────────────────────────────
 @admin.register(PatientChartData)
 class PatientChartDataAdmin(admin.ModelAdmin):

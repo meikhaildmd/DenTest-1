@@ -87,6 +87,10 @@ class Question(models.Model):
     correct_option = models.CharField(max_length=100, choices=CORRECT_OPTION_CHOICES)
 
     explanation = models.TextField(blank=True, null=True)
+    question_image = models.ImageField(
+        upload_to="question_images/", blank=True, null=True
+    )
+    question_image_url = models.URLField(blank=True, null=True)
     explanation_image = models.ImageField(
         upload_to="explanation_image/", blank=True, null=True
     )

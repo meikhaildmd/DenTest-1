@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
     },
   },
 
+  // Allow optimized image loading from your Django backend and localhost
+  images: {
+    domains: ["api.toothprep.com", "127.0.0.1", "localhost"],
+  },
+
   async rewrites() {
     return [
       {

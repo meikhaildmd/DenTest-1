@@ -20,6 +20,10 @@ class SubjectSerializer(serializers.ModelSerializer):
 
 class QuestionSerializer(serializers.ModelSerializer):
     subject = SubjectSerializer()
+    question_image = serializers.ImageField(read_only=True, allow_null=True, required=False)
+    question_image_url = serializers.URLField(read_only=True, allow_null=True, required=False)
+    explanation_image = serializers.ImageField(read_only=True, allow_null=True, required=False)
+    explanation_image_url = serializers.URLField(read_only=True, allow_null=True, required=False)
 
     class Meta:
         model = Question
@@ -32,9 +36,12 @@ class QuestionSerializer(serializers.ModelSerializer):
             'option4',
             'correct_option',
             'explanation',
-            'subject'
+            'question_image',
+            'question_image_url',
+            'explanation_image',
+            'explanation_image_url',
+            'subject',
         ]
-
 # serializers.py
 
 class SectionWithSubjectsSerializer(serializers.ModelSerializer):
