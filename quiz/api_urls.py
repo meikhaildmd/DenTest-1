@@ -27,6 +27,6 @@ urlpatterns = [
     path('user-progress/', UserProgressView.as_view(), name='user-progress'),
     path("custom-quiz/", CustomQuizView.as_view(), name="custom-quiz"),
     path("current-user/", CurrentUserView.as_view(), name="current-user"),
-    path("api/logout/", LogoutView.as_view(), name="logout"),
+    path("/logout/", LogoutView.as_view(), name="logout"),
     path("signup/", SignupView.as_view(), name="signup"),
 ]
