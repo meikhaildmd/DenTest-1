@@ -1,27 +1,29 @@
 'use client';
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-
-const API = process.env.NEXT_PUBLIC_API_BASE_URL;
+import { apiLogout } from '@/lib/auth';
 
 export default function LogoutPage() {
     const router = useRouter();
 
     useEffect(() => {
-        async function doLogout() {
-            await fetch(`${API}/logout/`, {
-                method: 'POST',
-                credentials: 'include',
-            });
-            router.push('/login');
-        }
-        doLogout();
+        (async () => {
+            try {
+                await apiLogout();              // <-- real logout happens here
+            } catch (e) {
+                // swallow; still navigate away
+                console.error(e);
+            } finally {
+                router.replace('/login?loggedout=1');
+                router.refresh();               // force revalidate server components / user checks
+            }
+        })();
     }, [router]);
 
     return (
         <div className="min-h-screen flex items-center justify-center text-white">
-            Logging out…
+            Signing you out…
         </div>
     );
 }

@@ -5,6 +5,7 @@ import WelcomeBanner from '@/components/WelcomeBanner';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { apiLogout } from '@/lib/auth';
 
 interface User {
   username: string;
@@ -29,15 +30,16 @@ export default function Home() {
 
   // --- Handle logout ---
   const handleLogout = async () => {
-    if (!API) return;
-    await fetch(`${API}/logout/`, {
-      method: 'POST',
-      credentials: 'include',
-    });
-    setName(null);
-    router.push('/login');
+    try {
+      await apiLogout();          // actually logs out on backend
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setName(null);
+      router.replace('/login?loggedout=1');  // navigates after logout
+      router.refresh();                     // forces re-check of current-user
+    }
   };
-
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center text-white overflow-hidden">
       {/* 🌈 Animated INBDE↔ADAT background */}
