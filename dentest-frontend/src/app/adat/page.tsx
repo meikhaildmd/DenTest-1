@@ -45,17 +45,25 @@ export default async function AdatHome() {
   let sections: Section[] = [];
   let progress: Record<number, number> = {};
 
+  // Fetch ADAT sections
   try {
     const res = await fetch(`${API}/sections/adat/`, { cache: "no-store" });
-    if (res.ok) sections = await res.json();
+    if (res.ok) {
+      sections = await res.json();
+    } else {
+      console.error("Failed to fetch ADAT sections:", res.status);
+      const text = await res.text();
+      console.warn("ADAT fetch response text:", text);
+    }
   } catch (e) {
-    console.error("Error fetching sections:", e);
+    console.error("Error fetching ADAT sections:", e);
   }
 
+  // Fetch user progress
   try {
     progress = await getProgress();
   } catch (e) {
-    console.error("Error getting progress:", e);
+    console.error("Error getting ADAT progress:", e);
   }
 
   return (
@@ -83,14 +91,20 @@ export default async function AdatHome() {
 
       {/* SECTIONS GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sections.map((s) => (
-          <SectionCard
-            key={s.id}
-            title={s.name}
-            href={`/adat/section/${s.id}`}
-            progress={progress[s.id]}
-          />
-        ))}
+        {sections.length > 0 ? (
+          sections.map((s) => (
+            <SectionCard
+              key={s.id}
+              title={s.name}
+              href={`/adat/section/${s.id}`}
+              progress={progress[s.id]}
+            />
+          ))
+        ) : (
+          <p className="text-neutral-400 text-center col-span-full">
+            No ADAT sections found. Check your backend data or import script.
+          </p>
+        )}
       </div>
 
       {/* CUSTOM QUIZ BUTTON */}
