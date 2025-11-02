@@ -14,14 +14,14 @@ export default function LoginPage() {
 
         try {
             // 1 ─ fetch CSRF cookie + token
-            const csrfRes = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/csrf/`, {
+            const csrfRes = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/csrf/`, {
                 credentials: 'include',
             });
             const { csrftoken } = await csrfRes.json();
             if (!csrftoken) throw new Error('CSRF token missing');
 
             // 2 ─ POST credentials
-            const r = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/login/`, {
+            const r = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/login/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
