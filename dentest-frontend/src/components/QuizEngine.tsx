@@ -59,7 +59,7 @@ export default function QuizEngine({
   const [questions, setQuestions] = useState<Question[]>([]);
   const [idx, setIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<number, AnswerStatus>>({});
-  const [showExp, setShowExp] = useState(false);
+  const [showExp, setShowExp] = useState<Record<number, boolean>>({});
 
   const router = useRouter();
   const search = useSearchParams();
@@ -141,7 +141,7 @@ export default function QuizEngine({
 
     const updated = { ...answers, [q.id]: { selected: ltr, isCorrect } };
     setAnswers(updated);
-    setShowExp(true);
+    setShowExp((prev) => ({ ...prev, [q.id]: true }));
 
     if (subjectId) {
       fetch(`${API}/user-question-status/update/`, {
@@ -164,7 +164,6 @@ export default function QuizEngine({
   const next = () => {
     if (idx + 1 < questions.length) {
       setIdx(idx + 1);
-      setShowExp(false);
       return;
     }
 
@@ -250,7 +249,10 @@ export default function QuizEngine({
           const base = clsx(
             'w-10 h-10 rounded-full grid place-items-center font-semibold select-none transition',
             'shadow-sm hover:scale-105',
-            active && (exam === 'adat' ? 'ring-2 ring-emerald-400' : 'ring-2 ring-blue-400'),
+            active &&
+            (exam === 'adat'
+              ? 'border-2 border-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.6)]'
+              : 'border-2 border-blue-400 shadow-[0_0_12px_rgba(96,165,250,0.6)]'),
             !stat && 'bg-neutral-800/80 text-neutral-200 ring-1 ring-neutral-700',
             ok &&
             'text-white shadow-[0_0_18px_rgba(16,185,129,0.35)] bg-gradient-to-b from-green-500 to-emerald-600',
@@ -263,7 +265,6 @@ export default function QuizEngine({
               key={qq.id}
               onClick={() => {
                 setIdx(i);
-                setShowExp(isReview && !!stat);
               }}
               className={base}
               aria-label={`Go to question ${i + 1}`}
@@ -371,7 +372,7 @@ export default function QuizEngine({
 
           {/* Explanation */}
           <AnimatePresence initial={false} mode="wait">
-            {(showExp || (isReview && answers[q.id])) && (
+            {(showExp[q.id] || (isReview && answers[q.id])) && (
               <motion.div
                 key="explanation"
                 initial={{ height: 0, opacity: 0, y: -6 }}
