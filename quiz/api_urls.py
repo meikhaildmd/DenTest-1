@@ -13,6 +13,7 @@ from .views_api import (
     CustomQuizView,
     CurrentUserView,
     SignupView,
+    UserQuestionStatusAllView,
 )
 
 urlpatterns = [
@@ -29,5 +30,5 @@ urlpatterns = [
     path("current-user/", CurrentUserView.as_view(), name="current-user"),
     path("logout/", LogoutView.as_view(), name="logout"),
     path("signup/", SignupView.as_view(), name="signup"),
-    path("user-question-status/all/", api_views.UserQuestionStatusAllView.as_view(), name="user_question_status_all"),
+    path("user-question-status/all/", UserQuestionStatusAllView.as_view(), name="user_question_status_all"),
 ]
