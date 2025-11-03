@@ -68,23 +68,38 @@ export default function CustomBuilderClient() {
     const [loading, setLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
     const [hasHistory, setHasHistory] = useState(false);
-
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [checkingLogin, setCheckingLogin] = useState(true);
     const router = useRouter();
     const search = useSearchParams();
     const examFilter = search.get('exam') ?? 'both';
 
-    const isLoggedIn =
-        typeof document !== 'undefined' && document.cookie.includes('sessionid=');
+    // 🔐 Check if user is logged in using /current-user/
+    useEffect(() => {
+        (async () => {
+            try {
+                const data = await apiFetch('/current-user/');
+                if (data.username) setIsLoggedIn(true);
+            } catch {
+                setIsLoggedIn(false);
+            } finally {
+                setCheckingLogin(false);
+            }
+        })();
+    }, []);
+
+
 
     /* -------------------------------------------------------------
        Check if user has question history (to enable filters)
     ------------------------------------------------------------- */
+    // 📚 Check if user has question history
     useEffect(() => {
         if (!isLoggedIn) return;
         (async () => {
             try {
                 const data = await apiFetch('/user-question-status/all/');
-                setHasHistory(data.length > 0);
+                setHasHistory((data.results ?? data).length > 0);
             } catch {
                 setHasHistory(false);
             }
@@ -134,7 +149,7 @@ export default function CustomBuilderClient() {
             });
 
             localStorage.setItem('customQuiz', JSON.stringify(questions));
-            router.push('/custom/quiz');
+            router.push(`/custom/quiz?exam=${examFilter}`);
         } catch (err: unknown) {
             console.error('Quiz start error:', err);
             if (err instanceof Error) setErrorMsg(err.message);
@@ -161,6 +176,15 @@ export default function CustomBuilderClient() {
             : examFilter === 'inbde'
                 ? 'from-blue-500 via-purple-500 to-fuchsia-500'
                 : 'from-blue-500 via-green-500 to-teal-400';
+
+
+    if (checkingLogin) {
+        return (
+            <p className="text-neutral-400 text-center mt-20 animate-pulse">
+                Checking login…
+            </p>
+        );
+    }
 
     /* -------------------------------------------------------------
        Render
