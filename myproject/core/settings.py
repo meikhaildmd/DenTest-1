@@ -221,8 +221,25 @@ CORS_ALLOW_HEADERS = [
 # --- ✅ Allow cookies to work across subdomains (frontend ↔ backend)
 SESSION_COOKIE_DOMAIN = ".toothprep.com"
 CSRF_COOKIE_DOMAIN = ".toothprep.com"
-
+# --- ✅ Explicitly mark cookies as cross-site safe ---
+CSRF_COOKIE_PATH = "/"
+SESSION_COOKIE_PATH = "/"
 
 # --- SECURITY HEADERS ---
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = not DEBUG
+
+# --- SENTRY ERROR TRACKING ---
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+SENTRY_DSN = env("SENTRY_DSN", default="")
+
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        send_default_pii=True,  # includes user info, IPs, etc.
+        traces_sample_rate=1.0,  # performance data (safe to leave on)
+        environment="production" if not DEBUG else "development",
+    )
