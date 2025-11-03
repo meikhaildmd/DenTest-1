@@ -9,6 +9,8 @@ import GradientButton from '@/components/GradientButton';
 import { API } from '@/lib/config';
 import { MEDIA_BASE } from "@/lib/config";
 import Image from "next/image";
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 /* ---------- csrf helper ---------- */
 function getCookie(name: string) {
@@ -387,24 +389,25 @@ export default function QuizEngine({
                     'bg-neutral-900/70 border-neutral-800'
                   )}
                 >
-                  <div
-                    className="prose prose-invert max-w-none prose-p:my-2 prose-strong:font-semibold"
-                    style={{ whiteSpace: 'pre-line' }}
-                    dangerouslySetInnerHTML={{ __html: q.explanation }}
-                  />
-                </div>
-                {(q.explanation_image || q.explanation_image_url) && (
-                  <div className="relative w-full max-w-md mx-auto mt-4 aspect-auto">
-                    <Image
-                      src={fullMediaUrl(q.explanation_image_url || q.explanation_image)!}
-                      alt="Explanation diagram"
-                      className="rounded-lg border border-neutral-800 object-contain"
-                      width={600}
-                      height={400}
-                      priority={false}
-                    />
+                  <div className="prose prose-invert max-w-none prose-p:my-2 prose-strong:font-semibold">
+                    <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                      {q.explanation}
+                    </ReactMarkdown>
                   </div>
-                )}
+
+                  {(q.explanation_image || q.explanation_image_url) && (
+                    <div className="relative w-full max-w-md mx-auto mt-4 aspect-auto">
+                      <Image
+                        src={fullMediaUrl(q.explanation_image_url || q.explanation_image)!}
+                        alt="Explanation diagram"
+                        className="rounded-lg border border-neutral-800 object-contain"
+                        width={600}
+                        height={400}
+                        priority={false}
+                      />
+                    </div>
+                  )}
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
