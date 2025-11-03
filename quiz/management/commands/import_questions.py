@@ -59,6 +59,7 @@ class Command(BaseCommand):
 
         with open(csv_file, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
+            reader.fieldnames = [h.strip().lstrip('\ufeff') for h in reader.fieldnames]
 
             for row in reader:
                 raw_text = (row.get("text") or "").strip()
