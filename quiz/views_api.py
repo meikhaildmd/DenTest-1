@@ -72,6 +72,18 @@ class UserQuestionStatusBySubjectView(generics.ListAPIView):
             question__subject_id=self.kwargs["subject_id"],
         )
 
+
+# ✅ New: return all answered questions for the logged-in user
+class UserQuestionStatusAllView(generics.ListAPIView):
+    """
+    Returns every UserQuestionStatus entry for the current user.
+    Used by the custom-quiz builder to know if they have any history.
+    """
+    serializer_class = UserQuestionStatusSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return UserQuestionStatus.objects.filter(user=self.request.user)
 # ✅  Updated: decide correctness on the server
 class UserQuestionStatusUpdateView(APIView):
     permission_classes = [IsAuthenticated]

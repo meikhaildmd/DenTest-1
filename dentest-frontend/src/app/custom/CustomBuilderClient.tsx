@@ -42,6 +42,7 @@ export default function CustomBuilderClient() {
     const [limit, setLimit] = useState<number>(20);
     const [loading, setLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
+    const [hasHistory, setHasHistory] = useState(false);
 
     const router = useRouter();
     const search = useSearchParams();
@@ -49,6 +50,27 @@ export default function CustomBuilderClient() {
 
     const isLoggedIn =
         typeof document !== 'undefined' && document.cookie.includes('sessionid=');
+
+    // ✅ Track if user has any answer history (for enabling filters
+
+    useEffect(() => {
+        if (!isLoggedIn) return;
+        (async () => {
+            try {
+                const res = await fetch(`${API}/user-question-status/all/`, {
+                    credentials: 'include',
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    setHasHistory(data.length > 0);
+                } else {
+                    setHasHistory(false);
+                }
+            } catch {
+                setHasHistory(false);
+            }
+        })();
+    }, [isLoggedIn]);
 
     /* -------------------------------------------------------------
        THEME detection (ADAT / INBDE / BOTH)
@@ -87,6 +109,31 @@ export default function CustomBuilderClient() {
             }
         })();
     }, [examFilter]);
+
+    /* -------------------------------------------------------------
+   Load user question history to enable filters
+------------------------------------------------------------- */
+    useEffect(() => {
+        if (!isLoggedIn) return;
+
+        (async () => {
+            try {
+                const res = await fetch(`${API}/user-question-status/all/`, {
+                    credentials: 'include',
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    // if user has at least one answered question, unlock filters
+                    setHasHistory(data.length > 0);
+                } else {
+                    setHasHistory(false);
+                }
+            } catch (err) {
+                console.error('Failed to fetch user history:', err);
+                setHasHistory(false);
+            }
+        })();
+    }, [isLoggedIn]);
 
     /* -------------------------------------------------------------
        Start quiz
@@ -201,7 +248,7 @@ export default function CustomBuilderClient() {
                 {/* Filter radio chips */}
                 <div className="flex gap-4">
                     {FILTERS.map((f) => {
-                        const disabled = !isLoggedIn && f !== 'all';
+                        const disabled = (f !== 'all') && (!isLoggedIn || !hasHistory);
                         return (
                             <button
                                 key={f}
