@@ -1,5 +1,112 @@
 text,option1,option2,option3,option4,correct_option,explanation,subject_id,question_image,explanation_image
 Dentin has a coefficient of thermal expansion (CoTE) most similar to which of the following dental materials?,Composite resin,Glass ionomer cement,Amalgam,Porcelain,2,"The <b>coefficient of thermal expansion (CoTE)</b> describes how much a material expands or contracts with temperature changes. In dentistry, matching a restorative material’s CoTE to that of <b>tooth structure</b> helps prevent marginal leakage and restoration failure.<br><br><b>Typical CoTE values (×10⁻⁶/°C):</b><br>- Dentin: 8–11<br>- Enamel: 11–13<br>- Glass ionomer: 8–13 → <b>closest to dentin</b><br>- Amalgam: 22–28<br>- Composite resin: 25–60<br>- Porcelain: 6–14<br><br>Glass ionomer closely matches dentin thermally and chemically bonds to tooth structure, making it ideal for liners and bases.<br><br><b>High-yield recap:</b><br>- Closest to dentin: Glass ionomer<br>- Higher CoTEs (composite, amalgam) → risk of microleakage<br>- Thermal compatibility reduces marginal stress",14,,
+A 29-year-old patient presents for placement of a resin-bonded indirect composite inlay on a mandibular first molar. The operator chooses a <b>dual-cured resin cement</b> instead of a light-cured or self-cured type. Which of the following <b>best explains the indication for using a dual-cured cement</b> in this scenario?,It provides higher compressive strength due to increased filler loading.,It allows polymerization in areas where light cannot adequately penetrate the restoration.,It eliminates the need for an adhesive bonding agent.,It reduces postoperative sensitivity compared to self-cured resin cements.,2,"<b>Resin-based cements</b> are commonly categorized based on their <b>polymerization mechanism</b>:<br>
+<ol>
+<li><b>Light-cured</b></li>
+<li><b>Self-cured (chemically activated)</b></li>
+<li><b>Dual-cured (both light and chemical activation)</b></li>
+</ol>
+Each system has unique clinical indications and limitations depending on <b>restoration type, thickness, and translucency</b>.<br><br>
+
+<b>Light-Cured Resin Cements</b><br>
+Polymerization: Initiated by <b>visible blue light (~470 nm)</b> through <b>camphorquinone (CQ)</b> and an amine activator.<br>
+<b>Advantages:</b><br>
+<ul>
+<li>Long working time (polymerization only starts upon light exposure)</li>
+<li>Excellent color stability (ideal for esthetic veneers or thin restorations)</li>
+</ul>
+<b>Limitations:</b><br>
+<ul>
+<li>Light penetration limited to <b>2–3 mm</b></li>
+<li>Not suitable for thick or opaque restorations (e.g., zirconia crowns, onlays)</li>
+</ul>
+→ <b>Common use:</b> Veneers, thin composite or ceramic restorations (&lt;2 mm).<br><br>
+
+<b>Self-Cured (Chemically Activated) Resin Cements</b><br>
+Polymerization: Initiated by mixing base and catalyst pastes containing <b>benzoyl peroxide</b> and <b>tertiary amine activators</b>.<br>
+<b>Advantages:</b><br>
+<ul>
+<li>No dependence on light—polymerizes completely in deep or opaque areas.</li>
+</ul>
+<b>Limitations:</b><br>
+<ul>
+<li>Shorter working time</li>
+<li>Color instability (amine oxidation leads to yellowing)</li>
+<li>Lower mechanical strength</li>
+</ul>
+→ <b>Common use:</b> Metal crowns, posts, core buildups where esthetics are not critical.<br><br>
+
+<b>Dual-Cured Resin Cements</b><br>
+Polymerization: Combines both <b>light and chemical curing</b> mechanisms.<br>
+<b>Advantages:</b><br>
+<ul>
+<li>Versatile—works with translucent and opaque restorations</li>
+<li>Reliable curing under thick ceramics (&ge;2 mm)</li>
+</ul>
+<b>Limitations:</b><br>
+<ul>
+<li>Slightly less color stable than purely light-cured versions</li>
+</ul>
+→ <b>Common use:</b> Indirect restorations like inlays, onlays, crowns, and posts.<br><br>
+
+<b>Summary Table</b><br>
+<table border=""1"" cellpadding=""4"">
+<tr><th>Type</th><th>Initiation</th><th>Best for</th><th>Limitation</th></tr>
+<tr><td>Light-cured</td><td>Camphorquinone + light</td><td>Veneers, esthetic zones</td><td>Poor light penetration</td></tr>
+<tr><td>Self-cured</td><td>Benzoyl peroxide + amine</td><td>Opaque restorations</td><td>Color instability</td></tr>
+<tr><td>Dual-cured</td><td>Light + chemical</td><td>Most indirect restorations</td><td>Slight discoloration potential</td></tr>
+</table><br>
+
+<b>High-Yield Points</b><br>
+<ul>
+<li><b>Dual-cured resin cements</b> are the gold standard for indirect restorations where light access is partial.</li>
+<li><b>Light-cured</b> = best esthetics (veneers).</li>
+<li><b>Self-cured</b> = best for metal or opaque substrates.</li>
+<li><b>Camphorquinone</b> is the most common photoinitiator in visible-light systems.</li>
+<li><b>Degree of conversion</b> correlates with <b>mechanical strength</b> and <b>marginal integrity</b>.</li>
+</ul>",14,,
+"During placement of a Class I composite restoration, the operator is concerned about polymerization shrinkage stress. Which of the following best explains why this cavity design is associated with a high C-factor and greater risk of bond failure?",Class I cavities have fewer bonded surfaces than unbonded surfaces.,The high ratio of bonded to unbonded surfaces limits stress relief during polymerization.,"The C-factor is determined primarily by the type of composite resin, not cavity configuration.",Polymerization shrinkage only occurs at the surface exposed to curing light.,2,"<b>C-factor (Configuration Factor)</b> describes the <b>ratio of bonded surfaces to unbonded or free surfaces</b> in a composite restoration.  
+It quantifies how cavity configuration influences <b>polymerization shrinkage stress</b> and its impact on adhesive bond integrity.<br><br>
+
+<b>Definition:</b><br>
+C-factor = (Number of bonded surfaces) / (Number of unbonded surfaces)<br><br>
+
+<b>Mechanism:</b><br>
+During polymerization, composite resin contracts by approximately <b>2–3%</b>.  
+When bonded to cavity walls, this shrinkage generates stress at the adhesive interface.  
+A higher C-factor means <b>less free surface area</b> for flow and stress relief, resulting in greater interfacial tension and potential debonding.<br><br>
+
+<b>Example C-factor values:</b><br>
+<table border=""1"" cellpadding=""4"">
+<tr><th>Cavity Type</th><th>Bonded Surfaces</th><th>Unbonded Surfaces</th><th>C-Factor</th></tr>
+<tr><td>Flat surface (veneer)</td><td>1</td><td>5</td><td>0.2</td></tr>
+<tr><td>Class V</td><td>3</td><td>2</td><td>1.5</td></tr>
+<tr><td>Class I</td><td>5</td><td>1</td><td>5.0</td></tr>
+<tr><td>Class II (proximal box)</td><td>4</td><td>2</td><td>2.0</td></tr>
+</table><br>
+
+<b>Clinical Implications:</b><br>
+<ul>
+<li><b>High C-factor</b> cavities (Class I, Class V) experience more polymerization stress.</li>
+<li>This can lead to <b>marginal gaps, microleakage, postoperative sensitivity</b>, and <b>adhesive failure</b>.</li>
+<li><b>Low C-factor</b> restorations (veneers, sealants) allow more resin flow and less stress.</li>
+</ul><br>
+
+<b>Stress-Reduction Strategies:</b><br>
+<ul>
+<li>Use <b>incremental layering</b> (reduces bonded surface area per increment).</li>
+<li>Use <b>flowable liners</b> or <b>low-modulus base layers</b> to absorb stress.</li>
+<li>Employ <b>soft-start curing</b> or <b>ramped light polymerization</b>.</li>
+<li>Consider <b>bulk-fill composites</b> with optimized polymerization kinetics.</li>
+</ul><br>
+
+<b>High-Yield Summary:</b><br>
+<ul>
+<li>C-factor = bonded surfaces ÷ unbonded surfaces.</li>
+<li>Higher C-factor → higher polymerization stress → increased risk of debonding.</li>
+<li>Class I cavities have the highest C-factor (≈ 5).</li>
+<li>Incremental technique is the best method to minimize C-factor stress.</li>
+</ul>",14,,
 Which of the following restorative materials exhibits the highest coefficient of thermal expansion (CoTE) compared with tooth structure?,Amalgam,Composite resin,Glass ionomer cement,Porcelain,2,"The <b>coefficient of thermal expansion (CoTE)</b> measures dimensional change with temperature fluctuations. A higher CoTE increases risk of marginal leakage and stress at the restoration–tooth interface.<br><br><b>Typical CoTE values (×10⁻⁶/°C):</b><br>- Dentin: 8–11<br>- Enamel: 11–13<br>- Glass ionomer: 8–13<br>- Amalgam: 22–28<br>- <b>Composite resin: 25–60 → highest</b><br>- Porcelain: 6–14<br><br>Composite resins expand and contract more than tooth structure due to their resin matrix (Bis-GMA, UDMA) and variable filler content. This mismatch can cause marginal leakage, staining, and postoperative sensitivity.<br><br><b>High-yield recap:</b><br>- Highest CoTE: Composite resin<br>- Closest to dentin: Glass ionomer<br>- High CoTE → marginal breakdown, leakage risk",14,,
 Which of the following statements best describes the role of Bis-GMA in composite resins and adhesive systems?,It acts as a low-viscosity diluent to improve flow and handling,It is the primary resin monomer providing mechanical strength and bonding properties,It serves as a coupling agent between filler particles and the resin matrix,It is a photoinitiator responsible for initiating polymerization,2,"<b>Bis-GMA (Bisphenol A-glycidyl methacrylate)</b> is the main <b>resin monomer</b> in most dental composite and adhesive systems. It provides rigidity, low polymerization shrinkage, and strong adhesion to tooth structure when polymerized.<br><br><b>Functional roles:</b><br>- <b>Bis-GMA:</b> Primary monomer → high molecular weight → strength + reduced shrinkage.<br>- <b>TEGDMA:</b> Low-viscosity diluent → improves flow but increases shrinkage and water sorption.<br>- <b>UDMA:</b> Intermediate viscosity → improves flexibility and reduces brittleness.<br><br><b>Other adhesive components:</b><br>- <b>Solvents:</b> (ethanol, acetone) carry monomers into dentin.<br>- <b>Photoinitiators:</b> (camphorquinone) trigger polymerization.<br>- <b>Silane agents:</b> bond inorganic fillers to the resin matrix.<br><br><b>High-yield recap:</b><br>- Bis-GMA: strength + adhesion<br>- TEGDMA: reduces viscosity, increases flow<br>- UDMA: improves flexibility and toughness",14,,
 The adhesive component of a dentin bonding agent primarily functions to:,Remove the smear layer,Demineralize the dentin surface,Penetrate the primed dentin and form a hybrid layer,Act as a solvent to carry hydrophilic monomers,3,"Modern adhesive systems bond restorative materials to tooth structure through three main steps:<br><br>1. <b>Etching:</b> removes or modifies the smear layer and exposes collagen fibrils.<br>2. <b>Priming:</b> uses hydrophilic monomers (e.g., HEMA) in solvent to re-expand collagen and prepare the surface.<br>3. <b>Bonding:</b> hydrophobic resins (e.g., Bis-GMA, UDMA) infiltrate the primed dentin and polymerize to form the <b>hybrid layer</b>.<br><br>The <b>adhesive component</b> specifically penetrates the primed dentin and intertubular spaces, creating a strong micromechanical and chemical bond through hybrid layer and resin tag formation.<br><br><b>High-yield recap:</b><br>- Etchant: removes smear layer<br>- Primer: rehydrates collagen<br>- Adhesive: penetrates primed dentin → forms hybrid layer<br>- Function: unite resin composite with tooth structure",14,,
@@ -7,6 +114,43 @@ The adhesive component of a dentin bonding agent primarily functions to:,Remove 
 "In a total-etch (etch-and-rinse) adhesive system, which of the following correctly describes the sequence of application?","Apply primer and adhesive simultaneously, leaving the smear layer intact","Etch enamel and dentin together, rinse, then apply primer and adhesive",Apply self-etching primer directly to smear-covered dentin,"Use phosphoric acid on enamel only, then apply a universal adhesive",2,"<b>Total-etch (etch-and-rinse) adhesive systems</b> remove the smear layer completely before bonding, using phosphoric acid to prepare enamel and dentin for micromechanical retention.<br><br><b>Step-by-step sequence:</b><br>1️⃣ <b>Etching:</b> 35–37% phosphoric acid on enamel and dentin (~15 s). Enamel → microporosities for resin tags. Dentin → removes smear layer and exposes collagen.<br>2️⃣ <b>Rinsing and gentle drying:</b> Dentin should remain <b>slightly moist</b> (glistening).<br>3️⃣ <b>Priming:</b> Hydrophilic monomers (HEMA) in solvents (ethanol/acetone/water) infiltrate collagen.<br>4️⃣ <b>Bonding:</b> Hydrophobic resin (Bis-GMA, UDMA) polymerizes to form <b>hybrid layer</b> and <b>resin tags</b>.<br><br><div style='border:1px solid #ddd;border-radius:10px;overflow:hidden;margin:8px 0;'><div style='background:#0f172a;color:#fff;padding:10px 12px;font-weight:600;'>Adhesive System Comparison</div><table role='grid' style='width:100%;border-collapse:collapse;font-size:14px;color:#000;'><thead><tr style='background:#111827;color:#fff;'><th style='padding:8px;border:1px solid #ddd;text-align:left;'>System</th><th style='padding:8px;border:1px solid #ddd;'>Generation</th><th style='padding:8px;border:1px solid #ddd;'>Smear Layer Handling</th><th style='padding:8px;border:1px solid #ddd;'>Steps</th><th style='padding:8px;border:1px solid #ddd;'>Key Features</th></tr></thead><tbody><tr style='background:#ffffff;color:#000;'><td style='padding:8px;border:1px solid #ddd;'>Etch-and-Rinse (Total-Etch)</td><td style='padding:8px;border:1px solid #ddd;'>4th & 5th</td><td style='padding:8px;border:1px solid #ddd;'>Removed</td><td style='padding:8px;border:1px solid #ddd;'>3-step or 2-step</td><td style='padding:8px;border:1px solid #ddd;'>Excellent enamel bond; technique-sensitive (moist dentin required)</td></tr><tr style='background:#f9fafb;color:#000;'><td style='padding:8px;border:1px solid #ddd;'>Self-Etch</td><td style='padding:8px;border:1px solid #ddd;'>6th & 7th</td><td style='padding:8px;border:1px solid #ddd;'>Modified / Incorporated</td><td style='padding:8px;border:1px solid #ddd;'>2-step or 1-step</td><td style='padding:8px;border:1px solid #ddd;'>Milder etch; fewer sensitivity issues; thinner hybrid layer</td></tr><tr style='background:#ffffff;color:#000;'><td style='padding:8px;border:1px solid #ddd;'>Universal</td><td style='padding:8px;border:1px solid #ddd;'>8th+</td><td style='padding:8px;border:1px solid #ddd;'>Selectable (self-etch or total-etch)</td><td style='padding:8px;border:1px solid #ddd;'>1 step</td><td style='padding:8px;border:1px solid #ddd;'>Simplified and versatile; bond durability varies</td></tr></tbody></table></div><b>High-yield recap:</b><br>- <b>Total-etch</b> = Etch → Rinse → Prime + Bond (smear layer removed).<br>- <b>Self-etch</b> = no rinsing, smear layer modified, less technique-sensitive.<br>- <b>Universal</b> = can function as either method.",14,,
 "In adhesive bonding systems, what is the primary role of the primer?",To remove the smear layer and demineralize dentin,To enhance the wetting and infiltration of hydrophobic resin into moist dentin,To initiate polymerization of the adhesive resin,To create a chemical bond between filler particles and the resin matrix,2,"The <b>primer</b> acts as a bridge between the <b>hydrophilic dentin</b> surface and the <b>hydrophobic bonding resin</b>. After etching, dentin is demineralized and left moist, with exposed collagen fibrils. If this surface is overdried, collagen collapses, preventing resin penetration.<br><br>Primers contain <b>hydrophilic monomers</b> (most notably <b>HEMA – Hydroxyethyl Methacrylate</b>) dissolved in <b>volatile solvents</b> such as ethanol, acetone, or water. The solvent system carries monomers deep into the collagen network and helps re-expand partially collapsed fibrils. As the solvent evaporates, the hydrophilic ends of the monomers bond to collagen while the hydrophobic ends remain available to co-polymerize with the adhesive resin.<br><br>This process ensures full adhesive penetration and formation of a uniform <b>hybrid layer</b>, which provides both micromechanical retention and sealing against microleakage.<br><br><b>Roles of components:</b><br>- <b>HEMA:</b> Promotes resin infiltration and surface wettability.<br>- <b>Solvent (ethanol, acetone, water):</b> Carries primer monomers; must be fully evaporated to avoid voids or nanoleakage.<br>- <b>Hydrophobic co-monomers (e.g., UDMA):</b> Co-polymerize with the adhesive to form a strong hybrid layer.<br><br><b>Clinical implications:</b><br>- Excess moisture → poor infiltration and decreased bond strength.<br>- Overdrying → collagen collapse and incomplete hybridization.<br>- In self-etch systems, primer and adhesive are often combined for simplicity.<br><br><b>High-yield recap:</b><br>- <b>Primer</b> improves wetting and penetration of resin into dentin.<br>- <b>HEMA</b> = hydrophilicity; <b>Solvent</b> = carrier.<br>- <b>Goal:</b> Proper resin infiltration → strong hybrid layer.",14,,
 A patient presents with a non-cavitated interproximal enamel lesion detected on bitewing radiographs. What is the most appropriate treatment to arrest lesion progression and preserve tooth structure?,Conventional composite restoration,Glass ionomer sealant,Fluoride varnish application,Resin infiltration (ICON technique),4,"<b>Resin infiltration</b> is a <b>micro-invasive treatment</b> for <b>incipient, non-cavitated enamel lesions</b>, especially interproximal lesions confined to enamel or the outer third of dentin. The low-viscosity resin penetrates demineralized enamel microporosities and, after polymerization, creates a <b>diffusion barrier</b> that arrests lesion progression.<br><br><b>Why a non-cavitated lesion can appear on radiographs:</b><br>- Bitewings detect <b>demineralization</b> (loss of mineral density), not physical cavitation. Early lesions appear as a faint, triangular <b>radiolucency</b> beneath the contact.<br>- If the surface is intact clinically (no break), the lesion is <b>non-cavitated</b> and ideal for infiltration.<br><br><b>ICON clinical protocol:</b><br>1) <b>Etch</b> with <b>15% hydrochloric acid</b> (~2 min) to remove the pseudo-intact surface layer.<br>2) <b>Dry</b> with 99% ethanol (Icon-Dry) to enhance resin penetration.<br>3) <b>Infiltrate</b> with low-viscosity TEGDMA-based resin (Icon-Infiltrant) for ~3 min; light cure. Consider a second application for optimal penetration.<br>4) Maintain absolute isolation; finish/polish as needed.<br><br><b>Advantages:</b> arrests caries without drilling, preserves enamel, improves esthetics of white spots (refractive index matching).<br><b>Limitations:</b> requires intact surface; not for cavitated/advanced lesions; technique-sensitive isolation.<br><br><b>High-yield recap:</b><br>- <b>Indication:</b> non-cavitated interproximal/smooth-surface lesions.<br>- <b>Goal:</b> block diffusion pathways; NOT remineralization per se.<br>- <b>Key steps:</b> 15% HCl → ethanol → infiltrant (TEGDMA) → cure.",14,,
+Which statement best differentiates noble metal alloys from base metal alloys used in fixed prosthodontics?,Noble alloys have lower density and greater stiffness than base metal alloys.,Noble alloys exhibit higher corrosion resistance and are easier to cast.,Base metal alloys are softer and more ductile than noble alloys.,"Noble alloys have higher oxide-layer formation, improving porcelain bonding.",2,"<b>Noble vs Base Metal Alloys</b><br><br>
+
+Dental alloys are classified by the proportion of <b>noble (precious) metals</b>—Au, Pt, Pd, Ir, Rh, Ru—versus <b>base metals</b> such as Ni, Cr, Co, and Fe.<br><br>
+
+<b>Noble Alloys:</b>
+<ul>
+<li>High corrosion resistance due to chemical inertness of noble metals.</li>
+<li>Excellent castability and marginal adaptation.</li>
+<li>High density and ductility → easily finished and polished.</li>
+<li>Low oxide formation → ideal for metal–ceramic interfaces when properly modified with Pd or Pt.</li>
+</ul><br>
+
+<b>Base Metal Alloys:</b>
+<ul>
+<li>Contain mainly Ni–Cr or Co–Cr elements.</li>
+<li>High strength and elastic modulus but more brittle.</li>
+<li>Form stable oxide layers (useful for porcelain bonding) but more prone to corrosion and allergenic reactions (e.g., Ni sensitivity).</li>
+<li>Less dense and harder to polish and cast accurately.</li>
+</ul><br>
+
+<b>Summary Comparison:</b><br>
+<table border=""1"" cellpadding=""4"">
+<tr><th>Property</th><th>Noble Alloy</th><th>Base Metal Alloy</th></tr>
+<tr><td>Corrosion resistance</td><td>High</td><td>Moderate to Low</td></tr>
+<tr><td>Density</td><td>High (heavy)</td><td>Low (lightweight)</td></tr>
+<tr><td>Elastic modulus</td><td>Lower (flexible)</td><td>Higher (stiffer)</td></tr>
+<tr><td>Castability</td><td>Excellent</td><td>Difficult</td></tr>
+<tr><td>Porcelain bonding</td><td>Requires oxide-modifying elements</td><td>Intrinsic oxide layer</td></tr>
+<tr><td>Allergenic potential</td><td>Minimal</td><td>Possible (Ni, Be)</td></tr>
+</table><br>
+
+<b>High-Yield Summary:</b>
+<ul>
+<li>Noble alloys → biocompatible, corrosion resistant, easy to cast.</li>
+<li>Base metal alloys → strong and stiff but less corrosion resistant.</li>
+<li>Alloy selection balances esthetics, strength, cost, and biocompatibility.</li>
+</ul>",14,,
 Which acid is used for etching during the resin infiltration (ICON) technique?,37% phosphoric acid,10% polyacrylic acid,15% hydrochloric acid,9% hydrofluoric acid,3,"The <b>ICON</b> resin infiltration system uses <b>15% hydrochloric acid (HCl)</b> to <b>remove the hypermineralized surface layer</b> of early carious lesions, exposing subsurface porosities for resin penetration.<br><br><b>Why HCl (15%) vs phosphoric acid (35–37%):</b><br>- Phosphoric acid efficiently creates microroughness for bonding but <b>does not adequately erode</b> the pseudo-intact surface of incipient lesions.<br>- <b>HCl</b> is more effective for <b>eroding the surface layer</b>, enabling deeper infiltration by the <b>TEGDMA-based</b> infiltrant.<br><br><b>Protocol pearls:</b> HCl etch (~2 min) → ethanol desiccation → low-viscosity resin infiltration → light cure (often two applications).<br><br><b>High-yield recap:</b><br>- <b>Etchant:</b> 15% HCl (ICON-Etch).<br>- <b>Purpose:</b> remove surface layer; open pathways for resin.<br>- <b>Followed by:</b> ethanol (Icon-Dry) and <b>Icon-Infiltrant</b> application.",14,,
 Which of the following best describes the primary role of TEGDMA in composite resins?,Provides high molecular rigidity and reduces polymerization shrinkage,Acts as a low-viscosity diluent monomer to improve flow and conversion,Functions as a photoinitiator that triggers free-radical polymerization,Bonds the inorganic filler particles to the resin matrix,2,"<b>TEGDMA</b> is a <b>low-viscosity, hydrophilic diluent monomer</b> blended with high-viscosity monomers (e.g., Bis-GMA/UDMA) to <b>reduce viscosity</b>, improve <b>flow</b>, and enhance <b>degree of conversion</b>.<br><br><b>Benefits:</b> better handling, improved infiltration (in adhesives/infiltration systems), and improved filler dispersion.<br><b>Trade-offs:</b> increases <b>polymerization shrinkage</b> and <b>water sorption</b> compared with higher–molecular weight monomers.<br><br><b>High-yield recap:</b><br>- <b>Role:</b> diluent monomer → ↓ viscosity, ↑ conversion.<br>- <b>Downside:</b> ↑ shrinkage, ↑ water uptake.<br>- Used across <b>composites</b>, <b>adhesives</b>, and <b>ICON</b>.",14,,
 Which of the following best describes the effects of increasing filler content in dental composite resins?,Increases polymerization shrinkage and thermal expansion,Decreases strength and increases water sorption,Increases hardness and wear resistance while reducing shrinkage and thermal expansion,Reduces viscosity and improves flow into cavity preparations,3,"<b>Fillers</b> strengthen composites and reduce the proportion of oligomeric resin matrix needed. Increasing filler loading improves multiple properties:<br><br>- <b>Mechanical:</b> ↑ hardness, ↑ compressive strength, ↓ wear.<br>- <b>Dimensional:</b> ↓ polymerization shrinkage; ↓ coefficient of thermal expansion (closer to tooth).<br>- <b>Physical:</b> ↓ water sorption and surface softening; ↑ radiopacity (with Ba/Sr/Zr-glass fillers).<br>- <b>Handling:</b> ↑ viscosity (paste-like consistency) with higher filler loading.<br><br><b>High-yield recap:</b><br>- ↑ filler → ↑ strength & radiopacity; ↓ shrinkage, ↓ thermal expansion, ↓ water uptake; ↑ viscosity.<br>- ↓ filler → ↑ flow but more shrinkage and wear.",14,,
@@ -19,3 +163,88 @@ Each of the following is a property of glass ionomer cement (GIC) EXCEPT:,Fluori
 "Which type of stress is dental amalgam most resistant to, and how does this affect restoration design?",Tensile stress; allows for thin margins and feather edges,Shear stress; prevents marginal ditching,Compressive stress; requires bulk and 90° cavosurface margins,Flexural stress; minimizes occlusal wear,3,"<b>Dental amalgam</b> has high <b>compressive strength</b> but low <b>tensile strength</b>, meaning it performs very well under vertical biting loads but poorly under bending or tensile forces.<br><br>When occlusal forces are applied:<br>- <b>Compressive stresses</b> occur directly beneath the contact point, within the bulk of the restoration — the area being ‘squeezed’.<br>- <b>Tensile stresses</b> develop along the cavosurface margins and on the opposite side of the load, where the material tries to flex outward.<br><br>Because amalgam cannot stretch or bend without fracturing, thin edges and unsupported enamel are prone to <b>marginal chipping</b> or <b>bulk fracture</b>. This is why cavity preparations require adequate bulk (≥1.5–2 mm) and 90° cavosurface margins — to ensure the material is under compression, not tension.<br><br><b>Clinically, this explains why early amalgam failure often presents as small chips or ditching at the margins:</b> these are areas where tensile stresses are concentrated, leading to crack propagation and marginal breakdown.<br><br><b>High-yield recap:</b><br>- High compressive strength (~400 MPa)<br>- Low tensile strength (~50 MPa)<br>- Compressive stress under point of load<br>- Tensile stress at margins<br>- Failure pattern: marginal ditching due to tensile stress<br>- Rule: amalgam resists pressure, not pulling.",14,,
 A patient presents with limited mouth opening (trismus) and pain in the mandibular molar region requiring anesthesia. Which injection technique would be most appropriate in this case?,Inferior alveolar nerve block (conventional),Gow-Gates mandibular nerve block,Vazirani-Akinosi (closed-mouth) mandibular nerve block,Mental nerve block,3,"The <b>Vazirani-Akinosi closed-mouth mandibular nerve block</b> is specifically indicated for patients with <b>trismus</b> or limited mouth opening. Unlike the conventional inferior alveolar or Gow-Gates blocks, this technique is performed with the teeth in occlusion or slightly apart.<br><br><b>Technique overview:</b><br>- The needle is inserted parallel to the maxillary occlusal plane at the mucogingival junction of the maxillary molars and advanced posteriorly into the pterygomandibular space.<br>- The mouth remains closed during the injection.<br><br><b>Nerves anesthetized:</b> inferior alveolar, lingual, and mylohyoid.<br><br><b>Comparison:</b><br>- Conventional IANB: requires full mouth opening.<br>- Gow-Gates: requires wide opening but provides a broader block.<br>- <b>Vazirani-Akinosi:</b> ideal when mouth opening is restricted.<br><br><b>High-yield recap:</b><br>- Indication: trismus, infection, trauma.<br>- Approach: closed-mouth, mucogingival junction of upper molars.<br>- Nerves: IAN, lingual, mylohyoid.<br>- Advantage: effective even with limited opening.",14,,
 Which of the following is a true property of Mineral Trioxide Aggregate (MTA)?,It sets in the presence of moisture,It causes chronic pulp inflammation,It is highly soluble in oral fluids,It is primarily composed of zinc oxide and eugenol,1,"<b>Mineral Trioxide Aggregate (MTA)</b> is a <b>bioactive, hydraulic calcium silicate cement</b> (mainly tricalcium silicate, dicalcium silicate, tricalcium aluminate; bismuth oxide for radiopacity). It is <b>hydrophilic</b> and <b>sets in the presence of moisture/blood</b>, forming calcium silicate hydrate and <b>calcium hydroxide</b>, which yields a <b>high pH (~12.5)</b> with antibacterial and dentinogenic effects.<br><br><b>Key properties:</b><br>– <b>Excellent seal</b> (slight expansion on set); <b>biocompatible & bioactive</b> (induces dentin/cementum).<br>– <b>Low solubility after setting</b>; <b>high radiopacity</b>.<br>– <b>Long setting time</b> (~3–4 h) and potential <b>tooth discoloration</b> (more with gray MTA) are drawbacks.<br>– <b>Clinical uses:</b> pulp capping, pulpotomy, apexogenesis/apexification, perforation repair, retrofillings.<br>– <b>Safety note:</b> <i>Unset MTA</i> (fresh powder/paste) is highly alkaline and <b>may irritate skin or eyes</b>; once set, it is <b>highly biocompatible</b>.<br><br><b>High-yield:</b> Do not confuse MTA with <b>zinc oxide–eugenol</b> (palliative base) or <b>resin adhesives</b> (polymerize rather than hydrate).",14,,
+"In high-copper dental amalgam alloys, the addition of copper primarily improves which of the following properties?",Ductility and flow,Creep resistance and strength,Setting expansion,Corrosion susceptibility,2,"<b>Role of Copper in Dental Amalgam Alloys</b><br><br>
+
+Copper (Cu) is added to dental amalgam alloys primarily to <b>improve mechanical properties</b> and <b>reduce the formation of weak corrosion-prone phases</b> seen in traditional low-copper amalgams.<br><br>
+
+<b>Traditional (low-copper) amalgam:</b><br>
+<ul>
+<li>Composition: ~65% Ag, 29% Sn, 6% Cu (or less), and trace Zn.</li>
+<li>Forms a weak and unstable <b>gamma-2 (Sn–Hg)</b> phase during setting.</li>
+<li>Gamma-2 phase → prone to <b>corrosion</b> and <b>creep</b> (plastic deformation under load).</li>
+</ul><br>
+
+<b>High-copper amalgam:</b><br>
+<ul>
+<li>Contains 12–30% Cu.</li>
+<li>Copper reacts with Sn (tin) to form <b>Cu–Sn (eta phase)</b> instead of the weak Sn–Hg (gamma-2) phase.</li>
+<li>Eliminates gamma-2, resulting in a <b>stronger and more corrosion-resistant material.</b></li>
+</ul><br>
+
+<b>Key Improvements from Copper Addition:</b><br>
+<ul>
+<li><b>Increased strength:</b> due to elimination of weak gamma-2 phase.</li>
+<li><b>Improved creep resistance:</b> copper-rich eta phase resists deformation.</li>
+<li><b>Reduced marginal breakdown:</b> due to improved corrosion resistance and mechanical integrity.</li>
+<li><b>Enhanced longevity:</b> less surface deterioration and fewer fractures.</li>
+</ul><br>
+
+<b>Other effects:</b><br>
+<ul>
+<li>Slightly faster setting reaction (higher reactivity).</li>
+<li>Less delayed expansion compared to zinc-containing alloys (when properly handled).</li>
+</ul><br>
+
+<b>Summary Table:</b><br>
+<table border=""1"" cellpadding=""4"">
+<tr><th>Property</th><th>Effect of Copper</th></tr>
+<tr><td>Strength</td><td>Increases</td></tr>
+<tr><td>Creep</td><td>Decreases</td></tr>
+<tr><td>Corrosion resistance</td><td>Improves</td></tr>
+<tr><td>Gamma-2 phase</td><td>Eliminated</td></tr>
+<tr><td>Marginal integrity</td><td>Improved</td></tr>
+</table><br>
+
+<b>High-Yield Summary:</b><br>
+<ul>
+<li>Copper reacts with tin to prevent gamma-2 formation (Sn–Hg phase).</li>
+<li>High-copper amalgams exhibit <b>greater strength</b> and <b>lower creep</b>.</li>
+<li>Improved clinical performance and reduced marginal failure.</li>
+<li>Modern amalgams universally contain 12–30% Cu for optimal properties.</li>
+</ul>",14,,
+Which of the following statements best describes the primary function of precious metals in dental casting alloys?,They increase tarnish and corrosion susceptibility.,They improve biocompatibility and corrosion resistance.,They increase modulus of elasticity and hardness exclusively.,They reduce cost and melting temperature.,2,"<b>Precious metals</b>—also called <b>noble metals</b>—are primarily added to dental alloys to enhance <b>corrosion resistance, biocompatibility, and workability</b>.<br><br>
+
+<b>Common precious metals:</b> Gold (Au), Platinum (Pt), Palladium (Pd), Rhodium (Rh), Iridium (Ir), and Ruthenium (Ru).<br><br>
+
+<b>Key Functions:</b>
+<ul>
+<li><b>Corrosion and tarnish resistance:</b> Precious metals are chemically stable and maintain luster in the oral environment.</li>
+<li><b>Biocompatibility:</b> Their inertness minimizes tissue irritation and galvanic activity.</li>
+<li><b>Workability:</b> Gold imparts excellent ductility and malleability, allowing precise casting and burnishing.</li>
+<li><b>Solid-solution strengthening:</b> Palladium and platinum harden the gold matrix while maintaining corrosion resistance.</li>
+<li><b>Thermal stability:</b> High melting points reduce distortion during soldering or porcelain firing.</li>
+</ul><br>
+
+<b>Classification:</b>
+<ul>
+<li><b>High-noble alloys:</b> ≥ 60 % noble metal content (≥ 40 % Au).</li>
+<li><b>Noble alloys:</b> ≥ 25 % noble metal content.</li>
+<li><b>Predominantly base metal:</b> &lt; 25 % noble metal.</li>
+</ul><br>
+
+<b>Summary Table</b><br>
+<table border=""1"" cellpadding=""4"">
+<tr><th>Metal</th><th>Primary Effect</th></tr>
+<tr><td>Gold (Au)</td><td>Corrosion resistance, ductility, color</td></tr>
+<tr><td>Palladium (Pd)</td><td>Increases strength and whitens gold</td></tr>
+<tr><td>Platinum (Pt)</td><td>Raises melting point, improves hardness</td></tr>
+<tr><td>Iridium/Ruthenium</td><td>Grain refiners for fine microstructure</td></tr>
+</table><br>
+
+<b>High-Yield Points:</b>
+<ul>
+<li>Precious metals = high corrosion resistance and biocompatibility.</li>
+<li>Pd and Pt strengthen and whiten Au alloys.</li>
+<li>Grain refiners (Ru, Ir) improve cast accuracy and polishability.</li>
+<li>Gold’s ductility and inertness make it ideal for long-term restorations.</li>
+</ul>",14,,

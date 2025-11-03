@@ -301,3 +301,205 @@ For penicillin-allergic patients, <b>Azithromycin 500 mg</b> or <b>Clindamycin 6
 Which of the following best describes the mechanism of action of celecoxib?,Non-selective inhibition of COX-1 and COX-2,Selective inhibition of COX-2,Irreversible inhibition of platelet COX-1,Inhibition of leukotriene synthesis,2,"Celecoxib is a <b>selective COX-2 inhibitor</b>, designed to reduce inflammation and pain while minimizing gastrointestinal side effects typical of non-selective NSAIDs.<br><br><b>COX-1:</b> Constitutive enzyme — responsible for gastric mucosal protection, renal blood flow, and platelet aggregation.<br><b>COX-2:</b> Inducible enzyme — expressed at inflammation sites; inhibition reduces prostaglandin synthesis and inflammation.<br><br><b>Advantages:</b><ul><li>Fewer GI ulcers and bleeding episodes compared to nonselective NSAIDs (e.g., ibuprofen, naproxen).</li><li>Minimal effect on platelet function and bleeding time.</li></ul><b>Risks:</b><ul><li>Higher risk of cardiovascular events (MI, stroke) due to prostacyclin/thromboxane imbalance.</li><li>Contraindicated in patients with established heart disease.</li></ul><b>High-Yield Recap:</b> Celecoxib = COX-2 selective → anti-inflammatory + less GI toxicity.",9,,
 "A 70-kg adult patient requires local anesthesia with 2% lidocaine containing 1:100,000 epinephrine. What is the maximum number of carpules that can be safely administered?",7,10,13,20,3,"Each carpule of 2% lidocaine (1.8 mL) contains <b>36 mg</b> of lidocaine (20 mg/mL × 1.8 mL).<br>Maximum recommended dose = <b>7 mg/kg × 70 kg = 490 mg</b>.<br>490 ÷ 36 = ~13 carpules.<br><br><b>Mechanism of Action:</b> Blocks <b>voltage-gated sodium channels</b>, preventing depolarization and nerve impulse propagation.<br><br><b>Toxicity Signs:</b> Circumoral numbness, tinnitus, dizziness → seizures → cardiovascular collapse.<br><b>Prevention:</b> Aspirate before injection, inject slowly, and use epinephrine to limit systemic absorption.<br><br><b>High-Yield Recap:</b><ul><li>Max lidocaine with epi: 7 mg/kg</li><li>Without epi: 4.4 mg/kg</li><li>Always calculate by weight.</li></ul>",9,,
 Which of the following local anesthetics provides the longest duration of pulpal anesthesia?,Lidocaine,Mepivacaine,Bupivacaine,Articaine,3,"<b>Bupivacaine</b> is a long-acting <b>amide</b> anesthetic with prolonged action due to high lipid solubility and protein binding.<br><br><b>Duration:</b><ul><li>Pulpal: 90–180 min</li><li>Soft-tissue: 4–12 hours</li></ul><b>Uses:</b> Long oral surgeries, postoperative pain control.<br><br><b>Cautions:</b><ul><li>Highly cardiotoxic — avoid intravascular injection.</li><li>Not recommended for children or short procedures.</li></ul><b>Comparison Table:</b><br><table border='1' cellpadding='4' cellspacing='0'><tr><th>Local Anesthetic</th><th>Duration (pulpal)</th><th>Key Property</th><th>Notes</th></tr><tr><td>Mepivacaine</td><td>20–40 min</td><td>Mild vasodilator</td><td>No epi needed for short cases</td></tr><tr><td>Lidocaine</td><td>60 min</td><td>Standard agent</td><td>Safe & effective</td></tr><tr><td>Articaine</td><td>60–75 min</td><td>High diffusion</td><td>Avoid IAN block (paresthesia risk)</td></tr><tr><td><b>Bupivacaine</b></td><td><b>90–180 min</b></td><td><b>High lipid solubility</b></td><td><b>Longest duration, cardiotoxic potential</b></td></tr></table><br><b>High-Yield Recap:</b> Bupivacaine = longest-acting local anesthetic; ideal for long cases but cardiotoxic.",9,,
+A 58-year-old patient taking clopidogrel and warfarin is prescribed amoxicillin–clavulanate for an odontogenic infection. Which of the following statements best describes the interaction between β-lactam antibiotics and these medications?,β-lactams diminish the antiplatelet effect of clopidogrel and enhance the anticoagulant effect of warfarin.,β-lactams enhance both antiplatelet and anticoagulant activity.,β-lactams inhibit both drug effects by reducing hepatic metabolism.,β-lactams have no significant interaction with either drug.,1,"<b>β-lactam Antibiotic Interactions</b><br><br>
+
+<b>1. Interaction with Antiplatelet Drugs (e.g., Clopidogrel, Aspirin):</b><br>
+<ul>
+<li>Some β-lactams (especially penicillins and cephalosporins) can <b>diminish the effect of antiplatelet agents</b> by interfering with <b>platelet aggregation</b> or competing at platelet receptor sites.</li>
+<li>Penicillins reversibly inhibit platelet aggregation through blockade of ADP-induced platelet activation and reduce platelet adhesion.</li>
+<li>However, the overall <b>antiplatelet effect of clopidogrel</b> may appear <b>diminished</b> in patients taking β-lactams concurrently, particularly at high antibiotic doses.</li>
+</ul><br>
+
+<b>2. Interaction with Anticoagulants (e.g., Warfarin):</b><br>
+<ul>
+<li>β-lactams can <b>enhance the anticoagulant effect of warfarin</b> via several mechanisms:</li>
+<ul>
+<li><b>Reduction of intestinal flora</b> → decreased synthesis of vitamin K → lower availability of clotting factors II, VII, IX, X.</li>
+<li><b>Displacement of warfarin</b> from plasma protein binding sites.</li>
+<li><b>Inhibition of hepatic metabolism</b> of warfarin in certain patients.</li>
+</ul>
+<li>Result: increased INR and risk of bleeding.</li>
+</ul><br>
+
+<b>3. Clinical Implications:</b><br>
+<ul>
+<li>Monitor INR closely when β-lactams are prescribed with warfarin.</li>
+<li>Observe for reduced clopidogrel efficacy if high-dose or prolonged β-lactam therapy is used.</li>
+<li>Amoxicillin, ampicillin, and cephalosporins are most frequently implicated in this interaction.</li>
+</ul><br>
+
+<b>Summary Table</b><br>
+<table border=""1"" cellpadding=""4"">
+<tr><th>Drug Combination</th><th>Interaction</th><th>Clinical Effect</th></tr>
+<tr><td>β-lactam + Clopidogrel/Aspirin</td><td>Diminished antiplatelet action</td><td>Reduced platelet inhibition</td></tr>
+<tr><td>β-lactam + Warfarin</td><td>Enhanced anticoagulant effect</td><td>Increased INR / bleeding risk</td></tr>
+</table><br>
+
+<b>High-Yield Points:</b><br>
+<ul>
+<li>β-lactams decrease platelet aggregation but paradoxically <b>reduce the effectiveness of antiplatelet agents</b> like clopidogrel.</li>
+<li>They <b>enhance warfarin activity</b> through vitamin K depletion and protein-binding displacement.</li>
+<li>Always monitor INR and bleeding tendencies in patients on warfarin receiving β-lactams.</li>
+</ul>",9,,
+A 45-year-old patient with rheumatoid arthritis and bipolar disorder is prescribed methotrexate and lithium concurrently. Which of the following best explains the potential interaction between these two medications?,"Methotrexate increases lithium excretion, decreasing lithium levels.",Lithium inhibits methotrexate absorption in the GI tract.,Concurrent use may lead to increased plasma concentrations and toxicity of both drugs due to reduced renal clearance.,No clinically significant interaction occurs between the two agents.,3,"<b>Methotrexate–Lithium Interaction</b><br><br>
+
+<b>Mechanism of Toxicity:</b><br>
+Both <b>methotrexate</b> and <b>lithium</b> are primarily <b>excreted unchanged by the kidneys</b>.  
+When administered together, they can <b>compete for renal tubular secretion</b> and reduce each other’s clearance.<br><br>
+
+<b>1. Methotrexate:</b><br>
+<ul>
+<li>Eliminated by glomerular filtration and active tubular secretion.</li>
+<li>Nephrotoxic drugs (NSAIDs, penicillins, lithium) can reduce its renal excretion.</li>
+<li>Accumulation → <b>myelosuppression, mucositis, hepatotoxicity, nephrotoxicity.</b></li>
+</ul><br>
+
+<b>2. Lithium:</b><br>
+<ul>
+<li>Filtered and reabsorbed in the proximal tubule via sodium transport pathways.</li>
+<li>Renally-cleared drugs like methotrexate can <b>reduce lithium clearance</b>.</li>
+<li>Accumulation → <b>neurotoxicity, tremor, ataxia, confusion, GI distress.</b></li>
+</ul><br>
+
+<b>3. Combined Effect:</b><br>
+<ul>
+<li>Co-administration → <b>mutual reduction in renal clearance</b>.</li>
+<li>Increased risk of <b>toxicity and renal impairment</b>.</li>
+<li>Risk amplified in dehydration or pre-existing renal dysfunction.</li>
+</ul><br>
+
+<b>Clinical Management:</b><br>
+<ul>
+<li>Avoid combination when possible; consider alternative therapy.</li>
+<li>Monitor renal function and serum drug levels closely.</li>
+<li>Ensure hydration and counsel on toxicity symptoms.</li>
+</ul><br>
+
+<b>High-Yield Points:</b><br>
+<ul>
+<li>Both drugs renally cleared → risk of mutual accumulation.</li>
+<li>Monitor <b>creatinine, lithium levels, and CBC</b>.</li>
+<li>Signs: tremor, mucositis, renal dysfunction.</li>
+</ul>",9,,
+A 36-year-old male presents with acute oral mucosal inflammation secondary to aphthous ulcers. Which corticosteroid is most appropriate for short-term topical use to control inflammation while minimizing systemic effects?,Dexamethasone,Hydrocortisone,Prednisone,Betamethasone,2,"<b>Corticosteroid Selection: When to Use Each Type</b><br><br>
+
+Corticosteroids differ in <b>anti-inflammatory potency, mineralocorticoid activity, and duration</b>.  
+Choosing depends on <b>clinical indication, route, and systemic risk</b>.<br><br>
+
+<b>Hydrocortisone (short-acting, low potency)</b><br>
+<ul>
+<li>Equivalent to cortisol; both glucocorticoid and mineralocorticoid activity.</li>
+<li>Used for mild inflammation or adrenal replacement.</li>
+<li>Topical/oral rinse for oral ulcers, dermatitis, or allergy.</li>
+<li>Short half-life → minimal systemic accumulation.</li>
+</ul><br>
+
+<b>Prednisone/Prednisolone (intermediate potency)</b><br>
+<ul>
+<li>Systemic therapy for inflammatory or autoimmune disease.</li>
+<li>Minimal mineralocorticoid effect.</li>
+<li>Duration: 12–36 hrs → daily dosing.</li>
+</ul><br>
+
+<b>Dexamethasone/Betamethasone (long-acting, high potency)</b><br>
+<ul>
+<li>Very potent; no mineralocorticoid effect.</li>
+<li>36–72 hr duration → severe inflammation, cerebral edema.</li>
+<li>Dexamethasone rinse for severe oral mucositis.</li>
+</ul><br>
+
+<b>Fludrocortisone</b> → primarily mineralocorticoid (Addison’s disease).<br><br>
+
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Hydrocortisone:</b> short-term topical/local use.</li>
+<li><b>Prednisone:</b> systemic inflammation.</li>
+<li><b>Dexamethasone/Betamethasone:</b> long-acting, severe inflammation.</li>
+<li><b>Fludrocortisone:</b> adrenal mineralocorticoid replacement.</li>
+</ul>",9,,
+A 47-year-old patient with mild oral candidiasis after antibiotic therapy presents for treatment. Which of the following is the most appropriate first-line antifungal in this case?,Intravenous amphotericin B,Oral fluconazole for 4 weeks,Topical nystatin suspension (swish and swallow),Oral ketoconazole tablets,3,"<b>Antifungal Drug Classes – When and How to Use Each Type</b><br><br>
+
+Antifungal selection depends on <b>infection site, severity, and immune status</b>.<br><br>
+
+<b>1. Polyenes – Nystatin &amp; Amphotericin B</b><br>
+<ul>
+<li><b>MOA:</b> Bind to <b>ergosterol</b> in fungal membranes → create pores → cell death (fungicidal).</li>
+<li><b>Route:</b>
+  <ul>
+    <li><b>Nystatin:</b> Topical or oral suspension; not systemically absorbed.</li>
+    <li><b>Amphotericin B:</b> Intravenous for severe systemic infection.</li>
+  </ul>
+</li>
+<li><b>Indications:</b>
+  <ul>
+    <li><b>Nystatin:</b> First-line for oral candidiasis (“swish and swallow”).</li>
+    <li><b>Amphotericin B:</b> Reserved for life-threatening systemic mycoses.</li>
+  </ul>
+</li>
+<li><b>Notes:</b> Nystatin is safe and local; amphotericin B is nephrotoxic.</li>
+</ul><br>
+
+<b>2. Azoles – Fluconazole, Ketoconazole, Itraconazole, Voriconazole</b><br>
+<ul>
+<li><b>MOA:</b> Inhibit <b>lanosterol 14-α-demethylase</b> → block ergosterol synthesis (fungistatic).</li>
+<li><b>Route:</b> Oral, topical, or IV depending on agent and infection severity.</li>
+<li><b>Indications:</b>
+  <ul>
+    <li><b>Fluconazole:</b> Oral/esophageal/vaginal candidiasis; systemic Candida infection.</li>
+    <li><b>Ketoconazole (topical):</b> Dermatophyte or seborrheic infections.</li>
+    <li><b>Itraconazole/Voriconazole:</b> Broader use in Aspergillus or resistant Candida.</li>
+  </ul>
+</li>
+<li><b>Notes:</b> Fluconazole preferred for mucosal infections; monitor liver enzymes in systemic use.</li>
+</ul><br>
+
+<b>Summary Table</b><br>
+<table border=""1"" cellpadding=""4"">
+<tr><th>Drug Class</th><th>Example</th><th>Route</th><th>Key Indications</th></tr>
+<tr><td>Polyenes</td><td>Nystatin</td><td>Topical/oral rinse</td><td>Oral/vaginal candidiasis</td></tr>
+<tr><td>Polyenes</td><td>Amphotericin B</td><td>IV</td><td>Systemic fungal infection</td></tr>
+<tr><td>Azoles</td><td>Fluconazole</td><td>Oral/IV</td><td>Oropharyngeal/systemic Candida</td></tr>
+<tr><td>Azoles</td><td>Ketoconazole</td><td>Topical</td><td>Dermatophytes/seborrheic dermatitis</td></tr>
+</table><br>
+
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Nystatin:</b> Topical/oral suspension for local Candida.</li>
+<li><b>Fluconazole:</b> Oral therapy for systemic or recurrent infection.</li>
+<li><b>Amphotericin B:</b> IV for severe systemic disease.</li>
+<li><b>Ketoconazole (topical):</b> For dermatophyte/scalp infections.</li>
+</ul>",9,,
+A 32-year-old patient with recurrent herpes labialis experiences frequent outbreaks despite topical creams. Which regimen is most appropriate to reduce recurrence frequency?,Topical penciclovir cream only at onset of symptoms,Oral acyclovir or valacyclovir suppressive therapy daily,Intravenous acyclovir during every outbreak,No treatment; symptomatic care only,2,"<b>Antiviral Selection: Matching Route and Indication</b><br><br>
+
+<b>1. Topical Therapy – Mild Localized Lesions</b><br>
+<ul>
+<li><b>Penciclovir 1% cream:</b> applied every 2 hrs for 4 days during prodrome; shortens healing by ~1 day.</li>
+<li>Used for episodic cold sores; no prevention of recurrence.</li>
+</ul><br>
+
+<b>2. Oral Therapy – Frequent Recurrences or Moderate Disease</b><br>
+<ul>
+<li><b>Acyclovir 400 mg BID</b> or <b>Valacyclovir 500 mg daily</b> for ≥6 months.</li>
+<li>Suppressive regimen decreases frequency/severity by ~80%.</li>
+<li>Preferred for recurrent herpes labialis or genital HSV.</li>
+</ul><br>
+
+<b>3. Intravenous Therapy – Severe/Systemic Cases</b><br>
+<ul>
+<li><b>IV acyclovir 5–10 mg/kg q8h</b> for HSV encephalitis or disseminated infection.</li>
+</ul><br>
+
+<b>Alternative Antivirals:</b><br>
+<ul>
+<li><b>Oseltamivir:</b> Oral agent for influenza A/B (start within 48 hrs).</li>
+<li><b>Ganciclovir/Valganciclovir:</b> CMV infections (e.g., retinitis).</li>
+<li><b>Foscarnet:</b> For acyclovir-resistant HSV/CMV.</li>
+</ul><br>
+
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Topical penciclovir:</b> episodic mild lesions only.</li>
+<li><b>Oral acyclovir/valacyclovir:</b> suppressive therapy for recurrent HSV.</li>
+<li><b>IV acyclovir:</b> severe systemic infections or immunocompromised patients.</li>
+<li>Start antivirals at prodrome for best results.</li>
+</ul>",9,,

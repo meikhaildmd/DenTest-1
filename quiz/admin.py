@@ -1,3 +1,4 @@
+# quiz/admin.py
 from django.contrib import admin
 from django.contrib.auth import get_user_model
 from .models import (
@@ -12,7 +13,10 @@ from .models import (
     UserQuestionStatus,
 )
 
-# ─── Inlines ───────────────────────────────────────────────────────────
+# ════════════════════════════════════════════════════════════════════════
+# INLINE MODELS
+# ════════════════════════════════════════════════════════════════════════
+
 class QuestionImageInline(admin.TabularInline):
     model = QuestionImage
     extra = 0
@@ -23,29 +27,32 @@ class CustomQuizQuestionInline(admin.TabularInline):
     extra = 0
 
 
-# ─── Section admin ─────────────────────────────────────────────────────
+# ════════════════════════════════════════════════════════════════════════
+# CORE CONTENT ADMINS
+# ════════════════════════════════════════════════════════════════════════
+
 @admin.register(Section)
 class SectionAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "exam_type")
     list_filter = ("exam_type",)
     search_fields = ("name",)
+    ordering = ("id",)
 
 
-# ─── Subject admin ─────────────────────────────────────────────────────
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "section")
     list_filter = ("section__exam_type", "section")
     search_fields = ("name",)
+    ordering = ("section", "id")
 
 
-# ─── Question admin ────────────────────────────────────────────────────
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ("id", "text", "subject", "correct_option")
-    search_fields = ("text",)
+    list_display = ("id", "subject", "text", "correct_option")
     list_filter = ("subject__section__exam_type", "subject__section", "subject")
-    ordering = ("subject__section__name", "subject__name")
+    search_fields = ("text",)
+    ordering = ("subject__section__name", "subject__name", "id")
     inlines = [QuestionImageInline]
 
 
@@ -56,40 +63,48 @@ class QuestionImageAdmin(admin.ModelAdmin):
     ordering = ("-id",)
 
 
-# ─── Patient chart admin ───────────────────────────────────────────────
 @admin.register(PatientChartData)
 class PatientChartDataAdmin(admin.ModelAdmin):
     list_display = ("id", "question", "chief_complaint")
     search_fields = ("question__text", "chief_complaint")
+    ordering = ("-id",)
 
 
-# ─── Custom quiz admin ─────────────────────────────────────────────────
+# ════════════════════════════════════════════════════════════════════════
+# QUIZZES AND ATTEMPTS
+# ════════════════════════════════════════════════════════════════════════
+
 @admin.register(CustomQuiz)
 class CustomQuizAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "user", "created_at")
-    inlines = [CustomQuizQuestionInline]
     search_fields = ("title", "user__username")
+    ordering = ("-created_at",)
+    inlines = [CustomQuizQuestionInline]
 
 
-# ─── Quiz attempt admin ────────────────────────────────────────────────
 @admin.register(QuizAttempt)
 class QuizAttemptAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "subject", "score")
     search_fields = ("user__username",)
-    ordering = ("id",)
+    ordering = ("-id",)
 
 
-# ─── User question status admin ────────────────────────────────────────
 @admin.register(UserQuestionStatus)
 class UserQuestionStatusAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "question")
     search_fields = ("user__username", "question__text")
-    ordering = ("id",)
+    ordering = ("-id",)
 
 
-# ─── User admin (simple view for new accounts) ─────────────────────────
+# ════════════════════════════════════════════════════════════════════════
+# USER ADMIN (OVERRIDE DEFAULT)
+# ════════════════════════════════════════════════════════════════════════
+
 User = get_user_model()
-admin.site.unregister(User)  # remove Django’s default registration if active
+try:
+    admin.site.unregister(User)
+except admin.sites.NotRegistered:
+    pass
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
