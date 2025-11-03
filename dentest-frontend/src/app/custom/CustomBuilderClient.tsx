@@ -18,6 +18,32 @@ function getCookie(name: string): string | null {
     return match ? decodeURIComponent(match[2]) : null;
 }
 
+// ✅ Centralized fetch helper (handles CSRF + cookies + errors)
+async function apiFetch(endpoint: string, options: RequestInit = {}) {
+    const csrf = getCookie('csrftoken');
+    const headers = {
+        'Content-Type': 'application/json',
+        ...(csrf ? { 'X-CSRFToken': csrf } : {}),
+        ...options.headers,
+    };
+
+    const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000/api'}${endpoint}`,
+        {
+            credentials: 'include',
+            ...options,
+            headers,
+        }
+    );
+
+    if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.detail || data.error || `Request failed: ${res.status}`);
+    }
+
+    return res.json();
+}
+
 /* -------------------------------------------------------------
    Types
 ------------------------------------------------------------- */
@@ -28,7 +54,6 @@ interface Question { id: number; text: string; }
 /* -------------------------------------------------------------
    Constants
 ------------------------------------------------------------- */
-const API = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000/api';
 const FILTERS = ['all', 'incorrect', 'correct', 'unanswered'] as const;
 type Filter = (typeof FILTERS)[number];
 
@@ -51,36 +76,20 @@ export default function CustomBuilderClient() {
     const isLoggedIn =
         typeof document !== 'undefined' && document.cookie.includes('sessionid=');
 
-    // ✅ Track if user has any answer history (for enabling filters
-
+    /* -------------------------------------------------------------
+       Check if user has question history (to enable filters)
+    ------------------------------------------------------------- */
     useEffect(() => {
         if (!isLoggedIn) return;
         (async () => {
             try {
-                const res = await fetch(`${API}/user-question-status/all/`, {
-                    credentials: 'include',
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    setHasHistory(data.length > 0);
-                } else {
-                    setHasHistory(false);
-                }
+                const data = await apiFetch('/user-question-status/all/');
+                setHasHistory(data.length > 0);
             } catch {
                 setHasHistory(false);
             }
         })();
     }, [isLoggedIn]);
-
-    /* -------------------------------------------------------------
-       THEME detection (ADAT / INBDE / BOTH)
-    ------------------------------------------------------------- */
-    const themeGradient =
-        examFilter === 'adat'
-            ? 'from-emerald-800 via-teal-600 to-emerald-400'
-            : examFilter === 'inbde'
-                ? 'from-blue-500 via-purple-500 to-fuchsia-500'
-                : 'from-blue-500 via-green-500 to-teal-400';
 
     /* -------------------------------------------------------------
        Load subjects by section / exam
@@ -92,13 +101,9 @@ export default function CustomBuilderClient() {
                 const allSubs: Subject[] = [];
 
                 for (const exam of exams) {
-                    const sections: Section[] = await fetch(`${API}/sections/${exam}/`).then((r) =>
-                        r.json()
-                    );
+                    const sections: Section[] = await apiFetch(`/sections/${exam}/`);
                     for (const sec of sections) {
-                        const subs: Subject[] = await fetch(
-                            `${API}/sections/${sec.id}/subjects/`
-                        ).then((r) => r.json());
+                        const subs: Subject[] = await apiFetch(`/sections/${sec.id}/subjects/`);
                         subs.forEach((s) => allSubs.push({ ...s, section: sec }));
                     }
                 }
@@ -111,31 +116,6 @@ export default function CustomBuilderClient() {
     }, [examFilter]);
 
     /* -------------------------------------------------------------
-   Load user question history to enable filters
-------------------------------------------------------------- */
-    useEffect(() => {
-        if (!isLoggedIn) return;
-
-        (async () => {
-            try {
-                const res = await fetch(`${API}/user-question-status/all/`, {
-                    credentials: 'include',
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    // if user has at least one answered question, unlock filters
-                    setHasHistory(data.length > 0);
-                } else {
-                    setHasHistory(false);
-                }
-            } catch (err) {
-                console.error('Failed to fetch user history:', err);
-                setHasHistory(false);
-            }
-        })();
-    }, [isLoggedIn]);
-
-    /* -------------------------------------------------------------
        Start quiz
     ------------------------------------------------------------- */
     const start = async () => {
@@ -143,17 +123,9 @@ export default function CustomBuilderClient() {
         setLoading(true);
 
         try {
-            await fetch(`${API}/csrf/`, { credentials: 'include' });
-            const csrf = getCookie('csrftoken');
-            if (!csrf) throw new Error('Could not obtain CSRF token.');
-
-            const res = await fetch(`${API}/custom-quiz/`, {
+            await apiFetch('/csrf/'); // ensures CSRF cookie is set
+            const questions: Question[] = await apiFetch('/custom-quiz/', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': csrf,
-                },
-                credentials: 'include',
                 body: JSON.stringify({
                     subject_ids: Array.from(selected),
                     filter,
@@ -161,12 +133,6 @@ export default function CustomBuilderClient() {
                 }),
             });
 
-            if (!res.ok) {
-                const data = await res.json().catch(() => ({}));
-                throw new Error(data.detail || data.error || 'Quiz creation failed.');
-            }
-
-            const questions: Question[] = await res.json();
             localStorage.setItem('customQuiz', JSON.stringify(questions));
             router.push('/custom/quiz');
         } catch (err: unknown) {
@@ -185,6 +151,16 @@ export default function CustomBuilderClient() {
         (acc[s.section.id] ??= []).push(s);
         return acc;
     }, {});
+
+    /* -------------------------------------------------------------
+       Theme gradient
+    ------------------------------------------------------------- */
+    const themeGradient =
+        examFilter === 'adat'
+            ? 'from-emerald-800 via-teal-600 to-emerald-400'
+            : examFilter === 'inbde'
+                ? 'from-blue-500 via-purple-500 to-fuchsia-500'
+                : 'from-blue-500 via-green-500 to-teal-400';
 
     /* -------------------------------------------------------------
        Render
@@ -226,11 +202,8 @@ export default function CustomBuilderClient() {
                                             checked={selected.has(s.id)}
                                             onChange={() => {
                                                 const next = new Set(selected);
-                                                if (next.has(s.id)) {
-                                                    next.delete(s.id);
-                                                } else {
-                                                    next.add(s.id);
-                                                }
+                                                if (next.has(s.id)) next.delete(s.id);
+                                                else next.add(s.id);
                                                 setSelected(next);
                                             }}
                                         />
@@ -245,10 +218,9 @@ export default function CustomBuilderClient() {
 
             {/* FILTER + LIMIT */}
             <div className="mb-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-                {/* Filter radio chips */}
                 <div className="flex gap-4">
                     {FILTERS.map((f) => {
-                        const disabled = (f !== 'all') && (!isLoggedIn || !hasHistory);
+                        const disabled = f !== 'all' && (!isLoggedIn || !hasHistory);
                         return (
                             <button
                                 key={f}
