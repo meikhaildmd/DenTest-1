@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 
+
 urlpatterns = [
     path('api/', include('quiz.api_urls')),
     path('admin/', admin.site.urls),

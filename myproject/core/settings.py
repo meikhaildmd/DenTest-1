@@ -168,6 +168,10 @@ LOGGING = {
     },
 }
 
+
+# --- SECURITY HEADERS ---
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = not DEBUG
 # --- CORS + CSRF (Production Safe) ---
 
 CSRF_COOKIE_HTTPONLY = False
@@ -229,17 +233,18 @@ SESSION_COOKIE_PATH = "/"
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = not DEBUG
 
-# --- SENTRY ERROR TRACKING ---
+# --- SENTRY ERROR MONITORING ---
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
+# Load DSN from .env or Render environment variables
 SENTRY_DSN = env("SENTRY_DSN", default="")
 
 if SENTRY_DSN:
     sentry_sdk.init(
         dsn=SENTRY_DSN,
         integrations=[DjangoIntegration()],
-        send_default_pii=True,  # includes user info, IPs, etc.
-        traces_sample_rate=1.0,  # performance data (safe to leave on)
+        send_default_pii=True,       # Include user/IP info for better context
+        traces_sample_rate=1.0,      # Capture performance data (safe to lower later)
         environment="production" if not DEBUG else "development",
     )
