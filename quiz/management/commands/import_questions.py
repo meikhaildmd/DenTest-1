@@ -64,17 +64,20 @@ class Command(BaseCommand):
             for row in reader:
                 raw_text = (row.get("text") or "").strip()
                 if not raw_text:
+                    print(f"⚠️ Skipped (no text): {row}")
                     skipped += 1
                     continue
 
                 subject_id = (row.get("subject_id") or "").strip()
                 if not subject_id:
+                    print(f"⚠️ Skipped (no subject_id): {row}")
                     skipped += 1
                     continue
 
                 try:
                     subject = Subject.objects.get(id=subject_id)
                 except Subject.DoesNotExist:
+                    print(f"⚠️ Skipped (invalid subject_id {subject_id}): {row}")
                     skipped += 1
                     continue
 
