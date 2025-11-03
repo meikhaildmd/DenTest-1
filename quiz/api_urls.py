@@ -13,7 +13,6 @@ from .views_api import (
     CustomQuizView,
     CurrentUserView,
     SignupView,
-    api_views
 )
 
 urlpatterns = [
