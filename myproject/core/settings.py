@@ -195,7 +195,6 @@ CORS_ALLOWED_ORIGINS = [
     "https://www.odontest.com",
     "https://dentest.net",
     "https://www.dentest.net",
-    "https://www.dentestpro.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -205,7 +204,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://www.odontest.com",
     "https://dentest.net",
     "https://www.dentest.net",
-    "https://www.dentestpro.com",
     "https://api.toothprep.com",
     "https://toothprep-backend.onrender.com",
 ]
