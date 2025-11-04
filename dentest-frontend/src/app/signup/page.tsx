@@ -32,7 +32,7 @@ export default function SignupPage() {
         }
 
         try {
-            const res = await fetch(`${API}/api/signup/`, {
+            const res = await fetch(`${API}/signup/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
