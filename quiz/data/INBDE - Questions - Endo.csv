@@ -1,0 +1,719 @@
+text,option1,option2,option3,option4,correct_option,explanation,subject_id,question_image,explanation_image
+Which cells are primarily responsible for bone and root resorption seen during orthodontic movement or periapical inflammation?,Odontoblasts,Osteoclasts,Cementoblasts,Ameloblasts,2,"<b>Osteoclasts and Root Resorption</b><br><br>
+<b>Overview:</b><br>
+<b>Osteoclasts</b> are large, multinucleated cells responsible for resorption of mineralized tissues including <b>bone, cementum, and dentin</b>. They originate from monocyte/macrophage precursors and are activated by <b>RANKL–RANK signaling</b> in response to inflammation or mechanical stress.<br><br>
+<b>Clinical Contexts:</b><br>
+<ul>
+<li><b>Physiologic:</b> Normal bone remodeling and eruption of permanent teeth.</li>
+<li><b>Pathologic:</b> Root resorption following trauma, periapical lesions, or orthodontic forces.</li>
+<li><b>Microscopy:</b> Presence of <b>Howship’s lacunae</b> on resorbed surfaces.</li>
+</ul><br>
+<b>Distinction:</b><br>
+<ul>
+<li><b>Osteoclasts</b> act on bone and sometimes dentin.</li>
+<li><b>Odontoclasts</b> are a specialized form that primarily resorb dental tissues (more specific term, often used in ADAT).</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Main resorptive cells:</b> Osteoclasts (general term).</li>
+<li><b>Dental-specific variant:</b> Odontoclasts (ADAT terminology).</li>
+<li><b>Seen in:</b> Orthodontic movement, trauma, inflammation, or exfoliation.</li>
+</ul>",19,,
+Which radiographic feature best distinguishes internal root resorption from external root resorption?,"Internal resorption presents as a well-defined, symmetrical radiolucency continuous with the pulp space",External resorption presents as an irregular radiolucency within the pulp chamber,Internal resorption appears irregular and non-uniform along the root surface,Both show identical radiographic patterns and cannot be distinguished,1,"<b>Internal vs External Root Resorption – Radiographic Features</b><br><br>
+<b>Internal Resorption:</b><br>
+<ul>
+<li>Originates within the <b>pulp chamber or canal</b> due to chronic pulpal inflammation and activation of odontoclasts inside the dentin.</li>
+<li>Appears as a <b>well-defined, round or ovoid radiolucency</b> that is <b>continuous with the pulp space</b>.</li>
+<li>Margins are smooth and symmetrical.</li>
+<li>Lesion does <b>not shift</b> when radiograph angulation changes (because it’s inside the canal).</li>
+</ul><br>
+<b>External Resorption:</b><br>
+<ul>
+<li>Originates on the <b>external root surface</b>, often due to trauma, periapical inflammation, pressure from orthodontics, cysts, or adjacent teeth.</li>
+<li>Appears as an <b>irregular or moth-eaten radiolucency</b> that may shift in relation to the canal when x-ray angle changes (the <b>SLOB rule</b> helps confirm).</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Internal resorption:</b> Symmetrical, round, continuous with pulp canal.</li>
+<li><b>External resorption:</b> Irregular, asymmetrical, root outline altered.</li>
+<li>Use <b>SLOB rule (Same Lingual, Opposite Buccal)</b> to determine if lesion moves → external.</li>
+</ul>",19,,
+A 25-year-old patient presents with a pinkish discoloration of a maxillary central incisor. Radiograph reveals a well-circumscribed radiolucent area within the pulp chamber. What is the most likely diagnosis and management?,External root resorption; extract the tooth,Internal resorption; perform root canal therapy immediately,External resorption; monitor for 6 months,Internal resorption; place calcium hydroxide and observe,2,"<b>Internal Resorption – Etiology and Treatment</b><br><br>
+<b>Pathophysiology:</b><br>
+<ul>
+<li>Caused by chronic pulpal inflammation that activates <b>odontoclasts within the pulp</b>.</li>
+<li>Commonly occurs following trauma, caries, or pulp capping procedures.</li>
+<li>Resorption progresses outward through the dentin toward the root surface.</li>
+</ul><br>
+<b>Clinical Signs:</b><br>
+<ul>
+<li>“<b>Pink tooth of Mummery</b>” – pink hue in crown due to vascular granulation tissue within the pulp chamber.</li>
+<li>Often asymptomatic until perforation occurs.</li>
+</ul><br>
+<b>Radiographic Findings:</b><br>
+<ul>
+<li>Well-circumscribed, round radiolucency continuous with the pulp space.</li>
+<li>Lesion remains centered in the canal regardless of x-ray angulation.</li>
+</ul><br>
+<b>Treatment:</b><br>
+<ul>
+<li><b>Immediate root canal therapy</b> to remove vital pulp tissue and stop resorptive process.</li>
+<li>If perforation is present → use <b>MTA (mineral trioxide aggregate)</b> or <b>bioceramic repair materials</b> to seal the defect.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Etiology:</b> Chronic pulpal inflammation (trauma, caries, pulp exposure).</li>
+<li><b>Clinical sign:</b> Pink tooth discoloration.</li>
+<li><b>Treatment:</b> Root canal therapy; repair perforation with MTA if needed.</li>
+<li><b>Radiographic feature:</b> Smooth, symmetrical radiolucency continuous with pulp canal.</li>
+</ul>",19,,
+A patient presents after minor dental trauma. The maxillary central incisor shows tenderness to percussion but no mobility or displacement. The tooth is vital and not displaced. What is the most likely diagnosis?,Concussion,Subluxation,Extrusive luxation,Intrusive luxation,1,"<b>Concussion vs. Subluxation – Dental Trauma Classification</b><br><br>
+<b>Concussion:</b><br>
+<ul>
+<li><b>Injury to the periodontal ligament (PDL)</b> without mobility or displacement.</li>
+<li>Tooth is <b>tender to percussion</b> but otherwise normal clinically and radiographically.</li>
+<li><b>Pulp test:</b> Vital or may show transient negative response due to pulpal inflammation.</li>
+<li><b>Treatment:</b> No splinting required; soft diet, follow-up at 4 weeks and 6–8 weeks with vitality testing.</li>
+</ul><br>
+<b>Subluxation:</b><br>
+<ul>
+<li><b>PDL injury with increased mobility</b> but no displacement.</li>
+<li>Bleeding from the gingival sulcus is common.</li>
+<li><b>Pulp test:</b> May show transient or delayed loss of vitality (up to 20% later necrose).</li>
+<li><b>Treatment:</b> Flexible splint for 1–2 weeks, clinical and radiographic monitoring.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Concussion:</b> Tenderness only, no mobility, no displacement.</li>
+<li><b>Subluxation:</b> Mobility ↑, sulcular bleeding, still no displacement.</li>
+<li><b>Vitality loss risk:</b> Higher in subluxation (especially in immature teeth).</li>
+<li><b>Both:</b> Require follow-up with vitality and radiographs at 4–8 weeks.</li>
+</ul>",19,,
+"A 9-year-old patient falls and fractures the crown of a maxillary central incisor. The pulp is exposed, and the tooth is immature with an open apex. What is the most appropriate initial treatment?",Complete pulpectomy and root canal filling,Extraction of the tooth,Pulp capping or partial pulpotomy to preserve vitality,Reimplantation after extraoral storage in milk,3,"<b>Management of Dental Trauma with Pulp Exposure</b><br><br>
+<b>Clinical Scenario:</b><br>
+In immature teeth with open apices, preserving pulp vitality is critical for continued <b>root development and apexogenesis</b>.<br><br>
+<b>Treatment Options:</b><br>
+<ul>
+<li><b>Small pulp exposure (&lt;24 hours):</b> Perform <b>direct pulp cap</b> using calcium hydroxide or MTA.</li>
+<li><b>Larger or contaminated exposure:</b> Perform <b>partial pulpotomy (Cvek pulpotomy)</b> to remove inflamed coronal pulp while preserving healthy radicular pulp.</li>
+<li>Cover with <b>MTA or calcium hydroxide</b> and a well-sealed restoration.</li>
+</ul><br>
+<b>Contraindicated:</b><br>
+<ul>
+<li><b>Root canal therapy</b> – not indicated until apex closure (would prevent root maturation).</li>
+<li><b>Extraction</b> – unnecessary if root is restorable.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Immature teeth:</b> Maintain vitality → apexogenesis.</li>
+<li><b>Mature teeth:</b> RCT if pulp exposure & symptomatic.</li>
+<li><b>Materials:</b> MTA or Ca(OH)₂ for pulp capping/pulpotomy.</li>
+<li><b>Goal:</b> Preserve vitality, allow continued root development.</li>
+</ul>",19,,
+"During root canal irrigation, which tooth has the highest risk of sodium hypochlorite (NaOCl) extrusion into periapical tissues?",Maxillary central incisor,Mandibular canine,Maxillary lateral incisor,Mandibular first molar,3,"<b>Sodium Hypochlorite Accident – High-Risk Tooth Anatomy</b><br><br>
+<b>Overview:</b><br>
+Sodium hypochlorite (NaOCl) is a potent irrigant used for <b>dissolving organic tissue</b> and <b>disinfecting the canal system</b>. Extravasion into periapical tissues causes severe pain, swelling, and ecchymosis due to its cytotoxicity.<br><br>
+<b>Tooth at Highest Risk:</b><br>
+<ul>
+<li><b>Maxillary lateral incisor</b> – has a <b>curved or dilacerated apex</b> and often a <b>large or open apical foramen</b>.</li>
+<li>The thin labial cortical plate offers little resistance, increasing risk of irrigant extrusion.</li>
+<li>Accessory canals and proximity to the nasolabial fold further predispose to tissue spread.</li>
+</ul><br>
+<b>Clinical Features of NaOCl Accident:</b><br>
+<ul>
+<li>Immediate sharp pain and burning sensation.</li>
+<li>Rapid swelling, bruising, and possible ecchymosis of the lip or infraorbital region.</li>
+<li>Bleeding through the canal may occur.</li>
+</ul><br>
+<b>Management:</b><br>
+<ul>
+<li>Stop irrigation immediately and reassure patient.</li>
+<li>Rinse canal with saline, apply <b>cold compress</b> for first 6 hours, then <b>warm compresses</b>.</li>
+<li>Prescribe <b>analgesics, antibiotics, and corticosteroids</b> if swelling is severe.</li>
+<li>Monitor healing and complete RCT after inflammation resolves.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Most at risk:</b> Maxillary lateral incisor (thin bone + open apex).</li>
+<li><b>Complication:</b> NaOCl extrusion → chemical burn + tissue necrosis.</li>
+<li><b>Immediate management:</b> Stop irrigation, saline flush, cold compress, analgesics.</li>
+</ul>",19,,
+What type of cell is most characteristic of an acute periapical abscess?,Lymphocytes,Plasma cells,Neutrophils,Macrophages,3,"<b>Acute Periapical Abscess – Cellular Composition</b><br><br>
+<b>Overview:</b><br>
+An acute periapical abscess is a <b>rapid, suppurative infection</b> at the apex of a non-vital tooth caused by bacterial invasion of periradicular tissues through an infected root canal.<br><br>
+<b>Histopathology:</b><br>
+<ul>
+<li>Dominated by <b>neutrophils (polymorphonuclear leukocytes)</b>—the hallmark of acute inflammation.</li>
+<li>Accumulation of neutrophils forms <b>pus (purulent exudate)</b>.</li>
+<li>Liquefaction necrosis occurs centrally, surrounded by hyperemic connective tissue.</li>
+</ul><br>
+<b>Clinical Features:</b><br>
+<ul>
+<li>Severe throbbing pain and tenderness to percussion.</li>
+<li>Tooth is <b>non-vital</b> and feels extruded from the socket.</li>
+<li>Possible swelling or systemic signs (fever, malaise).</li>
+</ul><br>
+<b>Comparison:</b><br>
+<ul>
+<li><b>Acute abscess:</b> Neutrophils → pus formation.</li>
+<li><b>Chronic abscess:</b> Lymphocytes, plasma cells, and macrophages → granulation tissue.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Main cell type:</b> Neutrophils (PMNs).</li>
+<li><b>Product:</b> Pus composed of dead neutrophils and necrotic debris.</li>
+<li><b>Key distinction:</b> Acute → PMNs; Chronic → lymphocytes & plasma cells.</li>
+</ul>",19,,
+The access cavity outline of which tooth is typically triangular in shape?,Maxillary central incisor,Maxillary first molar,Mandibular molar,Mandibular premolar,2,"<b>Access Cavity Shape – Maxillary First Molar</b><br><br>
+<b>Overview:</b><br>
+Access cavity shapes are determined by <b>pulp chamber anatomy</b> and <b>canal configuration</b>.<br><br>
+<b>Maxillary First Molar:</b><br>
+<ul>
+<li>Typically has <b>three roots</b> (MB, DB, and palatal).</li>
+<li><b>Triangular access</b> with base toward the buccal and apex toward the palatal canal.</li>
+<li>Triangle may be slightly <b>rhomboid</b> if a second MB canal (MB2) is present.</li>
+</ul><br>
+<b>Other Tooth Shapes:</b><br>
+<ul>
+<li><b>Maxillary central incisor:</b> Triangular or ovoid (single canal).</li>
+<li><b>Mandibular molars:</b> Trapezoidal or rectangular (mesial and distal roots).</li>
+<li><b>Premolars:</b> Ovoid or round depending on number of canals.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Maxillary first molar:</b> Triangular/rhomboid.</li>
+<li><b>Mandibular molar:</b> Trapezoidal.</li>
+<li><b>Premolars:</b> Ovoid.</li>
+<li><b>Incisors/canines:</b> Ovoid (single canal).</li>
+</ul>",19,,
+Which of the following teeth does not share a similar triangular access cavity shape as the others?,Maxillary first molar,Maxillary second molar,Maxillary first premolar,Maxillary central incisor,3,"<b>Access Cavity Shape – Triangular vs Ovoid</b><br><br>
+<b>Triangular Access:</b><br>
+<ul>
+<li>Seen in <b>maxillary molars</b> and <b>maxillary central incisors</b>.</li>
+<li>Reflects the triangular pulp chamber formed by canal orifices (e.g., MB, DB, P).</li>
+<li>Triangle base faces buccal, apex toward palatal.</li>
+</ul><br>
+<b>Ovoid Access:</b><br>
+<ul>
+<li><b>Maxillary first premolar</b> has an <b>ovoid access</b> due to its two canal orifices aligned <b>buccolingually</b>.</li>
+<li>Shape is elongated rather than triangular.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Molars & central incisor:</b> Triangular access.</li>
+<li><b>Premolars:</b> Ovoid access (exception).</li>
+<li><b>Access shape = internal pulp anatomy orientation.</b></li>
+</ul>",19,,
+Which of the following is the primary cause of tooth discoloration following pulpal necrosis?,Demineralization of enamel,Penetration of metallic ions from restorations,Degradation of hemoglobin products within dentinal tubules,Microleakage through defective restorations,3,"<b>Discoloration of a Nonvital Tooth – Mechanism</b><br><br>
+<b>Overview:</b><br>
+After pulpal necrosis, breakdown of <b>red blood cells</b> and <b>hemoglobin derivatives</b> leads to discoloration of the dentin through penetration into <b>dentinal tubules</b>.<br><br>
+<b>Pathophysiology:</b><br>
+<ul>
+<li>Pulpal necrosis → breakdown of <b>hemoglobin</b> into <b>iron sulfide and porphyrin pigments</b>.</li>
+<li>These pigments diffuse through the dentinal tubules and bind to dentin proteins.</li>
+<li>Tooth develops a <b>dark gray, brown, or black hue</b> that does not respond to normal polishing.</li>
+</ul><br>
+<b>Other Causes of Discoloration:</b><br>
+<ul>
+<li><b>Intrinsic:</b> Blood pigments (necrosis), pulp remnants, medicaments, tetracycline.</li>
+<li><b>Extrinsic:</b> Stains from food, tobacco, chlorhexidine, or poor hygiene.</li>
+</ul><br>
+<b>Treatment:</b><br>
+<ul>
+<li><b>Nonvital (internal) bleaching</b> using sodium perborate and hydrogen peroxide (“walking bleach” technique).</li>
+<li>Restore access cavity with a well-sealed composite to prevent recontamination.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Cause:</b> Hemoglobin breakdown → iron sulfide pigment.</li>
+<li><b>Location:</b> Dentinal tubules.</li>
+<li><b>Color:</b> Gray to black internal discoloration.</li>
+<li><b>Tx:</b> Internal (nonvital) bleaching or crown restoration.</li>
+</ul>",19,,
+Which of the following intracanal medicaments or irrigants is primarily responsible for removing the smear layer from canal walls?,Calcium hydroxide,Sodium hypochlorite (NaOCl),Ethylenediaminetetraacetic acid (EDTA),Chlorhexidine gluconate (CHX),3,"<b>Smear Layer Removal – Role of EDTA</b><br><br>
+<b>Overview:</b><br>
+Instrumentation of the root canal creates a <b>smear layer</b> composed of organic debris, dentin shavings, bacteria, and necrotic tissue that covers the canal walls and occludes dentinal tubules.<br><br>
+<b>EDTA (17% solution):</b><br>
+<ul>
+<li>Acts as a <b>chelating agent</b> that binds and removes the <b>inorganic (dentin) component</b> of the smear layer.</li>
+<li>Typically used as a final rinse after sodium hypochlorite.</li>
+<li>Leaves the dentinal tubules open, allowing better <b>disinfection and sealer penetration</b>.</li>
+</ul><br>
+<b>Other Agents:</b><br>
+<ul>
+<li><b>NaOCl:</b> Dissolves organic tissue but <b>cannot remove inorganic smear layer</b>.</li>
+<li><b>CHX:</b> Antimicrobial only—no effect on smear layer.</li>
+<li><b>Ca(OH)₂:</b> Intracanal medicament with antimicrobial and pH-elevating properties; does not remove debris.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Smear layer = organic + inorganic debris.</b></li>
+<li><b>EDTA (17%)</b> chelates inorganic portion → removes smear layer.</li>
+<li><b>NaOCl</b> dissolves organic tissue → used in combination with EDTA for complete cleaning.</li>
+<li><b>Sequence:</b> NaOCl → EDTA → final saline rinse.</li>
+</ul>",19,,
+Which of the following teeth is most likely to have a second mesiobuccal canal (MB2)?,Maxillary first molar,Maxillary second molar,Mandibular first molar,Maxillary first premolar,1,"<b>MB2 Canal – Maxillary First Molar</b><br><br>
+<b>Overview:</b><br>
+The <b>mesiobuccal root</b> of the maxillary first molar often contains a second canal (MB2), which is frequently missed during endodontic treatment.<br><br>
+<b>Prevalence:</b><br>
+<ul>
+<li>Found in up to <b>80–90%</b> of maxillary first molars.</li>
+<li>Present in ~50% of <b>maxillary second molars</b>.</li>
+<li>Rare in mandibular molars or premolars.</li>
+</ul><br>
+<b>Location:</b><br>
+<ul>
+<li>MB2 orifice lies <b>mesiopalatal</b> to the main MB canal, often along a line drawn between MB and palatal orifices.</li>
+<li>Typically smaller and hidden under dentin shelf → must use magnification and troughing with ultrasonic tips.</li>
+</ul><br>
+<b>Clinical Importance:</b><br>
+<ul>
+<li>Failure to locate and treat MB2 is a major cause of <b>post-treatment endodontic failure</b>.</li>
+<li>Access cavity should be <b>rhomboid</b> rather than triangular to allow MB2 visualization.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Tooth:</b> Maxillary first molar (most common site).</li>
+<li><b>Prevalence:</b> Up to 90% (less in 2nd molars).</li>
+<li><b>Missed MB2 = persistent infection or RCT failure.</b></li>
+<li><b>Detection:</b> Use microscope, CBCT, and ultrasonics.</li>
+</ul>",19,,
+Which root of tooth #14 (maxillary first molar) is most likely to have two canals?,Mesiobuccal root,Distobuccal root,Palatal root,Lingual root,1,"<b>Tooth #14 (Maxillary First Molar) – Root Canal Anatomy</b><br><br>
+<b>Overview:</b><br>
+Tooth #14, the <b>maxillary first molar</b>, typically has <b>three roots</b> and <b>three to four canals</b>:<br>
+<ul>
+<li><b>Mesiobuccal (MB) root</b> – often has <b>two canals (MB1 and MB2)</b>.</li>
+<li><b>Distobuccal (DB) root</b> – usually has <b>one canal</b>.</li>
+<li><b>Palatal root</b> – typically <b>one large canal</b>.</li>
+</ul><br>
+<b>High-Yield Anatomy:</b><br>
+<ul>
+<li><b>MB root:</b> Two canals in ~80–90% of cases; MB2 often located mesiopalatal to MB1.</li>
+<li><b>DB root:</b> Single, straight canal (rarely bifurcates).</li>
+<li><b>Palatal root:</b> Single large canal with round cross-section; rarely bifid.</li>
+</ul><br>
+<b>Clinical Relevance:</b><br>
+<ul>
+<li>MB2 is frequently missed → major cause of <b>endo failure</b>.</li>
+<li>Detection aided by <b>CBCT, ultrasonics, and magnification</b>.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Most likely root with two canals:</b> Mesiobuccal.</li>
+<li><b>Typical configuration:</b> 3 roots, 4 canals (MB1, MB2, DB, P).</li>
+<li><b>Palatal root:</b> Single, large canal—NOT usually two.</li>
+</ul>",19,,
+"A patient with a previously root-canal-treated premolar presents with mild pain on chewing and localized swelling along the gingival margin. A narrow, isolated periodontal pocket is noted on probing, and radiographic examination shows a J-shaped radiolucency. What is the most likely diagnosis?",Root perforation,Vertical root fracture,Lateral periodontal cyst,Chronic apical abscess,2,"<b>Vertical Root Fracture – Diagnosis and Features</b><br><br>
+<b>Overview:</b><br>
+A <b>vertical root fracture (VRF)</b> is a longitudinal crack extending from the root canal wall to the external root surface. It occurs most often in <b>endodontically treated teeth</b> due to excessive condensation or post placement.<br><br>
+<b>Etiology:</b><br>
+<ul>
+<li>Excessive lateral condensation during obturation.</li>
+<li>Overpreparation of canal walls or large post space.</li>
+<li>Weakened dentin after endodontic treatment.</li>
+</ul><br>
+<b>Clinical Features:</b><br>
+<ul>
+<li><b>Localized pain</b> on biting or chewing (“pain on release”).</li>
+<li><b>Isolated deep periodontal pocket</b> along the fracture line.</li>
+<li>Possible <b>sinus tract</b> near the gingival margin.</li>
+</ul><br>
+<b>Radiographic Signs:</b><br>
+<ul>
+<li><b>J-shaped or halo-shaped radiolucency</b> around the root, extending from the apex to the lateral surface.</li>
+<li>Often mistaken for endo failure or lateral cyst.</li>
+<li>May show <b>separation of root fragments</b> on CBCT or angled periapical films.</li>
+</ul><br>
+<b>Diagnosis:</b><br>
+<ul>
+<li>Confirmed by <b>CBCT</b> or direct visualization under magnification during surgery.</li>
+<li>Transillumination or dye staining may help detect the fracture line.</li>
+</ul><br>
+<b>Treatment:</b><br>
+<ul>
+<li><b>Hopeless prognosis</b> for most vertically fractured roots.</li>
+<li>Usually requires <b>extraction</b> or <b>root amputation</b> (for multi-rooted teeth).</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Cause:</b> Excessive condensation or post stress in RCT teeth.</li>
+<li><b>Key signs:</b> Isolated pocket + J-shaped radiolucency.</li>
+<li><b>Diagnosis:</b> CBCT or surgical exploration.</li>
+<li><b>Management:</b> Extraction (or root resection in multi-rooted cases).</li>
+</ul>",19,,
+Sodium perborate is commonly used in which of the following dental procedures?,Apexification,Internal (nonvital) tooth bleaching,Pulp capping,Root canal irrigation,2,"<b>Sodium Perborate – Use in Endodontics</b><br><br>
+<b>Overview:</b><br>
+Sodium perborate is a mild oxidizing agent commonly used in the <b>internal bleaching of nonvital (endodontically treated) teeth</b> to correct discoloration from pulpal necrosis, hemorrhage, or endodontic materials.<br><br>
+<b>Mechanism:</b><br>
+<ul>
+<li>Releases <b>oxygen</b> when mixed with <b>water or hydrogen peroxide</b>, which oxidizes stain molecules in dentin.</li>
+<li>Commonly combined with <b>3% hydrogen peroxide</b> for the “walking bleach” technique.</li>
+<li>Produces gradual, controlled whitening without excessive heat or external irritation.</li>
+</ul><br>
+<b>Technique (Walking Bleach):</b><br>
+<ul>
+<li>Remove gutta-percha 2 mm below the CEJ and seal with glass ionomer.</li>
+<li>Place a paste of sodium perborate + water (or 3% H₂O₂) inside the pulp chamber.</li>
+<li>Seal access with temporary filling for 3–7 days.</li>
+<li>Repeat as needed until desired shade is achieved.</li>
+</ul><br>
+<b>Advantages:</b><br>
+<ul>
+<li>Safe, noninvasive, and effective for internal stains.</li>
+<li>Lower risk of cervical resorption compared to higher-concentration peroxides.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Procedure:</b> Internal bleaching (“walking bleach”).</li>
+<li><b>Agent:</b> Sodium perborate + water or 3% H₂O₂.</li>
+<li><b>Indication:</b> Discoloration in nonvital, endodontically treated teeth.</li>
+<li><b>Contraindication:</b> Vital teeth or teeth with inadequate coronal seal.</li>
+</ul>",19,,
+"In radiographic localization, the acronym SLOB stands for which of the following?","Same Lingual, Opposite Buccal","Same Labial, Opposite Buccal","Same Lingual, Opposite Bitewing","Same Lateral, Opposite Base",1,"<b>SLOB Rule – Radiographic Localization Principle</b><br><br>
+<b>Overview:</b><br>
+The <b>SLOB rule</b> (Same Lingual, Opposite Buccal) is used in <b>radiographic localization</b> to determine the buccolingual position of an object such as a canal, root, or foreign body.<br><br>
+<b>Principle:</b><br>
+<ul>
+<li>If the <b>x-ray tube or beam</b> is moved horizontally or vertically and the image of the object moves in the <b>same direction</b> → the object is <b>lingual</b>.</li>
+<li>If the image moves in the <b>opposite direction</b> → the object is <b>buccal</b>.</li>
+</ul><br>
+<b>Example (High-Yield):</b><br>
+<ul>
+<li>Two canals appear superimposed on a periapical radiograph.</li>
+<li>Shift the x-ray cone mesially → if the canal image moves <b>mesially</b>, it’s on the <b>lingual</b>.</li>
+<li>If it moves <b>distally</b>, it’s on the <b>buccal</b>.</li>
+</ul><br>
+<b>Applications:</b><br>
+<ul>
+<li>Determining <b>MB2 canal location</b> in molars.</li>
+<li>Identifying <b>foreign bodies</b>, <b>broken instruments</b>, or <b>supernumerary roots</b>.</li>
+<li>Used in <b>Clark’s rule</b> and <b>tube-shift technique</b>.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>SLOB = Same Lingual, Opposite Buccal.</b></li>
+<li><b>Movement same as tube → lingual.</b></li>
+<li><b>Movement opposite → buccal.</b></li>
+<li>Used to determine spatial position on 2D radiographs.</li>
+</ul>",19,,
+"During irrigation of a root canal treatment (RCT), the patient suddenly responds with severe, sharp pain. What is the most likely cause?",Instrument separation inside the canal,Sodium hypochlorite (NaOCl) extrusion beyond the apex,Over-instrumentation into periapical tissues,Incomplete anesthesia,2,"<b>Sodium Hypochlorite (NaOCl) Accident – Key Features</b><br><br>
+<b>Overview:</b><br>
+Sodium hypochlorite is used for <b>dissolving organic tissue</b> and <b>disinfecting canals</b>. Accidental extrusion beyond the apex can cause <b>severe tissue injury</b> and immediate patient pain.<br><br>
+<b>Clinical Presentation:</b><br>
+<ul>
+<li><b>Immediate, severe, burning pain</b> during irrigation.</li>
+<li>Rapid <b>facial swelling</b>, <b>bruising</b> (ecchymosis), and possible bleeding from the canal.</li>
+<li>Pain is <b>out of proportion</b> to normal instrumentation discomfort.</li>
+</ul><br>
+<b>Etiology:</b><br>
+<ul>
+<li>Loss of apical constriction or <b>open apex</b>.</li>
+<li><b>Binding or wedged irrigation needle</b> preventing backflow.</li>
+<li>High irrigation pressure or poor control.</li>
+</ul><br>
+<b>Immediate Management:</b><br>
+<ul>
+<li><b>Stop irrigation immediately</b> and reassure the patient.</li>
+<li>Irrigate canal with saline to dilute NaOCl.</li>
+<li>Apply <b>cold compress</b> for 6 hours, then <b>warm compresses</b>.</li>
+<li>Prescribe <b>analgesics</b> and consider <b>short corticosteroid course</b> to control inflammation.</li>
+</ul><br>
+<b>Prognosis:</b><br>
+<ul>
+<li>Soft tissue damage heals gradually; RCT can be completed once symptoms subside.</li>
+<li>Severe cases may cause <b>necrosis or paresthesia</b>.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Cause:</b> NaOCl extrusion through apex → chemical burn.</li>
+<li><b>Signs:</b> Immediate sharp pain, swelling, ecchymosis.</li>
+<li><b>Prevention:</b> Use side-vented needle, gentle pressure, and short insertion depth.</li>
+<li><b>Management:</b> Stop irrigation → saline → cold compress → NSAIDs/steroids.</li>
+</ul>",19,,
+What is the most likely cause of lingering pain on a tooth following root canal treatment?,Missed canal,Overfilled canal,Overextension of sealer,Delayed coronal restoration,1,"<b>Lingering Pain After Root Canal Treatment – Missed Canal</b><br><br>
+<b>Overview:</b><br>
+Persistent or lingering pain after an apparently completed root canal most often indicates <b>persistent intraradicular infection</b>—commonly due to a <b>missed canal</b> or <b>incomplete cleaning and shaping</b>.<br><br>
+<b>Common Causes:</b><br>
+<ul>
+<li><b>Missed canal:</b> Residual necrotic tissue or bacteria remain in untreated canal (most common cause).</li>
+<li><b>Incomplete debridement:</b> Apical or lateral canal remnants harbor infection.</li>
+<li><b>Cracked root:</b> Can mimic endodontic failure but usually shows isolated probing defect.</li>
+<li><b>Overextension of materials:</b> May cause short-term pain, but not lingering chronic symptoms.</li>
+</ul><br>
+<b>Most Frequently Missed Canals (High-Yield):</b><br>
+<ul>
+<li><b>Maxillary first molar:</b> Mesiobuccal root often contains a <b>second canal (MB2)</b>.</li>
+<li><b>Mandibular first molar:</b> <b>Distal root</b> may contain <b>two canals (DB and DL)</b> instead of one.</li>
+<li><b>Mandibular lateral incisor:</b> Often has <b>two canals (facial and lingual)</b> that merge apically — the <b>lingual canal</b> is commonly missed.</li>
+</ul><br>
+<b>Diagnosis:</b><br>
+<ul>
+<li><b>Persistent percussion tenderness</b> after obturation.</li>
+<li>Periapical radiolucency that fails to resolve.</li>
+<li><b>CBCT</b> imaging often reveals missed canal or incomplete fill.</li>
+</ul><br>
+<b>Management:</b><br>
+<ul>
+<li><b>Retreatment</b> of the root canal system, locating all canals with magnification and CBCT guidance.</li>
+<li>Occasionally <b>apicoectomy</b> if persistent periapical lesion remains.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Most likely cause:</b> Missed canal → persistent infection.</li>
+<li><b>Common sites:</b> MB2 (max 1st molar), distal root (mand 1st molar), lingual canal (mand lateral incisor).</li>
+<li><b>Diagnosis:</b> CBCT and careful exploration under magnification.</li>
+</ul>",19,,
+What is the most common complication associated with internal (nonvital) tooth bleaching?,Crown fracture,Pulpal necrosis,Cervical root resorption,Enamel hypocalcification,3,"<b>Complication of Internal (Nonvital) Bleaching – Cervical Root Resorption</b><br><br>
+<b>Overview:</b><br>
+Internal bleaching is performed on <b>endodontically treated teeth</b> to correct discoloration due to pulpal necrosis or restorative materials.  
+Although effective, it carries the risk of <b>external cervical root resorption (ECR)</b>, especially when high-concentration oxidizing agents are used.<br><br>
+<b>Pathogenesis:</b><br>
+<ul>
+<li>Penetration of <b>hydrogen peroxide</b> and oxygen radicals through dentinal tubules into the <b>periodontal ligament</b>.</li>
+<li>This triggers an <b>inflammatory resorptive response</b> from odontoclasts at the cervical root surface.</li>
+<li>More likely if there’s <b>loss of cementum</b> or <b>heat activation</b> during bleaching.</li>
+</ul><br>
+<b>Risk Factors:</b><br>
+<ul>
+<li>Use of <b>30–35% hydrogen peroxide</b> instead of sodium perborate-water mix.</li>
+<li>Previous trauma (microcracks or cemental defects).</li>
+<li>Inadequate <b>barrier placement</b> over gutta-percha below CEJ.</li>
+<li>Heat application during bleaching.</li>
+</ul><br>
+<b>Prevention:</b><br>
+<ul>
+<li>Always seal canal orifice with <b>2 mm glass ionomer barrier</b> below CEJ.</li>
+<li>Prefer <b>sodium perborate + water</b> rather than high-concentration peroxides.</li>
+<li>Avoid heat-activated techniques.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Most common complication:</b> Cervical root resorption (external).</li>
+<li><b>Cause:</b> Diffusion of peroxide into PDL → inflammatory resorption.</li>
+<li><b>Prevention:</b> Use sodium perborate + water and proper cervical seal.</li>
+<li><b>Note:</b> Risk is higher in teeth with previous trauma.</li>
+</ul>",19,,
+Which clinical test is most helpful in differentiating endodontic pain from periodontal pain?,Percussion test,Palpation test,Transillumination,Cold test,1,"<b>Endodontic vs Periodontal Pain – Diagnostic Differentiation</b><br><br>
+<b>Overview:</b><br>
+Endodontic and periodontal diseases can produce similar symptoms, but their <b>origins and pain patterns differ</b>.  
+The <b>percussion test</b> is one of the simplest and most reliable methods to help differentiate the two.<br><br>
+<b>Percussion Test Principle:</b><br>
+<ul>
+<li><b>Vertical percussion:</b> Stresses the <b>apex</b> and indicates <b>endodontic (periapical)</b> inflammation.</li>
+<li><b>Lateral percussion or pressure:</b> Stresses the <b>periodontal ligament</b> and indicates <b>periodontal</b> inflammation.</li>
+</ul><br>
+<b>Additional Diagnostic Clues:</b><br>
+<ul>
+<li><b>Endodontic origin:</b> Non-vital pulp (negative to cold test), localized radiolucency at apex.</li>
+<li><b>Periodontal origin:</b> Vital pulp (normal response), generalized bone loss, pocket formation.</li>
+<li>Combined lesions may show overlapping signs — pulp testing and probing help confirm.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Best initial test:</b> Percussion (vertical = endo, lateral = perio).</li>
+<li><b>Endo pain:</b> Sharp, lingering, periapical tenderness, nonvital pulp.</li>
+<li><b>Perio pain:</b> Dull, pressure-like, mobility, deep pockets, vital pulp.</li>
+<li><b>Confirm with:</b> Pulp vitality tests and probing depths.</li>
+</ul>",19,,
+A patient reports lingering pain lasting more than 20 seconds after a cold test is applied to a tooth. What is the most likely diagnosis?,Reversible pulpitis,Irreversible pulpitis,Pulpal necrosis,Normal pulp response,2,"<b>Pulp Vitality Testing – Lingering Pain After Cold</b><br><br>
+<b>Overview:</b><br>
+Thermal testing (usually with refrigerant spray or CO₂ snow) helps determine pulp vitality and inflammation.  
+The <b>duration and intensity</b> of the response are key indicators of pulpal status.<br><br>
+<b>Typical Responses:</b><br>
+<ul>
+<li><b>Normal pulp:</b> Sharp pain that subsides immediately when the stimulus is removed.</li>
+<li><b>Reversible pulpitis:</b> Brief, sharp pain (<b><10 seconds</b>) that disappears once the stimulus is gone.</li>
+<li><b>Irreversible pulpitis:</b> <b>Lingering pain >20 seconds</b> after cold removal, may be spontaneous or radiating.</li>
+<li><b>Necrotic pulp:</b> <b>No response</b> to cold or electric pulp test.</li>
+</ul><br>
+<b>Mechanism:</b><br>
+In irreversible pulpitis, inflamed pulp tissue has <b>elevated intrapulpal pressure</b> and <b>damaged A-delta and C fibers</b> that continue firing after the stimulus is removed.<br><br>
+<b>Clinical Features:</b><br>
+<ul>
+<li>Spontaneous pain, especially at night.</li>
+<li>Pain triggered by hot/cold stimuli and <b>lingers after removal</b>.</li>
+<li>Tooth often <b>vital but inflamed beyond repair</b>.</li>
+</ul><br>
+<b>Treatment:</b><br>
+<ul>
+<li><b>Irreversible pulpitis:</b> Root canal therapy or extraction.</li>
+<li><b>Reversible pulpitis:</b> Remove irritant and place sedative or permanent restoration.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Lingering pain after cold → Irreversible pulpitis.</b></li>
+<li><b>Short pain → Reversible pulpitis.</b></li>
+<li><b>No response → Necrosis.</b></li>
+<li><b>Treatment:</b> RCT or extraction for irreversible pulpitis.</li>
+</ul>",19,,
+"A patient reports sharp, exaggerated pain to a cold stimulus that subsides immediately after removal of the stimulus. What is the most likely diagnosis?",Reversible pulpitis,Irreversible pulpitis,Pulp necrosis,Normal pulp response,1,"<b>Pulp Vitality Testing – Reversible Pulpitis</b><br><br>
+<b>Overview:</b><br>
+Reversible pulpitis is a <b>mild, transient inflammation</b> of the pulp caused by an <b>irritant</b> such as caries, exposed dentin, or defective restorations.  
+The pulp can recover once the irritant is removed.<br><br>
+<b>Clinical Features:</b><br>
+<ul>
+<li><b>Sharp, exaggerated pain</b> to cold, sweet, or air stimulus.</li>
+<li>Pain <b>does not linger</b>—it <b>subsides immediately</b> after stimulus removal.</li>
+<li>No spontaneous or nocturnal pain.</li>
+<li>Tooth usually <b>vital and asymptomatic</b> otherwise.</li>
+</ul><br>
+<b>Diagnostic Testing:</b><br>
+<ul>
+<li><b>Cold test:</b> Exaggerated but brief response.</li>
+<li><b>Electric pulp test:</b> Normal or slightly lower threshold.</li>
+<li><b>Radiograph:</b> No periapical changes.</li>
+</ul><br>
+<b>Common Causes:</b><br>
+<ul>
+<li>Caries approaching the pulp.</li>
+<li>Exposed dentin or marginal leakage.</li>
+<li>Recent restorative work or trauma.</li>
+</ul><br>
+<b>Treatment:</b><br>
+<ul>
+<li><b>Remove the irritant</b> (caries or faulty restoration).</li>
+<li>Place <b>sedative liner or definitive restoration</b>.</li>
+<li>No endodontic therapy required if symptoms resolve.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Short, sharp pain → Reversible pulpitis.</b></li>
+<li><b>Lingering pain → Irreversible pulpitis.</b></li>
+<li><b>No response → Pulp necrosis.</b></li>
+<li><b>Treatment:</b> Remove cause and restore tooth.</li>
+</ul>",19,,
+A patient is diagnosed with a vertical root fracture in an endodontically treated tooth. What is the most appropriate treatment?,Root canal retreatment,Apicoectomy and retrofill,Extraction of the affected tooth,Observation and splinting,3,"<b>Treatment of Vertical Root Fracture</b><br><br>
+<b>Overview:</b><br>
+A vertical root fracture (VRF) is a <b>longitudinal crack extending from the root canal to the external root surface</b>.  
+It is often seen in <b>previously root canal–treated teeth</b> and represents one of the most challenging endodontic failures.<br><br>
+<b>Etiology:</b><br>
+<ul>
+<li>Excessive condensation pressure during obturation.</li>
+<li>Over-preparation or post space drilling.</li>
+<li>Trauma or wedging forces from restorations.</li>
+</ul><br>
+<b>Clinical and Radiographic Features:</b><br>
+<ul>
+<li>Localized deep probing defect along one root surface.</li>
+<li><b>J-shaped or halo-shaped radiolucency</b> on radiograph.</li>
+<li>Possible sinus tract adjacent to the root.</li>
+<li>Pain on biting or percussion.</li>
+</ul><br>
+<b>Treatment Options:</b><br>
+<ul>
+<li><b>Single-rooted teeth:</b> Extraction is the treatment of choice — the tooth cannot be predictably repaired.</li>
+<li><b>Multi-rooted teeth:</b> Root amputation or hemisection may be possible if only one root is affected.</li>
+</ul><br>
+<b>Prognosis:</b><br>
+<ul>
+<li>Poor — due to bacterial leakage along the fracture line.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Diagnosis:</b> Deep narrow pocket, J-shaped radiolucency, history of RCT.</li>
+<li><b>Treatment:</b> Extraction (single-rooted) or root amputation (multi-rooted).</li>
+<li><b>Reason:</b> Irreversible bacterial contamination along fracture.</li>
+<li><b>Prevention:</b> Avoid excessive post and obturation pressure.</li>
+</ul>",19,,
+Which of the following correctly describes an Ellis Class III fracture?,Fracture involving enamel only,Fracture involving enamel and dentin without pulp exposure,"Fracture involving enamel, dentin, and pulp exposure",Root fracture involving cementum and dentin,3,"<b>Ellis Classification of Tooth Fractures</b><br><br>
+<b>Overview:</b><br>
+The <b>Ellis classification</b> system describes the <b>extent of tooth structure loss due to trauma</b> and helps guide treatment urgency.<br><br>
+<b>Classification:</b><br>
+<ul>
+<li><b>Class I:</b> Enamel only – no dentin exposure.</li>
+<li><b>Class II:</b> Enamel and dentin – sensitive to air/cold.</li>
+<li><b>Class III:</b> Enamel, dentin, and pulp exposure – painful, may bleed; requires pulp therapy.</li>
+<li><b>Class IV:</b> Tooth discoloration due to pulpal necrosis.</li>
+<li><b>Class V:</b> Avulsion – tooth completely displaced.</li>
+<li><b>Class VI:</b> Root fracture involving dentin, cementum, possibly pulp.</li>
+</ul><br>
+<b>Treatment Summary:</b><br>
+<ul>
+<li><b>Class I:</b> Smooth or restore.</li>
+<li><b>Class II:</b> Restore with pulp protection.</li>
+<li><b>Class III:</b> Pulp capping, pulpotomy, or RCT.</li>
+<li><b>Class IV:</b> RCT and esthetic restoration.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Ellis I:</b> Enamel only.</li>
+<li><b>Ellis II:</b> Enamel + dentin (sensitive).</li>
+<li><b>Ellis III:</b> Enamel + dentin + pulp (painful, bleeding).</li>
+</ul>",19,,
+What is the standard medicament used in direct pulp capping procedures?,Zinc oxide eugenol (ZOE),Calcium hydroxide (Ca(OH)₂),Glass ionomer cement (GIC),Mineral trioxide aggregate (MTA),2,"<b>Pulp Capping Medicament – Calcium Hydroxide</b><br><br>
+<b>Overview:</b><br>
+Pulp capping preserves pulp vitality after accidental or carious exposure by promoting <b>dentin bridge formation</b>.<br><br>
+<b>Standard Medicament:</b><br>
+<ul>
+<li><b>Calcium hydroxide (Ca(OH)₂)</b> – high pH (~12), antibacterial, induces dentin bridge via mild necrosis and odontoblast activation.</li>
+<li>Alternative: <b>MTA</b> – bioceramic with superior seal and biocompatibility but longer setting time.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Standard:</b> Calcium hydroxide.</li>
+<li><b>Mechanism:</b> Alkaline necrosis → reparative dentin.</li>
+<li><b>Alternative:</b> MTA (better seal, higher cost).</li>
+</ul>",19,,
+Which condition can cause obstructive sleep apnea (OSA) in children?,Nasal polyps,Enlarged adenoids,Cleft palate,Enlarged tongue (macroglossia),2,"<b>Obstructive Sleep Apnea (OSA) in Children – Common Causes</b><br><br>
+<b>Overview:</b><br>
+Pediatric OSA is caused most commonly by <b>adenotonsillar hypertrophy</b> (enlarged adenoids and tonsils), leading to airway obstruction during sleep.<br><br>
+<b>Clinical Features:</b><br>
+<ul>
+<li>Loud snoring, restless sleep, mouth breathing.</li>
+<li>Daytime sleepiness or hyperactivity.</li>
+<li>Growth retardation in severe cases.</li>
+</ul><br>
+<b>Treatment:</b><br>
+<ul>
+<li><b>Adenoidectomy and tonsillectomy</b> are first-line management.</li>
+<li>In adults, obesity is the most common cause.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Children:</b> Adenotonsillar hypertrophy.</li>
+<li><b>Adults:</b> Obesity.</li>
+<li><b>Treatment:</b> Adenotonsillectomy.</li>
+</ul>",19,,
+A tooth tests negative to cold (Endo Ice) but is painful on percussion and palpation. What is the most likely diagnosis?,Irreversible pulpitis,Pulp necrosis with symptomatic apical periodontitis,Reversible pulpitis,Normal pulp and periapical tissues,2,"<b>Pulp Necrosis with Symptomatic Apical Periodontitis</b><br><br>
+<b>Overview:</b><br>
+A tooth with <b>no response to vitality testing</b> but <b>pain on percussion/palpation</b> indicates <b>necrotic pulp with inflamed periapical tissues</b>.<br><br>
+<b>Key Findings:</b><br>
+<ul>
+<li><b>Cold test:</b> No response → necrosis.</li>
+<li><b>Percussion/palpation:</b> Pain → apical inflammation.</li>
+<li><b>Radiograph:</b> Often shows periapical radiolucency.</li>
+</ul><br>
+<b>Diagnosis:</b> Pulp necrosis with symptomatic apical periodontitis.<br><br>
+<b>Treatment:</b> Root canal therapy; antibiotics only if systemic symptoms are present.<br><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Cold/EPT negative → necrosis.</b></li>
+<li><b>Pain on percussion → apical inflammation.</b></li>
+<li><b>Treatment:</b> RCT, not antibiotics alone.</li>
+</ul>",19,,
+"A patient presents with a small, painless pustule on the gingiva near the apex of a tooth. The tooth tests non-vital. What is the most likely diagnosis?",Acute apical abscess,Chronic apical abscess (draining sinus tract),Lateral periodontal abscess,Gingival abscess,2,"<b>Chronic Apical Abscess (Draining Sinus Tract)</b><br><br>
+<b>Overview:</b><br>
+A <b>chronic apical abscess</b> results from long-standing periapical infection with a <b>drainage pathway</b> (sinus tract) to relieve pressure.<br><br>
+<b>Clinical Features:</b><br>
+<ul>
+<li>Non-vital tooth.</li>
+<li>Painless parulis (gum boil) with pus drainage.</li>
+<li>Tracing with gutta-percha leads to apex.</li>
+</ul><br>
+<b>Differentiation:</b><br>
+<ul>
+<li><b>Acute abscess:</b> Painful, swollen, no drainage.</li>
+<li><b>Chronic abscess:</b> Painless, draining tract.</li>
+</ul><br>
+<b>Treatment:</b><br>
+<ul>
+<li><b>Root canal therapy</b> or extraction.</li>
+<li>Sinus tract heals after eliminating infection.</li>
+<li>Antibiotics not required unless systemic symptoms.</li>
+</ul><br>
+<b>High-Yield Summary:</b><br>
+<ul>
+<li><b>Diagnosis:</b> Chronic apical abscess (sinus tract).</li>
+<li><b>Tooth:</b> Non-vital.</li>
+<li><b>Treatment:</b> RCT or extraction.</li>
+</ul>",19,,

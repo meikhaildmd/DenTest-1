@@ -1,0 +1,304 @@
+text,option1,option2,option3,option4,correct_option,explanation,subject_id,question_image,explanation_image
+"A 6‑year‑old patient presents for a recall exam. You note several white spot lesions on the maxillary primary incisors and a new restoration placed 8 months ago due to a cavitated lesion. The child brushes once daily with fluoridated toothpaste, and clinical examination shows visible plaque along the gingival margins. According to the CAMBRA protocol, how should this patient’s caries risk level be classified?",Low risk,Moderate risk,High risk,Extreme risk,3,"In CAMBRA, you look for disease indicators first. White spot lesions mean enamel has already started to demineralize, and a restoration placed in the last three years means there was a cavity recently. Both are strong signs that caries is active or has been active. Even though the child uses fluoridated toothpaste (a protective factor), disease indicators override protective factors. 
+CAMBRA Risk Levels: 
+<b>Low Risk</b> – No lesions, protective factors outweigh risk factors.  
+<b>Moderate Risk</b> – No lesions but multiple risk factors with limited protective factors.  
+<b>High Risk</b> – Presence of any disease indicators such as white spot lesions, cavitated lesions in the last 3 years, or recent restorations due to caries.  
+<b>Extreme Risk</b> – High risk plus severe xerostomia or rampant caries despite adequate protection.  
+In this case: White spot lesions + a restoration placed <3 years are strong disease indicators. Protective factors (fluoridated toothpaste) do not override disease indicators. No severe xerostomia → <b>High Risk.</b>",1,,
+"A smooth surface on a primary molar shows an early change when dried with air, but when the surface is viewed while still wet, no change is seen. The enamel is intact and no dentin is visible. What ICDAS code best describes this lesion?",Code 0,Code 1,Code 3,Code 4,2,"ICDAS is based on what you see visually:
+
+| Code | Description |
+
+| 0 | Sound enamel, no change visible. |
+| 1 | First visual change in enamel, seen only after air drying. |
+| 2 | Distinct visual change in enamel visible even when wet. |
+| 3 | Localized enamel breakdown without dentin visible. |
+| 4 | Underlying dark shadow from dentin. |
+
+In this case, the lesion is only seen after drying and not when wet. That matches ICDAS Code 1. Recognizing a Code 1 lesion is important because it is an early, non‑cavitated stage that can often be managed with fluoride and sealants rather than restorative treatment. ",1,,
+A bitewing radiograph of a permanent molar shows a radiolucency that extends from the enamel surface into the inner half of enamel but does not reach the dentino‑enamel junction. How would this lesion be classified in the radiographic caries progression system?,E1,E2,D1,D3,2,"Radiographic caries progression is described by how far the lesion penetrates:
+
+| Code | Depth | Meaning |
+
+| E1 | Outer half of enamel | Very early enamel caries. |
+| E2 | Inner half of enamel | Advanced enamel caries. |
+| D1 | Outer third of dentin | Early dentinal involvement. |
+| D2 | Middle third of dentin | Moderate dentinal caries. |
+| D3 | Inner third of dentin | Deep dentinal caries approaching the pulp. |
+
+In this scenario, the lesion is in the inner half of enamel but has not reached dentin, which is classified as E2.",1,,
+"According to pediatric guidelines, at what age should a child first visit the dentist?",3-6 months,6-12 months,1-2 years,2-3 years,2,"According to the American Academy of Pediatric Dentistry (AAPD) and similar pediatric dental guidelines, a child should see a dentist by the time their <b>first tooth erupts</b> or <b>no later than their first birthday.</b> This usually occurs between <b>6 and 12 months</b> of age. The purpose of this early visit is to establish a dental home, evaluate oral development, and provide parents with guidance on feeding, fluoride use, and habits like thumb sucking. Early visits help identify risk factors and prevent early childhood caries.",1,,
+"According to caries management guidelines, how often should a high‑caries‑risk child have a professional dental recall visit?",Every 6 months,Every 12 months,Every 3 months,Every 18 months,3,"Children classified as high caries risk should be seen more frequently to monitor lesions, apply fluoride treatments, and reinforce preventive strategies. Current guidelines recommend a recall interval of about every 3 months for high‑risk patients. Individuals with low caries risk are typically seen every 6 months.",1,,
+Which of the following statements best reflects the relationship between the age a child is first affected by caries and their future caries risk?,The age of first caries has no effect on future caries risk.,"The younger a child is when affected by caries, the lower the risk of future caries.","The younger a child is when affected by caries, the higher the risk of progression and future caries in permanent teeth.",Caries risk is determined only by diet and not by age of first caries.,3,"Early childhood caries is not only a problem for the primary dentition but also a strong predictor for future caries. The younger a child is when caries first develops, the higher the risk of caries progression and the higher the likelihood that caries will also affect the permanent dentition. This is because early caries often reflects high-risk habits and a susceptible oral environment that, if unchanged, will continue to affect new teeth as they erupt. Identifying and addressing caries early is critical to breaking this cycle.",1,,
+"A 2‑year‑old child lives in a community where the water fluoride level is 0.4 ppm. According to pediatric fluoride supplementation guidelines, how much systemic fluoride supplement should this child receive daily?",0 mg/day,0.25 mg/day,0.5 mg/day,1.0 mg/day,1,"<div style=""border:1px solid #ddd;border-radius:10px;overflow:hidden;margin:8px 0;"">
+  <div style=""background:#0f172a;color:#fff;padding:10px 12px;font-weight:600;"">Fluoride Supplementation — ADA Guidelines</div>
+  <table role=""grid"" style=""width:100%;border-collapse:collapse;font-size:14px;text-align:center;color:#000;"">
+    <thead>
+      <tr style=""background:#111827;color:#fff;"">
+        <th style=""padding:8px;border:1px solid #ddd;"">Child’s Age</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">&lt; 0.3 ppm</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">0.3–0.6 ppm</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">&gt; 0.6 ppm</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Birth – 6 months</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">None</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">None</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">None</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">6 months – 3 years</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">0.25 mg</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">None</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">None</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">3 – 6 years</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">0.50 mg</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">0.25 mg</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">None</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">&gt; 6 years</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">1.00 mg</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">0.50 mg</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">None</td>
+      </tr>
+    </tbody>
+  </table>
+</div>",1,,
+What is the recommended optimal concentration of fluoride in community drinking water to prevent caries while minimizing the risk of fluorosis?,0.3 ppm,0.5 ppm,0.7 ppm,1.0 ppm,3,The current recommendation for optimal water fluoridation is <b>0.7 parts per million (ppm)</b>. This level provides significant protection against caries while minimizing the risk of fluorosis in children.,1,,
+A 4‑year‑old patient is quiet and reserved during a dental appointment. They accept treatment and follow instructions but do not actively engage with the dentist. What Frankl behavior rating would best describe this patient?,Frankl 1,Frankl 2,Frankl 3,Frankl 4,3,"The Frankl Scale rates a child’s behavior in the dental chair from 1 (strongly negative) to 4 (strongly positive). A patient who is reserved but accepts care and follows directions fits Frankl 3. <table border='1' cellpadding='4' cellspacing='0'><tr><th>Frankl Score</th><th>Description</th></tr><tr><td>1</td><td>Strongly negative: refuses treatment, cries, fearful.</td></tr><tr><td>2</td><td>Negative: reluctant, uncooperative but accepts care.</td></tr><tr><td>3</td><td>Positive: reserved but accepts care and follows directions.</td></tr><tr><td>4</td><td>Strongly positive: cooperative, shows enjoyment.</td></tr></table>",1,,
+At what age do the maxillary primary canines typically erupt?,9–13 months,13–19 months,16–22 months,25–33 months,3,"<div style=""border:1px solid #ddd;border-radius:10px;overflow:hidden;margin:8px 0;"">
+  <div style=""background:#0f172a;color:#fff;padding:10px 12px;font-weight:600;"">Primary Teeth — Eruption (months)</div>
+  <table role=""grid"" style=""width:100%;border-collapse:collapse;font-size:14px;color:#000;"">
+    <thead>
+      <tr style=""background:#111827;color:#fff;"">
+        <th style=""padding:8px;border:1px solid #ddd;text-align:left;"">Tooth</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">Maxillary</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">Mandibular</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Central Incisor</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">8–12</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">6–10</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Lateral Incisor</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">9–13</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">10–16</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Canine</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">16–22</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">17–23</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">First Molar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">13–19</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">14–18</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Second Molar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">25–33</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">23–31</td>
+      </tr>
+    </tbody>
+  </table>
+</div>",1,,
+Which mandibular primary tooth is expected to erupt at around 6–10 months?,Mandibular lateral incisor,Mandibular central incisor,Mandibular canine,Mandibular first molar,2,"<div style=""border:1px solid #ddd;border-radius:10px;overflow:hidden;margin:8px 0;"">
+  <div style=""background:#0f172a;color:#fff;padding:10px 12px;font-weight:600;"">Primary Teeth — Eruption (months)</div>
+  <table role=""grid"" style=""width:100%;border-collapse:collapse;font-size:14px;color:#000;"">
+    <thead>
+      <tr style=""background:#111827;color:#fff;"">
+        <th style=""padding:8px;border:1px solid #ddd;text-align:left;"">Tooth</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">Maxillary</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">Mandibular</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Central Incisor</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">8–12</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">6–10</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Lateral Incisor</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">9–13</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">10–16</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Canine</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">16–22</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">17–23</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">First Molar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">13–19</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">14–18</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Second Molar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">25–33</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">23–31</td>
+      </tr>
+    </tbody>
+  </table>
+</div>",1,,
+At what age do maxillary permanent central incisors typically erupt?,6–7 years,7–8 years,8–9 years,9–10 years,1,"<div style=""border:1px solid #ddd;border-radius:10px;overflow:hidden;margin:8px 0;"">
+  <div style=""background:#0f172a;color:#fff;padding:10px 12px;font-weight:600;"">Permanent Teeth — Eruption (years)</div>
+  <table role=""grid"" style=""width:100%;border-collapse:collapse;font-size:14px;color:#000;"">
+    <thead>
+      <tr style=""background:#111827;color:#fff;"">
+        <th style=""padding:8px;border:1px solid #ddd;text-align:left;"">Tooth</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">Maxillary</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">Mandibular</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Central Incisor</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">7–8</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">6–7</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Lateral Incisor</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">8–9</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">7–8</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Canine</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">11–12</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">9–10</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">First Premolar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">10–11</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">10–12</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Second Premolar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">10–12</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">11–12</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">First Molar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">6–7</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">6–7</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Second Molar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">12–13</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">11–13</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Third Molar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">17–21</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">17–21</td>
+      </tr>
+    </tbody>
+  </table>
+</div>",1,,
+"A 3-day-old newborn presents with multiple small white nodules on the midline of the hard palate. The lesions are asymptomatic, do not interfere with feeding, and parents are concerned about 'oral lumps.' Which of the following is the most likely diagnosis?",Epstein’s pearls,Bohn’s nodules,Congenital epulis,White sponge nevus,1,"Epstein’s pearls are keratin-filled palatal midline cysts in newborns. Course: benign, asymptomatic, resolve spontaneously; no treatment required. Bohn’s nodules are alveolar ridge cysts of salivary origin, self-resolving with no treatment. Congenital epulis is a gingival tumor at birth, often anterior maxilla; may regress, but large lesions interfering with feeding require surgical excision. White sponge nevus is a genetic keratinization disorder with diffuse oral white plaques, lifelong but benign, no treatment required.",1,,
+"Which developmental anomaly is characterized by the union of two adjacent tooth germs, leading to a reduced number of teeth in the arch?",Fusion,Gemination,Concrescence,Dens invaginatus,1,"Fusion is the union of two developing tooth germs, resulting in a large tooth structure and a reduced tooth count when the fused tooth is counted as one. Gemination is an attempt of a single tooth bud to divide, often showing a bifid crown but the total tooth count is normal. Concrescence is the union of two fully formed teeth by cementum only, most often in the posterior maxilla. Dens invaginatus is an enamel/dentin infolding creating a 'tooth within a tooth.' Management: Often no treatment unless esthetics or pulp involvement necessitates reshaping, restoration, or endodontic therapy.",1,,
+Which of the following is true regarding primary teeth compared to permanent teeth?,They have thicker enamel and dentin,They have smaller pulp chambers,Their pulp horns are closer to the surface,Their cervical enamel rods are oriented gingivally,3,"Primary teeth have larger pulp chambers relative to crown size, and pulp horns extend closer to the occlusal surface. Other key differences: enamel and dentin are thinner, allowing caries to progress faster; crowns are whiter, more opaque, with narrower occlusal tables and more pronounced cervical constrictions; roots are long, slender, and flared, with more accessory canals; and cervical enamel rods extend occlusally, unlike the gingival orientation in permanent teeth. Clinical implications: higher risk of pulp exposure during restorative dentistry, furcation involvement develops quickly due to accessory canals, and conservative preps with stainless steel crowns are often preferred.",1,,
+Which of the following is true regarding the appearance of primary teeth compared to permanent teeth?,Primary teeth are more mineralized and appear darker in shade,Primary teeth are less mineralized and appear whiter in shade,Primary teeth are equally mineralized and similar in color to permanent teeth,Primary teeth are less mineralized but appear darker in shade,2,"Primary teeth are less mineralized, which makes them appear whiter and more opaque than permanent teeth. Other anatomical differences: broad contacts and narrower occlusal tables complicate class II restorations; enamel and dentin are thinner, allowing rapid caries progression; pulp chambers are larger with pulp horns close to the surface, increasing pulp exposure risk; roots are slender, flared, and contain more accessory canals; and cervical enamel rods extend occlusally. Clinical implications: shade matching requires lighter, more opaque composites; early radiographic monitoring is critical to detect interproximal lesions; and furcation pathology is common due to accessory canal communication.",1,,
+Which of the following best describes the Hall Technique for managing carious primary molars?,Complete caries removal followed by composite restoration,Partial caries removal and placement of a glass ionomer liner,Placement of a preformed stainless steel crown without caries removal or tooth preparation,Indirect pulp capping with calcium hydroxide,3,"The Hall Technique is a minimally invasive approach to treating carious primary molars. Unlike conventional restorative methods, no local anesthesia, caries removal, or tooth preparation is performed. Instead, a preformed stainless steel crown is cemented directly over the carious tooth, effectively sealing in the decay. By cutting off the bacteria’s nutrient supply, the caries process is arrested. This approach is particularly valuable in uncooperative pediatric patients, where traditional preparation carries a high risk of pulp exposure or patient distress. When chosen carefully—for teeth without pulpal symptoms and with adequate crown height—the Hall Technique provides a durable and child‑friendly alternative to conventional treatment.",1,,
+"A 6-year-old child presents with a mandibular primary molar that has extensive proximal and occlusal decay. The tooth is vital but weakened, and the parent reports the child has a high caries risk. Which of the following is the most appropriate restoration for this tooth?",Amalgam filling,Composite resin filling,Stainless steel crown,Extraction and space maintainer,3,"In primary molars with extensive multi-surface caries, a stainless steel crown is considered the treatment of choice. Small occlusal lesions may be adequately restored with amalgam or composite, but these materials do not provide long-term durability when multiple surfaces are involved, especially in high‑caries‑risk children. Stainless steel crowns protect the remaining tooth structure, withstand occlusal forces, and reduce the likelihood of recurrent decay. They are also indicated after pulp therapy procedures such as pulpotomy or pulpectomy, as the remaining tooth is structurally compromised. Extraction with a space maintainer may be necessary if the tooth is non‑restorable or has pulpal pathology, but in this case the tooth is vital and can be preserved. Thus, an SSC provides the most predictable and durable outcome for a child with significant caries and a history of disease activity.",1,,
+"At what time in development does the initiation stage of odontogenesis begin, and what structure is first formed?",Week 6 in utero; dental lamina,Week 8 in utero; tooth bud,Week 9 in utero; enamel organ,At birth; enamel calcification,1,"The initiation stage begins around week 6 in utero, when underlying ectomesenchyme signals the oral epithelium to thicken into the dental lamina. This is the first commitment to tooth formation, and the identity of each tooth (incisor, canine, molar) is specified by the ectomesenchyme. If the lamina fails completely, the result is anodontia (no teeth at all, very rare). More commonly, partial failure leads to hypodontia (missing fewer than 6 teeth) or oligodontia (missing 6 or more teeth). Conversely, excessive proliferation can cause supernumerary teeth. From here, odontogenesis follows the sequence: bud → cap → bell → apposition → mineralization → eruption. Broadly, enamel is ectodermal (ameloblasts), while dentin, pulp, cementum, alveolar bone, and the PDL come from ectomesenchyme.",1,,
+The bud stage of tooth development is characterized by:,Proliferation of epithelial and ectomesenchymal cells forming a rounded mass of cells,"Formation of enamel organ, dental papilla, and dental follicle",Histodifferentiation of ameloblasts and odontoblasts,Secretion of dentin before enamel,1,"The bud stage begins at about week 8 in utero, when the dental lamina proliferates into the ectomesenchyme to form rounded epithelial outgrowths (tooth buds). At this stage the buds are not yet organized into enamel, dentin, or pulp, but they mark the precise sites of future teeth. Disturbances typically affect tooth size: reduced proliferation may cause microdontia, while excess proliferation may cause macrodontia. Soon after, the successional dental lamina gives rise to permanent successors, explaining why permanent incisors and premolars develop lingual to their primary counterparts. Bud is a stepping stone toward cap (organization) and bell (cell differentiation) before hard tissue apposition.",1,,
+Which of the following is first established during the cap stage of odontogenesis?,Differentiation of ameloblasts and odontoblasts,"Formation of the enamel organ, dental papilla, and dental follicle",Secretion of dentin and enamel matrices,Fusion of reduced enamel epithelium with oral epithelium,2,"At about week 9 in utero, the tooth germ enters the cap stage and organizes into three components: the enamel organ (epithelium → enamel), the dental papilla (ectomesenchyme → dentin and pulp), and the dental follicle (ectomesenchyme → cementum, alveolar bone, PDL). Within the enamel organ, the stellate reticulum and the enamel knot appear; the enamel knot acts as a signaling center for cusp patterning. Because this stage shapes morphology, errors lead to form anomalies: fusion (two buds join; tooth count decreases), gemination (one bud attempts to split; tooth count unchanged), or dens invaginatus (enamel epithelium folds inward). This stage sets the blueprint that the bell stage will refine before hard tissue deposition begins.",1,,
+Which of the following correctly matches tooth tissues with their embryologic origin?,Enamel and dentin → ectoderm,Enamel → ectoderm; dentin and pulp → ectomesenchyme,Enamel → ectomesenchyme; dentin → ectoderm,Enamel and dentin → mesoderm,2,"Enamel develops from the enamel organ, derived from oral ectoderm, whereas dentin and pulp develop from the dental papilla, which is neural crest–derived ectomesenchyme; the dental follicle (also ectomesenchymal) produces cementum, alveolar bone, and the PDL. This dual origin explains clinical behavior: enamel is acellular and nonvital (no true regeneration), while dentin and pulp are vital and vascular, capable of forming secondary/tertiary dentin. Pathology follows origin: ectodermal defects produce amelogenesis imperfecta; mesenchymal defects produce dentinogenesis imperfecta or root/PDL anomalies. Remember the temporal choreography: odontoblasts lay dentin first, which then induces ameloblasts to deposit enamel; initial mineralization begins at the DEJ (~4–6 months in utero).",1,,
+Oligodontia is defined as the congenital absence of how many permanent teeth (excluding third molars)?,3 or more,6 or less,6 or more,8 or more,3,"Oligodontia is the congenital absence of six or more permanent teeth (excluding third molars). Hypodontia refers to the absence of fewer than six teeth; anodontia is the complete absence of teeth (rare, often syndromic). These conditions reflect disturbances of the initiation stage—localized or generalized failure of the dental lamina to form or invaginate at specific sites—and they carry functional and esthetic implications often requiring multidisciplinary management.",1,,
+A 4-year-old presents after avulsion of a maxillary primary central incisor. What is the recommended management regarding reimplantation?,Reimplant immediately and place a flexible splint for 1–2 weeks,"Do not reimplant; control bleeding, provide analgesia, soft diet, and arrange follow-up",Soak the tooth in doxycycline and reimplant,Reimplant only if extraoral dry time is under 60 minutes,2,"Primary teeth should not be reimplanted because manipulation can injure the developing permanent successor and increase the risks of ankylosis, infection, and aspiration. Management is conservative: confirm the tooth is not intruded or associated with alveolar fracture, control bleeding, provide analgesics, review tetanus status, maintain oral hygiene (e.g., chlorhexidine if age-appropriate), advise a soft diet, and schedule clinical/radiographic follow-up. Space maintenance is usually unnecessary for lost primary incisors. This differs from permanent tooth avulsion, where immediate reimplantation is recommended when feasible.",1,,
+Which finding best distinguishes subluxation from concussion of a tooth?,Subluxation shows mobility without displacement,Concussion presents with mobility but no displacement,Subluxation always involves displacement,There is no difference,1,"Dental trauma often affects the periodontal ligament (PDL), and correct diagnosis guides treatment. Concussion = injury to the PDL without mobility or displacement (tooth is tender to percussion but stable). Subluxation = mobility present but no displacement. Both are minor luxation injuries. Management is conservative: soft diet, oral hygiene, possible chlorhexidine rinses, and follow-up to monitor pulp vitality. Distinguishing between the two prevents overtreatment.",1,,
+A 5-year-old presents with an intruded primary maxillary central incisor. What is the appropriate management?,Reposition and splint for 2 weeks,Observe for spontaneous re-eruption or natural exfoliation,Extract the tooth immediately,Rigid splint for 4–6 weeks,2,Intrusion is the most common traumatic injury in upper primary incisors. The pliable alveolar bone in children allows the tooth to be driven apically into the socket rather than fracturing. Management is conservative: most intruded primary teeth spontaneously re-erupt. Intervention is required only if the crown is displaced toward the permanent successor bud or if there is aspiration risk. Splinting is contraindicated. Radiographic follow-up is essential because intrusive trauma may cause enamel defects or malformations of permanent successors.,1,,
+A 9-year-old presents with an extrusively luxated permanent maxillary incisor. What is the recommended splinting approach?,Rigid splint for 4–6 weeks,Flexible splint for 10–14 days,"No splinting, observe only",Flexible splint for 3 months,2,"Extrusive luxation is a partial displacement of the tooth out of the socket. Clinically, the tooth appears elongated and is mobile with gingival bleeding. Management: gently reposition the tooth into the socket and stabilize with a flexible splint for 10–14 days. Flexibility allows physiologic movement and reduces ankylosis risk. Compare: lateral luxation and alveolar fracture require rigid splinting for 4–6 weeks; root fractures need up to 3 months of flexible splinting. Supportive care includes analgesics, a soft diet, good oral hygiene, and pulp vitality monitoring.",1,,
+"In a case of alveolar fracture involving displacement of multiple anterior teeth, what is the recommended splinting protocol?",Flexible splint for 7–10 days,Rigid splint for 4–6 weeks,Flexible splint for 3 months,No splinting; allow spontaneous healing,2,"Alveolar fractures involve teeth and supporting alveolar bone. Because bone segments are unstable, a rigid splint is required for stability. The recommended period is 4–6 weeks to allow osseous healing. Flexible splints are insufficient for bone fractures. Management also includes repositioning of the segment, antibiotics and tetanus prophylaxis when indicated, and radiographic follow-up.",1,,
+A 10-year-old boy avulses a maxillary permanent central incisor on the playground. What is the recommended management if the tooth is brought in within 30 minutes in milk?,Discard the tooth; prognosis is hopeless,Replant immediately with finger pressure and splint flexibly for 14 days,Delay replantation and perform root canal treatment first,Store the tooth in water for 24 hours before replanting,2,"Avulsed permanent teeth should be replanted as soon as possible. Even when long-term survival is uncertain, replantation maintains alveolar bone and occlusion. First aid: handle the tooth by the crown, rinse briefly if dirty (preferably milk, saline, or saliva), and replant immediately if possible. In the dental office: irrigate the socket, replant gently, and apply a flexible splint for about 14 days. Splint longer if there is an alveolar fracture (4–6 weeks) or a root fracture (3 months). Endodontics: immature apices may revascularize; mature or closed apices usually need root canal treatment soon after replantation to prevent resorption. Time is critical: prognosis declines sharply after 60 minutes dry.",1,,
+Which of the following is the most appropriate transport medium for an avulsed permanent tooth if immediate replantation is not possible?,Water,Milk,Hydrogen peroxide solution,Dry napkin,2,The prognosis of a replanted tooth depends on periodontal ligament cell viability. Milk is the best readily available storage medium because it is isotonic with a compatible pH and preserves cell viability. Acceptable alternatives include saline or the patient’s saliva when milk is not available. Water is harmful because it is hypotonic and causes rapid lysis of ligament cells. Antiseptics such as hydrogen peroxide are cytotoxic and must not be used. The ideal strategy remains immediate replantation when feasible.,1,,
+"In a subcondylar mandibular fracture, the condylar head is most commonly displaced in which direction?",Posteriorly,Anteromedially,Laterally,Superiorly,2,"The lateral pterygoid muscle inserts on the condylar head and neck. After a subcondylar fracture, this muscle pulls the condylar fragment anteromedially. This displacement pattern is a classic diagnostic clue on imaging, including the reverse Towne’s view. In children, condylar fractures matter because the condyle is a mandibular growth center; mismanagement risks ankylosis, asymmetry, and growth disturbances. Treatment may be conservative or surgical depending on displacement and function.",1,,
+Which of the following statements about dental trauma is TRUE?,Girls are twice as likely to experience dental trauma as boys,Boys are twice as likely to experience dental trauma as girls,Boys and girls experience dental trauma at the same rate,Dental trauma occurs predominantly in adults over 30 years,2,"Epidemiologic studies consistently demonstrate a male predominance in dental trauma, with a 2:1 ratio of boys to girls. This is largely due to greater participation of boys in vigorous play, sports, and risk-taking behaviors. Dental trauma shows two incidence peaks: 2–4 years (primary teeth, toddlers falling) and 7–10 years (permanent maxillary incisors, often from sports or playground injuries). Understanding these patterns helps in prevention counseling, such as advising the use of mouthguards during sports.",1,,
+Which of the following statements about premature loss of primary molars is TRUE?,Premature loss of a second primary molar results in mesial drift of the permanent first molar,Premature loss of a second primary molar results in distal drift of the permanent first molar,"The later the loss of the second primary molar, the greater the mesial drift of the permanent first molar",Premature loss of posterior primary molars typically leads to increased arch length,1,"The second primary molar is considered a keystone tooth in the mixed dentition because it preserves the space needed for eruption of the first permanent molar. If it is lost prematurely, the permanent molar will migrate mesially into the space, reducing arch length and predisposing to crowding and malocclusion. The earlier the loss, the greater the impact. Space maintainers are used to preserve this space: a distal shoe if the first permanent molar has not erupted, a band-and-loop if it has erupted, or a lingual arch or Nance appliance for bilateral cases.",1,,
+Which of the following is a major risk factor for traumatic dental injuries to maxillary incisors?,Increased overjet,Posterior crossbite,Deep bite,Open bite,1,"Increased overjet, particularly greater than 3–4 mm, is one of the strongest risk factors for traumatic dental injuries to maxillary incisors. The protruded position of the teeth leaves them unprotected by the lips, making them more likely to fracture during falls or sports injuries. The risk rises sharply with overjet greater than 6 mm. Boys, who already experience more trauma than girls, are especially at risk. Early orthodontic correction can significantly reduce trauma incidence.",1,,
+Which of the following oral findings is most characteristic of Down syndrome?,Hypoplastic enamel and early eruption of teeth,"Macroglossia, delayed eruption, and high prevalence of periodontal disease",Supernumerary teeth and unerupted permanent molars,Multiple odontomas and obliterated pulp chambers,2,"Down syndrome (trisomy 21) is associated with delayed eruption, hypodontia, macroglossia, and early, severe periodontal disease despite a relatively low caries prevalence. Recognizing these oral findings is high yield for INBDE.",1,,
+"Which condition is associated with multiple unerupted permanent teeth, numerous supernumerary teeth, and hypoplastic or absent clavicles?",Down syndrome,Cleidocranial dysplasia,Crouzon syndrome,Treacher Collins syndrome,2,"Cleidocranial dysplasia is characterized by hypoplastic or absent clavicles, open sutures, wormian bones, numerous supernumerary teeth, and failure of permanent teeth to erupt. It is a classic congenital disorder tested on INBDE.",1,,
+Which of the following is a characteristic oral finding of Crouzon syndrome (craniofacial dysostosis)?,Midface hypoplasia and high-arched palate,Hypoplastic clavicles with multiple supernumerary teeth,Macroglossia with periodontal disease,Taurodontism and enamel hypoplasia,1,"Crouzon syndrome (craniofacial dysostosis) results from FGFR2 mutations and premature cranial suture fusion (craniosynostosis). Oral findings include midface hypoplasia, crowding, and high-arched or cleft palate. It is distinguished from cleidocranial dysplasia (clavicle defects, supernumerary teeth) and Down syndrome (macroglossia, periodontal disease).",1,,
+Which of the following best describes the craniofacial features of Treacher Collins syndrome (mandibulofacial dysostosis)?,"Hypoplastic zygomas, mandibular retrognathia, and downward-slanting palpebral fissures",Hypoplastic clavicles and numerous supernumerary teeth,Macroglossia and increased periodontal disease susceptibility,Midface hypoplasia and high-arched palate,1,"Treacher Collins syndrome (mandibulofacial dysostosis) is a first and second branchial arch disorder. Features include hypoplastic zygomas, mandibular retrognathia, downward-slanting palpebral fissures, ear anomalies, and cleft palate. Oral findings include malocclusion and airway compromise.",1,,
+"A 5-year-old child presents with fever, sore throat, and multiple small vesicular-ulcerative lesions on the soft palate and tonsillar pillars. Which of the following is the most likely diagnosis?",Herpetic gingivostomatitis,Hand-foot-and-mouth disease,Herpangina,Candidiasis,3,"Herpangina is an acute viral infection of childhood most often caused by Coxsackie A viruses. It has a sudden onset with fever, sore throat, and malaise, followed by small vesicles that rupture to form shallow ulcers. These lesions characteristically occur on the posterior oral cavity—soft palate, uvula, and tonsillar pillars. The condition is self-limiting and resolves within about a week. This posterior localization helps distinguish herpangina from herpetic gingivostomatitis (anterior gingiva and mucosa), hand-foot-and-mouth disease (oral plus skin lesions), and candidiasis (white plaques that wipe away).",1,,
+Which of the following is a contraindication to the use of nitrous oxide–oxygen inhalation sedation in children?,Asthma,An uncooperative child,Mild anxiety related to dental treatment,Strong gag reflex during dental procedures,2,"Nitrous oxide is a safe and effective agent for anxiolysis and mild sedation in pediatric dentistry. It is well tolerated and even considered safe in children with asthma, since it is non-irritating to the airway. The main contraindications are situations where the technique cannot be performed effectively, such as in an uncooperative child who cannot calmly accept or breathe through the nasal hood. Other contraindications include acute upper respiratory infections, nasal obstruction, recent ear or eye surgery involving gas spaces, severe chronic pulmonary disease, and certain psychiatric or communication disorders. Thus, cooperation of the child is essential for nitrous oxide sedation to be feasible.",1,,
+"In pediatric dentistry, the behavioral technique known as 'modeling' is best described as:",Using fun labels and suggesting use of imagination,Ignoring a behavior and redirecting attention elsewhere,Providing an example or demonstration of how to perform a desired behavior,"Informing, demonstrating, and then guiding the child through a procedure",3,"Modeling is a behavior management technique in which a child learns by observing another person, often a peer, sibling, or the dentist, successfully completing a procedure or demonstrating cooperative behavior. Children are more likely to adopt a behavior when they see someone similar to themselves performing it calmly and without fear. This technique reduces anxiety by normalizing the experience and showing that the procedure can be completed safely. Modeling is distinct from the tell-show-do technique, which involves directly instructing and demonstrating to the same child.",1,,
+"A 5-year-old boy presents with pain in a mandibular first primary molar for two days. Clinical exam shows a large carious lesion with pulp exposure, but surrounding tissues appear normal. A radiograph shows caries extending into the pulp with no periapical or furcal pathology. What is the most appropriate treatment?",Calcium hydroxide pulpotomy,Pulpectomy,Formocresol pulpotomy,Direct pulp capping with calcium hydroxide or zinc oxide cement,3,"In a primary molar with carious pulp exposure but no signs of radicular pulp involvement or periapical pathology, the treatment of choice is pulpotomy. The coronal pulp is removed and the radicular pulp preserved. Formocresol has historically been the standard medicament, though ferric sulfate and MTA are modern alternatives. Direct pulp capping is not recommended in primary teeth due to poor long-term success and risk of internal resorption. Pulpectomy is indicated if radicular pulp involvement is evident, and extraction is reserved for non-restorable or severely infected teeth.",1,,
+Which of the following radiographic findings is most indicative of successful healing after partial pulpotomy in an immature permanent tooth?,Irregular pulp canal calcification,Periodontal ligament widening or periradicular radiolucency,Formation of a dentinal bridge between the pulp wound and capping material,Pulp canal obliteration (PCO),3,"The goal of partial pulpotomy in immature permanent teeth (apexogenesis) is to preserve pulp vitality so that root development continues. The hallmark sign of success is formation of a dentinal bridge between the pulp wound and the capping material, which indicates healing and barrier formation. Pulp canal calcification or obliteration may occur but is not the primary objective. Periodontal ligament widening or periapical radiolucency indicates failure. Thus, dentinal bridge formation is considered the most reliable sign of treatment success.",1,,
+An 8-year-old child has a diastema between the maxillary central incisors. What is the most likely outcome as other teeth erupt?,The diastema will increase in size,The diastema will close if less than 2 mm,The diastema will close regardless of its size,The diastema will remain unchanged,2,"A midline diastema in the mixed dentition is often normal during the 'ugly duckling stage.' As the permanent canines erupt, their mesial movement helps close the space. Diastemas of 2 mm or less usually close spontaneously, while larger gaps may persist. Small diastemas are self-correcting; persistent or wide diastemas may need orthodontic or surgical intervention.",1,,
+"For a 12-year-old patient, whose consent is legally required before dental treatment can be performed?",The child’s mother,The child’s grandparent,An 18-year-old sibling,The patient themselves,1,"Minors under 18 cannot provide legal consent for dental treatment. Consent must be obtained from a parent or legal guardian. While grandparents or siblings may accompany the child, they cannot authorize treatment unless they hold legal guardianship. Children can provide assent, which is ethically important, but legal consent must come from a parent or guardian.",1,,
+A 7-year-old child has a gross carious lesion on primary molar tooth L involving three surfaces. What is the recommended treatment approach?,Amalgam filling,Direct composite restoration,Stainless steel crown,Extraction,3,"For extensive multi-surface caries in primary molars, the treatment of choice is a stainless steel crown (SSC). SSCs provide full coverage, are durable, and protect the remaining tooth structure until exfoliation. Amalgam or composite may work for smaller lesions, while extraction is reserved for non-restorable teeth or those with advanced pathology.",1,,
+"In an average 8-year-old child, how many permanent teeth are typically present?",8,10,12,14,3,"By age 8, children usually have erupted the first permanent molars and most permanent incisors, totaling 12 teeth. Canines and premolars erupt later between ages 9–12. Recognizing eruption timing helps identify normal vs. delayed development.
+
+<div style=""border:1px solid #ddd;border-radius:10px;overflow:hidden;margin:8px 0;"">
+  <div style=""background:#0f172a;color:#fff;padding:10px 12px;font-weight:600;"">Permanent Teeth — Eruption (years)</div>
+  <table role=""grid"" style=""width:100%;border-collapse:collapse;font-size:14px;color:#000;"">
+    <thead>
+      <tr style=""background:#111827;color:#fff;"">
+        <th style=""padding:8px;border:1px solid #ddd;text-align:left;"">Tooth</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">Maxillary</th>
+        <th style=""padding:8px;border:1px solid #ddd;"">Mandibular</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Central Incisor</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">7–8</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">6–7</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Lateral Incisor</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">8–9</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">7–8</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Canine</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">11–12</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">9–10</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">First Premolar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">10–11</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">10–12</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Second Premolar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">10–12</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">11–12</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">First Molar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">6–7</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">6–7</td>
+      </tr>
+      <tr style=""background:#ffffff;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Second Molar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">12–13</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">11–13</td>
+      </tr>
+      <tr style=""background:#f9fafb;color:#000;"">
+        <td style=""padding:8px;border:1px solid #ddd;"">Third Molar</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">17–21</td>
+        <td style=""padding:8px;border:1px solid #ddd;"">17–21</td>
+      </tr>
+    </tbody>
+  </table>
+</div>  
+
+
+At age 8, only central incisors, lateral incisors, and first molars are present, giving a total of 12 teeth.",1,,
+"A 7-year-old girl has deep caries on teeth L and K, with a 3-surface lesion on tooth L and a 2-surface lesion on tooth K. What is the best restorative treatment for tooth K?",Amalgam,Composite,Stainless steel crown,Extraction,3,"For extensive lesions in primary molars, especially when multiple teeth are involved, the stainless steel crown is the restoration of choice. SSCs ensure full coverage, prevent recurrent decay, and withstand occlusal forces until natural exfoliation. Even for a 2-surface lesion like tooth K, SSC provides the most predictable outcome when caries is advanced.",1,,
+A 7-year-old child presents the day after placement of a stainless steel crown with swelling of the lower lip at the level of occlusion. What is the most likely cause?,Immunological reaction,Trauma,Infection,Allergic reaction,2,"Lip swelling the day after crown placement is most often due to accidental biting of the numb lip following local anesthesia. This is a traumatic lesion, not an immune or infectious process. Parents should be advised to monitor children until anesthesia wears off to prevent such injuries.",1,,
+A child previously bit their lip after an inferior alveolar nerve block. What can be done in the next appointment to reduce the risk of trauma?,Inferior alveolar nerve block with lidocaine,Inferior alveolar nerve block with articaine,Infiltration with mepivacaine (carbocaine),Delay treatment for a few days,3,"Children are more likely to injure lips or cheeks after prolonged numbness from inferior alveolar nerve blocks. To minimize risk, a short-acting anesthetic such as mepivacaine via infiltration can be used when feasible. This provides adequate anesthesia while reducing the duration of soft-tissue anesthesia and lowering the chance of lip trauma.",1,,
+"A 10-year-old child develops rash, hives, and difficulty breathing shortly after administration of local anesthetic. What is the most likely diagnosis?",Type I hypersensitivity reaction (IgE-mediated),Type IV hypersensitivity reaction,Erythema multiforme,Allergic contact dermatitis,1,"The rapid onset of rash, hives, and respiratory distress after anesthetic injection indicates a Type I hypersensitivity reaction (anaphylaxis). This is IgE-mediated and requires immediate recognition. Type IV hypersensitivity reactions are delayed. Erythema multiforme produces target lesions, and allergic contact dermatitis is localized to skin after exposure, not systemic.",1,,
+What is the correct immediate management for a 10-year-old child experiencing a Type I hypersensitivity reaction after local anesthesia?,Topical steroid cream,Epinephrine administration (EpiPen),Oral antihistamines,Observation only,2,"The definitive management of anaphylaxis is immediate intramuscular epinephrine. This rapidly counteracts airway edema, bronchospasm, and hypotension. Antihistamines and steroids may be adjunctive but are not first-line. Observation without intervention can be fatal. Prompt administration of epinephrine is critical for survival.",1,,
