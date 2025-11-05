@@ -26,7 +26,7 @@ export default async function SectionPage({
 
   const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
   const section: SectionWithSubjects = await fetch(
-    `${base}//sections/${sectionId}/with-subjects/`,
+    `${base}/sections/${sectionId}/with-subjects/`,
     { cache: "no-store" }
   ).then((r) => r.json());
 
